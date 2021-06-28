@@ -1,33 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
     <title>CookIt</title>
-    <script defer
-    src="https://kit.fontawesome.com/cc9939a825.js"
-    crossorigin="anonymous"
+    <script
+      defer
+      src="https://kit.fontawesome.com/cc9939a825.js"
+      crossorigin="anonymous"
     ></script>
     <script defer type="module" src="./assets/js/controller.js"></script>
-</head>
-<body>
-  <div class="grid">
-    <div class="nav"></div>
-    <div class='main'>
-      <div class="main__left"></div>
-      <div class="main__center">
-        <div class="logo">
-          <img src="./assets/images/png/Logo.png" alt="">
+  </head>
+  <body>
+    <div class="grid">
+      <div class="nav"></div>
+      <div class="main">
+        <div class="main__left"></div>
+        <div class="main__center">
+          <img
+            class="main__center-logo"
+            src="./assets/images/png/Logo.png"
+            alt="CookIt Logo"
+          />
+          <h1 class="main__center-welcomeMessage">
+            Create Your Perfect <br />
+            Meal Plan
+          </h1>
+          <button href="" class="btn main__center-btn">Click To Start</button>
         </div>
-        <h1 class="main__center-welcomeMessage">Create Your Perfect <br> Meal Plan</h1>
-        <div class="btn">Click To Start</div>
+        <div class="main__right"></div>
       </div>
-      <div class="main__right"></div>
+      <div class="footer"></div>
     </div>
-    <div class="footer">
-      <img src=".//assets/images/jpg/footer-img@2x.jpg" alt="">
-    </div>
-  </div>
-</body>
+  </body>
 </html>
