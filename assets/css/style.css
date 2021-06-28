@@ -36,10 +36,18 @@ h1 {
 }
 
 /* ------ sections ------*/
-.grid {
+.grid-1 {
   display: grid;
-  grid-template-rows: 100px auto 100px;
-  height: 100vh;
+  grid-template-columns: 6fr minmax(30rem, 1fr);
+}
+.grid-2 {
+  display: grid;
+  grid-template-rows: 100px auto;
+  height: 90vh;
+}
+
+.nav {
+  background-color: red;
 }
 
 .main {
@@ -70,8 +78,12 @@ h1 {
   justify-content: center;
   align-items: center;
 }
+.main__right {
+  border-left: 5rem solid #224a95;
+}
 
 .footer {
+  height: 10vh;
   background-image: url(../images/jpg/footer-img@2x.jpg);
   background-position: center;
   background-size: cover;

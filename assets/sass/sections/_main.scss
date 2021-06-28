@@ -29,4 +29,8 @@
       align-items: center;
     }
   }
+ 
+  &__right{
+      border-left: 5rem solid $color-blue;
+  }
 }

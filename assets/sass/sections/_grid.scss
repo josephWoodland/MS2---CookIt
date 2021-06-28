@@ -1,5 +1,13 @@
 .grid{
+
+    &-1{
     display: grid;
-    grid-template-rows: 100px auto 100px;
-    height: 100vh;
+    grid-template-columns: 6fr minmax(30rem, 1fr);
+    }
+
+    &-2{
+    display: grid;
+    grid-template-rows: 100px auto;
+    height: 90vh;
+    }
 }
