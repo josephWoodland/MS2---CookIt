@@ -46,8 +46,8 @@ h1 {
   height: 90vh;
 }
 
-.nav {
-  background-color: red;
+.nav-logo {
+  height: 5rem;
 }
 
 .main {
@@ -63,8 +63,19 @@ h1 {
   align-items: center;
   justify-content: center;
 }
-.main__center-logo {
+.main__center__img {
+  display: flex;
+  flex-direction: row;
+}
+.main__center__img-pods {
+  margin-top: 5rem;
+  height: 20rem;
+}
+.main__center__img-logo {
   height: 30rem;
+}
+.main__center__img-avo {
+  height: 15rem;
 }
 .main__center-welcomeMessage {
   width: 80%;
@@ -79,11 +90,11 @@ h1 {
   align-items: center;
 }
 .main__right {
-  border-left: 5rem solid #224a95;
+  border-left: 7rem solid #224a95;
 }
 
 .footer {
-  height: 10vh;
+  height: 15vh;
   background-image: url(../images/jpg/footer-img@2x.jpg);
   background-position: center;
   background-size: cover;

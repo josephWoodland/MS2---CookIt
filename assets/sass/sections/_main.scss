@@ -11,8 +11,23 @@
     align-items: center;
     justify-content: center;
 
-    &-logo {
-      height: 30rem;
+    &__img {
+        
+      display: flex;
+      flex-direction: row;
+
+      &-pods {
+        margin-top: 5rem;
+        height: 20rem;
+      }
+
+      &-logo {
+        height: 30rem;
+      }
+
+      &-avo{
+          height: 15rem;
+      }
     }
 
     &-welcomeMessage {
@@ -29,8 +44,8 @@
       align-items: center;
     }
   }
- 
-  &__right{
-      border-left: 5rem solid $color-blue;
+
+  &__right {
+    border-left: 7rem solid $color-blue;
   }
 }
