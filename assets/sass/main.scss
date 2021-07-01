@@ -1,0 +1,25 @@
+// Restet the styling of the page - delete all inherited padding and margins
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+html {
+  font-size: 62.5%;
+}
+
+/* ------ variables ------*/
+@import "items/variables";
+@import "items/typography";
+@import "items/buttons";
+@import "items/classes";
+
+/* ------ sections ------*/
+
+@import "sections/grid";
+@import "sections/nav";
+@import "sections/main";
+@import "sections/footer";

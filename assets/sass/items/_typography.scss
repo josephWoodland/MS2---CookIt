@@ -1,0 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;400&display=swap");
+
+$font: "Noto Sans JP", sans-serif;
+
+$font-size-copy: 2rem;
+$font-size-button: 2.4rem;
+$font-size-heading: 4.8rem;
+
+h1 {
+  font-family: $font;
+  font-size: $font-size-heading;
+  font-weight: 800;
+}

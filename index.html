@@ -1,31 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
     <title>CookIt</title>
-    <script defer
-    src="https://kit.fontawesome.com/cc9939a825.js"
-    crossorigin="anonymous"
+    <script
+      defer
+      src="https://kit.fontawesome.com/cc9939a825.js"
+      crossorigin="anonymous"
     ></script>
-    <script defer src="./assets/js/controller.js"></script>
-</head>
-<body>
-  <div class="grid">
-    <div class="nav"></div>
-    <div class='main'>
-      <div class="main__left"></div>
-      <div class="main__center">
-        <div class="logo"></div>
-        <h1>Create Your Perfect <br> Meal Plan</h1>
-        <div class="btn">Click To Start</div>
+    <script defer type="module" src="./assets/js/controller.js"></script>
+  </head>
+  <body>
+    <div class="grid-1">
+      <div class="grid-2">
+      <div class="nav">
+        <img
+            class="nav-logo"
+            src="./assets/images/png/Logo.png"
+            alt="CookIt Logo"
+          />
       </div>
-      <div class="main__right"></div>
+      <div class="main">
+        <div class="main__left"></div>
+        <div class="main__center">
+          <div class="main__center__img">
+        <img class="main__center__img-pods" src="./assets/images/png/pods@2x.png" alt="Picture of some peas in pods">
+          <img
+            class="main__center__img-logo"
+            src="./assets/images/png/Logo.png"
+            alt="CookIt Logo"
+          />
+          <img src="./assets/images/png/avocado@2x.png" alt="" class="main__center__img-avo">
+        </div>
+          <h1 class="main__center-welcomeMessage">
+            Create Your Perfect <br />
+            Meal Plan
+          </h1>
+          <button href="" class="btn main__center-btn">Click To Start</button>
+        </div>
+      </div>
     </div>
-    <div class="footer">
-      <img src=".//assets/images/jpg/footer-img@2x.jpg" alt="">
-    </div>
-  </div>
-</body>
+    <div class="main__right"></div>
+   </div>
+    <div class="footer"></div>
+  </body>
 </html>
+

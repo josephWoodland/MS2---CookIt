@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;400&display=swap");
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+/* ------ variables ------*/
+/* //////////////////////////////////////////////////////////////////////////////// 
+------------------------------- Variables  --------------------------------------
+//////////////////////////////////////////////////////////////////////////////////*/
+h1 {
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 4.8rem;
+  font-weight: 800;
+}
+
+.btn {
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 2.4rem;
+  color: #2b2b2b;
+  background-color: #efc600;
+  border: 1px solid #2b2b2b;
+  border-radius: 10rem;
+  -webkit-border-radius: 10rem;
+  -moz-border-radius: 10rem;
+  -ms-border-radius: 10rem;
+  -o-border-radius: 10rem;
+  cursor: pointer;
+}
+
+/* ------ sections ------*/
+.grid-1 {
+  display: grid;
+  grid-template-columns: 6fr minmax(30rem, 1fr);
+}
+.grid-2 {
+  display: grid;
+  grid-template-rows: 100px auto;
+  height: 90vh;
+}
+
+.nav-logo {
+  height: 5rem;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 1fr minmax(650px, auto) 1fr;
+  justify-items: center;
+  align-content: center;
+}
+.main__center {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.main__center__img {
+  display: flex;
+  flex-direction: row;
+}
+.main__center__img-pods {
+  margin-top: 5rem;
+  height: 20rem;
+}
+.main__center__img-logo {
+  height: 30rem;
+}
+.main__center__img-avo {
+  height: 15rem;
+}
+.main__center-welcomeMessage {
+  width: 80%;
+  margin: 4rem;
+  text-align: center;
+}
+.main__center-btn {
+  display: flex;
+  width: 30rem;
+  height: 5rem;
+  justify-content: center;
+  align-items: center;
+}
+.main__right {
+  border-left: 7rem solid #224a95;
+}
+
+.footer {
+  height: 15vh;
+  background-image: url(../images/jpg/footer-img@2x.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+/*# sourceMappingURL=style.css.map */
