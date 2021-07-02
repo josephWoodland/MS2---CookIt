@@ -2,8 +2,31 @@
 ------------------------------- MODAL  --------------------------------------
 //////////////////////////////////////////////////////////////////////////////////*/
 
-.modal{
-    position: fixed;
-    height: 30rem;
-    width: 30rem;
+.formModal {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.8);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.form {
+  margin: auto;
+  background-color: $color-backgound;
+  width: 70%;
+  height: 80%;
+
+  &__logo {
+    width: 6rem;
+  }
+
+  &__header {
+      
+  }
+  &__right {
+      border-left: 5rem solid $color-blue
+  }
 }
