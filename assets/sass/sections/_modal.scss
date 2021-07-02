@@ -20,7 +20,7 @@
   height: 80%;
 
   &__logo {
-    width: 6rem;
+    width: 10rem;
   }
 
   &__header {
@@ -40,10 +40,35 @@
     margin-top: 2rem;
   }
 
-  &__question{
-      display: flex;
+  &__question {
+    display: flex;
+    margin-top: 2rem;
   }
   &__right {
     border-left: 5rem solid $color-blue;
+  }
+
+  &-btn{
+      margin-top: 2rem;
+      text-transform: capitalize;
+      width: 35%;
+      height: 4rem;
+  }
+
+  input,
+  select {
+      margin-left: 2rem;
+      border-style: none;
+      border-bottom: 1px solid $color-blue;
+      background-color: $color-backgound;
+      font-family: $font;
+      transition: all .4s ease;
+      -webkit-transition: all .4s ease;
+      -moz-transition: all .4s ease;
+      -ms-transition: all .4s ease;
+      -o-transition: all .4s ease;
+}
+  input:focus{
+      border-bottom: 1px solid $color-gold;
   }
 }

@@ -144,7 +144,7 @@ p {
   height: 80%;
 }
 .form__logo {
-  width: 6rem;
+  width: 10rem;
 }
 .form__header {
   width: 50%;
@@ -164,9 +164,32 @@ p {
 }
 .form__question {
   display: flex;
+  margin-top: 2rem;
 }
 .form__right {
   border-left: 5rem solid #224a95;
+}
+.form-btn {
+  margin-top: 2rem;
+  text-transform: capitalize;
+  width: 35%;
+  height: 4rem;
+}
+.form input,
+.form select {
+  margin-left: 2rem;
+  border-style: none;
+  border-bottom: 1px solid #224a95;
+  background-color: #f8f8f8;
+  font-family: "Noto Sans JP", sans-serif;
+  transition: all 0.4s ease;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+}
+.form input:focus {
+  border-bottom: 1px solid #efc600;
 }
 
 /* //////////////////////////////////////////////////////////////////////////////// 
