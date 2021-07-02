@@ -37,7 +37,8 @@ p {
 /* //////////////////////////////////////////////////////////////////////////////// 
 ------------------------------- BUTTON  --------------------------------------
 //////////////////////////////////////////////////////////////////////////////////*/
-.btn {
+.btn,
+input[type=submit] {
   font-family: "Noto Sans JP", sans-serif;
   font-size: 2.4rem;
   color: #2b2b2b;
@@ -175,11 +176,12 @@ p {
   width: 35%;
   height: 4rem;
 }
-.form input,
+.form input[type=text],
 .form select {
   margin-left: 2rem;
+  padding: none;
   border-style: none;
-  border-bottom: 1px solid #224a95;
+  border-bottom: 2px solid #224a95;
   background-color: #f8f8f8;
   font-family: "Noto Sans JP", sans-serif;
   transition: all 0.4s ease;
@@ -188,8 +190,11 @@ p {
   -ms-transition: all 0.4s ease;
   -o-transition: all 0.4s ease;
 }
-.form input:focus {
-  border-bottom: 1px solid #efc600;
+.form input[type=text]:focus,
+.form select:focus {
+  border-style: none;
+  outline: none;
+  border-bottom: 2px solid #efc600;
 }
 
 /* //////////////////////////////////////////////////////////////////////////////// 

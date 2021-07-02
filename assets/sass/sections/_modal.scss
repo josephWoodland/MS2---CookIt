@@ -55,11 +55,12 @@
       height: 4rem;
   }
 
-  input,
+  input[type=text],
   select {
       margin-left: 2rem;
+      padding: none;
       border-style: none;
-      border-bottom: 1px solid $color-blue;
+      border-bottom: 2px solid $color-blue;
       background-color: $color-backgound;
       font-family: $font;
       transition: all .4s ease;
@@ -67,8 +68,11 @@
       -moz-transition: all .4s ease;
       -ms-transition: all .4s ease;
       -o-transition: all .4s ease;
+
+      &:focus{
+          border-style: none;
+          outline: none;
+          border-bottom: 2px solid $color-gold;
+      }
 }
-  input:focus{
-      border-bottom: 1px solid $color-gold;
-  }
 }
