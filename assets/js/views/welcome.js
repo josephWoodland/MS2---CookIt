@@ -5,3 +5,4 @@ export function renderName() {
   const name = localStorage.getItem("name");
   welcomeMessage.textContent = `Welcome Back ${name}, Lets Get Started`;
 }
+

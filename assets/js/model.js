@@ -1,4 +1,5 @@
 import * as welcome from "./views/welcome.js";
+import * as input from "./views/input.js";
 
 // This function is so I can save my name to storage to test the personalised Welcome message
 export function userData() {
