@@ -34,7 +34,6 @@ formBtn.addEventListener('click', function(e){
   model.formSubmit(e)
 })
 
-console.log(btnStart);
 function init() {
   model.starterMessage();
 }
