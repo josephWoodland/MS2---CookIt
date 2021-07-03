@@ -176,6 +176,14 @@ input[type=submit] {
 .form__right {
   border-left: 5rem solid #224a95;
 }
+.form__right-close {
+  font-size: 4rem;
+  color: #efc600;
+  padding-left: 85%;
+}
+.form__right-close :hover {
+  color: #224a95;
+}
 .form-btn {
   margin-top: 2rem;
   text-transform: capitalize;
