@@ -77,15 +77,23 @@ export async function getMealPlan() {
 
 // getMealPlan();
 
-console.log(inputData);
+// console.log(inputData);
 console.log(mealPlan);
 
+// Function to mutate the data from the API call into a usable object
 export async function plannerData(data) {
-  
+  const weekplan = data.week
+console.log(weekplan);
   plan = {
-    mon: data
+    mon: weekplan.monday.meals,
+    tue: weekplan.tuesday.meals,
+    wed: weekplan.wednesday.meals,
+    thur: weekplan.thursday.meals,
+    fri: weekplan.friday.meals,
+    sat: weekplan.saturday.meals,
+    sun: weekplan.sunday.meals,
   };
-
 }
 
 plannerData(mealPlan);
+console.log(plan);
