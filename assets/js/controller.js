@@ -29,10 +29,10 @@ close.addEventListener("click", input.closeModal);
 // on pressing the esc key
 document.addEventListener("keydown", input.escPress);
 // Event to collect Input data
-formBtn.addEventListener('click', function(e){
+formBtn.addEventListener("click", function (e) {
   e.preventDefault();
-  model.formSubmit(e)
-})
+  model.formSubmit(e);
+});
 
 function init() {
   model.starterMessage();

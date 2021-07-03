@@ -3,17 +3,16 @@
 //////////////////////////////////////////////////////////////////////////////////*/
 
 .btn,
-input[type=submit]{
-    
-    font-family: $font;
-    font-size: $font-size-button;
-    color: $color-text;
-    background-color: $color-gold;
-    border: 1px solid $color-text;
-    border-radius: 10rem;
-    -webkit-border-radius: 10rem;
-    -moz-border-radius: 10rem;
-    -ms-border-radius: 10rem;
-    -o-border-radius: 10rem;
-    cursor: pointer;
+input[type="submit"] {
+  font-family: $font;
+  font-size: $font-size-button;
+  color: $color-text;
+  background-color: $color-gold;
+  border: 1px solid $color-text;
+  border-radius: 10rem;
+  -webkit-border-radius: 10rem;
+  -moz-border-radius: 10rem;
+  -ms-border-radius: 10rem;
+  -o-border-radius: 10rem;
+  cursor: pointer;
 }

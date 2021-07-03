@@ -2,23 +2,21 @@
 ------------------------------- GRID  --------------------------------------
 //////////////////////////////////////////////////////////////////////////////////*/
 
-.grid{
-
-    &-1{
+.grid {
+  &-1 {
     display: grid;
     grid-template-columns: 6fr minmax(30rem, 1fr);
-    }
+  }
 
-    &-2{
+  &-2 {
     display: grid;
     grid-template-rows: 6rem auto;
     height: 85vh;
-    }
+  }
 
-    &-weekly {
-        display: grid;
-        grid-template-columns: repeat(8, 1fr);
-        grid-template-rows: repeat(4,1fr);
-        
-    }
+  &-weekly {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
 }
