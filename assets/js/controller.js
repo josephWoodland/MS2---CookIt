@@ -22,19 +22,21 @@ const mainLeft = document.querySelector(".main__left");
 const btnStart = document.querySelector(".main__center-btn");
 const close = document.querySelector('.form__right-close');
 
-// Page Load Intital Functions //
+// Page event listeners
 
+// Event to to open the modal
+btnStart.addEventListener("click", input.openModal);
+// Event to close the modal
+  // on clicking the outside of the form
+modal.addEventListener('click', input.closeModal);
+  // on clicking on the close icon
+close.addEventListener('click', input.closeModal);
+  // on pressing the esc key
+document.addEventListener('keydown', input.escPress);
+
+√
 function init() {
-  // Event to to open the modal
-  btnStart.addEventListener("click", input.openModal);
-  // Event to close the modal
-    // on clicking the outside of the form
-  modal.addEventListener('click', input.closeModal);
-    // on clicking on the close icon
-  close.addEventListener('click', input.closeModal);
-    // on pressing the esc key
-  document.addEventListener('keydown', input.escPress);
-  
+
   model.starterMessage();
 }
 // model.userData();
