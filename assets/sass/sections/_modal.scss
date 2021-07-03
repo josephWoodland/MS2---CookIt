@@ -78,12 +78,11 @@
     border-bottom: 2px solid $color-blue;
     background-color: $color-backgound;
     font-family: $font;
-    transition: all 0.4s ease;
-    -webkit-transition: all 0.4s ease;
-    -moz-transition: all 0.4s ease;
-    -ms-transition: all 0.4s ease;
-    -o-transition: all 0.4s ease;
-
+    transition: all 0 ease;
+    -webkit-transition: all 0 ease;
+    -moz-transition: all 0 ease;
+    -ms-transition: all 0 ease;
+    -o-transition: all 0 ease;
     &:focus {
       border-style: none;
       outline: none;

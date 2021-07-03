@@ -198,11 +198,11 @@ input[type=submit] {
   border-bottom: 2px solid #224a95;
   background-color: #f8f8f8;
   font-family: "Noto Sans JP", sans-serif;
-  transition: all 0.4s ease;
-  -webkit-transition: all 0.4s ease;
-  -moz-transition: all 0.4s ease;
-  -ms-transition: all 0.4s ease;
-  -o-transition: all 0.4s ease;
+  transition: all 0 ease;
+  -webkit-transition: all 0 ease;
+  -moz-transition: all 0 ease;
+  -ms-transition: all 0 ease;
+  -o-transition: all 0 ease;
 }
 .form input[type=text]:focus,
 .form select:focus {
