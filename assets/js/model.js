@@ -1,6 +1,5 @@
 import * as welcome from "./views/welcome.js";
 import { URL, API_KEY } from "./config.js";
-import * as input from "./views/input.js";
 
 // Element Selectors
 const formInput = document.querySelectorAll("#form input");
@@ -82,8 +81,8 @@ console.log(mealPlan);
 
 // Function to mutate the data from the API call into a usable object
 export async function plannerData(data) {
-  const weekplan = data.week
-console.log(weekplan);
+  const weekplan = data.week;
+  console.log(weekplan);
   plan = {
     mon: weekplan.monday.meals,
     tue: weekplan.tuesday.meals,
@@ -97,3 +96,14 @@ console.log(weekplan);
 
 plannerData(mealPlan);
 console.log(plan);
+
+// Get the recipe title and id number to pring to the HTML
+export function dailyPlanner(day) {
+  const mealTitle = Object.assign(
+    {},
+    ...day.map((i) => ({ [i.title]: [i.id] }))
+  );
+  console.log(mealTitle);
+}
+
+dailyPlanner(plan.mon);
