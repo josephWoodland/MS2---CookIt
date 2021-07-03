@@ -7,12 +7,6 @@ import * as input from "./views/input.js";
 const modal = document.querySelector(".overlay");
 
 // Input Selectors //
-const name = document.getElementById("name");
-const time = document.getElementById("time");
-const calorie = document.getElementById("calorie");
-const diet = document.getElementById("diet");
-const allergies = document.getElementById("allergies");
-const messure = document.getElementById("messure");
 
 // Conatanier Selectors //
 const mainContainer = document.querySelector(".main__center");
@@ -25,6 +19,7 @@ const formBtn = document.querySelector(".form-btn");
 
 // Page event listeners
 // Event to to open the modal
+
 btnStart.addEventListener("click", input.openModal);
 // Event to close the modal
 // on clicking the outside of the form
@@ -37,9 +32,9 @@ document.addEventListener("keydown", input.escPress);
 formBtn.addEventListener('click', function(e){
   e.preventDefault();
   model.formSubmit(e)
-  console.log(e);
 })
 
+console.log(btnStart);
 function init() {
   model.starterMessage();
 }

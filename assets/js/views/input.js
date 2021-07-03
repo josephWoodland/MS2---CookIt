@@ -3,7 +3,6 @@
 // Element selcetors
 const modal = document.querySelector(".overlay");
 const form = document.querySelector(".form");
-const close = document.querySelector(".form__right-close");
 
 // Function to open the modal
 export function openModal () {
