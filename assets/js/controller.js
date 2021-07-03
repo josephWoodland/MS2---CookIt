@@ -21,9 +21,9 @@ const mainLeft = document.querySelector(".main__left");
 // Button Selectors //
 const btnStart = document.querySelector(".main__center-btn");
 const close = document.querySelector('.form__right-close');
+const formBtn = document.querySelector('.form-btn');
 
 // Page event listeners
-
 // Event to to open the modal
 btnStart.addEventListener("click", input.openModal);
 // Event to close the modal
@@ -33,8 +33,9 @@ modal.addEventListener('click', input.closeModal);
 close.addEventListener('click', input.closeModal);
   // on pressing the esc key
 document.addEventListener('keydown', input.escPress);
+// Event to collect Input data
+formBtn.addEventListener('click', modal.formSubmit)
 
-√
 function init() {
 
   model.starterMessage();
