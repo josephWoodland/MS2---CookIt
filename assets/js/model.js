@@ -64,7 +64,8 @@ export function formSubmit(e) {
 // Get Data from Local storage so I can work with it without making API calls
 inputData = JSON.parse(window.localStorage.getItem("inputData"));
 mealPlan = JSON.parse(window.localStorage.getItem("recipeData"));
-
+recipe = JSON.parse(window.localStorage.getItem("recipe"));
+console.log(recipe);
 // Function to get the meal plan from the user input
 
 export async function getMealPlan(inputData) {
@@ -73,7 +74,25 @@ export async function getMealPlan(inputData) {
       `${URL}mealplanner/generate?${API_KEY}&timeFrame=${inputData.time}&targetCalories=${inputData.calorie}&diet=${inputData.diet}&exclude=${inputData.allergies}`
     );
     const data = await res.json();
-    window.localStorage.setItem("recipeData", JSON.stringify(data));
+
+    if (!res.ok) throw new Error(`${data.message} (${res.status})`);
+
+    recipe = data;
+
+    recipe = {
+      id: recipe.id,
+      name: recipe.title,
+      stepsHtml: recipe.instructions,
+      sourceUrl: recipe.sourceUrl,
+      summery: recipe.summary,
+      cuisine: recipe.cuisines[0],
+      image: recipe.image,
+      ingredients: recipe.extendedIngredients,
+      servings: recipe.servings,
+      time: recipe.readyInMinutes,
+    };
+
+    window.localStorage.setItem("recipeData", JSON.stringify(recipe));
 
     console.log(data);
   } catch (err) {
@@ -90,6 +109,9 @@ export async function getRecipeByID(id){
       `https://api.spoonacular.com/recipes/${id}/information?${API_KEY}`
     )
     const data = await res.json();
+
+    if (!res.ok) throw new Error(`${data.message} (${res.status})`);
+
     console.log(data);
     window.localStorage.setItem('recipe', JSON.stringify(data))
   } catch (err){
