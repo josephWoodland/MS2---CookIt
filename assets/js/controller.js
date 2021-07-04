@@ -19,7 +19,6 @@ const formBtn = document.querySelector(".form-btn");
 
 // Page event listeners
 // Event to to open the modal
-
 btnStart.addEventListener("click", input.openModal);
 // Event to close the modal
 // on clicking the outside of the form

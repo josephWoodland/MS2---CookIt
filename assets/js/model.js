@@ -1,5 +1,7 @@
 import * as welcome from "./views/welcome.js";
 import { URL, API_KEY } from "./config.js";
+import * as input from "./views/input.js";
+
 
 // Element Selectors
 const formInput = document.querySelectorAll("#form input");
@@ -49,6 +51,8 @@ export function formSubmit(e) {
     {},
     ...arrValues.map((item) => ({ [item.name]: item.value }))
   );
+  getMealPlan(inputData);
+  input.closeModal();
   // Save the name to local storage to use further on
   window.localStorage.setItem("name", inputData.name);
   // console.log(inputData);
@@ -60,7 +64,7 @@ export function formSubmit(e) {
 inputData = JSON.parse(window.localStorage.getItem("inputData"));
 mealPlan = JSON.parse(window.localStorage.getItem("recipeData"));
 
-export async function getMealPlan() {
+export async function getMealPlan(inputData) {
   try {
     const res = await fetch(
       `${URL}mealplanner/generate?${API_KEY}&timeFrame=${inputData.time}&targetCalories=${inputData.calorie}&diet=${inputData.diet}&exclude=${inputData.allergies}`
