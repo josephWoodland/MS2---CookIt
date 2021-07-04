@@ -2,7 +2,7 @@ const homeHTML = document.querySelector(".home");
 const grid = document.querySelector(".grid-1");
 
 export function renderWeekly(plan) {
-    
+
   homeHTML.innerHTML = `
     <div class="grid-2">
       <div class="nav">
@@ -14,13 +14,13 @@ export function renderWeekly(plan) {
           />
         </div>
         <div class="nav__buttons">
-          <button href="" class="btn nav__btn-home">Home</button>
-          <button href="" class="btn nav__btn-save">Save</button>
-          <button href="" class="btn nav__btn-pdf">Pdf</button>
+          <button href="#" id="home" class="btn nav__btn">Home</button>
+          <button href="#" id="save" class="btn nav__btn">Save</button>
+          <button href="#" id="pdf" class="btn nav__btn">Pdf</button>
         </div>
       </div>
       <div class="grid-3">
-        <div class="space"></div>
+      <div class="space"></div>
         <div class="table__left">
           <div class="grid-4">
             <div class="table__meals"></div>
@@ -30,13 +30,13 @@ export function renderWeekly(plan) {
           </div>
         </div>
         <div class="table__weekly grid-weekly">
-          <div class="table__weekly-cell">Monday</div>
-          <div class="table__weekly-cell">Tuesday</div>
-          <div class="table__weekly-cell">Wednesday</div>
-          <div class="table__weekly-cell">Thursday</div>
-          <div class="table__weekly-cell">Friday</div>
-          <div class="table__weekly-cell">Saturday</div>
-          <div class="table__weekly-cell">Sunday</div>
+          <div class="table__weekly-cell days">Monday</div>
+          <div class="table__weekly-cell days">Tuesday</div>
+          <div class="table__weekly-cell days">Wednesday</div>
+          <div class="table__weekly-cell days">Thursday</div>
+          <div class="table__weekly-cell days">Friday</div>
+          <div class="table__weekly-cell days">Saturday</div>
+          <div class="table__weekly-cell days">Sunday</div>
           <div class="table__weekly-cell">${plan.mon[0].title}</div>
           <div class="table__weekly-cell">${plan.tue[0].title}</div>
           <div class="table__weekly-cell">${plan.wed[0].title}</div>

@@ -21,5 +21,10 @@
   &__weekly-cell {
     border-right: 2px solid $color-blue;
     border-bottom: 2px solid $color-blue;
+    font-size: $font-size-copy;
   }
+}
+
+.days{
+    font-weight: bold;
 }

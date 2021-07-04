@@ -18,8 +18,8 @@
   &-3{
       margin: auto;
       display: grid;
-      grid-template-columns: 1fr 1fr 9fr 1fr;
-      height: 40vh
+      grid-template-columns: .5fr 1fr 9fr .5fr ;
+      height: 60vh
       
   }
 
@@ -32,7 +32,7 @@
   &-weekly {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-rows: repeat(4, minmax(mincontent 1fr));
     grid-column-gap: 2rem;
   }
 }
