@@ -1,7 +1,7 @@
 import * as welcome from "./views/welcome.js";
 import { URL, API_KEY } from "./config.js";
 import * as input from "./views/input.js";
-
+import * as table from './views/table.js'
 
 // Element Selectors
 const formInput = document.querySelectorAll("#form input");
@@ -111,3 +111,4 @@ export function dailyPlanner(day) {
 }
 
 dailyPlanner(plan.mon);
+table.renderWeekly(plan)
