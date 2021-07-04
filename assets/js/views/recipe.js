@@ -1,1 +1,2 @@
-// Function so that clicking on the recipe name in the table woll open up the reicpe modal
+
+// Function so that clicking on the recipe name in the table will open up the recipe modal

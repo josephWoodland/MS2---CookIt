@@ -1,11 +1,17 @@
 import * as welcome from "./views/welcome.js";
 import { URL, API_KEY } from "./config.js";
 import * as input from "./views/input.js";
-import * as table from './views/table.js'
+import * as table from "./views/table.js";
 
 // Element Selectors
 const formInput = document.querySelectorAll("#form input");
 const formSelect = document.querySelectorAll("#form select");
+
+// Empty objects to put retrived data in
+let mealPlan = {};
+let plan = {};
+let inputData = {};
+let recipe = {};
 
 // This function is so I can save my name to storage to test the personalised Welcome message
 export function userData() {
@@ -26,12 +32,7 @@ export async function starterMessage() {
   }
 }
 
-let mealPlan = {};
-let plan = {};
-let inputData = {};
-let recipe = {};
-
-// This is the function collect the data from thr form and store it to use in the API call
+// This is the function collect the data from the form and store it to use in the API call
 export function formSubmit(e) {
   // collect the data from the all input fields in the form
   const inputHTML = Array.from(formInput);
@@ -77,6 +78,26 @@ export async function getMealPlan(inputData) {
 
     if (!res.ok) throw new Error(`${data.message} (${res.status})`);
 
+    window.localStorage.setItem("recipeData", JSON.stringify(recipe));
+
+    console.log(data);
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+// getMealPlan();
+
+// Function to get recipe data by ID
+export async function getRecipeByID(id) {
+  try {
+    const res = await fetch(
+      `https://api.spoonacular.com/recipes/${id}/information?${API_KEY}`
+    );
+    const data = await res.json();
+
+    if (!res.ok) throw new Error(`${data.message} (${res.status})`);
+
     recipe = data;
 
     recipe = {
@@ -92,40 +113,19 @@ export async function getMealPlan(inputData) {
       time: recipe.readyInMinutes,
     };
 
-    window.localStorage.setItem("recipeData", JSON.stringify(recipe));
-
-    console.log(data);
+    window.localStorage.setItem("recipe", JSON.stringify(recipe));
+    
   } catch (err) {
     console.error(err);
   }
 }
 
-// getMealPlan();
-
-// Function to get recipe data by ID
-export async function getRecipeByID(id){
-  try{
-    const res = await fetch(
-      `https://api.spoonacular.com/recipes/${id}/information?${API_KEY}`
-    )
-    const data = await res.json();
-
-    if (!res.ok) throw new Error(`${data.message} (${res.status})`);
-
-    console.log(data);
-    window.localStorage.setItem('recipe', JSON.stringify(data))
-  } catch (err){
-      console.error(err);
-  }
-}
-
 // getRecipeByID(1420295);
-console.log(mealPlan);
+// console.log(mealPlan);
 
 // Function to mutate the data from the API call into a usable object
 export async function plannerData(data) {
   const weekplan = data.week;
-  console.log(weekplan);
   plan = {
     mon: weekplan.monday.meals,
     tue: weekplan.tuesday.meals,
@@ -150,4 +150,5 @@ export function dailyPlanner(day) {
 }
 
 dailyPlanner(plan.mon);
-table.renderWeekly(plan)
+
+table.renderWeekly(plan);

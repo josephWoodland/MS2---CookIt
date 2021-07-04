@@ -37,27 +37,27 @@ export function renderWeekly(plan) {
           <div class="table__weekly-cell days">Friday</div>
           <div class="table__weekly-cell days">Saturday</div>
           <div class="table__weekly-cell days">Sunday</div>
-          <div class="table__weekly-cell">${plan.mon[0].title}</div>
-          <div class="table__weekly-cell">${plan.tue[0].title}</div>
-          <div class="table__weekly-cell">${plan.wed[0].title}</div>
-          <div class="table__weekly-cell">${plan.thur[0].title}</div>
-          <div class="table__weekly-cell">${plan.fri[0].title}</div>
-          <div class="table__weekly-cell">${plan.sat[0].title}</div>
-          <div class="table__weekly-cell">${plan.sun[0].title}</div>
-          <div class="table__weekly-cell">${plan.mon[1].title}</div>
-          <div class="table__weekly-cell">${plan.tue[1].title}</div>
-          <div class="table__weekly-cell">${plan.wed[1].title}</div>
-          <div class="table__weekly-cell">${plan.thur[1].title}</div>
-          <div class="table__weekly-cell">${plan.fri[1].title}</div>
-          <div class="table__weekly-cell">${plan.sat[1].title}</div>
-          <div class="table__weekly-cell">${plan.sun[1].title}</div>
-          <div class="table__weekly-cell">${plan.mon[2].title}</div>
-          <div class="table__weekly-cell">${plan.tue[2].title}</div>
-          <div class="table__weekly-cell">${plan.wed[2].title}</div>
-          <div class="table__weekly-cell">${plan.thur[2].title}</div>
-          <div class="table__weekly-cell">${plan.fri[2].title}</div>
-          <div class="table__weekly-cell">${plan.sat[2].title}</div>
-          <div class="table__weekly-cell">${plan.sun[2].title}</div>
+          <div class="table__weekly-cell" onClick="getID(this.id)" id="${plan.mon[0].id}">${plan.mon[0].title}</div>
+          <div class="table__weekly-cell" onClick="getID(this.id)" id="${plan.tue[0].id}">${plan.tue[0].title}</div>
+          <div class="table__weekly-cell" onClick="getID(this.id)" id="${plan.wed[0].id}">${plan.wed[0].title}</div>
+          <div class="table__weekly-cell" onClick="getID(this.id)" id="${plan.thur[0].id}">${plan.thur[0].title}</div>
+          <div class="table__weekly-cell" onClick="getID(this.id)" id="${plan.fri[0].id}">${plan.fri[0].title}</div>
+          <div class="table__weekly-cell" onClick="getID(this.id)" id="${plan.sat[0].id}">${plan.sat[0].title}</div>
+          <div class="table__weekly-cell" onClick="getID(this.id)" id="${plan.sun[0].id}">${plan.sun[0].title}</div>
+          <div class="table__weekly-cell" onClick="getID(this.id)" id="${plan.mon[1].id}">${plan.mon[1].title}</div>
+          <div class="table__weekly-cell" onClick="getID(this.id)" id="${plan.tue[1].id}">${plan.tue[1].title}</div>
+          <div class="table__weekly-cell" onClick="getID(this.id)" id="${plan.wed[1].id}">${plan.wed[1].title}</div>
+          <div class="table__weekly-cell" onClick="getID(this.id)" id="${plan.thur[1].id}">${plan.thur[1].title}</div>
+          <div class="table__weekly-cell" onClick="getID(this.id)" id="${plan.fri[1].id}">${plan.fri[1].title}</div>
+          <div class="table__weekly-cell" onClick="getID(this.id)" id="${plan.sat[1].id}">${plan.sat[1].title}</div>
+          <div class="table__weekly-cell" onClick="getID(this.id)" id="${plan.sun[1].id}">${plan.sun[1].title}</div>
+          <div class="table__weekly-cell" onClick="getID(this.id)" id="${plan.mon[2].id}">${plan.mon[2].title}</div>
+          <div class="table__weekly-cell" onClick="getID(this.id)" id="${plan.tue[2].id}">${plan.tue[2].title}</div>
+          <div class="table__weekly-cell" onClick="getID(this.id)" id="${plan.wed[2].id}">${plan.wed[2].title}</div>
+          <div class="table__weekly-cell" onClick="getID(this.id)" id="${plan.thur[2].id}">${plan.thur[2].title}</div>
+          <div class="table__weekly-cell" onClick="getID(this.id)" id="${plan.fri[2].id}">${plan.fri[2].title}</div>
+          <div class="table__weekly-cell" onClick="getID(this.id)" id="${plan.sat[2].id}">${plan.sat[2].title}</div>
+          <div class="table__weekly-cell" onClick="getID(this.id)" id="${plan.sun[2].id}">${plan.sun[2].title}</div>
         </div>
         <div class="space"></div>
       </div>
