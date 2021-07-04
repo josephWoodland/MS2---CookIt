@@ -57,7 +57,6 @@ export function formSubmit(e) {
   input.closeModal();
   // Save the name to local storage to use further on
   window.localStorage.setItem("name", inputData.name);
-  // console.log(inputData);
   // Save this to local storage for me to work with
   window.localStorage.setItem("inputData", JSON.stringify(inputData));
 }
@@ -78,8 +77,7 @@ export async function getMealPlan(inputData) {
 
     if (!res.ok) throw new Error(`${data.message} (${res.status})`);
 
-    window.localStorage.setItem("recipeData", JSON.stringify(recipe));
-
+    plannerData(data)
     console.log(data);
   } catch (err) {
     console.error(err);
@@ -114,7 +112,7 @@ export async function getRecipeByID(id) {
     };
 
     window.localStorage.setItem("recipe", JSON.stringify(recipe));
-    
+
   } catch (err) {
     console.error(err);
   }
@@ -135,10 +133,10 @@ export async function plannerData(data) {
     sat: weekplan.saturday.meals,
     sun: weekplan.sunday.meals,
   };
+  table.renderWeekly(plan);
 }
 
-plannerData(mealPlan);
-console.log(plan);
+// 
 
 // Get the recipe title and id number to pring to the HTML
 export function dailyPlanner(day) {
@@ -146,9 +144,8 @@ export function dailyPlanner(day) {
     {},
     ...day.map((i) => ({ [i.title]: [i.id] }))
   );
-  console.log(mealTitle);
 }
 
-dailyPlanner(plan.mon);
+// dailyPlanner(plan.mon);
 
-table.renderWeekly(plan);
+

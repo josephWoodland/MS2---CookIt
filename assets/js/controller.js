@@ -35,12 +35,13 @@ formBtn.addEventListener("click", function (e) {
   e.preventDefault();
   model.formSubmit(e);
 });
-// Evetn to catch when a recipe name has been clicked
-recpie.addEventListener("click", function () {
+
+// Evetn to catch when a recipe name has been clicked - added ? to stop a console error when the plan is not is not in the HTML
+recpie?.addEventListener("click", function () {
   console.log('click');
 });
 
-// Functino recives the ID from the recipe name clicked
+// Function recives the ID from the recipe name clicked
 function getID(id){
   model.getRecipeByID(id)
 }
