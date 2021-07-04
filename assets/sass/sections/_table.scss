@@ -19,12 +19,19 @@
   }
 
   &__weekly-cell {
+    display: flex;
     border-right: 2px solid $color-blue;
     border-bottom: 2px solid $color-blue;
     font-size: $font-size-copy;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    &:hover {
+      color: $color-gold;
+    }
   }
 }
 
-.days{
-    font-weight: bold;
+.days {
+  font-weight: bold;
 }

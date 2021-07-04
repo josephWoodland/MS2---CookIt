@@ -259,9 +259,16 @@ input[type=submit] {
   -o-transform: rotate(-45deg);
 }
 .table__weekly-cell {
+  display: flex;
   border-right: 2px solid #224a95;
   border-bottom: 2px solid #224a95;
   font-size: 2rem;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.table__weekly-cell:hover {
+  color: #efc600;
 }
 
 .days {
