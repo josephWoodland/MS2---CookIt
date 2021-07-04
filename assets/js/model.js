@@ -29,6 +29,7 @@ export async function starterMessage() {
 let mealPlan = {};
 let plan = {};
 let inputData = {};
+let recipe = {};
 
 // This is the function collect the data from thr form and store it to use in the API call
 export function formSubmit(e) {
@@ -60,9 +61,11 @@ export function formSubmit(e) {
   window.localStorage.setItem("inputData", JSON.stringify(inputData));
 }
 
-// Get Input data from Local storage
+// Get Data from Local storage so I can work with it without making API calls
 inputData = JSON.parse(window.localStorage.getItem("inputData"));
 mealPlan = JSON.parse(window.localStorage.getItem("recipeData"));
+
+// Function to get the meal plan from the user input
 
 export async function getMealPlan(inputData) {
   try {
@@ -80,7 +83,21 @@ export async function getMealPlan(inputData) {
 
 // getMealPlan();
 
-// console.log(inputData);
+// Function to get recipe data by ID
+export async function getRecipeByID(id){
+  try{
+    const res = await fetch(
+      `https://api.spoonacular.com/recipes/${id}/information?${API_KEY}`
+    )
+    const data = await res.json();
+    console.log(data);
+    window.localStorage.setItem('recipe', JSON.stringify(data))
+  } catch (err){
+      console.error(err);
+  }
+}
+
+// getRecipeByID(1420295);
 console.log(mealPlan);
 
 // Function to mutate the data from the API call into a usable object
