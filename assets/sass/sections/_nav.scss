@@ -3,7 +3,21 @@
 //////////////////////////////////////////////////////////////////////////////////*/
 
 .nav {
+  display: flex;
+
   &-logo {
     height: 5rem;
+  }
+  &__logo-logo {
+    height: 5rem;
+  }
+  &__buttons {
+    margin-left: 60vw;
+  }
+
+  &__btn {
+    width: 10rem;
+    margin-right: 2rem;
+    margin-top: 1rem;
   }
 }

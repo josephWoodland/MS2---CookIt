@@ -1,0 +1,18 @@
+.table {
+
+
+  &__weekly,
+  &__left {
+    font-family: $font;
+    font-size: $font-size-button;
+    color: $color-blue;
+  }
+
+  &__meals{
+      transform:  rotate(45deg);
+      -webkit-transform:  rotate(45deg);
+      -moz-transform:  rotate(45deg);
+      -ms-transform:  rotate(45deg);
+      -o-transform:  rotate(45deg);
+}
+}

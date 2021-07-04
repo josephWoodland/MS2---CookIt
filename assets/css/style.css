@@ -73,17 +73,40 @@ input[type=submit] {
   grid-template-rows: 6rem auto;
   height: 85vh;
 }
+.grid-3 {
+  display: grid;
+  grid-template-columns: 1fr 9fr;
+}
+.grid-4 {
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  height: 100%;
+}
 .grid-weekly {
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
+  grid-template-columns: repeat(7, 1fr);
   grid-template-rows: repeat(4, 1fr);
 }
 
 /* //////////////////////////////////////////////////////////////////////////////// 
 ------------------------------- NAV  --------------------------------------
 //////////////////////////////////////////////////////////////////////////////////*/
+.nav {
+  display: flex;
+}
 .nav-logo {
   height: 5rem;
+}
+.nav__logo-logo {
+  height: 5rem;
+}
+.nav__buttons {
+  margin-left: 60vw;
+}
+.nav__btn {
+  width: 10rem;
+  margin-right: 2rem;
+  margin-top: 1rem;
 }
 
 .main {
@@ -214,6 +237,19 @@ input[type=submit] {
   border-style: none;
   outline: none;
   border-bottom: 2px solid #efc600;
+}
+
+.table__weekly, .table__left {
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 2.4rem;
+  color: #224a95;
+}
+.table__meals {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
 }
 
 /* //////////////////////////////////////////////////////////////////////////////// 
