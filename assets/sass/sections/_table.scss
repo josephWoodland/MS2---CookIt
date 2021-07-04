@@ -1,18 +1,25 @@
 .table {
-
-
+  &__weekly {
+    border-left: 2px solid $color-blue;
+  }
   &__weekly,
   &__left {
+    text-align: center;
     font-family: $font;
     font-size: $font-size-button;
     color: $color-blue;
   }
 
-  &__meals{
-      transform:  rotate(45deg);
-      -webkit-transform:  rotate(45deg);
-      -moz-transform:  rotate(45deg);
-      -ms-transform:  rotate(45deg);
-      -o-transform:  rotate(45deg);
-}
+  &__meals {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+  }
+
+  &__weekly-cell {
+    border-right: 2px solid $color-blue;
+    border-bottom: 2px solid $color-blue;
+  }
 }
