@@ -9,7 +9,6 @@ const formInput = document.querySelectorAll("#form input");
 const formSelect = document.querySelectorAll("#form select");
 
 // Empty objects to put retrived data in
-let mealPlan = {};
 let plan = {};
 let inputData = {};
 let recipe = {};
@@ -72,7 +71,6 @@ export function formSubmit(e) {
 // These are here so I can test rendering functions
 // recipeView.ingredientsHtml(recipe.ingredients,inputData)
 // recipeView.renderRecipe(recipe,inputData,recipe.ingredients);
-
 
 // Function to get the meal plan from the user input
 export async function getMealPlan(inputData) {
