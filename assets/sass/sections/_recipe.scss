@@ -1,13 +1,5 @@
 .recipe {
   padding: 3rem;
-  &__card {
-    display: flex;
-    &-info {
-    }
-    &-method {
-      margin: auto 5% auto 5%;
-    }
-  }
   &__head {
     display: flex;
     justify-content: space-between;
@@ -25,24 +17,61 @@
     }
   }
 
-  &__info {
+  &__card {
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 2rem;
 
-    &-img {
-      width: 100%;
-      margin-right: 10%;
-      border: 2px solid $color-gold;
-    }
+    &__info {
+        margin-right: 10%;
+      &-img {
+        width: 100%;
+        border: 2px solid $color-gold;
+      }
+      &__basic {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 2rem;
 
-    &__portion {
-      &-time {
+        &__portion {
+          &-time {
+          }
+          &-serving {
+          }
+        }
+        &__web{
+
+            &-link {
+            }
+            &-dietary{
+
+            }
+        }
+        &-ingrediants{
+            
+        }
       }
-      &-serving {
+
+    }
+    &__method {
+      margin: auto;
+      
+      &-h2 {
+          margin-bottom: 2rem;
+      }
+      &-p {
+        
       }
     }
-    &-link {
+  }
+  &__right{
+    border-left: 5rem solid $color-blue;
+
+    &-close {
+      font-size: 4rem;
+      color: $color-gold;
+      padding-left: 85%;
+      :hover {
+        color: $color-blue;
+      }
     }
   }
 }
