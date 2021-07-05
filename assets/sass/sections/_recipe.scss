@@ -1,0 +1,48 @@
+.recipe {
+  padding: 3rem;
+  &__card {
+    display: flex;
+    &-info {
+    }
+    &-method {
+      margin: auto 5% auto 5%;
+    }
+  }
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+
+    &-logo {
+      height: 10rem;
+    }
+    &-header {
+      color: $color-text-grey;
+      font-size: $font-size-button;
+      width: 35%;
+      text-align: center;
+      margin-right: 20%;
+    }
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+
+    &-img {
+      width: 100%;
+      margin-right: 10%;
+      border: 2px solid $color-gold;
+    }
+
+    &__portion {
+      &-time {
+      }
+      &-serving {
+      }
+    }
+    &-link {
+    }
+  }
+}

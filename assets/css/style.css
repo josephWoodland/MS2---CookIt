@@ -29,6 +29,12 @@ h2 {
   font-size: 2.4rem;
 }
 
+h3 {
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 2rem;
+  font-weight: 100;
+}
+
 p {
   font-family: "Noto Sans JP", sans-serif;
   font-size: 2rem;
@@ -283,6 +289,41 @@ input[type=submit] {
   background-image: url(../images/jpg/footer-img@2x.jpg);
   background-position: center;
   background-size: cover;
+}
+
+.recipe {
+  padding: 3rem;
+}
+.recipe__card {
+  display: flex;
+}
+.recipe__card-method {
+  margin: auto 5% auto 5%;
+}
+.recipe__head {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+.recipe__head-logo {
+  height: 10rem;
+}
+.recipe__head-header {
+  color: #707070;
+  font-size: 2.4rem;
+  width: 35%;
+  text-align: center;
+  margin-right: 20%;
+}
+.recipe__info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+.recipe__info-img {
+  width: 100%;
+  margin-right: 10%;
+  border: 2px solid #efc600;
 }
 
 /*# sourceMappingURL=style.css.map */
