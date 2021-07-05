@@ -20,6 +20,7 @@ const mainLeft = document.querySelector(".main__left");
 const btnStart = document.querySelector(".main__center-btn");
 const close = document.querySelector(".form__right-close");
 const formBtn = document.querySelector(".form-btn");
+const recipeCardBtn = document.querySelector('.recipe__right-close');
 
 // Page event listeners
 // Event to to open the modal - added ? to stop the console error when the btn is not on the screen
@@ -41,6 +42,8 @@ formBtn?.addEventListener("click", function (e) {
 recpie?.addEventListener("click", function () {
   console.log("click");
 });
+
+recipeCardBtn?.addEventListener("click", input.closeModal);
 
 // Function recives the ID from the recipe name clicked
 function getID(id) {

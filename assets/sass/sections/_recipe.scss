@@ -18,10 +18,10 @@
   }
 
   &__card {
-    display: flex;
-
+    display: grid;
+    grid-template-columns: 2fr 5fr;
+    grid-column-gap: 3rem;
     &__info {
-        margin-right: 10%;
       &-img {
         width: 100%;
         border: 2px solid $color-gold;
@@ -29,7 +29,7 @@
       &__basic {
         display: flex;
         justify-content: space-between;
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
 
         &__portion {
           &-time {
@@ -37,33 +37,34 @@
           &-serving {
           }
         }
-        &__web{
-
-            &-link {
-            }
-            &-dietary{
-
-            }
+      }
+      &__web {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        &-link {
         }
-        &-ingrediants{
-            
+        &-dietary {
         }
       }
-
+      &-ingrediants {
+        padding-left: 2rem;
+      }
     }
     &__method {
-      margin: auto;
-      
+      margin: 0 auto;
+
       &-h2 {
-          margin-bottom: 2rem;
+        margin-bottom: 2rem;
       }
       &-p {
-        
       }
     }
   }
-  &__right{
+  &__right {
     border-left: 5rem solid $color-blue;
+    display: flex;
+    flex-direction: column;
 
     &-close {
       font-size: 4rem;
@@ -72,6 +73,19 @@
       :hover {
         color: $color-blue;
       }
+    }
+
+    &__buttons{
+        display: flex;
+        padding: 2rem 1rem 2rem 1rem;
+        justify-content: space-around;
+        flex-direction: column;
+        height: 50%;
+        &-btn{
+            width: 100%;
+            height: 5rem;
+        }
+
     }
   }
 }
