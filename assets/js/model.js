@@ -66,9 +66,11 @@ export function formSubmit(e) {
 inputData = JSON.parse(window.localStorage.getItem("inputData"));
 mealPlan = JSON.parse(window.localStorage.getItem("recipeData"));
 recipe = JSON.parse(window.localStorage.getItem("recipe"));
+console.log(inputData);
 console.log(recipe);
 
-recipeView.renderRecipe(recipe);
+// recipeView.ingredientsHtml(recipe.ingredients,inputData)
+recipeView.renderRecipe(recipe,inputData,recipe.ingredients);
 // Function to get the meal plan from the user input
 
 export async function getMealPlan(inputData) {
