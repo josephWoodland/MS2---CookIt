@@ -22,6 +22,8 @@ const close = document.querySelector(".form__right-close");
 const formBtn = document.querySelector(".form-btn");
 const recipeCardBtn = document.querySelector('.recipe__right-close');
 const recipeCardBack = document.querySelector('#backRecipe');
+const homeBtn = document.querySelector('#home');
+const saveBtn = document.querySelector('#save');
 
 // Page event listeners
 // Event to to open the modal - added ? to stop the console error when the btn is not on the screen
@@ -39,16 +41,15 @@ formBtn?.addEventListener("click", function (e) {
   model.formSubmit(e);
 });
 
-// Evetn to catch when a recipe name has been clicked - added ? to stop a console error when the plan is not is not in the HTML
-recpie?.addEventListener("click", function () {
-  console.log("click");
-});
+// Event to catch when a recipe name has been clicked - added ? to stop a console error when the plan is not is not in the HTML
+
 // Events to close recipe card modal
 recipeCardBtn?.addEventListener("click", input.closeModal);
 recipeCardBack?.addEventListener("click", input.closeModal);
 
 // Function recives the ID from the recipe name clicked
 function getID(id) {
+  input.openModal();
   model.getRecipeByID(id);
 }
 

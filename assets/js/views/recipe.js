@@ -6,7 +6,6 @@ const modalContainer = document.querySelector("#modal");
 
 // Function so that clicking on the recipe name in the table will open up the recipe modal
 export function ingredientsHtml(ingredients, inputData) {
-  console.log(ingredients);
   
   return   `
        <li>${
@@ -25,8 +24,6 @@ export function ingredientsHtml(ingredients, inputData) {
 
 export async function renderRecipe(recipe,inputData,ingredients) {
 
-console.log(inputData);
-console.log(ingredients);
 
   modalContainer.innerHTML = `
 <div class="form__wrapper">

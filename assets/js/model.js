@@ -17,7 +17,6 @@ let recipe = {};
 // This function is so I can save my name to storage to test the personalised Welcome message
 export function userData() {
   const name = prompt("What is your name?");
-  console.log(name);
   window.localStorage.setItem("name", name);
 }
 
@@ -48,7 +47,6 @@ export function formSubmit(e) {
       value: arr.value,
     };
   });
-  console.log(arrValues);
   // Turn the Array in to an object to work from
   inputData = Object.assign(
     {},
@@ -63,14 +61,13 @@ export function formSubmit(e) {
 }
 
 // Get Data from Local storage so I can work with it without making API calls
-inputData = JSON.parse(window.localStorage.getItem("inputData"));
-mealPlan = JSON.parse(window.localStorage.getItem("recipeData"));
-recipe = JSON.parse(window.localStorage.getItem("recipe"));
-console.log(inputData);
-console.log(recipe);
+// inputData = JSON.parse(window.localStorage.getItem("inputData"));
+// mealPlan = JSON.parse(window.localStorage.getItem("recipeData"));
+// recipe = JSON.parse(window.localStorage.getItem("recipe"));
+
 
 // recipeView.ingredientsHtml(recipe.ingredients,inputData)
-recipeView.renderRecipe(recipe,inputData,recipe.ingredients);
+// recipeView.renderRecipe(recipe,inputData,recipe.ingredients);
 // Function to get the meal plan from the user input
 
 export async function getMealPlan(inputData) {
@@ -83,7 +80,6 @@ export async function getMealPlan(inputData) {
     if (!res.ok) throw new Error(`${data.message} (${res.status})`);
 
     plannerData(data);
-    console.log(data);
   } catch (err) {
     console.error(err);
   }
@@ -93,6 +89,8 @@ export async function getMealPlan(inputData) {
 
 // Function to get recipe data by ID
 export async function getRecipeByID(id) {
+  
+
   try {
     const res = await fetch(
       `https://api.spoonacular.com/recipes/${id}/information?${API_KEY}`
@@ -116,7 +114,8 @@ export async function getRecipeByID(id) {
       time: recipe.readyInMinutes,
     };
 
-    window.localStorage.setItem("recipe", JSON.stringify(recipe));
+    recipeView.renderRecipe(recipe,inputData,recipe.ingredients);
+    // window.localStorage.setItem("recipe", JSON.stringify(data));
   } catch (err) {
     console.error(err);
   }
