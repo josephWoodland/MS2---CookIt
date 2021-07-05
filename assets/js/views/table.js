@@ -1,5 +1,4 @@
 const homeHTML = document.querySelector(".home");
-const grid = document.querySelector(".grid-1");
 
 export function renderWeekly(plan) {
 

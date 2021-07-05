@@ -2,6 +2,7 @@ import * as welcome from "./views/welcome.js";
 import { URL, API_KEY } from "./config.js";
 import * as input from "./views/input.js";
 import * as table from "./views/table.js";
+import * as recipeView from "./views/recipe.js";
 
 // Element Selectors
 const formInput = document.querySelectorAll("#form input");
@@ -66,6 +67,8 @@ inputData = JSON.parse(window.localStorage.getItem("inputData"));
 mealPlan = JSON.parse(window.localStorage.getItem("recipeData"));
 recipe = JSON.parse(window.localStorage.getItem("recipe"));
 console.log(recipe);
+
+recipeView.renderRecipe(recipe);
 // Function to get the meal plan from the user input
 
 export async function getMealPlan(inputData) {
@@ -77,7 +80,7 @@ export async function getMealPlan(inputData) {
 
     if (!res.ok) throw new Error(`${data.message} (${res.status})`);
 
-    plannerData(data)
+    plannerData(data);
     console.log(data);
   } catch (err) {
     console.error(err);
@@ -112,7 +115,6 @@ export async function getRecipeByID(id) {
     };
 
     window.localStorage.setItem("recipe", JSON.stringify(recipe));
-
   } catch (err) {
     console.error(err);
   }
@@ -136,7 +138,7 @@ export async function plannerData(data) {
   table.renderWeekly(plan);
 }
 
-// 
+
 
 // Get the recipe title and id number to pring to the HTML
 export function dailyPlanner(day) {
@@ -147,5 +149,3 @@ export function dailyPlanner(day) {
 }
 
 // dailyPlanner(plan.mon);
-
-

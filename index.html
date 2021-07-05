@@ -117,9 +117,9 @@
     </div>
     <div class="footer"></div>
     <div class="overlay"></div>
-    <div class="form grid-1">
+    <div id="modal" class="form grid-1">
       <div class="form__wrapper">
-        <!-- <img
+        <img
           class="form__logo"
           src="./assets/images/png/Logo.png"
           alt="CookIt Logo"
@@ -198,8 +198,12 @@
             id="form-btn"
           />
         </form>
-      </div> -->
-      <div class="recipe">
+      </div>
+      <div class="form__right">
+        <a href="#" class="form__right-close"><i class="fas fa-times"></i></a>
+      </div>
+      <!-- <div class="form__wrapper">
+        <div class="recipe">
         <div class="recipe__head">
         <img
           class="recipe__head-logo"
@@ -245,13 +249,11 @@
       <div class="recipe__right">
         <a href="#" class="recipe__right-close"><i class="fas fa-times"></i></a>
         <div class="recipe__right__buttons">
-          <button href="" class="btn recipe__right__buttons-btn">Home</button>
-          <button href="" class="btn recipe__right__buttons-btn">Save</button>
-          <button href="" class="btn recipe__right__buttons-btn">Pdf</button>
+          <button href="" id="pdfRecipe" class="btn recipe__right__buttons-btn">PDF</button>
+          <button href="" id="saveRecipe" class="btn recipe__right__buttons-btn">Save</button>
+          <button href="" id="backRecipe" class="btn recipe__right__buttons-btn">Back</button>
         </div>
-      </div>
-      <!-- <div class="form__right">
-        <a href="#" class="form__right-close"><i class="fas fa-times"></i></a>
+      </div> 
       </div> -->
   </body>
 </html>
