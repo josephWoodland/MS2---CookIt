@@ -2,6 +2,8 @@ const welcomeMessage = document.querySelector(".main__center-welcomeMessage");
 const formTitle = document.querySelector(".form__header");
 const formP = document.querySelector(".form__paragraph");
 const formName = document.querySelector("#formName");
+const deleteBtn = document.querySelector("#delete");
+
 let name;
 
 // Runction to render users name to the welcom screen
@@ -22,4 +24,7 @@ export function hideName() {
     // Hide the what is your name question
     formName.classList.add("hidden");
   }
+}
+export function showDeleteBtn() {
+  deleteBtn.classList.remove("hidden");
 }

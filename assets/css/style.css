@@ -170,6 +170,11 @@ input[type=submit] {
 }
 .main__right {
   border-left: 7rem solid #224a95;
+  padding: 2rem;
+}
+.main__right-delete {
+  width: 100%;
+  margin: 10% auto auto auto;
 }
 
 /* //////////////////////////////////////////////////////////////////////////////// 

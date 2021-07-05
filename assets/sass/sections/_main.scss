@@ -48,5 +48,10 @@
 
   &__right {
     border-left: 7rem solid $color-blue;
+    padding: 2rem;
+    &-delete{
+      width: 100%;
+      margin: 10% auto auto auto
+    }
   }
 }

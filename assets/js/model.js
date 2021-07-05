@@ -25,6 +25,7 @@ export async function starterMessage() {
     // If there is a name in storage then render a different message in the welcome screen
     welcome.renderName();
     welcome.hideName();
+    welcome.showDeleteBtn();
   } else {
     // If not do nothing
     return;
