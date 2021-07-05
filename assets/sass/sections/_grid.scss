@@ -35,4 +35,9 @@
     grid-template-rows: repeat(4, minmax(mincontent 1fr));
     grid-column-gap: 2rem;
   }
+  &-daily{
+    display: grid;
+    width: 30rem;
+    grid-column-gap: 2rem;
+  }
 }

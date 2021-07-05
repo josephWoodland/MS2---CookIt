@@ -1,8 +1,10 @@
 .table {
-  &__weekly {
+  &__weekly,
+  &__daily {
     border-left: 2px solid $color-blue;
   }
   &__weekly,
+  &__daily,
   &__left {
     text-align: center;
     font-family: $font;
@@ -18,7 +20,8 @@
     -o-transform: rotate(-45deg);
   }
 
-  &__weekly-cell {
+  &__weekly-cell,
+  &__daily-cell {
     display: flex;
     border-right: 2px solid $color-blue;
     border-bottom: 2px solid $color-blue;

@@ -102,6 +102,11 @@ input[type=submit] {
   grid-template-rows: repeat(4, minmax(mincontent 1fr));
   grid-column-gap: 2rem;
 }
+.grid-daily {
+  display: grid;
+  width: 30rem;
+  grid-column-gap: 2rem;
+}
 
 /* //////////////////////////////////////////////////////////////////////////////// 
 ------------------------------- NAV  --------------------------------------
@@ -234,6 +239,7 @@ input[type=submit] {
   height: 4rem;
 }
 .form input[type=text],
+.form input[type=number],
 .form select {
   margin-left: 2rem;
   padding: none;
@@ -248,16 +254,17 @@ input[type=submit] {
   -o-transition: all 0 ease;
 }
 .form input[type=text]:focus,
+.form input[type=number]:focus,
 .form select:focus {
   border-style: none;
   outline: none;
   border-bottom: 2px solid #efc600;
 }
 
-.table__weekly {
+.table__weekly, .table__daily {
   border-left: 2px solid #224a95;
 }
-.table__weekly, .table__left {
+.table__weekly, .table__daily, .table__left {
   text-align: center;
   font-family: "Noto Sans JP", sans-serif;
   font-size: 2.4rem;
@@ -270,7 +277,7 @@ input[type=submit] {
   -ms-transform: rotate(-45deg);
   -o-transform: rotate(-45deg);
 }
-.table__weekly-cell {
+.table__weekly-cell, .table__daily-cell {
   display: flex;
   border-right: 2px solid #224a95;
   border-bottom: 2px solid #224a95;
@@ -279,7 +286,7 @@ input[type=submit] {
   align-items: center;
   cursor: pointer;
 }
-.table__weekly-cell:hover {
+.table__weekly-cell:hover, .table__daily-cell:hover {
   color: #efc600;
 }
 

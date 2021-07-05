@@ -1,7 +1,47 @@
 const homeHTML = document.querySelector(".home");
 
-export function renderWeekly(plan) {
+export async function renderDay(obj) {
 
+  let title = Object.keys(obj);
+  let id = Object.values(obj);
+
+  homeHTML.innerHTML = `
+  <div class="grid-2">
+          <div class="nav">
+            <div class="nav__logo">
+              <img
+                class="nav__logo-logo"
+                src="./assets/images/png/Logo.png"
+                alt="CookIt Logo"
+              />
+            </div>
+            <div class="nav__buttons">
+              <button href="" class="btn nav__btn">Home</button>
+              <button href="" class="btn nav__btn">Save</button>
+              <button href="" class="btn nav__btn">Pdf</button>
+            </div>
+          </div>
+          <div class="grid-3">
+            <div class="space"></div>
+            <div class="table__left">
+              <div class="grid-4">
+                <div class="table__meals"></div>
+                <div class="table__meals">Breakfast</div>
+                <div class="table__meals">Lunch</div>
+                <div class="table__meals">Dinner</div>
+              </div>
+            </div>
+            <div class="grid-daily">
+            <div class="table__daily-cell days">Day</div>
+            <div class="table__daily-cell" onClick="getID(this.id)" id="${id[0]}">${title[0]}</div>
+            <div class="table__daily-cell" onClick="getID(this.id)" id="${id[1]}">${title[1]}</div>
+            <div class="table__daily-cell" onClick="getID(this.id)" id="${id[2]}">${title[2]}</div>
+            </div>
+            <div class="space"></div>
+        </div>`;
+}
+
+export function renderWeekly(plan) {
   homeHTML.innerHTML = `
     <div class="grid-2">
       <div class="nav">

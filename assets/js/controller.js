@@ -22,6 +22,8 @@ const close = document.querySelector(".form__right-close");
 const formBtn = document.querySelector(".form-btn");
 const recipeCardBtn = document.querySelector('.recipe__right-close');
 const recipeCardBack = document.querySelector('#backRecipe');
+const recipeCardPdf = document.querySelector('#pdfRecipe');
+const recipeCardSave = document.querySelector('#saveRecipe');
 const homeBtn = document.querySelector('#home');
 const saveBtn = document.querySelector('#save');
 

@@ -65,7 +65,6 @@ export function formSubmit(e) {
 // mealPlan = JSON.parse(window.localStorage.getItem("recipeData"));
 // recipe = JSON.parse(window.localStorage.getItem("recipe"));
 
-
 // recipeView.ingredientsHtml(recipe.ingredients,inputData)
 // recipeView.renderRecipe(recipe,inputData,recipe.ingredients);
 // Function to get the meal plan from the user input
@@ -78,8 +77,12 @@ export async function getMealPlan(inputData) {
     const data = await res.json();
 
     if (!res.ok) throw new Error(`${data.message} (${res.status})`);
+      if(inputData.time === 'weekly'){
 
-    plannerData(data);
+        plannerData(data);
+      } else {
+        dailyPlanner(data)
+      }
   } catch (err) {
     console.error(err);
   }
@@ -89,8 +92,6 @@ export async function getMealPlan(inputData) {
 
 // Function to get recipe data by ID
 export async function getRecipeByID(id) {
-  
-
   try {
     const res = await fetch(
       `https://api.spoonacular.com/recipes/${id}/information?${API_KEY}`
@@ -114,7 +115,7 @@ export async function getRecipeByID(id) {
       time: recipe.readyInMinutes,
     };
 
-    recipeView.renderRecipe(recipe,inputData,recipe.ingredients);
+    recipeView.renderRecipe(recipe, inputData, recipe.ingredients);
     // window.localStorage.setItem("recipe", JSON.stringify(data));
   } catch (err) {
     console.error(err);
@@ -139,14 +140,16 @@ export async function plannerData(data) {
   table.renderWeekly(plan);
 }
 
-
-
 // Get the recipe title and id number to pring to the HTML
 export function dailyPlanner(day) {
+  console.log(day);
   const mealTitle = Object.assign(
     {},
-    ...day.map((i) => ({ [i.title]: [i.id] }))
+    ...day.meals.map((i) => ({ [i.title]: [i.id] }))
   );
+  console.log(mealTitle);
+  window.localStorage.setItem("day", JSON.stringify(mealTitle));
+  table.renderDay(mealTitle);
 }
 
 // dailyPlanner(plan.mon);
