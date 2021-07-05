@@ -51,9 +51,6 @@ export async function renderRecipe(recipe,inputData,ingredients) {
             }</b></h3>
           </div>  
           <div class="recipe__card__info__web">
-            <h3 class="recipe__card__info__web-dietary">Dietry <br> <b>${
-              recipe.dietry
-            }</b></h3>
             <a href="${
               recipe.sourceUrl
             }" class="recipe__card__info__web-link">Go to the website</a>

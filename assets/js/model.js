@@ -47,14 +47,18 @@ export function formSubmit(e) {
       value: arr.value,
     };
   });
+
   // Turn the Array in to an object to work from
   inputData = Object.assign(
     {},
     ...arrValues.map((item) => ({ [item.name]: item.value }))
   );
+  // Use the data collected to make the API call with the data
   getMealPlan(inputData);
+  // close the modal
   input.closeModal();
-  // Save the name to local storage to use further on
+  // Save the name to local storage to so user can have a personsalised experaince
+
   window.localStorage.setItem("name", inputData.name);
   // Save this to local storage for me to work with
   window.localStorage.setItem("inputData", JSON.stringify(inputData));
@@ -65,10 +69,12 @@ export function formSubmit(e) {
 // mealPlan = JSON.parse(window.localStorage.getItem("recipeData"));
 // recipe = JSON.parse(window.localStorage.getItem("recipe"));
 
+// These are here so I can test rendering functions
 // recipeView.ingredientsHtml(recipe.ingredients,inputData)
 // recipeView.renderRecipe(recipe,inputData,recipe.ingredients);
-// Function to get the meal plan from the user input
 
+
+// Function to get the meal plan from the user input
 export async function getMealPlan(inputData) {
   try {
     const res = await fetch(
@@ -77,7 +83,9 @@ export async function getMealPlan(inputData) {
     const data = await res.json();
 
     if (!res.ok) throw new Error(`${data.message} (${res.status})`);
-      if(inputData.time === 'weekly'){
+    // Data needs to be checked and sent to the right render function
+    console.log(inputData.time);
+      if(inputData.time === 'week'){
 
         plannerData(data);
       } else {
@@ -90,7 +98,7 @@ export async function getMealPlan(inputData) {
 
 // getMealPlan();
 
-// Function to get recipe data by ID
+// Function to get recipe data by ID - ID is collected by user clicking on the recipe name on the table page
 export async function getRecipeByID(id) {
   try {
     const res = await fetch(
@@ -101,7 +109,7 @@ export async function getRecipeByID(id) {
     if (!res.ok) throw new Error(`${data.message} (${res.status})`);
 
     recipe = data;
-
+      // Organise the data into an object with just the information that the app needs
     recipe = {
       id: recipe.id,
       name: recipe.title,
@@ -115,6 +123,7 @@ export async function getRecipeByID(id) {
       time: recipe.readyInMinutes,
     };
 
+    // Send the object to be renderd
     recipeView.renderRecipe(recipe, inputData, recipe.ingredients);
     // window.localStorage.setItem("recipe", JSON.stringify(data));
   } catch (err) {
