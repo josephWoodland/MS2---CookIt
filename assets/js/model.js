@@ -66,9 +66,12 @@ export function formSubmit(e) {
 inputData = JSON.parse(window.localStorage.getItem("inputData"));
 mealPlan = JSON.parse(window.localStorage.getItem("recipeData"));
 recipe = JSON.parse(window.localStorage.getItem("recipe"));
+
+console.log(inputData);
 console.log(recipe);
 
-recipeView.renderRecipe(recipe);
+
+// recipeView.renderRecipe(recipe);
 // Function to get the meal plan from the user input
 
 export async function getMealPlan(inputData) {
@@ -112,6 +115,7 @@ export async function getRecipeByID(id) {
       ingredients: recipe.extendedIngredients,
       servings: recipe.servings,
       time: recipe.readyInMinutes,
+     
     };
 
     window.localStorage.setItem("recipe", JSON.stringify(recipe));
@@ -121,7 +125,6 @@ export async function getRecipeByID(id) {
 }
 
 // getRecipeByID(1420295);
-// console.log(mealPlan);
 
 // Function to mutate the data from the API call into a usable object
 export async function plannerData(data) {
@@ -148,4 +151,18 @@ export function dailyPlanner(day) {
   );
 }
 
-// dailyPlanner(plan.mon);
+export async function ingredientsHtml(ingredients,inputData) {
+  console.log(ingredients);
+  console.log(inputData);
+  
+  const html = `
+       <li>${
+         inputData.messure === "metric"
+           ? ingredients[0].measures.metric.amount
+           : ingredients[0].measures.us.amount
+       } : ${ingredients[0].name}</li>
+      `;
+console.log(html);
+    };
+
+ingredientsHtml(recipe.ingredients,inputData)
