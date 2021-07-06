@@ -61,7 +61,7 @@ export async function renderRecipe(recipe, inputData, ingredients) {
       </div>
     </div>
       <div class="recipe__right">
-        <a href="#" class="recipe__right-close"><i class="fas fa-times"></i></a>
+        <a href="#" onclick="closeModal()" class="recipe__right-close"><i class="fas fa-times"></i></a>
         <div class="recipe__right__buttons">
           <button href="#" id="pdfRecipe" onclick="pdfRecipe(this.recipe)" class="btn recipe__right__buttons-btn">PDF</button>
           <button href="#" id="saveRecipe" onclick="saveRecipe(this.recipe)" class="btn recipe__right__buttons-btn">Save</button>
