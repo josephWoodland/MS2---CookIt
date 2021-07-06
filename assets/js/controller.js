@@ -68,7 +68,7 @@ recipeCardPdf?.addEventListener("click", pdf.recipe);
 // Function recives the ID from the recipe name clicked
 function getID(id) {
   input.openModal();
-  await model.getRecipeByID(id);
+  model.getRecipeByID(id);
 }
 
 function init() {

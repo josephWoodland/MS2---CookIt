@@ -46,7 +46,7 @@ export function formSubmit(e) {
 
   input.closeModal();
 
-  await getMealPlan(inputData);
+  getMealPlan(inputData);
 
   if (!("name" in localStorage)) {
     window.localStorage.setItem("name", inputData.name);
