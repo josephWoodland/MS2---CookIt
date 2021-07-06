@@ -15,13 +15,10 @@ export function renderName() {
 
 // Function to render
 export function hideName() {
-  // console.log("We have your name on file");
-  // Change the text content for the header
+ 
   if (formTitle) {
     formTitle.textContent = `Ok ${name} Let's Create a Meal Plan`;
-    // Change the form paragraph
     formP.textContent = "";
-    // Hide the what is your name question
     formName.classList.add("hidden");
   }
 }
