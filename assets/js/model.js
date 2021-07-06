@@ -160,4 +160,12 @@ export function dailyPlanner(day) {
   table.renderDay(mealTitle);
 }
 
-// dailyPlanner(plan.mon);
+// Function to save the current plan
+export function savePlanner(plan){
+
+}
+
+// Function to save current recipe
+export function saveRecipe(recipe){
+
+}

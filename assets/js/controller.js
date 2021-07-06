@@ -35,7 +35,7 @@ const deleteBtn = document.querySelector("#delete");
 btnStart?.addEventListener("click", input.openModal);
 // Event to close the modal
 // on clicking the outside of the form
-modal.addEventListener("click", input.closeModal);
+modal?.addEventListener("click", input.closeModal);
 // on clicking on the close icon
 close?.addEventListener("click", input.closeModal);
 // on pressing the esc key
@@ -45,16 +45,28 @@ formBtn?.addEventListener("click", function (e) {
   e.preventDefault();
   model.formSubmit(e);
 });
-deleteBtn?.addEventListener('click', clearStorage.clearPopup)
-// Event to catch when a recipe name has been clicked - added ? to stop a console error when the plan is not is not in the HTML
 
-// Events to close recipe card modal
+// Events to close recipeCard modal
 recipeCardBtn?.addEventListener("click", input.closeModal);
 recipeCardBack?.addEventListener("click", input.closeModal);
 
+// Events for the user to be able to handle data
+// Delete button to be able to delete local storage
+deleteBtn?.addEventListener('click', clearStorage.clearPopup);
+// Btn to save planner to local storage
+saveBtn?.addEventListener('click', save.savePlan);
+// Btn to return to the welcome page
+homeBtn?.addEventListener('click', home.welcomePage);
+// Btn to Save recipe data
+recipeCardSave?.addEventListener('click', save.saveRecipe);
+// Btn to creat a pdf pdf of the recipe
+recipeCardPdf?.addEventListener('click', pdf.recipe);
+
 // Function recives the ID from the recipe name clicked
 function getID(id) {
+  // Open the model
   input.openModal();
+  // Render weekly plan
   model.getRecipeByID(id);
 }
 
@@ -64,8 +76,3 @@ function init() {
 // model.userData();
 
 init();
-
-
-// Function so that clicking on the recipe name in the table will open up the recipe modal
-
-// steps.textContent = `let's do it\n\nPreheat the oven to 350* and line 12 muffin cups with parchment paper liners.\n\nIn a large glass bowl sift together the almond flour, coconut flour, baking powder, salt and garlic powder. Toss in one cup cheddar cheese and the chopped ham. Stir the flour mixture to combine with the ham and the cheddar cheese.\n\nTo the flour mixture you will now add in the melted butter, cream, eggs and water. Thoroughly mix all the ingredients together to form a batter. The batter will be slightly thick as these are dense muffins.\n\nDivide batter evenly into the muffin tin. Sprinkle each muffin top with the remaining 1/2 cup shredded cheddar.\n\nBake for 30 minutes in 350* oven. Test with a toothpick to check for doneness as these muffins are quite dense and oven temperatures can vary slightly. If they need more time keep them in the oven for a few minutes longer.\n\nRemove and enjoy. These muffins are great hot out of the oven, but also keep well in an airtight bag or container in the fridge for a few days.`;
