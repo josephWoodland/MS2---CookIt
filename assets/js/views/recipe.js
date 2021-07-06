@@ -2,29 +2,22 @@ import * as modal from "../model.js";
 
 const modalContainer = document.querySelector("#modal");
 
-
-
 // Function so that clicking on the recipe name in the table will open up the recipe modal
 export function ingredientsHtml(ingredients, inputData) {
-  
-  return   `
+  return `
        <li>${
          inputData.messure === "metric"
            ? ingredients.measures.metric.amount
            : ingredients.measures.us.amount
-       } ${inputData.messure === "metric"
-       ? ingredients.measures.metric.unitShort
-       : ingredients.measures.us.unitShort
-   }: ${ingredients.name}</li>
+       } ${
+    inputData.messure === "metric"
+      ? ingredients.measures.metric.unitShort
+      : ingredients.measures.us.unitShort
+  }: ${ingredients.name}</li>
       `;
-
 }
 
-
-
-export async function renderRecipe(recipe,inputData,ingredients) {
-
-
+export async function renderRecipe(recipe, inputData, ingredients) {
   modalContainer.innerHTML = `
 <div class="form__wrapper">
         <div class="recipe">
@@ -57,7 +50,7 @@ export async function renderRecipe(recipe,inputData,ingredients) {
           </div>
         </div>
             <ul class="recipe__card__info-ingrediants">
-              ${recipe.ingredients.map(ingredientsHtml).join('')}
+              ${recipe.ingredients.map(ingredientsHtml).join("")}
             </ul>
           </div>
           <div class="recipe__card__method">
@@ -70,9 +63,9 @@ export async function renderRecipe(recipe,inputData,ingredients) {
       <div class="recipe__right">
         <a href="#" class="recipe__right-close"><i class="fas fa-times"></i></a>
         <div class="recipe__right__buttons">
-          <button href="" id="pdfRecipe" class="btn recipe__right__buttons-btn">PDF</button>
-          <button href="" id="saveRecipe" class="btn recipe__right__buttons-btn">Save</button>
-          <button href="" id="backRecipe" class="btn recipe__right__buttons-btn">Back</button>
+          <button href="#" id="pdfRecipe" onclick="pdfRecipe(this.recipe)" class="btn recipe__right__buttons-btn">PDF</button>
+          <button href="#" id="saveRecipe" onclick="saveRecipe(this.recipe)" class="btn recipe__right__buttons-btn">Save</button>
+          <button href="#" id="backRecipe" onclick="closeModal()" class="btn recipe__right__buttons-btn">Back</button>
         </div>
       </div> 
       </div>

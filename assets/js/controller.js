@@ -9,6 +9,10 @@ import * as home from './views/home.js'
 
 // Global scope function so it can be used in the HTML
 window.getID = getID;
+window.pdfRecipe = pdf.recipe;
+window.saveRecipe = save.saveRecipe;
+window.home = home.welcomePage;
+window.closeModal = input.closeModal;
 
 // Element Selectors //
 const modal = document.querySelector(".overlay");

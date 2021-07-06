@@ -3,15 +3,16 @@ import { URL, API_KEY } from "./config.js";
 import * as input from "./views/input.js";
 import * as table from "./views/table.js";
 import * as recipeView from "./views/recipe.js";
+import * as save from './views/save.js'
 
 // Element Selectors
 const formInput = document.querySelectorAll("#form input");
 const formSelect = document.querySelectorAll("#form select");
 
 // Empty objects to put retrived data in
-let plan = {};
-let inputData = {};
-let recipe = {};
+export let plan = {};
+export let inputData = {};
+export let recipe = {};
 
 // This function is so I can save my name to storage to test the personalised Welcome message
 export function userData() {
@@ -56,10 +57,10 @@ export function formSubmit(e) {
     {},
     ...arrValues.map((item) => ({ [item.name]: item.value }))
   );
-  // Use the data collected to make the API call with the data
-  getMealPlan(inputData);
   // close the modal
   input.closeModal();
+  // Use the data collected to make the API call with the data
+  getMealPlan(inputData);
   // Save the name to local storage to so user can have a personsalised experaince
 
   window.localStorage.setItem("name", inputData.name);
@@ -124,7 +125,8 @@ export async function getRecipeByID(id) {
       servings: recipe.servings,
       time: recipe.readyInMinutes,
     };
-
+    // Save object as the curRecipe
+    save.curRecipeData(recipe);
     // Send the object to be renderd
     recipeView.renderRecipe(recipe, inputData, recipe.ingredients);
     // window.localStorage.setItem("recipe", JSON.stringify(data));
