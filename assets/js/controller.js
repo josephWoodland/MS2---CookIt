@@ -2,6 +2,7 @@
 
 import * as model from "./model.js";
 import * as input from "./views/input.js";
+import * as clearStorage from './views/clear.js'
 
 // Global scope function so it can be used in the HTML
 window.getID = getID;
@@ -26,6 +27,8 @@ const recipeCardPdf = document.querySelector('#pdfRecipe');
 const recipeCardSave = document.querySelector('#saveRecipe');
 const homeBtn = document.querySelector('#home');
 const saveBtn = document.querySelector('#save');
+const deleteBtn = document.querySelector("#delete");
+
 
 // Page event listeners
 // Event to to open the modal - added ? to stop the console error when the btn is not on the screen
@@ -42,7 +45,7 @@ formBtn?.addEventListener("click", function (e) {
   e.preventDefault();
   model.formSubmit(e);
 });
-
+deleteBtn?.addEventListener('click', clearStorage.clearPopup)
 // Event to catch when a recipe name has been clicked - added ? to stop a console error when the plan is not is not in the HTML
 
 // Events to close recipe card modal
