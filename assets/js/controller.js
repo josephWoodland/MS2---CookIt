@@ -3,6 +3,9 @@
 import * as model from "./model.js";
 import * as input from "./views/input.js";
 import * as clearStorage from './views/clear.js'
+import * as save from './views/save.js'
+import * as pdf from './views/pdf.js'
+import * as home from './views/home.js'
 
 // Global scope function so it can be used in the HTML
 window.getID = getID;
@@ -25,8 +28,9 @@ const recipeCardBtn = document.querySelector('.recipe__right-close');
 const recipeCardBack = document.querySelector('#backRecipe');
 const recipeCardPdf = document.querySelector('#pdfRecipe');
 const recipeCardSave = document.querySelector('#saveRecipe');
-const homeBtn = document.querySelector('#home');
-const saveBtn = document.querySelector('#save');
+const homeBtn = document.getElementById('homeDay');
+const saveBtn = document.querySelector('#saveDay');
+const pfdBtn = document.querySelector('#pdfDay');
 const deleteBtn = document.querySelector("#delete");
 
 
@@ -41,9 +45,8 @@ close?.addEventListener("click", input.closeModal);
 // on pressing the esc key
 document.addEventListener("keydown", input.escPress);
 // Event to collect Input data
-formBtn?.addEventListener("click", function (e) {
-  e.preventDefault();
-  model.formSubmit(e);
+formBtn?.addEventListener("click", function () {
+  model.formSubmit();
 });
 
 // Events to close recipeCard modal
@@ -56,7 +59,9 @@ deleteBtn?.addEventListener('click', clearStorage.clearPopup);
 // Btn to save planner to local storage
 saveBtn?.addEventListener('click', save.savePlan);
 // Btn to return to the welcome page
-homeBtn?.addEventListener('click', home.welcomePage);
+homeBtn?.addEventListener('click', function(){
+  console.log('click');
+});
 // Btn to Save recipe data
 recipeCardSave?.addEventListener('click', save.saveRecipe);
 // Btn to creat a pdf pdf of the recipe

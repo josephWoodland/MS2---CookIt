@@ -26,6 +26,9 @@ export async function starterMessage() {
     welcome.renderName();
     welcome.hideName();
     welcome.showDeleteBtn();
+    const name = window.localStorage.getItem("name", inputData.name);
+    inputData.name = name;
+    console.log('we have your details');
   } else {
     // If not do nothing
     return;
