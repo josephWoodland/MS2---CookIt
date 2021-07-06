@@ -3,7 +3,7 @@ import { URL, API_KEY } from "./config.js";
 import * as input from "./views/input.js";
 import * as table from "./views/table.js";
 import * as recipeView from "./views/recipe.js";
-import * as save from './views/save.js'
+import * as save from "./views/save.js";
 
 // Element Selectors
 const formInput = document.querySelectorAll("#form input");
@@ -27,9 +27,9 @@ export async function starterMessage() {
     welcome.renderName();
     welcome.hideName();
     welcome.showDeleteBtn();
-    const name = window.localStorage.getItem("name", inputData.name);
+    const name = window.localStorage.getItem("name");
     inputData.name = name;
-    console.log('we have your details');
+    console.log("we have your details");
   } else {
     // If not do nothing
     return;
@@ -62,10 +62,13 @@ export function formSubmit(e) {
   // Use the data collected to make the API call with the data
   getMealPlan(inputData);
   // Save the name to local storage to so user can have a personsalised experaince
-
-  window.localStorage.setItem("name", inputData.name);
-  // Save this to local storage for me to work with
-  window.localStorage.setItem("inputData", JSON.stringify(inputData));
+  if ("name" in localStorage) {
+    return;
+  } else {
+    window.localStorage.setItem("name", inputData.name);
+    // Save this to local storage for me to work with
+    // window.localStorage.setItem("inputData", JSON.stringify(inputData));
+  }
 }
 
 // Get Data from Local storage so I can work with it without making API calls
@@ -88,12 +91,11 @@ export async function getMealPlan(inputData) {
     if (!res.ok) throw new Error(`${data.message} (${res.status})`);
     // Data needs to be checked and sent to the right render function
     console.log(inputData.time);
-      if(inputData.time === 'week'){
-
-        plannerData(data);
-      } else {
-        dailyPlanner(data)
-      }
+    if (inputData.time === "week") {
+      plannerData(data);
+    } else {
+      dailyPlanner(data);
+    }
   } catch (err) {
     console.error(err);
   }
@@ -112,7 +114,7 @@ export async function getRecipeByID(id) {
     if (!res.ok) throw new Error(`${data.message} (${res.status})`);
 
     recipe = data;
-      // Organise the data into an object with just the information that the app needs
+    // Organise the data into an object with just the information that the app needs
     recipe = {
       id: recipe.id,
       name: recipe.title,
@@ -166,11 +168,7 @@ export function dailyPlanner(day) {
 }
 
 // Function to save the current plan
-export function savePlanner(plan){
-
-}
+export function savePlanner(plan) {}
 
 // Function to save current recipe
-export function saveRecipe(recipe){
-
-}
+export function saveRecipe(recipe) {}
