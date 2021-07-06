@@ -13,6 +13,8 @@ window.pdfRecipe = pdf.recipe;
 window.saveRecipe = save.saveRecipe;
 window.home = home.welcomePage;
 window.closeModal = input.closeModal;
+window.saveDay = save.savePlannerDay;
+window.saveWeekly = save.savePlannerWeekly;
 
 // Element Selectors //
 const modal = document.querySelector(".overlay");

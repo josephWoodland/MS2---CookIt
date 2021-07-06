@@ -16,7 +16,7 @@ export async function renderDay(obj) {
               />
             </div>
             <div class="nav__buttons">
-              <button href="#" onclick="home" id="homeDay" class="btn nav__btn">Home</button>
+              <button href="#" onclick="home()" id="homeDay" class="btn nav__btn">Home</button>
               <button href="#" onclick="saveDay()" id="saveDay" class="btn nav__btn">Save</button>
               <button href="#" onclick="pdfDay()" id="pdfDay" class="btn nav__btn">Pdf</button>
             </div>
@@ -55,7 +55,7 @@ export function renderWeekly(plan) {
         <div class="nav__buttons">
           <button href="#"  onclick="home()" id="homeWeek" class="btn nav__btn">Home</button>
           <button href="#"  onclick="saveWeekly()" id="saveWeek" class="btn nav__btn">Save</button>
-          <button href="#" onclick="pdfWeekly" id="pdfWeek" class="btn nav__btn">Pdf</button>
+          <button href="#" onclick="pdfWeekly()" id="pdfWeek" class="btn nav__btn">Pdf</button>
         </div>
       </div>
       <div class="grid-3">

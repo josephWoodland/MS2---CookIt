@@ -153,6 +153,7 @@ export async function plannerData(data) {
     sun: weekplan.sunday.meals,
   };
   table.renderWeekly(plan);
+  save.curPlannerData(plan)
 }
 
 // Get the recipe title and id number to pring to the HTML
@@ -162,9 +163,10 @@ export function dailyPlanner(day) {
     {},
     ...day.meals.map((i) => ({ [i.title]: [i.id] }))
   );
-  console.log(mealTitle);
+  // console.log(mealTitle);
   window.localStorage.setItem("day", JSON.stringify(mealTitle));
   table.renderDay(mealTitle);
+  save.curPlannerData(mealTitle)
 }
 
 // Function to save the current plan
