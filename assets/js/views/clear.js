@@ -9,6 +9,6 @@ export function clearPopup(e) {
     localStorage.clear();
     window.location.reload();
   } else {
-      return;
+    return;
   }
 }

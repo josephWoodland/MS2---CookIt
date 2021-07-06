@@ -14,12 +14,6 @@ export let plan = {};
 export let inputData = {};
 export let recipe = {};
 
-// This function is so I can save my name to storage to test the personalised Welcome message
-export function userData() {
-  const name = prompt("What is your name?");
-  window.localStorage.setItem("name", name);
-}
-
 // This function is to test if there has already been a name saved to local storage
 export async function starterMessage() {
   if ("name" in localStorage) {
@@ -51,11 +45,10 @@ export function formSubmit(e) {
   );
 
   input.closeModal();
-  getMealPlan(inputData);
 
-  if ("name" in localStorage) {
-    return;
-  } else {
+  await getMealPlan(inputData);
+
+  if (!("name" in localStorage)) {
     window.localStorage.setItem("name", inputData.name);
   }
 }

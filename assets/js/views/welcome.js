@@ -15,7 +15,6 @@ export function renderName() {
 
 // Function to render
 export function hideName() {
- 
   if (formTitle) {
     formTitle.textContent = `Ok ${name} Let's Create a Meal Plan`;
     formP.textContent = "";
