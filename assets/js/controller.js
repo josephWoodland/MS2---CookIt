@@ -19,6 +19,7 @@ window.saveDay = save.savePlannerDay;
 window.saveWeekly = save.savePlannerWeekly;
 window.renderRecipes = recipe.renderRecipes;
 window.openSettings = settings.openSettings;
+window.editSaveName = save.editSaveName;
 
 // Element Selectors //
 const modal = document.querySelector(".overlay");

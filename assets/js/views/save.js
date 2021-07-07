@@ -1,4 +1,5 @@
 import * as input from "./input.js";
+import * as recipe from './recipe.js'
 
 let curRecipe;
 let curPlan;
@@ -52,4 +53,16 @@ export function savePlannerDay() {
   curSavedPlanDays.push(curPlan);
   const plan = JSON.stringify(curPlan.flat(3));
   window.localStorage.setItem(`Day`, plan);
+}
+
+export function editSaveName(index) {
+  const newName = prompt("What would you like to change the name to?");
+
+  let i = Number(index);
+  curSavedRecipes[i].saveName = newName;
+  // Resave the recipeArr with the new name
+  const recipes = JSON.stringify(curSavedRecipes.flat(3));
+  window.localStorage.setItem(`recipe`, recipes);
+  // Reload the page with the new Arr
+  recipe.renderRecipes(curSavedRecipes)
 }
