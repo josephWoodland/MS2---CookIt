@@ -14,7 +14,8 @@ export let plan = {};
 export let inputData = {};
 export let recipe = {};
 export let savedRecipes = [];
-export let savedPlans = [];
+export let savedPlanWeek = [];
+export let savedPlanDay = [];
 
 // This function is to test if there has already been a name saved to local storage
 export async function starterMessage() {
@@ -128,12 +129,10 @@ export async function plannerData(data) {
 
 // Get the recipe title and id number to pring to the HTML
 export function dailyPlanner(day) {
-  console.log(day);
   const mealTitle = Object.assign(
     {},
     ...day.meals.map((i) => ({ [i.title]: [i.id] }))
   );
-  window.localStorage.setItem("day", JSON.stringify(mealTitle));
   table.renderDay(mealTitle);
   save.curPlannerData(mealTitle);
 }
@@ -148,10 +147,10 @@ export function fetchSavedData() {
   const items = { ...localStorage };
   console.log(items);
 
-  if('recipe' in items) savedRecipes.push(JSON.parse(items.recipe));
-  if ('plans' in items) savedPlans.push(JSON.parse(items.plans));
-
-  console.log(savedRecipes);
-  save.curSavedPlanData(savedPlans);
-  save.curSavedRecipeData(savedRecipes);
+  if ("recipe" in items) savedRecipes.push(JSON.parse(items.recipe));
+  if ("week" in items) savedPlanWeek.push(JSON.parse(items.week));
+  if ("day" in items) savedPlanDay.push(JSON.parse(items.day));
+  save.curSavedPlanWeeklyData(savedPlanWeek.flat(4));
+  save.curSavedPlanDayData(savedPlanDay.flat(4));
+  save.curSavedRecipeData(savedRecipes.flat(4));
 }

@@ -2,11 +2,16 @@ import * as input from "./input.js";
 
 let curRecipe;
 let curPlan;
-let curSavedPlans;
+let curSavedPlanDays;
+let curSavedPlanWeekly;
 let curSavedRecipes;
 
-export function curSavedPlanData(plans) {
-  curSavedPlans = plans;
+export function curSavedPlanDayData(plans) {
+  curSavedPlanDays = plans;
+}
+
+export function curSavedPlanWeeklyData(plans) {
+  curSavedPlanWeekly = plans;
 }
 
 export function curSavedRecipeData(recipe) {
@@ -26,21 +31,25 @@ export function saveRecipe() {
   const recipeName = prompt("What name would you like to save this as?");
   curRecipe.saveName = recipeName;
   curSavedRecipes.push(curRecipe);
-  console.log(curSavedRecipes);
-  const recipe = JSON.stringify(curSavedRecipes);
+  console.log(curSavedRecipes.flat(3));
+  const recipe = JSON.stringify(curSavedRecipes.flat(3));
   window.localStorage.setItem(`recipe`, recipe);
 }
 
 // Save the weekly plan
 export function savePlannerWeekly() {
   const planName = prompt("What you like to call this plan?");
-  const plan = JSON.stringify(curPlan);
+  curPlan.saveName = planName;
+  curSavedPlanWeekly.push(curPlan);
+  const plan = JSON.stringify(curSavedPlans.flat(3));
   window.localStorage.setItem(`Weekly`, plan);
 }
 
 // Save the daily plan
 export function savePlannerDay() {
   const planName = prompt("What you like to call this plan?");
-  const plan = JSON.stringify(curPlan);
+  curPlan.saveName = planName;
+  curSavedPlanDays.push(curPlan);
+  const plan = JSON.stringify(curPlan.flat(3));
   window.localStorage.setItem(`Day`, plan);
 }
