@@ -6,6 +6,8 @@ import * as clearStorage from "./views/clear.js";
 import * as save from "./views/save.js";
 import * as pdf from "./views/pdf.js";
 import * as home from "./views/home.js";
+import * as settings from "./views/settings.js";
+import * as recipe from "./views/recipe.js";
 
 // Global scope function so it can be used in the HTML
 window.getID = getID;
@@ -15,6 +17,8 @@ window.home = home.welcomePage;
 window.closeModal = input.closeModal;
 window.saveDay = save.savePlannerDay;
 window.saveWeekly = save.savePlannerWeekly;
+window.renderRecipes = recipe.renderRecipes;
+window.openSettings = settings.openSettings;
 
 // Element Selectors //
 const modal = document.querySelector(".overlay");

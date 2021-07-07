@@ -62,7 +62,6 @@ input[type=submit] {
   -ms-border-radius: 10rem;
   -o-border-radius: 10rem;
   cursor: pointer;
-  z-index: 100000;
 }
 
 /* //////////////////////////////////////////////////////////////////////////////// 
@@ -173,7 +172,7 @@ input[type=submit] {
   border-left: 7rem solid #224a95;
   padding: 2rem;
 }
-.main__right-delete {
+.main__right-delete, .main__right-settings {
   width: 100%;
   margin: 10% auto auto auto;
 }
@@ -385,6 +384,83 @@ input[type=submit] {
   height: 50%;
 }
 .recipe__right__buttons-btn {
+  width: 100%;
+  height: 5rem;
+}
+
+.settings {
+  padding: 3rem;
+}
+.settings__head {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+.settings__head-logo {
+  height: 10rem;
+}
+.settings__head-header {
+  color: #707070;
+  font-size: 2.4rem;
+  width: 35%;
+  text-align: center;
+  margin-right: 20%;
+}
+.settings__container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  width: 80%;
+  margin: auto;
+  border: 1px solid orange;
+}
+.settings__container-recipe {
+  text-transform: capitalize;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+  -moz-text-decoration-style: none;
+  display: flex;
+}
+.settings__container-recipe-edit, .settings__container-recipe-delete {
+  align-self: center;
+  font-size: 2rem;
+  margin-left: 0.5rem;
+  color: #224a95;
+}
+.settings__container-recipe-edit:hover, .settings__container-recipe-delete:hover {
+  color: #efc600;
+}
+.settings__container-recipe-item {
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 1.6rem;
+  text-align: center;
+  text-decoration: none;
+  width: 20rem;
+}
+.settings__right {
+  border-left: 5rem solid #224a95;
+  display: flex;
+  flex-direction: column;
+}
+.settings__right-close {
+  font-size: 4rem;
+  color: #efc600;
+  padding-left: 85%;
+}
+.settings__right-close :hover {
+  color: #224a95;
+}
+.settings__right__buttons {
+  display: flex;
+  padding: 2rem 1rem 2rem 1rem;
+  justify-content: space-around;
+  flex-direction: column;
+  height: 50%;
+}
+.settings__right__buttons-btn {
   width: 100%;
   height: 5rem;
 }

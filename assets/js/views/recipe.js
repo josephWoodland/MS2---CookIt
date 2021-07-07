@@ -1,9 +1,10 @@
 import * as modal from "../model.js";
 
 const modalContainer = document.querySelector("#modal");
-
+const renderContainer = document.querySelector('#renderContainer');
 // Function so that clicking on the recipe name in the table will open up the recipe modal
 export function ingredientsHtml(ingredients, inputData) {
+  
   return `
        <li>${
          inputData.messure === "metric"
@@ -16,6 +17,31 @@ export function ingredientsHtml(ingredients, inputData) {
   }: ${ingredients.name}</li>
       `;
 }
+
+export function renderRecipes(recipeArr){
+
+  console.log(recipeArr);
+
+  return `
+
+  <div class="settings__container-recipe">
+              <a
+                id="2909171"
+                href=""
+                onClick="getID(this.id)"
+                class="settings__container-recipe-item btn"
+                >SaveName</a
+              >
+              <a href="#" onclick="editSaveName()" class="settings__container-recipe-edit"
+                ><i class="fas fa-edit"></i></a
+              ><a href="#" onclick="deleteItem()" class="settings__container-recipe-delete"
+                ><i class="far fa-trash-alt"></i></a
+              >
+            </div>
+  
+            `
+}
+
 
 export async function renderRecipe(recipe, inputData, ingredients) {
   modalContainer.innerHTML = `
@@ -71,3 +97,5 @@ export async function renderRecipe(recipe, inputData, ingredients) {
       </div>
 `;
 }
+
+
