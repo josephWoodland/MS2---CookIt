@@ -73,6 +73,7 @@ function getID(id) {
 
 function init() {
   model.starterMessage();
+  model.fetchSavedData();
 }
 
 init();

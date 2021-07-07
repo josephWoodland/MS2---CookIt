@@ -13,6 +13,8 @@ const formSelect = document.querySelectorAll("#form select");
 export let plan = {};
 export let inputData = {};
 export let recipe = {};
+export let savedRecipes = [];
+export let savedPlans = [];
 
 // This function is to test if there has already been a name saved to local storage
 export async function starterMessage() {
@@ -22,8 +24,6 @@ export async function starterMessage() {
     welcome.showDeleteBtn();
     const name = window.localStorage.getItem("name");
     inputData.name = name;
-  } else {
-    return;
   }
 }
 
@@ -74,7 +74,12 @@ export async function getMealPlan(inputData) {
   }
 }
 
-// Function to get recipe data by ID - ID is collected by user clicking on the recipe name on the table page
+/**
+ * Get recipe data by ID
+ *
+ * @param {String} id  - Recipe id
+ * @return {Object} recipe - Recipe
+ */
 export async function getRecipeByID(id) {
   try {
     const res = await fetch(
@@ -102,6 +107,7 @@ export async function getRecipeByID(id) {
   } catch (err) {
     console.error(err);
   }
+  return recipe;
 }
 
 // Function to mutate the data from the API call into a usable object
@@ -130,4 +136,22 @@ export function dailyPlanner(day) {
   window.localStorage.setItem("day", JSON.stringify(mealTitle));
   table.renderDay(mealTitle);
   save.curPlannerData(mealTitle);
+}
+
+/**
+ * Fetch recipes from local storage
+ *
+ * @return {Object} of all recipes {Name} {ID}
+ */
+export function fetchSavedData() {
+  // Get all data from local storage
+  const items = { ...localStorage };
+  console.log(items);
+
+  if('recipe' in items) savedRecipes.push(JSON.parse(items.recipe));
+  if ('plans' in items) savedPlans.push(JSON.parse(items.plans));
+
+  console.log(savedRecipes);
+  save.curSavedPlanData(savedPlans);
+  save.curSavedRecipeData(savedRecipes);
 }
