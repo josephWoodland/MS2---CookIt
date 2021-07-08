@@ -1,31 +1,33 @@
 import * as model from "../model.js";
 
 const modalContainer = document.querySelector("#modal");
-const renderContainer = document.querySelector("#renderContainer");
-const header = document.querySelector('.settings__head-header');
 // Function so that clicking on the recipe name in the table will open up the recipe modal
 export function ingredientsHtml(ingredients, inputData) {
   return `
-       <li>${
-         inputData.messure === "metric"
-           ? ingredients.measures.metric.amount
-           : ingredients.measures.us.amount
-       } ${
+  <li>${
     inputData.messure === "metric"
-      ? ingredients.measures.metric.unitShort
-      : ingredients.measures.us.unitShort
+    ? ingredients.measures.metric.amount
+    : ingredients.measures.us.amount
+  } ${
+    inputData.messure === "metric"
+    ? ingredients.measures.metric.unitShort
+    : ingredients.measures.us.unitShort
   }: ${ingredients.name}</li>
-      `;
+  `;
 }
 
 export function renderRecipes() {
+  const renderContainer = document.querySelector("#renderContainer");
   const recipeArr = model.savedRecipes[0];
   const html = recipeArr.map(recipesHtml).join("");
   renderContainer.innerHTML = `${html}`;
 }
 
 export function recipesHtml(recipesArr, index) {
+  const header = document.querySelector('.settings__head-header');
+  console.log(header.textContent);
   header.textContent = 'Saved Recipes'
+  
   console.log(recipesArr);
   console.log(index);
 

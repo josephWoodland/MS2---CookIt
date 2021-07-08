@@ -8,6 +8,7 @@ import * as pdf from "./views/pdf.js";
 import * as home from "./views/home.js";
 import * as settings from "./views/settings.js";
 import * as recipe from "./views/recipe.js";
+import * as form from './views/form.js'
 
 // Global scope function so it can be used in the HTML
 window.getID = getID;
@@ -20,6 +21,7 @@ window.saveWeekly = save.savePlannerWeekly;
 window.renderRecipes = recipe.renderRecipes;
 window.openSettings = settings.openSettings;
 window.editSaveName = save.editSaveName;
+window.deleteItem = save.deleteItem;
 
 // Element Selectors //
 const modal = document.querySelector(".overlay");
@@ -45,7 +47,11 @@ const pfdBtn = document.querySelector("#pdfDay");
 const deleteBtn = document.querySelector("#delete");
 
 // Page event listeners
-btnStart?.addEventListener("click", input.openModal);
+btnStart?.addEventListener("click", function(){
+  input.openModal();
+  form.renderForm()
+
+})
 // Event to close the modal
 modal?.addEventListener("click", input.closeModal);
 // on clicking on the close icon

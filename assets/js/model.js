@@ -22,7 +22,6 @@ export async function starterMessage() {
   if ("name" in localStorage) {
     welcome.renderName();
     welcome.hideName();
-    welcome.showDeleteBtn();
     const name = window.localStorage.getItem("name");
     inputData.name = name;
   }

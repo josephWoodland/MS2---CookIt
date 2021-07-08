@@ -21,6 +21,4 @@ export function hideName() {
     formName.classList.add("hidden");
   }
 }
-export function showDeleteBtn() {
-  deleteBtn.classList.remove("hidden");
-}
+

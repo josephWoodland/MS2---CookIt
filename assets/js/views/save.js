@@ -1,5 +1,5 @@
 import * as input from "./input.js";
-import * as recipe from './recipe.js'
+import * as recipe from "./recipe.js";
 
 let curRecipe;
 let curPlan;
@@ -64,5 +64,19 @@ export function editSaveName(index) {
   const recipes = JSON.stringify(curSavedRecipes.flat(3));
   window.localStorage.setItem(`recipe`, recipes);
   // Reload the page with the new Arr
-  recipe.renderRecipes(curSavedRecipes)
+  recipe.renderRecipes(curSavedRecipes);
+}
+
+export function deleteItem(index) {
+
+  let i = Number(index);
+  const newArr = curSavedRecipes.splice(i, 1);
+  
+  console.log(newArr);
+  
+  const recipes = JSON.stringify(curSavedRecipes.flat(3));
+  
+  window.localStorage.setItem(`recipe`, recipes);
+
+  recipe.renderRecipes(curSavedRecipes);
 }
