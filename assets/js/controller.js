@@ -20,8 +20,11 @@ window.saveDay = save.savePlannerDay;
 window.saveWeekly = save.savePlannerWeekly;
 window.renderRecipes = recipe.renderRecipes;
 window.openSettings = settings.openSettings;
+<<<<<<< HEAD
 window.editSaveName = save.editSaveName;
 window.deleteItem = save.deleteItem;
+=======
+>>>>>>> parent of 50a2445 (Ability to edit recipeSaveName data)
 
 // Element Selectors //
 const modal = document.querySelector(".overlay");

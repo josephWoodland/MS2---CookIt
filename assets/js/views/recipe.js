@@ -1,8 +1,13 @@
-import * as model from "../model.js";
+import * as modal from "../model.js";
 
 const modalContainer = document.querySelector("#modal");
+<<<<<<< HEAD
+=======
+const renderContainer = document.querySelector('#renderContainer');
+>>>>>>> parent of 50a2445 (Ability to edit recipeSaveName data)
 // Function so that clicking on the recipe name in the table will open up the recipe modal
 export function ingredientsHtml(ingredients, inputData) {
+  
   return `
   <li>${
     inputData.messure === "metric"
@@ -16,6 +21,7 @@ export function ingredientsHtml(ingredients, inputData) {
   `;
 }
 
+<<<<<<< HEAD
 export function renderRecipes() {
   const renderContainer = document.querySelector("#renderContainer");
   const recipeArr = model.savedRecipes[0];
@@ -30,26 +36,32 @@ export function recipesHtml(recipesArr, index) {
   
   console.log(recipesArr);
   console.log(index);
+=======
+export function renderRecipes(recipeArr){
+
+  console.log(recipeArr);
+>>>>>>> parent of 50a2445 (Ability to edit recipeSaveName data)
 
   return `
 
   <div class="settings__container-recipe">
               <a
-                id="${recipesArr.id}"
+                id="2909171"
                 href=""
                 onClick="getID(this.id)"
                 class="settings__container-recipe-item btn"
-                >${recipesArr.saveName}</a
+                >SaveName</a
               >
-              <a href="#" id="${index}" onclick="editSaveName(${index})" class="settings__container-recipe-edit"
+              <a href="#" onclick="editSaveName()" class="settings__container-recipe-edit"
                 ><i class="fas fa-edit"></i></a
-              ><a href="#" id="${index}" onclick="deleteItem(${index})" class="settings__container-recipe-delete"
+              ><a href="#" onclick="deleteItem()" class="settings__container-recipe-delete"
                 ><i class="far fa-trash-alt"></i></a
               >
             </div>
   
-            `;
+            `
 }
+
 
 export async function renderRecipe(recipe, inputData, ingredients) {
   modalContainer.innerHTML = `
@@ -105,3 +117,5 @@ export async function renderRecipe(recipe, inputData, ingredients) {
       </div>
 `;
 }
+
+

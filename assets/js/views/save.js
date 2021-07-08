@@ -1,5 +1,8 @@
 import * as input from "./input.js";
+<<<<<<< HEAD
 import * as recipe from "./recipe.js";
+=======
+>>>>>>> parent of 50a2445 (Ability to edit recipeSaveName data)
 
 let curRecipe;
 let curPlan;
@@ -54,6 +57,7 @@ export function savePlannerDay() {
   const plan = JSON.stringify(curPlan.flat(3));
   window.localStorage.setItem(`Day`, plan);
 }
+<<<<<<< HEAD
 
 export function editSaveName(index) {
   const newName = prompt("What would you like to change the name to?");
@@ -80,3 +84,5 @@ export function deleteItem(index) {
 
   recipe.renderRecipes(curSavedRecipes);
 }
+=======
+>>>>>>> parent of 50a2445 (Ability to edit recipeSaveName data)
