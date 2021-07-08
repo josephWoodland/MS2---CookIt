@@ -21,8 +21,11 @@ window.saveWeekly = save.savePlannerWeekly;
 window.renderRecipes = recipe.renderRecipes;
 window.openSettings = settings.openSettings;
 <<<<<<< HEAD
+<<<<<<< HEAD
 window.editSaveName = save.editSaveName;
 window.deleteItem = save.deleteItem;
+=======
+>>>>>>> parent of 50a2445 (Ability to edit recipeSaveName data)
 =======
 >>>>>>> parent of 50a2445 (Ability to edit recipeSaveName data)
 

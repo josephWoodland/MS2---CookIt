@@ -2,6 +2,10 @@ import * as modal from "../model.js";
 
 const modalContainer = document.querySelector("#modal");
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+const renderContainer = document.querySelector('#renderContainer');
+>>>>>>> parent of 50a2445 (Ability to edit recipeSaveName data)
 =======
 const renderContainer = document.querySelector('#renderContainer');
 >>>>>>> parent of 50a2445 (Ability to edit recipeSaveName data)
@@ -22,6 +26,7 @@ export function ingredientsHtml(ingredients, inputData) {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 export function renderRecipes() {
   const renderContainer = document.querySelector("#renderContainer");
   const recipeArr = model.savedRecipes[0];
@@ -36,6 +41,11 @@ export function recipesHtml(recipesArr, index) {
   
   console.log(recipesArr);
   console.log(index);
+=======
+export function renderRecipes(recipeArr){
+
+  console.log(recipeArr);
+>>>>>>> parent of 50a2445 (Ability to edit recipeSaveName data)
 =======
 export function renderRecipes(recipeArr){
 

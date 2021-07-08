@@ -1,6 +1,9 @@
 import * as input from "./input.js";
 <<<<<<< HEAD
+<<<<<<< HEAD
 import * as recipe from "./recipe.js";
+=======
+>>>>>>> parent of 50a2445 (Ability to edit recipeSaveName data)
 =======
 >>>>>>> parent of 50a2445 (Ability to edit recipeSaveName data)
 
@@ -58,6 +61,7 @@ export function savePlannerDay() {
   window.localStorage.setItem(`Day`, plan);
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 export function editSaveName(index) {
   const newName = prompt("What would you like to change the name to?");
@@ -84,5 +88,7 @@ export function deleteItem(index) {
 
   recipe.renderRecipes(curSavedRecipes);
 }
+=======
+>>>>>>> parent of 50a2445 (Ability to edit recipeSaveName data)
 =======
 >>>>>>> parent of 50a2445 (Ability to edit recipeSaveName data)
