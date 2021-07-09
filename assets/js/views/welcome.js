@@ -2,7 +2,6 @@ const welcomeMessage = document.querySelector(".main__center-welcomeMessage");
 const formTitle = document.querySelector(".form__header");
 const formP = document.querySelector(".form__paragraph");
 const formName = document.querySelector("#formName");
-const deleteBtn = document.querySelector("#delete");
 
 let name;
 

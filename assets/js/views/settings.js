@@ -26,15 +26,14 @@ export function openSettings() {
               src="./assets/images/png/Logo.png"
               alt="CookIt Logo"
             />
-            <h1 class="settings__head-header">Saved Recipes</h1>
+            <h1 class="settings__head-header">Settings</h1>
           </div>
           <div id="renderContainer" class="settings__container">
-            
           </div>
         </div>
       </div>
       <div class="settings__right">
-        <a href="#" onclick="closeModal()" class="settings__right-close"
+        <a href="#" onclick="reloadPage()" class="settings__right-close"
           ><i class="fas fa-times"></i
         ></a>
         <div class="settings__right__buttons">
@@ -65,7 +64,7 @@ export function openSettings() {
           <button
             href="#"
             id="back"
-            onclick="closeModal()"
+            onclick="reloadPage()"
             class="btn settings__right__buttons-btn"
           >
             Back

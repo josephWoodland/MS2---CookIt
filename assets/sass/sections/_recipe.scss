@@ -1,5 +1,11 @@
 .recipe {
   padding: 3rem;
+
+  &__save-btn{
+    height: 3rem;
+    width: 8rem;
+    margin: auto;
+  }
   &__head {
     display: flex;
     justify-content: space-between;

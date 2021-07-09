@@ -7,6 +7,8 @@ import * as save from "./views/save.js";
 
 // Element Selectors
 const formInput = document.querySelectorAll("#form input");
+const name = document.querySelector('#name');
+const calorie = document.querySelector('#calorie');
 const formSelect = document.querySelectorAll("#form select");
 
 // Empty objects to put retrived data in
@@ -38,15 +40,14 @@ export function formSubmit(e) {
       value: arr.value,
     };
   });
-
+  console.log(arrValues);
   inputData = Object.assign(
     {},
     ...arrValues.map((item) => ({ [item.name]: item.value }))
   );
-
+  getMealPlan(inputData);
   input.closeModal();
 
-  getMealPlan(inputData);
 
   if (!("name" in localStorage)) {
     window.localStorage.setItem("name", inputData.name);
@@ -85,6 +86,7 @@ export async function getRecipeByID(id) {
     const res = await fetch(
       `https://api.spoonacular.com/recipes/${id}/information?${API_KEY}`
     );
+    console.log(res);
     const data = await res.json();
 
     if (!res.ok) throw new Error(`${data.message} (${res.status})`);

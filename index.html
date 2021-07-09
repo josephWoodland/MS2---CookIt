@@ -59,8 +59,7 @@
             id="settings"
             onclick="openSettings()"
             class="main__right-settings btn"
-          >
-            Settings
+          >Settings
           </button>
         </div>
       </div>
@@ -68,80 +67,8 @@
     </div>
     <div class="footer"></div>
     <div class="overlay hidden"></div>
-    <div id="modal" class="form grid-1 hidden">
-     
-        <div class="settings">
-          <div class="settings__head">
-            <img
-              class="settings__head-logo"
-              src="./assets/images/png/Logo.png"
-              alt="CookIt Logo"
-            />
-            <h1 class="settings__head-header">Saved Recipes</h1>
-          </div>
-          <div id="renderContainer" class="settings__container">
-            <div class="settings__container-recipe">
-              <a
-                id="2909171"
-                href=""
-                onClick="getID(this.id)"
-                class="settings__container-recipe-item btn"
-                >recipe saveName</a
-              >
-              <a href="#" onclick="editSaveName()" class="settings__container-recipe-edit"
-                ><i class="fas fa-edit"></i></a
-              ><a href="#" onclick="deleteItem()" class="settings__container-recipe-delete"
-                ><i class="far fa-trash-alt"></i></a
-              >
-            </div>
-            
-          </div>
-        </div>
-      </div>
-      <div class="settings__right">
-        <a href="#" onclick="closeModal()" class="settings__right-close"
-          ><i class="fas fa-times"></i
-        ></a>
-        <div class="settings__right__buttons">
-          <button
-            href="#"
-            id="plans"
-            onclick="renderPlans()"
-            class="btn settings__right__buttons-btn"
-          >
-            Plans
-          </button>
-          <button
-            href="#"
-            id="recipes"
-            onclick="renderRecipes()"
-            class="btn settings__right__buttons-btn"
-          >
-            Recipes
-          </button>
-          <button
-            href="#"
-            id="display"
-            onclick="renderDisplay()"
-            class="btn settings__right__buttons-btn"
-          >
-            Display
-          </button>
-          <button
-            href="#"
-            id="back"
-            onclick="closeModal()"
-            class="btn settings__right__buttons-btn"
-          >
-            Back
-          </button>
-          <button id="delete" class="main__right-delete btn">
-            Clear Storage
-          </button>
-        </div>
-      </div>
-    </div> -->
-    <div class="form__wrapper">
+    <div id="modal" class="form grid-1 hidden">      
+      <div class="form__wrapper">
         <img
           class="form__logo"
           src="./assets/images/png/Logo.png"
@@ -160,7 +87,7 @@
           </div>
           <div class="form__question">
             <p>How long do you want us to create a meal plan for?</p>
-            <select required name="time" id="time" class="form__question-2">
+            <select name="time" id="time" class="form__question-2">
               <option value="day">Day</option>
               <option value="week">Week</option>
             </select>
@@ -169,7 +96,7 @@
             <p>What is your target Calories per day?</p>
             <input
               required
-              type="number"
+              type="text"
               class="form__question-3"
               id="calorie"
               placeholder="e.g. 2000"
@@ -225,58 +152,6 @@
       <div class="form__right">
         <a href="#" class="form__right-close"><i class="fas fa-times"></i></a>
       </div>
-    
-        <div class="recipe">
-        <div class="recipe__head">
-        <img
-          class="recipe__head-logo"
-          src="./assets/images/png/Logo.png"
-          alt="CookIt Logo"
-        />
-      <h1 class="recipe__head-header">Ham and Cheese Muffins by The Kellie Kitchen</h1>
-        </div>
-        <div class="recipe__card">
-          <div class="recipe__card__info">
-          <img src="https://spoonacular.com/recipeImages/1420295-556x370.png" alt="Ham and Cheese Muffins by The Kellie Kitchen" class="recipe__card__info-img">
-            <div class="recipe__card__info__basic">
-            <div class="recipe__card__info__basic__portion">
-            <h3 class="recipe__card__info__basic__portion-time">Prep time <br> <b> 45 mins</b></h3>
-            <h3 class="recipe__card__info__basic__portion-serving">Serves <br> <b>Serves 4</b></h3>
-          </div>  
-          <div class="recipe__card__info__web">
-            <h3 class="recipe__card__info__web-dietary">Dietry <br> <b>meat</b></h3>
-            <a href="https://everydaydishes.com/simple-food-recipes/breakfast-recipes/ham-cheese-muffins-kellie-kitchen/" class="recipe__card__info__web-link">Go to the website</a>
-          </div>
-        </div>
-            <ul class="recipe__card__info-ingrediants">
-              <li>118.294ml : Diced ham</li>
-              <li>473ml : Almon Flour</li>
-              <li>59ml : Coconut Flour</li>
-              <li>2tsp : Baking powder</li>
-              <li>.5tsp : salt</li>
-              <li>.5tsp : Garlic Powder</li>
-              <li>354ml : Shredded Cheddar Cheese</li>
-              <li>4 : Eggs</li>
-              <li>6tbps : Butter</li>
-              <li>177ml : Heavy Cream</li>
-              <li>59ml : Water</li>
-            </ul>
-          </div>
-          <div class="recipe__card__method">
-            <h2 class="recipe__card__method-h2">Method</h2>
-          <p class="recipe__card__method-p"></p>
-          </div>
-        </div>
-      </div>
     </div>
-      <div class="recipe__right">
-        <a href="#" class="recipe__right-close"><i class="fas fa-times"></i></a>
-        <div class="recipe__right__buttons">
-          <button href="#" id="pdfRecipe" class="btn recipe__right__buttons-btn">PDF</button>
-          <button href="#" id="saveRecipe" class="btn recipe__right__buttons-btn">Save</button>
-          <button href="#" id="backRecipe" class="btn recipe__right__buttons-btn">Back</button>
-        </div>
-      </div> 
-      </div>
   </body>
 </html>

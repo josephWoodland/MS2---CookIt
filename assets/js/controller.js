@@ -8,7 +8,7 @@ import * as pdf from "./views/pdf.js";
 import * as home from "./views/home.js";
 import * as settings from "./views/settings.js";
 import * as recipe from "./views/recipe.js";
-import * as form from './views/form.js'
+import * as form from "./views/form.js";
 
 // Global scope function so it can be used in the HTML
 window.getID = getID;
@@ -20,14 +20,12 @@ window.saveDay = save.savePlannerDay;
 window.saveWeekly = save.savePlannerWeekly;
 window.renderRecipes = recipe.renderRecipes;
 window.openSettings = settings.openSettings;
-<<<<<<< HEAD
-<<<<<<< HEAD
 window.editSaveName = save.editSaveName;
 window.deleteItem = save.deleteItem;
-=======
->>>>>>> parent of 50a2445 (Ability to edit recipeSaveName data)
-=======
->>>>>>> parent of 50a2445 (Ability to edit recipeSaveName data)
+window.closeModal = input.closeModal;
+window.formSubmit = model.formSubmit;
+window.reloadPage = reloadPage;
+window.getSavedName = save.getSavedName;
 
 // Element Selectors //
 const modal = document.querySelector(".overlay");
@@ -53,11 +51,9 @@ const pfdBtn = document.querySelector("#pdfDay");
 const deleteBtn = document.querySelector("#delete");
 
 // Page event listeners
-btnStart?.addEventListener("click", function(){
+btnStart?.addEventListener("click", function () {
   input.openModal();
-  form.renderForm()
-
-})
+});
 // Event to close the modal
 modal?.addEventListener("click", input.closeModal);
 // on clicking on the close icon
@@ -65,8 +61,9 @@ close?.addEventListener("click", input.closeModal);
 // on pressing the esc key
 document.addEventListener("keydown", input.escPress);
 // Event to collect Input data
-formBtn?.addEventListener("click", function () {
-  model.formSubmit();
+formBtn?.addEventListener("click", function (e) {
+  e.preventDefault();
+  model.formSubmit(e);
 });
 
 // Events to close recipeCard modal
@@ -91,6 +88,10 @@ function getID(id) {
 function init() {
   model.starterMessage();
   model.fetchSavedData();
+}
+
+function reloadPage() {
+  window.location.reload();
 }
 
 init();

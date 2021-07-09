@@ -1,11 +1,7 @@
 import * as input from "./input.js";
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 import * as recipe from "./recipe.js";
-=======
->>>>>>> parent of 50a2445 (Ability to edit recipeSaveName data)
-=======
->>>>>>> parent of 50a2445 (Ability to edit recipeSaveName data)
+import * as settings from "./settings.js";
 
 let curRecipe;
 let curPlan;
@@ -35,12 +31,35 @@ export function curPlannerData(plan) {
 }
 
 export function saveRecipe() {
-  const recipeName = prompt("What name would you like to save this as?");
-  curRecipe.saveName = recipeName;
-  curSavedRecipes.push(curRecipe);
-  console.log(curSavedRecipes.flat(3));
-  const recipe = JSON.stringify(curSavedRecipes.flat(3));
-  window.localStorage.setItem(`recipe`, recipe);
+  const header = document.querySelector(".recipe__head-header");
+  const inputBox = document.querySelector("#saveName");
+  const saveNameBtn = document.querySelector("#nameSubmit");
+  const recipeName = header.textContent;
+  header.textContent = `What would you like to save this recipe as? ${recipeName}`;
+  inputBox.classList.remove("hidden");
+  saveNameBtn.classList.remove("hidden");
+}
+
+export function getSavedName() {
+  const inputBox = document.querySelector("#saveName");
+  const recipeName = inputBox.value;
+  console.log(recipeName);
+
+  if (!isNaN(recipeName)) {
+
+    alert("Invalid input valid NAME for the recipe, must be a written name");
+    inputBox.value = '';
+    saveRecipe();
+    
+  } else {
+    alert(`Recipe ${recipeName} saved`)
+    curRecipe.saveName = recipeName;
+    curSavedRecipes.push(curRecipe);
+    console.log(curSavedRecipes.flat(3));
+    const recipe = JSON.stringify(curSavedRecipes.flat(3));
+    window.localStorage.setItem(`recipe`, recipe);
+    input.closeModal();
+  }
 }
 
 // Save the weekly plan
@@ -60,8 +79,6 @@ export function savePlannerDay() {
   const plan = JSON.stringify(curPlan.flat(3));
   window.localStorage.setItem(`Day`, plan);
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
 
 export function editSaveName(index) {
   const newName = prompt("What would you like to change the name to?");
@@ -76,19 +93,12 @@ export function editSaveName(index) {
 }
 
 export function deleteItem(index) {
-
+  const renderContainer = document.querySelector("#renderContainer");
+  const header = document.querySelector(".settings__head-header");
   let i = Number(index);
-  const newArr = curSavedRecipes.splice(i, 1);
-  
-  console.log(newArr);
-  
+  alert(`You have deleted ${curSavedRecipes[i].saveName}!!, page will refresh!!`);
+  curSavedRecipes.splice(i, 1);
   const recipes = JSON.stringify(curSavedRecipes.flat(3));
-  
   window.localStorage.setItem(`recipe`, recipes);
-
-  recipe.renderRecipes(curSavedRecipes);
+  window.location.reload();
 }
-=======
->>>>>>> parent of 50a2445 (Ability to edit recipeSaveName data)
-=======
->>>>>>> parent of 50a2445 (Ability to edit recipeSaveName data)

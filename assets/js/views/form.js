@@ -79,6 +79,7 @@ export function renderForm() {
             class="btn form-btn"
             value="Make me a plan"
             id="form-btn"
+            onclick="formSubmit()"
           />
         </form>
       </div>
