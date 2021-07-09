@@ -26,6 +26,7 @@ window.closeModal = input.closeModal;
 window.formSubmit = model.formSubmit;
 window.reloadPage = reloadPage;
 window.getSavedName = save.getSavedName;
+window.renderSavedRecipe = recipe.renderSavedRecipe;
 
 // Element Selectors //
 const modal = document.querySelector(".overlay");

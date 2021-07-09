@@ -1,4 +1,5 @@
 import * as model from "../model.js";
+import * as input from './input.js';
 
 const modalContainer = document.querySelector("#modal");
 // Function so that clicking on the recipe name in the table will open up the recipe modal
@@ -16,9 +17,17 @@ export function ingredientsHtml(ingredients, inputData) {
   `;
 }
 
+export function renderSavedRecipe(i) {
+  console.log(i);
+  const recipeArr = model.savedRecipes[0];
+  const recipe = recipeArr[i];
+  renderRecipe(recipe);
+  input.openModel();
+}
+
 export function renderRecipes() {
   const renderContainer = document.querySelector("#renderContainer");
-  renderContainer.innerHTML = '';
+  renderContainer.innerHTML = "";
   const recipeArr = model.savedRecipes[0];
   const html = recipeArr.map(recipesHtml).join("");
   renderContainer.innerHTML = `${html}`;
@@ -31,9 +40,9 @@ export function recipesHtml(recipesArr, index) {
   return `
   <div class="settings__container-recipe">
               <a
-                id="${recipesArr.id}"
+                id="${index}"
                 href=""
-                onClick="getID(this.id)"
+                onClick="renderSavedRecipe(this.id)"
                 class="settings__container-recipe-item btn"
                 >${recipesArr.saveName}</a
               >
@@ -47,7 +56,7 @@ export function recipesHtml(recipesArr, index) {
             `;
 }
 
-export async function renderRecipe(recipe, inputData, ingredients) {
+export async function renderRecipe(recipe) {
   modalContainer.innerHTML = `
 <div class="form__wrapper">
         <div class="recipe">
