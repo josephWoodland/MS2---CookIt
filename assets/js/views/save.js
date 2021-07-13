@@ -64,9 +64,13 @@ export function getSavedName() {
 
 // Save the weekly plan
 export function savePlannerWeekly() {
-  const planName = prompt("What you like to call this plan?");
-  curPlan.saveName = planName;
-  curSavedPlanWeekly.push(curPlan);
+  const nav = document.querySelector(".nav");
+  const inputBox = document.querySelector("#saveName");
+  const saveNameBtn = document.querySelector("#nameSubmit");
+  const recipeName = header.textContent;
+  header.textContent = `What would you like to save this recipe as? ${recipeName}`;
+  inputBox.classList.remove("hidden");
+  saveNameBtn.classList.remove("hidden");
   const plan = JSON.stringify(curSavedPlans.flat(3));
   window.localStorage.setItem(`Weekly`, plan);
 }

@@ -121,12 +121,41 @@ input[type=submit] {
   height: 5rem;
 }
 .nav__buttons {
-  margin-left: 60vw;
+  margin-left: auto;
+}
+.nav__input {
+  width: 30%;
+  background-color: red;
+  margin-left: auto;
+  text-align: center;
 }
 .nav__btn {
   width: 10rem;
   margin-right: 2rem;
   margin-top: 1rem;
+}
+.nav__save-btn {
+  width: 10rem;
+  text-align: center;
+  margin-right: 1rem;
+}
+.nav input[type=text] {
+  margin-left: 2rem;
+  padding: none;
+  border-style: none;
+  border-bottom: 2px solid #224a95;
+  background-color: #f8f8f8;
+  font-family: "Noto Sans JP", sans-serif;
+  transition: all 0 ease;
+  -webkit-transition: all 0 ease;
+  -moz-transition: all 0 ease;
+  -ms-transition: all 0 ease;
+  -o-transition: all 0 ease;
+}
+.nav input[type=text]:focus {
+  border-style: none;
+  outline: none;
+  border-bottom: 2px solid #efc600;
 }
 
 .main {
@@ -417,7 +446,6 @@ input[type=submit] {
   gap: 1rem;
   width: 80%;
   margin: auto;
-  border: 1px solid orange;
 }
 .settings__container-recipe {
   text-transform: capitalize;

@@ -69,7 +69,7 @@ export function openSettings() {
           >
             Back
           </button>
-          <button id="delete" class="main__right-delete btn">
+          <button id="delete" onclick="clearStorage()" class="main__right-delete btn">
             Clear Storage
           </button>
         </div>

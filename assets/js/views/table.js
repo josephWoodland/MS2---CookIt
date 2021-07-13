@@ -14,6 +14,7 @@ export async function renderDay(obj) {
                 alt="CookIt Logo"
               />
             </div>
+
             <div class="nav__buttons">
               <button href="#" onclick="home()" id="homeDay" class="btn nav__btn">Home</button>
               <button href="#" onclick="saveDay()" id="saveDay" class="btn nav__btn">Save</button>
@@ -51,6 +52,18 @@ export function renderWeekly(plan) {
             alt="CookIt Logo"
           />
         </div>
+        <div class="nav__input">
+            <h2 class="nav__input-header">What name would you like to save this plan as?</h2>
+        <input 
+         required
+         type="text"
+         class="nav__input-saveName"
+         name="saveName"
+         id="savePlan"
+         placeholder="e.g. low carb"
+       />
+       <input type="submit" id="nameSubmit" class="nav__save-btn btn" value="save" onclick="getSavedName()">
+       </div>
         <div class="nav__buttons">
           <button href="#"  onclick="home()" id="homeWeek" class="btn nav__btn">Home</button>
           <button href="#"  onclick="saveWeekly()" id="saveWeek" class="btn nav__btn">Save</button>

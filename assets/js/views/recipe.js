@@ -1,5 +1,5 @@
 import * as model from "../model.js";
-import * as input from './input.js';
+import * as input from "./input.js";
 
 const modalContainer = document.querySelector("#modal");
 // Function so that clicking on the recipe name in the table will open up the recipe modal

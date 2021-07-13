@@ -7,8 +7,8 @@ import * as save from "./views/save.js";
 
 // Element Selectors
 const formInput = document.querySelectorAll("#form input");
-const name = document.querySelector('#name');
-const calorie = document.querySelector('#calorie');
+const name = document.querySelector("#name");
+const calorie = document.querySelector("#calorie");
 const formSelect = document.querySelectorAll("#form select");
 
 // Empty objects to put retrived data in
@@ -19,8 +19,11 @@ export let savedRecipes = [];
 export let savedPlanWeek = [];
 export let savedPlanDay = [];
 
-// This function is to test if there has already been a name saved to local storage
-export async function starterMessage() {
+/**
+
+ * Checks to see if there is a name stored locally
+ * @return {HTML text} user name and different welcome message
+ */ export async function starterMessage() {
   if ("name" in localStorage) {
     welcome.renderName();
     welcome.hideName();
@@ -29,7 +32,13 @@ export async function starterMessage() {
   }
 }
 
-// This is the function collect the data from the form and store it to use in the API call
+/**
+ * Collect User Input data
+ *
+ * @param {Event} e  - HTML event
+ * Colects the data form the Input HTML tags§
+ * @return {Object} recipe - Recipe
+ */
 export function formSubmit(e) {
   const inputHTML = Array.from(formInput);
   const selectHTML = Array.from(formSelect);
@@ -48,13 +57,17 @@ export function formSubmit(e) {
   getMealPlan(inputData);
   input.closeModal();
 
-
   if (!("name" in localStorage)) {
     window.localStorage.setItem("name", inputData.name);
   }
 }
 
-// Function to get the meal plan from the user input
+/**
+ * Get Meal Plan by user input data
+ *
+ * @param {Object} inputData  - Collection of user paramaters
+ * @return {Object} Data - Meal Plan data
+ */
 export async function getMealPlan(inputData) {
   try {
     const res = await fetch(
@@ -78,7 +91,7 @@ export async function getMealPlan(inputData) {
 /**
  * Get recipe data by ID
  *
- * @param {String} id  - Recipe id
+ * @param {Number} id  - Recipe id
  * @return {Object} recipe - Recipe
  */
 export async function getRecipeByID(id) {
@@ -112,7 +125,12 @@ export async function getRecipeByID(id) {
   return recipe;
 }
 
-// Function to mutate the data from the API call into a usable object
+/**
+ * Collects the data sent back from the Api
+ * @param {Object} data from API
+ *  Removes unused Data - seperates into days tp be rendered
+ * @return {Object} of to be rendered {Days} {Object}
+ */
 export async function plannerData(data) {
   const weekplan = data.week;
   plan = {
@@ -128,7 +146,12 @@ export async function plannerData(data) {
   save.curPlannerData(plan);
 }
 
-// Get the recipe title and id number to pring to the HTML
+/**
+ * Collects the data sent back from the Api
+ * @param {Object} day from API
+ *  Removes unused Data
+ * @return {Object} of to be rendered {Title} {ID}
+ */
 export function dailyPlanner(day) {
   const mealTitle = Object.assign(
     {},

@@ -12,12 +12,40 @@
     height: 5rem;
   }
   &__buttons {
-    margin-left: 60vw;
+    margin-left: auto;
   }
-
+  &__input {
+    width: 30%;
+    background-color: red;
+    margin-left: auto;
+    text-align: center;
+  }
   &__btn {
     width: 10rem;
     margin-right: 2rem;
     margin-top: 1rem;
+  }
+  &__save-btn {
+    width: 10rem;
+    text-align: center;
+    margin-right: 1rem;
+  }
+  input[type="text"] {
+    margin-left: 2rem;
+    padding: none;
+    border-style: none;
+    border-bottom: 2px solid $color-blue;
+    background-color: $color-backgound;
+    font-family: $font;
+    transition: all 0 ease;
+    -webkit-transition: all 0 ease;
+    -moz-transition: all 0 ease;
+    -ms-transition: all 0 ease;
+    -o-transition: all 0 ease;
+    &:focus {
+      border-style: none;
+      outline: none;
+      border-bottom: 2px solid $color-gold;
+    }
   }
 }

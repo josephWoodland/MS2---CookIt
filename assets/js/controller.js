@@ -27,6 +27,8 @@ window.formSubmit = model.formSubmit;
 window.reloadPage = reloadPage;
 window.getSavedName = save.getSavedName;
 window.renderSavedRecipe = recipe.renderSavedRecipe;
+window.clearStorage = clearStorage.clearPopup;
+window.renderPlans = settings.renderPlans;
 
 // Element Selectors //
 const modal = document.querySelector(".overlay");
