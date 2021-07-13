@@ -125,7 +125,6 @@ input[type=submit] {
 }
 .nav__input {
   width: 30%;
-  background-color: red;
   margin-left: auto;
   text-align: center;
 }

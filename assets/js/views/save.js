@@ -19,7 +19,6 @@ export function curSavedPlanWeeklyData(plans) {
 
 export function curSavedRecipeData(recipe) {
   curSavedRecipes = recipe;
-  console.log(curSavedRecipes);
 }
 
 export function curRecipeData(recipe) {
@@ -28,6 +27,7 @@ export function curRecipeData(recipe) {
 
 export function curPlannerData(plan) {
   curPlan = plan;
+  console.log(curPlan);
 }
 
 export function saveRecipe() {
@@ -46,13 +46,11 @@ export function getSavedName() {
   console.log(recipeName);
 
   if (!isNaN(recipeName)) {
-
     alert("Invalid input valid NAME for the recipe, must be a written name");
-    inputBox.value = '';
+    inputBox.value = "";
     saveRecipe();
-    
   } else {
-    alert(`Recipe ${recipeName} saved`)
+    alert(`Recipe ${recipeName} saved`);
     curRecipe.saveName = recipeName;
     curSavedRecipes.push(curRecipe);
     console.log(curSavedRecipes.flat(3));
@@ -62,17 +60,36 @@ export function getSavedName() {
   }
 }
 
-// Save the weekly plan
-export function savePlannerWeekly() {
-  const nav = document.querySelector(".nav");
-  const inputBox = document.querySelector("#saveName");
+export function getPlanName() {
+  const input = document.querySelector(".nav__input");
   const saveNameBtn = document.querySelector("#nameSubmit");
-  const recipeName = header.textContent;
-  header.textContent = `What would you like to save this recipe as? ${recipeName}`;
-  inputBox.classList.remove("hidden");
+  input.classList.remove("hidden");
   saveNameBtn.classList.remove("hidden");
-  const plan = JSON.stringify(curSavedPlans.flat(3));
-  window.localStorage.setItem(`Weekly`, plan);
+}
+
+export function savePlan() {
+  const nameInput = document.querySelector("#nameInput");
+  const planName = nameInput.value;
+  const input = document.querySelector(".nav__input");
+  const saveNameBtn = document.querySelector("#nameSubmit");
+  console.log(planName);
+  
+  if (!isNaN(planName)) {
+    alert("Invalid input valid NAME for the plan, must be a written name");
+    nameInput.value = " ";
+    
+  } else {
+    alert(`Plan ${planName} saved`);
+    curPlan.saveName = planName;
+    console.log(curPlan);
+    curSavedPlanWeekly.push(curPlan);
+    console.log(curSavedPlanWeekly.flat(3));
+    const plan = JSON.stringify(curSavedPlanWeekly.flat(3));
+    window.localStorage.setItem(`Weekly`, plan);
+    nameInput.value = " ";
+    input.classList.add("hidden");
+    saveNameBtn.classList.add("hidden");
+  }
 }
 
 // Save the daily plan
@@ -100,7 +117,9 @@ export function deleteItem(index) {
   const renderContainer = document.querySelector("#renderContainer");
   const header = document.querySelector(".settings__head-header");
   let i = Number(index);
-  alert(`You have deleted ${curSavedRecipes[i].saveName}!!, page will refresh!!`);
+  alert(
+    `You have deleted ${curSavedRecipes[i].saveName}!!, page will refresh!!`
+  );
   curSavedRecipes.splice(i, 1);
   const recipes = JSON.stringify(curSavedRecipes.flat(3));
   window.localStorage.setItem(`recipe`, recipes);
