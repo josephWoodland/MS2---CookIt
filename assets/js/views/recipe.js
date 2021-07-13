@@ -22,7 +22,6 @@ export function renderSavedRecipe(i) {
   const recipeArr = model.savedRecipes[0];
   const recipe = recipeArr[i];
   renderRecipe(recipe);
-  input.openModel();
 }
 
 export function renderRecipes() {

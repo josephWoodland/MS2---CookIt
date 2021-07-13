@@ -1,7 +1,7 @@
 .recipe {
   padding: 3rem;
 
-  &__save-btn{
+  &__save-btn {
     height: 3rem;
     width: 8rem;
     margin: auto;
@@ -41,21 +41,21 @@
         &__portion {
           display: flex;
           justify-content: space-between;
-          
         }
       }
       &__web {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        
       }
       &-ingrediants {
         padding-left: 2rem;
+        text-overflow: ellipsis;
       }
     }
     &__method {
       margin: 0 auto;
+      text-overflow: ellipsis;
 
       &-h2 {
         margin-bottom: 2rem;

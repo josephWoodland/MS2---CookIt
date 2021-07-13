@@ -2,29 +2,27 @@ import * as model from "../model.js"
 
 export function renderPlans() {
   const renderContainer = document.querySelector("#renderContainer");
-  
   const header = document.querySelector(".settings__head-header");
   const planArrDay = model.savedPlanDay[0];
   const planArrWeekly = model.savedPlanWeek[0];
+  const htmlDay = planArrDay != undefined ? planArrDay.map(planHtml).join("") : `<h2 class="settings__emptyArray">You have no saved Day Plans</h2>`;
+  const htmlWeek = planArrWeekly != undefined ? planArrWeekly.map(planHtml).join(""): `<h2 class="settings__emptyArray">You have no saved Weekly Plans</h2>`;
+// need error handling if there is nothing in the array //
   header.textContent = "Saved Plans";
-  renderContainer.innerHTML = "";
-  const htmlDay = planArrDay.map(planHtml).join("");
-  const htmlWeek = planArrWeekly.map(planHtml).join("");
   renderContainer.innerHTML = `
   </div>
   <h2 class="settings__container-header">Day Plans</h2><br>
-  <div id="renderContainer" class="settings__container">
+  <div id="renderContainer" class="settings__container day">
   ${htmlDay}
   </div>
   <h2 class="settings__container-header">Week Plans</h2><br>
-  <div id="renderContainer" class="settings__container">
+  <div id="renderContainer" class="settings__container week">
   ${htmlWeek}
   </div>`;
 
 }
 
 export function planHtml(planArr, index) {
-  console.log(planArr);
   const header = document.querySelector(".settings__head-header");
   header.textContent = "Saved Plans";
 
@@ -33,7 +31,6 @@ export function planHtml(planArr, index) {
                 <a
                   id="${index}"
                   href=""
-                  onClick="renderSavedRecipe(this.id)"
                   class="settings__container-plan-item btn"
                   >${planArr.saveName}</a
                 >

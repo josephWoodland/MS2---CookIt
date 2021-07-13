@@ -8,7 +8,7 @@ import * as pdf from "./views/pdf.js";
 import * as home from "./views/home.js";
 import * as settings from "./views/settings.js";
 import * as recipe from "./views/recipe.js";
-import * as form from "./views/form.js";
+import * as table from "./views/table.js";
 import * as plans from "./views/plans.js";
 
 // Global scope function so it can be used in the HTML
@@ -32,6 +32,28 @@ window.getSavedName = save.getSavedName;
 window.renderSavedRecipe = recipe.renderSavedRecipe;
 window.clearStorage = clearStorage.clearPopup;
 window.renderPlans = plans.renderPlans;
+window.renderSavedPlan = table.renderSavedPlan;
+
+window.onclick = function (e) {
+  e.preventDefault();
+  const id = e.target.id;
+  const div = e.target.parentNode.parentNode.closest("div");
+  const dayPlan = model.savedPlanDay[0];
+  const weekPlan = model.savedPlanWeek[0];
+  console.log(div.className);
+  console.log(model.savedPlanDay);
+  if (div.className === "settings__container week") {
+    console.log("this is a weekly plan");
+    console.log(weekPlan[id]);
+    table.renderWeekly(weekPlan[id])
+    input.closeModal();
+  } else if (div.className === "settings__container day") {
+    console.log("this is a day plan");
+    console.log(dayPlan[id]);
+    model.dailyPlanner(dayPlan[id]);
+    input.closeModal();
+  }
+};
 
 // Element Selectors //
 const modal = document.querySelector(".overlay");

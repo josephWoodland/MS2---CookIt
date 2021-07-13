@@ -16,13 +16,16 @@
       margin-right: 20%;
     }
   }
+  &-emptyArray{
+    
+  }
   &__container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
     width: 80%;
     margin: auto;
-    &-header{
+    &-header {
       width: 100%;
     }
 
@@ -36,7 +39,11 @@
       -o-border-radius: 1rem;
       -moz-text-decoration-style: none;
       display: flex;
-
+      &-break {
+        width: 100%;
+        height: 1rem;
+        border-bottom: 2px solid $color-gold;
+      }
       &-edit,
       &-delete {
         align-self: center;

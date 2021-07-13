@@ -386,9 +386,11 @@ input[type=submit] {
 }
 .recipe__card__info-ingrediants {
   padding-left: 2rem;
+  text-overflow: ellipsis;
 }
 .recipe__card__method {
   margin: 0 auto;
+  text-overflow: ellipsis;
 }
 .recipe__card__method-h2 {
   margin-bottom: 2rem;
@@ -458,6 +460,11 @@ input[type=submit] {
   -o-border-radius: 1rem;
   -moz-text-decoration-style: none;
   display: flex;
+}
+.settings__container-recipe-break, .settings__container-plan-break {
+  width: 100%;
+  height: 1rem;
+  border-bottom: 2px solid #efc600;
 }
 .settings__container-recipe-edit, .settings__container-recipe-delete, .settings__container-plan-edit, .settings__container-plan-delete {
   align-self: center;

@@ -1,5 +1,9 @@
 const homeHTML = document.querySelector(".home");
 
+export function renderSavedPlan(){
+
+}
+
 export async function renderDay(obj) {
   let title = Object.keys(obj);
   let id = Object.values(obj);

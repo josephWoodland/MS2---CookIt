@@ -1,7 +1,7 @@
 import * as input from "./input.js";
-
+import * as home from './home.js'
 import * as recipe from "./recipe.js";
-import * as settings from "./settings.js";
+
 
 let curRecipe;
 let curPlan;
@@ -91,6 +91,7 @@ export function savePlan() {
     input.classList.add("hidden");
     saveNameBtn.classList.add("hidden");
   }
+  home.welcomePage();
 }
 
 // Save the daily plan
@@ -117,6 +118,7 @@ export function savePlanDay() {
     input.classList.add("hidden");
     saveNameBtn.classList.add("hidden");
   }
+  home.welcomePage();
 }
 
 export function editSaveName(index) {
