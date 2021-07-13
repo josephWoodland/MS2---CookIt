@@ -446,7 +446,10 @@ input[type=submit] {
   width: 80%;
   margin: auto;
 }
-.settings__container-recipe {
+.settings__container-header {
+  width: 100%;
+}
+.settings__container-recipe, .settings__container-plan {
   text-transform: capitalize;
   border-radius: 1rem;
   -webkit-border-radius: 1rem;
@@ -456,16 +459,16 @@ input[type=submit] {
   -moz-text-decoration-style: none;
   display: flex;
 }
-.settings__container-recipe-edit, .settings__container-recipe-delete {
+.settings__container-recipe-edit, .settings__container-recipe-delete, .settings__container-plan-edit, .settings__container-plan-delete {
   align-self: center;
   font-size: 2rem;
   margin-left: 0.5rem;
   color: #224a95;
 }
-.settings__container-recipe-edit:hover, .settings__container-recipe-delete:hover {
+.settings__container-recipe-edit:hover, .settings__container-recipe-delete:hover, .settings__container-plan-edit:hover, .settings__container-plan-delete:hover {
   color: #efc600;
 }
-.settings__container-recipe-item {
+.settings__container-recipe-item, .settings__container-plan-item {
   font-family: "Noto Sans JP", sans-serif;
   font-size: 1.6rem;
   text-align: center;

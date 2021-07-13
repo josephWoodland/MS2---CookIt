@@ -15,6 +15,7 @@ export function curSavedPlanDayData(plans) {
 
 export function curSavedPlanWeeklyData(plans) {
   curSavedPlanWeekly = plans;
+  console.log(plans);
 }
 
 export function curSavedRecipeData(recipe) {
@@ -85,7 +86,7 @@ export function savePlan() {
     curSavedPlanWeekly.push(curPlan);
     console.log(curSavedPlanWeekly.flat(3));
     const plan = JSON.stringify(curSavedPlanWeekly.flat(3));
-    window.localStorage.setItem(`Weekly`, plan);
+    window.localStorage.setItem(`week`, plan);
     nameInput.value = " ";
     input.classList.add("hidden");
     saveNameBtn.classList.add("hidden");
@@ -93,12 +94,29 @@ export function savePlan() {
 }
 
 // Save the daily plan
-export function savePlannerDay() {
-  const planName = prompt("What you like to call this plan?");
-  curPlan.saveName = planName;
-  curSavedPlanDays.push(curPlan);
-  const plan = JSON.stringify(curPlan.flat(3));
-  window.localStorage.setItem(`Day`, plan);
+export function savePlanDay() {
+  const nameInput = document.querySelector("#nameInput");
+  const planName = nameInput.value;
+  const input = document.querySelector(".nav__input");
+  const saveNameBtn = document.querySelector("#nameSubmit");
+  console.log(planName);
+  
+  if (!isNaN(planName)) {
+    alert("Invalid input valid NAME for the plan, must be a written name");
+    nameInput.value = " ";
+    
+  } else {
+    alert(`Plan ${planName} saved`);
+    curPlan.saveName = planName;
+    console.log(curPlan);
+    curSavedPlanDays.push(curPlan);
+    console.log(curSavedPlanDays.flat(3));
+    const plan = JSON.stringify(curSavedPlanDays.flat(3));
+    window.localStorage.setItem(`day`, plan);
+    nameInput.value = " ";
+    input.classList.add("hidden");
+    saveNameBtn.classList.add("hidden");
+  }
 }
 
 export function editSaveName(index) {

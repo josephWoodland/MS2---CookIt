@@ -9,6 +9,7 @@ import * as home from "./views/home.js";
 import * as settings from "./views/settings.js";
 import * as recipe from "./views/recipe.js";
 import * as form from "./views/form.js";
+import * as plans from "./views/plans.js";
 
 // Global scope function so it can be used in the HTML
 window.getID = getID;
@@ -19,6 +20,7 @@ window.closeModal = input.closeModal;
 window.saveDay = save.savePlannerDay;
 window.saveWeekly = save.getPlanName;
 window.savePlan = save.savePlan;
+window.savePlanDay = save.savePlanDay;
 window.renderRecipes = recipe.renderRecipes;
 window.openSettings = settings.openSettings;
 window.editSaveName = save.editSaveName;
@@ -29,7 +31,7 @@ window.reloadPage = reloadPage;
 window.getSavedName = save.getSavedName;
 window.renderSavedRecipe = recipe.renderSavedRecipe;
 window.clearStorage = clearStorage.clearPopup;
-window.renderPlans = settings.renderPlans;
+window.renderPlans = plans.renderPlans;
 
 // Element Selectors //
 const modal = document.querySelector(".overlay");

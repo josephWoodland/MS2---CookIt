@@ -22,8 +22,12 @@
     gap: 1rem;
     width: 80%;
     margin: auto;
+    &-header{
+      width: 100%;
+    }
 
-    &-recipe {
+    &-recipe,
+    &-plan {
       text-transform: capitalize;
       border-radius: 1rem;
       -webkit-border-radius: 1rem;
