@@ -441,6 +441,9 @@ input[type=submit] {
   text-align: center;
   margin-right: 20%;
 }
+.settings-emptyArray {
+  grid-column: 1/span 3;
+}
 .settings__container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

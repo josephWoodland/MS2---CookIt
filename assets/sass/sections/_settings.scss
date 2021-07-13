@@ -16,8 +16,8 @@
       margin-right: 20%;
     }
   }
-  &-emptyArray{
-    
+  &-emptyArray {
+    grid-column: 1 / span 3;
   }
   &__container {
     display: grid;

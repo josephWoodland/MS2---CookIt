@@ -5,8 +5,8 @@ export function renderPlans() {
   const header = document.querySelector(".settings__head-header");
   const planArrDay = model.savedPlanDay[0];
   const planArrWeekly = model.savedPlanWeek[0];
-  const htmlDay = planArrDay != undefined ? planArrDay.map(planHtml).join("") : `<h2 class="settings__emptyArray">You have no saved Day Plans</h2>`;
-  const htmlWeek = planArrWeekly != undefined ? planArrWeekly.map(planHtml).join(""): `<h2 class="settings__emptyArray">You have no saved Weekly Plans</h2>`;
+  const htmlDay = planArrDay != undefined ? planArrDay.map(planHtml).join("") : `<h2 class="settings__emptyArray" style="grid-column:1 / span 3">You have no saved Day Plans</h2>`;
+  const htmlWeek = planArrWeekly != undefined ? planArrWeekly.map(planHtml).join(""): `<h2 class="settings__emptyArray style="grid-column:1 / span 3"">You have no saved Weekly Plans</h2>`;
 // need error handling if there is nothing in the array //
   header.textContent = "Saved Plans";
   renderContainer.innerHTML = `
