@@ -9,6 +9,9 @@ $font: "Noto Sans JP", sans-serif;
 @media screen and (max-width: $bp-large) {
   html {
     font-size: 55%;
+    @media screen and (max-width: $bp-small) {
+      font-size: 45%;
+    }
   }
 }
 $font-size-lists: 1.6rem;

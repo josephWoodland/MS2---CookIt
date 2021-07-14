@@ -9,6 +9,9 @@
     display: flex;
     flex-direction: column;
   }
+  @media screen and (max-width:$bp-small){
+    height: 100vh;
+  }
 
   &__center {
     display: flex;
@@ -19,14 +22,22 @@
     @media screen and (max-width:$bp-large){
       height: 80%;
     }
+    @media screen and (max-width:$bp-small){
+      width: 100%;
+    }
 
     &__img {
       display: flex;
-      flex-direction: row;
+      flex-direction: column-reverse;
 
       &-pods {
         margin-top: 5rem;
         height: 20rem;
+        @media screen and (max-width:$bp-small){
+          height: 5rem;
+          margin-left: auto;
+          // display: none;
+        }
       }
 
       &-logo {
@@ -35,6 +46,11 @@
 
       &-avo {
         height: 15rem;
+        @media screen and (max-width:$bp-small){
+          height: 5rem;
+          margin-right: auto;
+          // display: none;
+        }
       }
       @media screen and (max-width:$bp-large){
         &-pods {
@@ -46,6 +62,10 @@
           height: 20rem;
           margin-left: 2rem;
           padding-left: 4rem;
+          @media screen and (max-width:$bp-small){
+            padding: 0;
+            margin-left: 0;
+          }
         }
   
         &-avo {
@@ -62,6 +82,10 @@
         width: 60%;
 
       }
+      @media screen and (max-width:$bp-small){
+        width: 100%;
+
+      }
     }
 
     &-btn {
@@ -76,6 +100,9 @@
   &__right {
     border-left: 7rem solid $color-blue;
     padding: 2rem;
+    @media screen and (max-width: $bp-small){
+      height: 10rem;
+    }
     &-delete,
     &-settings{
       width: 100%;
@@ -91,6 +118,9 @@
         width: 20%;
         margin: 0;
         height: 4rem;
+        @media screen and (max-width: $bp-small){
+          width: 30%;
+        }
       }
     }
   }

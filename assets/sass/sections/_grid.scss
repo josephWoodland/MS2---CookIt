@@ -10,6 +10,9 @@
       display: flex;
       flex-direction: column;
     }
+    @media screen and (max-width:$bp-small){
+      height: 100vh;
+    }
   }
 
   &-2 {
@@ -19,6 +22,9 @@
     
     @media screen and (max-width:$bp-large){
       height: 75vh 
+    }
+    @media screen and (max-width:$bp-small){
+      height: 90vh;
     }
   }
 

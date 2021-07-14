@@ -23,6 +23,11 @@ html {
     font-size: 55%;
   }
 }
+@media screen and (max-width: 1200px) and (max-width: 600px) {
+  html {
+    font-size: 45%;
+  }
+}
 h1 {
   font-family: "Noto Sans JP", sans-serif;
   font-size: 4.8rem;
@@ -91,6 +96,11 @@ input[type=submit] {
     flex-direction: column;
   }
 }
+@media screen and (max-width: 600px) {
+  .grid-1 {
+    height: 100vh;
+  }
+}
 .grid-2 {
   display: grid;
   grid-template-rows: 6rem auto;
@@ -99,6 +109,11 @@ input[type=submit] {
 @media screen and (max-width: 1200px) {
   .grid-2 {
     height: 75vh;
+  }
+}
+@media screen and (max-width: 600px) {
+  .grid-2 {
+    height: 90vh;
   }
 }
 .grid-3 {
@@ -196,6 +211,11 @@ input[type=submit] {
     flex-direction: column;
   }
 }
+@media screen and (max-width: 600px) {
+  .main {
+    height: 100vh;
+  }
+}
 .main__center {
   display: flex;
   flex-direction: column;
@@ -208,19 +228,36 @@ input[type=submit] {
     height: 80%;
   }
 }
+@media screen and (max-width: 600px) {
+  .main__center {
+    width: 100%;
+  }
+}
 .main__center__img {
   display: flex;
-  flex-direction: row;
+  flex-direction: column-reverse;
 }
 .main__center__img-pods {
   margin-top: 5rem;
   height: 20rem;
+}
+@media screen and (max-width: 600px) {
+  .main__center__img-pods {
+    height: 5rem;
+    margin-left: auto;
+  }
 }
 .main__center__img-logo {
   height: 30rem;
 }
 .main__center__img-avo {
   height: 15rem;
+}
+@media screen and (max-width: 600px) {
+  .main__center__img-avo {
+    height: 5rem;
+    margin-right: auto;
+  }
 }
 @media screen and (max-width: 1200px) {
   .main__center__img-pods {
@@ -232,6 +269,14 @@ input[type=submit] {
     margin-left: 2rem;
     padding-left: 4rem;
   }
+}
+@media screen and (max-width: 1200px) and (max-width: 600px) {
+  .main__center__img-logo {
+    padding: 0;
+    margin-left: 0;
+  }
+}
+@media screen and (max-width: 1200px) {
   .main__center__img-avo {
     height: 15rem;
   }
@@ -246,6 +291,11 @@ input[type=submit] {
     width: 60%;
   }
 }
+@media screen and (max-width: 600px) {
+  .main__center-welcomeMessage {
+    width: 100%;
+  }
+}
 .main__center-btn {
   display: flex;
   width: 30rem;
@@ -256,6 +306,11 @@ input[type=submit] {
 .main__right {
   border-left: 7rem solid #224a95;
   padding: 2rem;
+}
+@media screen and (max-width: 600px) {
+  .main__right {
+    height: 10rem;
+  }
 }
 .main__right-delete, .main__right-settings {
   width: 100%;
@@ -272,6 +327,11 @@ input[type=submit] {
     width: 20%;
     margin: 0;
     height: 4rem;
+  }
+}
+@media screen and (max-width: 1200px) and (max-width: 600px) {
+  .main__right-settings {
+    width: 30%;
   }
 }
 
