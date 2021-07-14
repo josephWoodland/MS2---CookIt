@@ -4,6 +4,21 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 2rem;
+    
+
+    &-close{
+      display: none;
+      visibility: hidden;
+      font-size: 4rem;
+      color: $color-gold;
+      :hover {
+        color: $color-blue;
+      }
+      @media screen and (max-width: $bp-small) {
+        display: inline;
+       visibility: visible;
+      }
+    }
 
     &-logo {
       height: 10rem;
@@ -68,6 +83,10 @@
     display: flex;
     flex-direction: column;
 
+    @media screen and (max-width: $bp-small) {
+      border: none;
+    }
+
     &-close {
       font-size: 4rem;
       color: $color-gold;
@@ -75,17 +94,35 @@
       :hover {
         color: $color-blue;
       }
+
+      @media screen and (max-width: $bp-small) {
+        display: none;
+        visibility: hidden;
+      }
     }
 
     &__buttons {
       display: flex;
+      margin-top: 3rem;
       padding: 2rem 1rem 2rem 1rem;
       justify-content: space-around;
       flex-direction: column;
       height: 50%;
+      @media screen and (max-width: $bp-small){
+        &-right{
+          display: flex;
+        }
+        &-left{
+          display: flex;
+        }
+      }
       &-btn {
         width: 100%;
         height: 5rem;
+        @media screen and (max-width: $bp-small) {
+          width: 40%;
+          margin: 3rem auto 0rem auto;
+        }
       }
     }
   }

@@ -27,6 +27,9 @@ export function openSettings() {
               alt="CookIt Logo"
             />
             <h1 class="settings__head-header">Settings</h1>
+            <a href="#" onclick="reloadPage()" class="settings__head-close"
+          ><i class="fas fa-times"></i
+        ></a>
           </div>
           <div id="renderContainer" class="settings__container">
           </div>
@@ -37,6 +40,7 @@ export function openSettings() {
           ><i class="fas fa-times"></i
         ></a>
         <div class="settings__right__buttons">
+        <div class="settings__right__buttons-left">
           <button
             href="#"
             id="plans"
@@ -53,6 +57,8 @@ export function openSettings() {
           >
             Recipes
           </button>
+          </div>
+          <div class="settings__right__buttons-right">
           <button
             href="#"
             id="display"
@@ -69,6 +75,7 @@ export function openSettings() {
           >
             Back
           </button>
+          </div>
           <button id="delete" onclick="clearStorage()" class="main__right-delete btn">
             Clear Storage
           </button>

@@ -15,6 +15,7 @@
     }
   }
 
+
   &-2 {
     display: grid;
     grid-template-rows: auto auto;
@@ -68,5 +69,14 @@
     display: grid;
     width: 30rem;
     grid-column-gap: 2rem;
+  }
+  &-form {
+    display: grid;
+    grid-template-columns: 6fr minmax(30rem, 1fr);
+    @media screen and (max-width: $bp-large) {
+      display: flex;
+      flex-direction: column;
+    }
+   
   }
 }

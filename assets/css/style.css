@@ -166,6 +166,16 @@ input[type=submit] {
   width: 30rem;
   grid-column-gap: 2rem;
 }
+.grid-form {
+  display: grid;
+  grid-template-columns: 6fr minmax(30rem, 1fr);
+}
+@media screen and (max-width: 1200px) {
+  .grid-form {
+    display: flex;
+    flex-direction: column;
+  }
+}
 
 /* //////////////////////////////////////////////////////////////////////////////// 
 ------------------------------- NAV  --------------------------------------
@@ -578,8 +588,18 @@ input[type=submit] {
   justify-content: space-between;
   margin-bottom: 2rem;
 }
+@media screen and (max-width: 600px) {
+  .recipe__head {
+    flex-direction: column;
+  }
+}
 .recipe__head-logo {
   height: 10rem;
+}
+@media screen and (max-width: 600px) {
+  .recipe__head-logo {
+    width: 10rem;
+  }
 }
 .recipe__head-header {
   color: #707070;
@@ -587,6 +607,11 @@ input[type=submit] {
   width: 35%;
   text-align: center;
   margin-right: 20%;
+}
+@media screen and (max-width: 600px) {
+  .recipe__head-header {
+    width: 100%;
+  }
 }
 .recipe__card {
   display: grid;
@@ -631,6 +656,12 @@ input[type=submit] {
   display: flex;
   flex-direction: column;
 }
+@media screen and (max-width: 600px) {
+  .recipe__right {
+    border-top: 1rem solid #224a95;
+    border-left: none;
+  }
+}
 .recipe__right-close {
   font-size: 4rem;
   color: #efc600;
@@ -638,6 +669,12 @@ input[type=submit] {
 }
 .recipe__right-close :hover {
   color: #224a95;
+}
+@media screen and (max-width: 600px) {
+  .recipe__right-close {
+    display: none;
+    visibility: hidden;
+  }
 }
 .recipe__right__buttons {
   display: flex;
@@ -650,6 +687,14 @@ input[type=submit] {
   width: 100%;
   height: 5rem;
 }
+@media screen and (max-width: 600px) {
+  .recipe__right__buttons-btn {
+    width: 50%;
+    margin-top: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 
 .settings {
   padding: 3rem;
@@ -658,6 +703,21 @@ input[type=submit] {
   display: flex;
   justify-content: space-between;
   margin-bottom: 2rem;
+}
+.settings__head-close {
+  display: none;
+  visibility: hidden;
+  font-size: 4rem;
+  color: #efc600;
+}
+.settings__head-close :hover {
+  color: #224a95;
+}
+@media screen and (max-width: 600px) {
+  .settings__head-close {
+    display: inline;
+    visibility: visible;
+  }
 }
 .settings__head-logo {
   height: 10rem;
@@ -718,6 +778,11 @@ input[type=submit] {
   display: flex;
   flex-direction: column;
 }
+@media screen and (max-width: 600px) {
+  .settings__right {
+    border: none;
+  }
+}
 .settings__right-close {
   font-size: 4rem;
   color: #efc600;
@@ -726,16 +791,37 @@ input[type=submit] {
 .settings__right-close :hover {
   color: #224a95;
 }
+@media screen and (max-width: 600px) {
+  .settings__right-close {
+    display: none;
+    visibility: hidden;
+  }
+}
 .settings__right__buttons {
   display: flex;
+  margin-top: 3rem;
   padding: 2rem 1rem 2rem 1rem;
   justify-content: space-around;
   flex-direction: column;
   height: 50%;
 }
+@media screen and (max-width: 600px) {
+  .settings__right__buttons-right {
+    display: flex;
+  }
+  .settings__right__buttons-left {
+    display: flex;
+  }
+}
 .settings__right__buttons-btn {
   width: 100%;
   height: 5rem;
+}
+@media screen and (max-width: 600px) {
+  .settings__right__buttons-btn {
+    width: 40%;
+    margin: 3rem auto 0rem auto;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
