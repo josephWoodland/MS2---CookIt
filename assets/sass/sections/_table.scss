@@ -18,6 +18,15 @@
     -moz-transform: rotate(-45deg);
     -ms-transform: rotate(-45deg);
     -o-transform: rotate(-45deg);
+
+    @media screen and (max-width: $bp-small) {
+      display: none;
+      transform: none;
+      -webkit-transform: none;
+      -moz-transform: none;
+      -ms-transform: none;
+      -o-transform: none;
+    }
   }
 
   &__weekly-cell,
@@ -29,6 +38,7 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    text-overflow: ellipsis;
     &:hover {
       color: $color-gold;
     }
@@ -37,4 +47,10 @@
 
 .days {
   font-weight: bold;
+  @media screen and (max-width: $bp-small) {
+  }
+}
+.recipe {
+  @media screen and (max-width: $bp-small) {
+  }
 }

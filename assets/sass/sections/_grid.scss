@@ -6,50 +6,65 @@
   &-1 {
     display: grid;
     grid-template-columns: 6fr minmax(30rem, 1fr);
-    @media screen and (max-width:$bp-large) {
+    @media screen and (max-width: $bp-large) {
       display: flex;
       flex-direction: column;
     }
-    @media screen and (max-width:$bp-small){
-      height: 100vh;
+    @media screen and (max-width: $bp-small) {
+      height: auto;
     }
   }
 
   &-2 {
     display: grid;
-    grid-template-rows: 6rem auto;
+    grid-template-rows: auto auto;
     height: 85vh;
-    
-    @media screen and (max-width:$bp-large){
-      height: 75vh 
+
+    @media screen and (max-width: $bp-large) {
+
+      height: 75vh;
     }
-    @media screen and (max-width:$bp-small){
-      height: 90vh;
+    @media screen and (max-width: $bp-small) {
+      height: auto;
     }
   }
 
-
-  &-3{
-      margin: auto;
-      display: grid;
-      grid-template-columns: .5fr 1fr 9fr .5fr ;
-      height: 60vh
-      
+  &-3 {
+    margin: auto;
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 9fr 0.5fr;
+    height: 60vh;
+    width: 100vw;
+    @media screen and (max-width: $bp-small) {
+      margin-bottom: 6rem;
+      margin-top: 6rem;
+      height: 100vh;
+    }
   }
 
-  &-4{
-      display: grid;
-      grid-template-rows: repeat(4,1fr);
-      height: 100%;
+  &-4 {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    height: 100%;
+    @media screen and (max-width: $bp-small) {
+      display: flex;
+    }
   }
 
   &-weekly {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: repeat(4, minmax(mincontent 1fr));
+    grid-template-rows: repeat(4, minmax(min-content 1fr));
     grid-column-gap: 2rem;
+    @media screen and (max-width: $bp-small) {
+      grid-template-columns: repeat(4, 25%);
+      grid-template-rows: repeat(7,1fr);
+      grid-auto-flow: column;
+      gap: 2rem;
+
+    }
   }
-  &-daily{
+  &-daily {
     display: grid;
     width: 30rem;
     grid-column-gap: 2rem;
