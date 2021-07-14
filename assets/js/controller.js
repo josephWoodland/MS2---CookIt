@@ -45,7 +45,7 @@ window.onclick = function (e) {
   if (div.className === "settings__container week") {
     console.log("this is a weekly plan");
     console.log(weekPlan[id]);
-    table.renderWeekly(weekPlan[id])
+    table.renderWeekly(weekPlan[id]);
     input.closeModal();
   } else if (div.className === "settings__container day") {
     console.log("this is a day plan");

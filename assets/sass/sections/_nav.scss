@@ -8,14 +8,13 @@
   height: auto;
   justify-content: space-between;
 
-  @media screen and (max-width:$bp-large){
-    
+  @media screen and (max-width: $bp-large) {
     flex-direction: column;
     align-content: center;
   }
   &-logo {
     height: 5rem;
-    @media screen and (max-width:$bp-large){
+    @media screen and (max-width: $bp-large) {
       height: 9rem;
       width: 9rem;
       padding-top: 1rem;
@@ -34,7 +33,7 @@
     @media screen and (max-width: $bp-small) {
       display: flex;
       width: 100%;
-      &-header{
+      &-header {
         width: 45%;
       }
     }

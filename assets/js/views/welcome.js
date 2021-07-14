@@ -20,4 +20,3 @@ export function hideName() {
     formName.classList.add("hidden");
   }
 }
-

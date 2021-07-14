@@ -112,7 +112,7 @@
       margin: 10% auto auto auto
     }
     &-delete {
-      @media screen and (max-width: $bp-medium){
+      @media screen and (max-width: $bp-large){
         width: 40%
       }
     }

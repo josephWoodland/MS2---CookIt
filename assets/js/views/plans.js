@@ -1,13 +1,19 @@
-import * as model from "../model.js"
+import * as model from "../model.js";
 
 export function renderPlans() {
   const renderContainer = document.querySelector("#renderContainer");
   const header = document.querySelector(".settings__head-header");
   const planArrDay = model.savedPlanDay[0];
   const planArrWeekly = model.savedPlanWeek[0];
-  const htmlDay = planArrDay != undefined ? planArrDay.map(planHtml).join("") : `<h2 class="settings__emptyArray" style="grid-column:1 / span 3">You have no saved Day Plans</h2>`;
-  const htmlWeek = planArrWeekly != undefined ? planArrWeekly.map(planHtml).join(""): `<h2 class="settings__emptyArray style="grid-column:1 / span 3"">You have no saved Weekly Plans</h2>`;
-// need error handling if there is nothing in the array //
+  const htmlDay =
+    planArrDay != undefined
+      ? planArrDay.map(planHtml).join("")
+      : `<h2 class="settings__emptyArray" style="grid-column:1 / span 3">You have no saved Day Plans</h2>`;
+  const htmlWeek =
+    planArrWeekly != undefined
+      ? planArrWeekly.map(planHtml).join("")
+      : `<h2 class="settings__emptyArray style="grid-column:1 / span 3"">You have no saved Weekly Plans</h2>`;
+  // need error handling if there is nothing in the array //
   header.textContent = "Saved Plans";
   renderContainer.innerHTML = `
   </div>
@@ -19,7 +25,6 @@ export function renderPlans() {
   <div id="renderContainer" class="settings__container week">
   ${htmlWeek}
   </div>`;
-
 }
 
 export function planHtml(planArr, index) {

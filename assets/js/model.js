@@ -8,7 +8,7 @@ import * as save from "./views/save.js";
 // Element Selectors
 const formInput = document.querySelectorAll("#form input");
 const formSelect = document.querySelectorAll("#form select");
-const mainCenter = document.querySelector('.main__center-welcomeMessage');
+const mainCenter = document.querySelector(".main__center-welcomeMessage");
 // Empty objects to put retrived data in
 export let plan = {};
 export let inputData = {};
@@ -83,7 +83,7 @@ export async function getMealPlan(inputData) {
     }
   } catch (err) {
     console.error(err);
-    mainCenter.textContent = `We have a problem : ${err} please try again`
+    mainCenter.textContent = `We have a problem : ${err} please try again`;
   }
 }
 

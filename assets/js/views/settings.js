@@ -5,15 +5,14 @@ const modalContainer = document.querySelector("#modal");
 // Function so that clicking on the recipe name in the table will open up the recipe modal
 export function savedRecipes(arr) {
   console.log(arr);
-    return ``;
-  }
+  return ``;
+}
 
-  // Function so that clicking on the recipe name in the table will open up the recipe modal
+// Function so that clicking on the recipe name in the table will open up the recipe modal
 export function savedPlans(arr) {
   console.log(arr);
-    return ``;
-  }
-
+  return ``;
+}
 
 export function openSettings() {
   input.openModal();

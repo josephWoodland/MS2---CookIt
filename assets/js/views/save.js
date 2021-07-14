@@ -1,7 +1,6 @@
 import * as input from "./input.js";
-import * as home from './home.js'
+import * as home from "./home.js";
 import * as recipe from "./recipe.js";
-
 
 let curRecipe;
 let curPlan;
@@ -74,11 +73,10 @@ export function savePlan() {
   const input = document.querySelector(".nav__input");
   const saveNameBtn = document.querySelector("#nameSubmit");
   console.log(planName);
-  
+
   if (!isNaN(planName)) {
     alert("Invalid input valid NAME for the plan, must be a written name");
     nameInput.value = " ";
-    
   } else {
     alert(`Plan ${planName} saved`);
     curPlan.saveName = planName;
@@ -101,11 +99,10 @@ export function savePlanDay() {
   const input = document.querySelector(".nav__input");
   const saveNameBtn = document.querySelector("#nameSubmit");
   console.log(planName);
-  
+
   if (!isNaN(planName)) {
     alert("Invalid input valid NAME for the plan, must be a written name");
     nameInput.value = " ";
-    
   } else {
     alert(`Plan ${planName} saved`);
     curPlan.saveName = planName;

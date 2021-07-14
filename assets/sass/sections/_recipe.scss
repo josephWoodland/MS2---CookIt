@@ -13,14 +13,12 @@
 
     @media screen and (max-width: $bp-small) {
       flex-direction: column;
-    
     }
 
     &-logo {
       height: 10rem;
       @media screen and (max-width: $bp-small) {
-       width: 10rem;
-      
+        width: 10rem;
       }
     }
     &-header {
@@ -31,7 +29,6 @@
       margin-right: 20%;
       @media screen and (max-width: $bp-small) {
         width: 100%;
-      
       }
     }
   }
@@ -114,7 +111,6 @@
           margin-top: 3rem;
           margin-left: auto;
           margin-right: auto;
-        
         }
       }
     }
