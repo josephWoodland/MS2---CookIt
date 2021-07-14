@@ -4,9 +4,15 @@
 
 .nav {
   display: flex;
-
+  @media screen and (max-width:$bp-large){
+    height: 10rem;
+  }
   &-logo {
     height: 5rem;
+    @media screen and (max-width:$bp-large){
+      height: 9rem;
+      padding-top: 1rem;
+    }
   }
   &__logo-logo {
     height: 5rem;

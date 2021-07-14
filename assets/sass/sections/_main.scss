@@ -5,6 +5,10 @@
   grid-template-columns: 1fr minmax(650px, auto) 1fr;
   justify-items: center;
   align-content: center;
+  @media screen and (max-width:$bp-large) {
+    display: flex;
+    flex-direction: column;
+  }
 
   &__center {
     display: flex;
@@ -12,6 +16,9 @@
     height: 100%;
     align-items: center;
     justify-content: center;
+    @media screen and (max-width:$bp-large){
+      height: 80%;
+    }
 
     &__img {
       display: flex;
@@ -29,12 +36,32 @@
       &-avo {
         height: 15rem;
       }
+      @media screen and (max-width:$bp-large){
+        &-pods {
+          margin-top: 5rem;
+          height: 10rem;
+        }
+  
+        &-logo {
+          height: 20rem;
+          margin-left: 2rem;
+          padding-left: 4rem;
+        }
+  
+        &-avo {
+          height: 15rem;
+        }
+      }
     }
 
     &-welcomeMessage {
       width: 80%;
       margin: 4rem;
       text-align: center;
+      @media screen and (max-width:$bp-large){
+        width: 60%;
+
+      }
     }
 
     &-btn {
@@ -53,6 +80,18 @@
     &-settings{
       width: 100%;
       margin: 10% auto auto auto
+    }
+    @media screen and (max-width:$bp-large) {
+      border-left: none;
+      border-top: 1rem solid $color-blue;
+      display: flex;
+      height: 5rem;
+
+      &-settings{
+        width: 20%;
+        margin: 0;
+        height: 4rem;
+      }
     }
   }
 }

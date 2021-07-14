@@ -6,12 +6,20 @@
   &-1 {
     display: grid;
     grid-template-columns: 6fr minmax(30rem, 1fr);
+    @media screen and (max-width:$bp-large) {
+      display: flex;
+      flex-direction: column;
+    }
   }
 
   &-2 {
     display: grid;
     grid-template-rows: 6rem auto;
     height: 85vh;
+    
+    @media screen and (max-width:$bp-large){
+      height: 75vh 
+    }
   }
 
 

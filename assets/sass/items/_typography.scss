@@ -6,6 +6,11 @@
 
 $font: "Noto Sans JP", sans-serif;
 
+@media screen and (max-width: $bp-large) {
+  html {
+    font-size: 55%;
+  }
+}
 $font-size-lists: 1.6rem;
 $font-size-copy: 2rem;
 $font-size-button: 2.4rem;
