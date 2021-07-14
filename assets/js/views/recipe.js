@@ -74,7 +74,7 @@ export async function renderRecipe(recipe) {
       id="saveName"
       placeholder="e.g. brunch eggs"
     />
-    <input type="submit" id="nameSubmit" class="recipe__save-btn btn hidden" value="save" onclick="getSavedName()">
+    <input type="submit" id="nameSubmitRecipe" class="recipe__save-btn btn hidden" value="save" onclick="getSavedName()">
         </div>
         <div class="recipe__card">
           <div class="recipe__card__info">

@@ -34,7 +34,7 @@ export function curPlannerData(plan) {
 export function saveRecipe() {
   const header = document.querySelector(".recipe__head-header");
   const inputBox = document.querySelector("#saveName");
-  const saveNameBtn = document.querySelector("#nameSubmit");
+  const saveNameBtn = document.querySelector("#nameSubmitRecipe");
   const recipeName = header.textContent;
   header.textContent = `What would you like to save this recipe as? ${recipeName}`;
   inputBox.classList.remove("hidden");
