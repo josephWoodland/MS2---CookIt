@@ -61,7 +61,7 @@ export function openSettings() {
           <button
             href="#"
             id="display"
-            onclick="renderDisplay()"
+            onclick="renderButtonOptions()"
             class="btn settings__right__buttons-btn"
           >
             Display

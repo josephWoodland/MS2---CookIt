@@ -1,5 +1,4 @@
 import * as model from "../model.js";
-import * as input from "./input.js";
 
 const modalContainer = document.querySelector("#modal");
 // Function so that clicking on the recipe name in the table will open up the recipe modal
@@ -18,7 +17,6 @@ export function ingredientsHtml(ingredients, inputData) {
 }
 
 export function renderSavedRecipe(i) {
-  console.log(i);
   const recipeArr = model.savedRecipes[0];
   const recipe = recipeArr[i];
   renderRecipe(recipe);

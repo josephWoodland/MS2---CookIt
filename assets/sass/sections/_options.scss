@@ -1,0 +1,24 @@
+.options {
+  display: flex;
+  flex-direction: column;
+
+  &__question {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-size: $font-size-copy;
+    font-size: $font;
+
+    &-header {
+
+    }
+    &-btn{
+
+    }
+
+    select{
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    }
+  }
+}

@@ -10,6 +10,7 @@ import * as settings from "./views/settings.js";
 import * as recipe from "./views/recipe.js";
 import * as table from "./views/table.js";
 import * as plans from "./views/plans.js";
+import * as options from "./views/options.js";
 
 // Global scope function so it can be used in the HTML
 window.getID = getID;
@@ -33,6 +34,11 @@ window.renderSavedRecipe = recipe.renderSavedRecipe;
 window.clearStorage = clearStorage.clearPopup;
 window.renderPlans = plans.renderPlans;
 window.renderSavedPlan = table.renderSavedPlan;
+window.renderButtonOptions = options.renderOptions;
+window.collectBackSelection = options.selectBagroundColour;
+window.collectTextSelection = options.selectTextColour;
+window.collectBtnSelection = options.selectBtnColour;
+
 
 window.onclick = function (e) {
   e.preventDefault();
@@ -40,16 +46,11 @@ window.onclick = function (e) {
   const div = e.target.parentNode.parentNode.closest("div");
   const dayPlan = model.savedPlanDay[0];
   const weekPlan = model.savedPlanWeek[0];
-  console.log(div.className);
-  console.log(model.savedPlanDay);
+
   if (div.className === "settings__container week") {
-    console.log("this is a weekly plan");
-    console.log(weekPlan[id]);
     table.renderWeekly(weekPlan[id]);
     input.closeModal();
   } else if (div.className === "settings__container day") {
-    console.log("this is a day plan");
-    console.log(dayPlan[id]);
     model.dailyPlanner(dayPlan[id]);
     input.closeModal();
   }

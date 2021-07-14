@@ -14,7 +14,7 @@ export function curSavedPlanDayData(plans) {
 
 export function curSavedPlanWeeklyData(plans) {
   curSavedPlanWeekly = plans;
-  console.log(plans);
+
 }
 
 export function curSavedRecipeData(recipe) {

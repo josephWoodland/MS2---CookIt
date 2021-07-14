@@ -815,7 +815,6 @@ input[type=submit] {
 }
 .settings__right__buttons {
   display: flex;
-  margin-top: 3rem;
   padding: 2rem 1rem 2rem 1rem;
   justify-content: space-around;
   flex-direction: column;
@@ -832,12 +831,29 @@ input[type=submit] {
 .settings__right__buttons-btn {
   width: 100%;
   height: 5rem;
+  margin-top: 3rem;
 }
 @media screen and (max-width: 1200px) {
   .settings__right__buttons-btn {
     width: 40%;
     margin: 3rem auto 0rem auto;
   }
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+}
+.options__question {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-size: 2rem;
+  font-size: "Noto Sans JP", sans-serif;
+}
+.options__question select {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
 }
 
 /*# sourceMappingURL=style.css.map */

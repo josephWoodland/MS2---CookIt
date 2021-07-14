@@ -168,7 +168,6 @@ export function dailyPlanner(day) {
 export function fetchSavedData() {
   // Get all data from local storage
   const items = { ...localStorage };
-  console.log(items);
 
   if ("recipe" in items) savedRecipes.push(JSON.parse(items.recipe));
   if ("week" in items) savedPlanWeek.push(JSON.parse(items.week));
