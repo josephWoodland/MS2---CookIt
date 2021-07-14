@@ -1,12 +1,12 @@
 .settings {
   padding: 3rem;
+
   &__head {
     display: flex;
     justify-content: space-between;
     margin-bottom: 2rem;
-    
 
-    &-close{
+    &-close {
       display: none;
       visibility: hidden;
       font-size: 4rem;
@@ -16,7 +16,7 @@
       }
       @media screen and (max-width: $bp-small) {
         display: inline;
-       visibility: visible;
+        visibility: visible;
       }
     }
 
@@ -40,6 +40,11 @@
     gap: 1rem;
     width: 80%;
     margin: auto;
+    @media screen and (max-width: $bp-medium) {
+      width: 100%;
+    grid-template-columns: repeat(1, 1fr);
+
+    }
     &-header {
       width: 100%;
     }
@@ -83,7 +88,7 @@
     display: flex;
     flex-direction: column;
 
-    @media screen and (max-width: $bp-small) {
+    @media screen and (max-width: $bp-medium) {
       border: none;
     }
 
@@ -95,7 +100,7 @@
         color: $color-blue;
       }
 
-      @media screen and (max-width: $bp-small) {
+      @media screen and (max-width: $bp-medium) {
         display: none;
         visibility: hidden;
       }
@@ -108,18 +113,18 @@
       justify-content: space-around;
       flex-direction: column;
       height: 50%;
-      @media screen and (max-width: $bp-small){
-        &-right{
+      @media screen and (max-width: $bp-medium) {
+        &-right {
           display: flex;
         }
-        &-left{
+        &-left {
           display: flex;
         }
       }
       &-btn {
         width: 100%;
         height: 5rem;
-        @media screen and (max-width: $bp-small) {
+        @media screen and (max-width: $bp-medium) {
           width: 40%;
           margin: 3rem auto 0rem auto;
         }

@@ -29,14 +29,14 @@
 
     &__img {
       display: flex;
-      @media screen and (max-width:$bp-small){
+      @media screen and (max-width:$bp-medium){
         flex-direction: column-reverse;
         
       }
       &-pods {
         margin-top: 5rem;
         height: 20rem;
-        @media screen and (max-width:$bp-small){
+        @media screen and (max-width:$bp-medium){
           height: 5rem;
           margin-left: auto;
           // display: none;
@@ -49,7 +49,7 @@
 
       &-avo {
         height: 15rem;
-        @media screen and (max-width:$bp-small){
+        @media screen and (max-width:$bp-medium){
           height: 5rem;
           margin-right: auto;
           // display: none;
@@ -65,7 +65,7 @@
           height: 20rem;
           margin-left: 2rem;
           padding-left: 4rem;
-          @media screen and (max-width:$bp-small){
+          @media screen and (max-width:$bp-medium){
             padding: 0;
             margin-left: 0;
           }
@@ -85,7 +85,7 @@
         width: 60%;
 
       }
-      @media screen and (max-width:$bp-small){
+      @media screen and (max-width:$bp-medium){
         width: 100%;
 
       }
@@ -103,13 +103,18 @@
   &__right {
     border-left: 7rem solid $color-blue;
     padding: 2rem;
-    @media screen and (max-width: $bp-small){
+    @media screen and (max-width: $bp-medium){
       height: 10rem;
     }
     &-delete,
     &-settings{
       width: 100%;
       margin: 10% auto auto auto
+    }
+    &-delete {
+      @media screen and (max-width: $bp-medium){
+        width: 40%
+      }
     }
     @media screen and (max-width:$bp-large) {
       border-left: none;
@@ -121,7 +126,7 @@
         width: 20%;
         margin: 0;
         height: 4rem;
-        @media screen and (max-width: $bp-small){
+        @media screen and (max-width: $bp-medium){
           width: 30%;
         }
       }
