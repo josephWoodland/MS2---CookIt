@@ -1,6 +1,10 @@
 import * as model from '../model.js'
 const homeHTML = document.querySelector(".home");
-
+/**
+ * @param {Object} dayPlan
+ * 
+ * @return {String} render to HTML
+ */
 export async function renderDay(obj) {
   let title = Object.keys(obj);
   let id = Object.values(obj);
@@ -30,7 +34,6 @@ export async function renderDay(obj) {
   <div class="nav__buttons">
   <button href="#" onclick="home()" id="homeDay" class="btn nav__btn">Home</button>
   <button href="#" onclick="saveWeekly()" id="saveDay" class="btn nav__btn">Save</button>
-  <button href="#" onclick="pdfDay()" id="pdfDay" class="btn nav__btn">Pdf</button>
   </div>
   </div>
   <div class="grid-3">
@@ -54,6 +57,11 @@ export async function renderDay(obj) {
   model.fetchSavedData();
 }
 
+/**
+ * @param {Object} weekPlan
+ * 
+ * @return {String} render to HTML
+ */
 export function renderWeekly(plan) {
   homeHTML.innerHTML = `
   <div class="grid-2">
@@ -80,7 +88,6 @@ export function renderWeekly(plan) {
         <div class="nav__buttons">
           <button href="#"  onclick="home()" id="homeWeek" class="btn nav__btn">Home</button>
           <button href="#"  onclick="saveWeekly()" id="saveWeek" class="btn nav__btn">Save</button>
-          <button href="#" onclick="pdfWeekly()" id="pdfWeek" class="btn nav__btn">Pdf</button>
         </div>
       </div>
       <div class="grid-3">

@@ -1,5 +1,9 @@
 import * as model from '../model.js'
-
+/**
+ * @param {Event} buttonClick
+ * 
+ * @return {} alters HTML code
+ */
 export function renderForm() {
   const modalContainer = document.querySelector("#modal");
   modalContainer.innerHTML = `

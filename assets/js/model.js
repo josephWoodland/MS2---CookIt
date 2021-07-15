@@ -6,10 +6,12 @@ import * as recipeView from "./views/recipe.js";
 import * as save from "./views/save.js";
 
 // Element Selectors
+
 const formInput = document.querySelectorAll("#form input");
 const formSelect = document.querySelectorAll("#form select");
 const mainCenter = document.querySelector(".main__center-welcomeMessage");
 // Empty objects to put retrived data in
+
 export let plan = {};
 export let inputData = {};
 export let recipe = {};
@@ -18,7 +20,6 @@ export let savedPlanWeek = [];
 export let savedPlanDay = [];
 
 /**
-
  * Checks to see if there is a name stored locally
  * @return {HTML text} user name and different welcome message
  */ export async function starterMessage() {
@@ -159,7 +160,12 @@ export function dailyPlanner(day) {
   table.renderDay(mealTitle);
   save.curPlannerData(mealTitle);
 }
-
+/**
+ * User input selection to alter HTML
+ * @param {str, str} item from fetchSavedData
+ *  Checks what HTML element to mutate
+ * @return {HTML style} mutates {element} {style}
+ */
 export function displayOptions(item, selection) {
   const html = document.querySelector("html");
   const button = document.querySelectorAll(".btn");

@@ -1,19 +1,13 @@
 import * as input from "./input.js";
-import * as model from '../model.js'
+import * as model from "../model.js";
 
 const modalContainer = document.querySelector("#modal");
 
-// Function so that clicking on the recipe name in the table will open up the recipe modal
-export function savedRecipes(arr) {
-  console.log(arr);
-  return ``;
-}
-
-// Function so that clicking on the recipe name in the table will open up the recipe modal
-export function savedPlans(arr) {
-  console.log(arr);
-  return ``;
-}
+/**
+ * @param {Event} buttonClick
+ *
+ * @return {String} render to HTML
+ */
 
 export function openSettings() {
   input.openModal();
@@ -83,5 +77,4 @@ export function openSettings() {
       </div>
   `;
   model.fetchSavedData();
-
 }

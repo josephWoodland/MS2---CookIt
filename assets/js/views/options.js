@@ -1,6 +1,11 @@
 import * as model from "../model.js";
 import * as control from "../controller.js";
 
+/**
+ * @param {Event} buttonClick
+ * 
+ * @return {String} to print to HTML
+ */
 export function selectBackgroundColour() {
   const items = { ...localStorage };
   const selection = document.querySelector("#backgroundColourSelect");
@@ -17,6 +22,11 @@ export function selectBackgroundColour() {
     model.displayOptions("background", userChoice);
   }
 }
+/**
+ * @param {Event} buttonClick
+ * 
+ * @return {String} to print to HTML
+ */
 export function selectTextColour() {
   const items = { ...localStorage };
   const selection = document.querySelector("#textColourSelect");
@@ -32,6 +42,11 @@ export function selectTextColour() {
     localStorage.setItem("text", userChoice);
   }
 }
+/**
+ * @param {Event} buttonClick
+ * 
+ * @return {} alters CSS code
+ */
 export function selectBtnColour() {
   const items = { ...localStorage };
   const selection = document.querySelector("#btnColourSelect");
@@ -43,7 +58,6 @@ export function selectBtnColour() {
     control.reloadPage();
     return;
   } else {
-    console.log(button);
     localStorage.setItem("button", userChoice);
     let i;
     for (i = 0; i < button.length; i++) {
@@ -51,13 +65,16 @@ export function selectBtnColour() {
     };
   }
 }
-
+/**
+ * @param {Event} buttonClick
+ * 
+ * @return {String} to print to HTML
+ */
 export function renderOptions() {
   const renderContainer = document.querySelector("#renderContainer");
   const header = document.querySelector(".settings__head-header");
   header.textContent = "Display options";
   renderContainer.innerHTML = `
-
   
   <div class="options__question"
     <h1 class="options__question-header">Press the button to change the button colour</h1>

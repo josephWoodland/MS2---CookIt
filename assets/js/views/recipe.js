@@ -1,7 +1,11 @@
 import * as model from "../model.js";
-
 const modalContainer = document.querySelector("#modal");
-// Function so that clicking on the recipe name in the table will open up the recipe modal
+
+/**
+ * @param {Array, Array} ingredientsData
+ *
+ * @return {String} to print to HTML
+ */
 export function ingredientsHtml(ingredients, inputData) {
   return `
   <li>${
@@ -15,15 +19,22 @@ export function ingredientsHtml(ingredients, inputData) {
   }: ${ingredients.name}</li>
   `;
 }
-
+/**
+ * @param {index} button click
+ *
+ * @return {Array} recipeArray
+ */
 export function renderSavedRecipe(i) {
   const recipeArr = model.savedRecipes[0];
   const recipe = recipeArr[i];
   renderRecipe(recipe);
   model.fetchSavedData();
-
 }
-
+/**
+ * @param {Array} recipeData
+ *
+ * @return {String} to print to HTML
+ */
 export function renderRecipes() {
   const renderContainer = document.querySelector("#renderContainer");
   renderContainer.innerHTML = "";
@@ -31,9 +42,12 @@ export function renderRecipes() {
   const html = recipeArr.map(recipesHtml).join("");
   renderContainer.innerHTML = `${html}`;
   model.fetchSavedData();
-
 }
-
+/**
+ * @param {Array, index} recipeData
+ *
+ * @return {String} to print to HTML
+ */
 export function recipesHtml(recipesArr, index) {
   const header = document.querySelector(".settings__head-header");
   header.textContent = "Saved Recipes";
@@ -55,10 +69,12 @@ export function recipesHtml(recipesArr, index) {
             </div>
   
             `;
-  
-
 }
-
+/**
+ * @param {Array} recipeData
+ *
+ * @return {String} to print to HTML
+ */
 export async function renderRecipe(recipe) {
   modalContainer.innerHTML = `
 <div class="form__wrapper">
@@ -114,13 +130,11 @@ export async function renderRecipe(recipe) {
       <div class="recipe__right">
         <a href="#" onclick="closeModal()" class="recipe__right-close"><i class="fas fa-times"></i></a>
         <div class="recipe__right__buttons">
-          <button href="#" id="pdfRecipe" onclick="pdfRecipe(this.recipe)" class="btn recipe__right__buttons-btn">PDF</button>
           <button href="#" id="saveRecipe" onclick="saveRecipe(this.recipe)" class="btn recipe__right__buttons-btn">Save</button>
           <button href="#" id="backRecipe" onclick="closeModal()" class="btn recipe__right__buttons-btn">Back</button>
         </div>
       </div> 
       </div>
 `;
-model.fetchSavedData();
-
+  model.fetchSavedData();
 }

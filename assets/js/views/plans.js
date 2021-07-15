@@ -1,5 +1,9 @@
 import * as model from "../model.js";
-
+/**
+ * @param {Event} buttonClick
+ * 
+ * @return {String} to print to HTML
+ */
 export function renderPlans() {
   const renderContainer = document.querySelector("#renderContainer");
   const header = document.querySelector(".settings__head-header");
@@ -13,7 +17,7 @@ export function renderPlans() {
     planArrWeekly != undefined
       ? planArrWeekly.map(planHtml).join("")
       : `<h2 class="settings__emptyArray style="grid-column:1 / span 3"">You have no saved Weekly Plans</h2>`;
-  // need error handling if there is nothing in the array //
+
   header.textContent = "Saved Plans";
   renderContainer.innerHTML = `
   </div>
@@ -26,9 +30,12 @@ export function renderPlans() {
   ${htmlWeek}
   </div>`;
   model.fetchSavedData();
-  
 }
-
+/**
+ * @param {index} button click
+ *
+ * @return {Array} recipeArray
+ */
 export function planHtml(planArr, index) {
   const header = document.querySelector(".settings__head-header");
   header.textContent = "Saved Plans";
@@ -49,6 +56,4 @@ export function planHtml(planArr, index) {
               </div>
     
               `;
-
-
 }

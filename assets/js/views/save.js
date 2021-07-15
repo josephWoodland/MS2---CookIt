@@ -1,7 +1,6 @@
 import * as input from "./input.js";
 import * as home from "./home.js";
 import * as recipe from "./recipe.js";
-import * as model from '../model.js'
 
 let curRecipe;
 let curPlan;
@@ -9,28 +8,51 @@ let curSavedPlanDays;
 let curSavedPlanWeekly;
 let curSavedRecipes;
 
+/**
+ * @param {Array} planData
+ *
+ * @return {Array} to vairiable to hold the current savec day plan
+ */
 export function curSavedPlanDayData(plans) {
   curSavedPlanDays = plans;
 }
-
+/**
+ * @param {Array} planData
+ *
+ * @return {Array} to vairiable to hold the current saved weekly plans
+ */
 export function curSavedPlanWeeklyData(plans) {
   curSavedPlanWeekly = plans;
-
 }
-
+/**
+ * @param {Array} planData
+ *
+ * @return {Array} to vairiable to hold the current saved recipes
+ */
 export function curSavedRecipeData(recipe) {
   curSavedRecipes = recipe;
 }
-
+/**
+ * @param {Array} planData
+ *
+ * @return {Array} to vairiable to hold the current recipe
+ */
 export function curRecipeData(recipe) {
   curRecipe = recipe;
 }
-
+/**
+ * @param {Array} planData
+ *
+ * @return {Array} to vairiable to hold the current plan
+ */
 export function curPlannerData(plan) {
   curPlan = plan;
-  console.log(curPlan);
 }
-
+/**
+ * @param {Event} buttonClick
+ *
+ * @return {String} render to HTML
+ */
 export function saveRecipe() {
   const header = document.querySelector(".recipe__head-header");
   const inputBox = document.querySelector("#saveName");
@@ -40,11 +62,14 @@ export function saveRecipe() {
   inputBox.classList.remove("hidden");
   saveNameBtn.classList.remove("hidden");
 }
-
+/**
+ * @param {User Input}
+ *
+ * @return {String} render to HTML
+ */
 export function getSavedName() {
   const inputBox = document.querySelector("#saveName");
   const recipeName = inputBox.value;
-  console.log(recipeName);
 
   if (!isNaN(recipeName)) {
     alert("Invalid input valid NAME for the recipe, must be a written name");
@@ -54,20 +79,27 @@ export function getSavedName() {
     alert(`Recipe ${recipeName} saved`);
     curRecipe.saveName = recipeName;
     curSavedRecipes.push(curRecipe);
-    console.log(curSavedRecipes.flat(3));
     const recipe = JSON.stringify(curSavedRecipes.flat(3));
     window.localStorage.setItem(`recipe`, recipe);
     input.closeModal();
   }
 }
-
+/**
+ * @param {Event} buttonClick
+ *
+ * @return {} HTML change
+ */
 export function getPlanName() {
   const input = document.querySelector(".nav__input");
   const saveNameBtn = document.querySelector("#nameSubmit");
   input.classList.remove("hidden");
   saveNameBtn.classList.remove("hidden");
 }
-
+/**
+ * @param {User input}
+ *
+ * @return {String} to save to local storage
+ */
 export function savePlan() {
   const nameInput = document.querySelector("#nameInput");
   const planName = nameInput.value;
@@ -81,7 +113,6 @@ export function savePlan() {
   } else {
     alert(`Plan ${planName} saved`);
     curPlan.saveName = planName;
-    console.log(curPlan);
     curSavedPlanWeekly.push(curPlan);
     console.log(curSavedPlanWeekly.flat(3));
     const plan = JSON.stringify(curSavedPlanWeekly.flat(3));
@@ -93,13 +124,16 @@ export function savePlan() {
   home.welcomePage();
 }
 
-// Save the daily plan
+/**
+ * @param {User input}
+ *
+ * @return {String} to save to local storage
+ */
 export function savePlanDay() {
   const nameInput = document.querySelector("#nameInput");
   const planName = nameInput.value;
   const input = document.querySelector(".nav__input");
   const saveNameBtn = document.querySelector("#nameSubmit");
-  console.log(planName);
 
   if (!isNaN(planName)) {
     alert("Invalid input valid NAME for the plan, must be a written name");
@@ -107,9 +141,7 @@ export function savePlanDay() {
   } else {
     alert(`Plan ${planName} saved`);
     curPlan.saveName = planName;
-    console.log(curPlan);
     curSavedPlanDays.push(curPlan);
-    console.log(curSavedPlanDays.flat(3));
     const plan = JSON.stringify(curSavedPlanDays.flat(3));
     window.localStorage.setItem(`day`, plan);
     nameInput.value = " ";
@@ -118,22 +150,25 @@ export function savePlanDay() {
   }
   home.welcomePage();
 }
-
+/**
+ * @param {Index} savedRecipes array
+ * @return {New Str} save to local storage
+ * @return {New Array} render to HTML
+ */
 export function editSaveName(index) {
   const newName = prompt("What would you like to change the name to?");
 
   let i = Number(index);
   curSavedRecipes[i].saveName = newName;
-  // Resave the recipeArr with the new name
   const recipes = JSON.stringify(curSavedRecipes.flat(3));
   window.localStorage.setItem(`recipe`, recipes);
-  // Reload the page with the new Arr
   recipe.renderRecipes(curSavedRecipes);
 }
-
+/**
+ * @param {Array Index}
+ * @return {New Str} save to local storage
+ */
 export function deleteItem(index) {
-  const renderContainer = document.querySelector("#renderContainer");
-  const header = document.querySelector(".settings__head-header");
   let i = Number(index);
   alert(
     `You have deleted ${curSavedRecipes[i].saveName}!!, page will refresh!!`
