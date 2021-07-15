@@ -174,7 +174,7 @@ export function displayOptions(item, selection) {
   }
   if (item === "button") {
     let i;
-    for (i = 0; i <= button.length; i++) {
+    for (i = 0; i < button.length; i++) {
       button[i].style.backgroundColor = selection;
     };
 

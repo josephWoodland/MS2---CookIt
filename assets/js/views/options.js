@@ -46,7 +46,7 @@ export function selectBtnColour() {
     console.log(button);
     localStorage.setItem("button", userChoice);
     let i;
-    for (i = 0; i <= button.length; i++) {
+    for (i = 0; i < button.length; i++) {
       button[i].style.backgroundColor = userChoice;
     };
   }
