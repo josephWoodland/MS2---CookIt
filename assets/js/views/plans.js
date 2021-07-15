@@ -25,6 +25,8 @@ export function renderPlans() {
   <div id="renderContainer" class="settings__container week">
   ${htmlWeek}
   </div>`;
+  model.fetchSavedData();
+  
 }
 
 export function planHtml(planArr, index) {
@@ -47,4 +49,6 @@ export function planHtml(planArr, index) {
               </div>
     
               `;
+
+
 }

@@ -1,4 +1,5 @@
 import * as input from "./input.js";
+import * as model from '../model.js'
 
 const modalContainer = document.querySelector("#modal");
 
@@ -81,4 +82,6 @@ export function openSettings() {
         </div>
       </div>
   `;
+  model.fetchSavedData();
+
 }

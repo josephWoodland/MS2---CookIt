@@ -51,7 +51,7 @@ window.onclick = function (e) {
     table.renderWeekly(weekPlan[id]);
     input.closeModal();
   } else if (div.className === "settings__container day") {
-    model.dailyPlanner(dayPlan[id]);
+    table.renderDay(dayPlan[id]);
     input.closeModal();
   }
 };

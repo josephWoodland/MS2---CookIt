@@ -1,67 +1,67 @@
+import * as model from '../model.js'
 const homeHTML = document.querySelector(".home");
-
-export function renderSavedPlan() {}
 
 export async function renderDay(obj) {
   let title = Object.keys(obj);
   let id = Object.values(obj);
-
+  
   homeHTML.innerHTML = `
   <div class="grid-2">
-          <div class="nav">
-            <div class="nav__logo">
-              <img
-                class="nav__logo-logo"
-                src="./assets/images/png/Logo.png"
-                alt="CookIt Logo"
-              />
-            </div>
-            <div class="nav__input hidden">
-            <h2 class="nav__input-header">What name would you like to save this plan as?</h2>
-        <input 
-         required
-         type="text"
-         class="nav__input-saveName"
-         name="saveName"
-         id="nameInput"
-         placeholder="e.g. low carb"
-       />
-       <input type="submit" id="nameSubmit" class="nav__save-btn btn hidden" value="save" onclick="savePlanDay()">
-       </div>
-            <div class="nav__buttons">
-              <button href="#" onclick="home()" id="homeDay" class="btn nav__btn">Home</button>
-              <button href="#" onclick="saveWeekly()" id="saveDay" class="btn nav__btn">Save</button>
-              <button href="#" onclick="pdfDay()" id="pdfDay" class="btn nav__btn">Pdf</button>
-            </div>
-          </div>
-          <div class="grid-3">
-            <div class="space"></div>
-            <div class="table__left">
-              <div class="grid-4">
-                <div class="table__meals"></div>
-                <div class="table__meals">Breakfast</div>
-                <div class="table__meals">Lunch</div>
-                <div class="table__meals">Dinner</div>
-              </div>
-            </div>
-            <div class="grid-daily">
-            <div class="table__daily-cell days">Day</div>
-            <div class="table__daily-cell" onClick="getID(this.id)" id="${id[0]}">${title[0]}</div>
-            <div class="table__daily-cell" onClick="getID(this.id)" id="${id[1]}">${title[1]}</div>
-            <div class="table__daily-cell" onClick="getID(this.id)" id="${id[2]}">${title[2]}</div>
-            </div>
-            <div class="space"></div>
-        </div>`;
+  <div class="nav">
+  <div class="nav__logo">
+  <img
+  class="nav__logo-logo"
+  src="./assets/images/png/Logo.png"
+  alt="CookIt Logo"
+  />
+  </div>
+  <div class="nav__input hidden">
+  <h2 class="nav__input-header">What name would you like to save this plan as?</h2>
+  <input 
+  required
+  type="text"
+  class="nav__input-saveName"
+  name="saveName"
+  id="nameInput"
+  placeholder="e.g. low carb"
+  />
+  <input type="submit" id="nameSubmit" class="nav__save-btn btn hidden" value="save" onclick="savePlanDay()">
+  </div>
+  <div class="nav__buttons">
+  <button href="#" onclick="home()" id="homeDay" class="btn nav__btn">Home</button>
+  <button href="#" onclick="saveWeekly()" id="saveDay" class="btn nav__btn">Save</button>
+  <button href="#" onclick="pdfDay()" id="pdfDay" class="btn nav__btn">Pdf</button>
+  </div>
+  </div>
+  <div class="grid-3">
+  <div class="space"></div>
+  <div class="table__left">
+  <div class="grid-4">
+  <div class="table__meals"></div>
+  <div class="table__meals">Breakfast</div>
+  <div class="table__meals">Lunch</div>
+  <div class="table__meals">Dinner</div>
+  </div>
+  </div>
+  <div class="grid-daily">
+  <div class="table__daily-cell days">Day</div>
+  <div class="table__daily-cell" onClick="getID(this.id)" id="${id[0]}">${title[0]}</div>
+  <div class="table__daily-cell" onClick="getID(this.id)" id="${id[1]}">${title[1]}</div>
+  <div class="table__daily-cell" onClick="getID(this.id)" id="${id[2]}">${title[2]}</div>
+  </div>
+  <div class="space"></div>
+  </div>`;
+  model.fetchSavedData();
 }
 
 export function renderWeekly(plan) {
   homeHTML.innerHTML = `
-    <div class="grid-2">
-      <div class="nav">
-        <div class="nav__logo">
-          <img
-            class="nav__logo-logo"
-            src="./assets/images/png/Logo.png"
+  <div class="grid-2">
+  <div class="nav">
+  <div class="nav__logo">
+  <img
+  class="nav__logo-logo"
+  src="./assets/images/png/Logo.png"
             alt="CookIt Logo"
           />
         </div>
@@ -127,4 +127,6 @@ export function renderWeekly(plan) {
       </div>
     </div>
     `;
+  model.fetchSavedData();
+
 }

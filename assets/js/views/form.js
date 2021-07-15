@@ -1,3 +1,5 @@
+import * as model from '../model.js'
+
 export function renderForm() {
   const modalContainer = document.querySelector("#modal");
   modalContainer.innerHTML = `
@@ -87,4 +89,6 @@ export function renderForm() {
         <a href="#" onclick="closeModal()" class="form__right-close"><i class="fas fa-times"></i></a>
       </div>
 `;
+model.fetchSavedData();
+
 }

@@ -20,6 +20,8 @@ export function renderSavedRecipe(i) {
   const recipeArr = model.savedRecipes[0];
   const recipe = recipeArr[i];
   renderRecipe(recipe);
+  model.fetchSavedData();
+
 }
 
 export function renderRecipes() {
@@ -28,6 +30,8 @@ export function renderRecipes() {
   const recipeArr = model.savedRecipes[0];
   const html = recipeArr.map(recipesHtml).join("");
   renderContainer.innerHTML = `${html}`;
+  model.fetchSavedData();
+
 }
 
 export function recipesHtml(recipesArr, index) {
@@ -51,6 +55,8 @@ export function recipesHtml(recipesArr, index) {
             </div>
   
             `;
+  
+
 }
 
 export async function renderRecipe(recipe) {
@@ -115,4 +121,6 @@ export async function renderRecipe(recipe) {
       </div> 
       </div>
 `;
+model.fetchSavedData();
+
 }

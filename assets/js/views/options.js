@@ -90,4 +90,6 @@ export function renderOptions() {
     <button id="btnSelect" onclick="collectBackSelect()" class="options__question-btn-backSelect btn">Select</button>
   </div>
 `;
+model.fetchSavedData();
+
 }

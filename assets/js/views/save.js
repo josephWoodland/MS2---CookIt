@@ -1,6 +1,7 @@
 import * as input from "./input.js";
 import * as home from "./home.js";
 import * as recipe from "./recipe.js";
+import * as model from '../model.js'
 
 let curRecipe;
 let curPlan;
