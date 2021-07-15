@@ -35,9 +35,9 @@ window.clearStorage = clearStorage.clearPopup;
 window.renderPlans = plans.renderPlans;
 window.renderSavedPlan = table.renderSavedPlan;
 window.renderButtonOptions = options.renderOptions;
-window.collectBackSelection = options.selectBagroundColour;
-window.collectTextSelection = options.selectTextColour;
-window.collectBtnSelection = options.selectBtnColour;
+window.collectBackSelect = options.selectBackgroundColour;
+window.collectTextSelect = options.selectTextColour;
+window.collectBtnSelect = options.selectBtnColour;
 
 
 window.onclick = function (e) {
