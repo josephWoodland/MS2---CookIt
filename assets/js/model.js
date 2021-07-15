@@ -160,6 +160,27 @@ export function dailyPlanner(day) {
   save.curPlannerData(mealTitle);
 }
 
+export function displayOptions(item, selection) {
+  const html = document.querySelector("html");
+  const button = document.querySelectorAll(".btn");
+
+  console.log(item);
+  console.log(selection);
+  if (item === "background") {
+    html.style.backgroundColor = selection;
+  }
+  if (item === "text") {
+    html.style.color = selection;
+  }
+  if (item === "button") {
+    let i;
+    for (i = 0; i <= button.length; i++) {
+      button[i].style.backgroundColor = selection;
+    };
+
+  }
+}
+
 /**
  * Fetch recipes from local storage
  *
@@ -172,6 +193,9 @@ export function fetchSavedData() {
   if ("recipe" in items) savedRecipes.push(JSON.parse(items.recipe));
   if ("week" in items) savedPlanWeek.push(JSON.parse(items.week));
   if ("day" in items) savedPlanDay.push(JSON.parse(items.day));
+  if ("background" in items) displayOptions("background", items.background);
+  if ("text" in items) displayOptions("text", items.text);
+  if ("button" in items) displayOptions("button", items.button);
   save.curSavedPlanWeeklyData(savedPlanWeek.flat(4));
   save.curSavedPlanDayData(savedPlanDay.flat(4));
   save.curSavedRecipeData(savedRecipes.flat(4));

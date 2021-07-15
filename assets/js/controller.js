@@ -119,7 +119,7 @@ function init() {
   model.fetchSavedData();
 }
 
-function reloadPage() {
+export function reloadPage() {
   window.location.reload();
 }
 

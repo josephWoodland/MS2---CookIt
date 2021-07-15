@@ -1,41 +1,55 @@
-export function selectBackgroundColour(){
-    const selection = document.querySelector('#backgroundColourSelect');
-    const html = document.querySelector('html');
-    const userChoice = selection.value;
-  
-    if (userChoice === 'default'){
-        return
-    } else {
-        html.style.backgroundColor = userChoice;
-        localStorage.setItem('background',userChoice);
-    }
+import * as model from "../model.js";
+import * as control from "../controller.js";
 
+export function selectBackgroundColour() {
+  const items = { ...localStorage };
+  const selection = document.querySelector("#backgroundColourSelect");
+  const html = document.querySelector("html");
+  const userChoice = selection.value;
 
+  if (userChoice === "default") {
+    if ("background" in items) localStorage.removeItem("background");
+    control.reloadPage();
+    return;
+  } else {
+    html.style.backgroundColor = userChoice;
+    localStorage.setItem("background", userChoice);
+    model.displayOptions("background", userChoice);
+  }
 }
-export function selectTextColour(){
-    const selection = document.querySelector('#textColourSelect');
-    const userChoice = selection.value;
-    const html = document.querySelector('html');
+export function selectTextColour() {
+  const items = { ...localStorage };
+  const selection = document.querySelector("#textColourSelect");
+  const userChoice = selection.value;
+  const html = document.querySelector("html");
 
-    if (userChoice === 'default'){
-        return
-    } else {
-        html.style.color = `${userChoice} !important`;
-        localStorage.setItem('text',userChoice);
-        
-    }
-    
+  if (userChoice === "default") {
+    if ("text" in items) localStorage.removeItem("text");
+    control.reloadPage();
+    return;
+  } else {
+    html.style.color = userChoice;
+    localStorage.setItem("text", userChoice);
+  }
 }
-export function selectBtnColour(){
-    const selection = document.querySelector('#btnColourSelect');
-    const userChoice = selection.value;
-    const button = document.querySelectorAll('button');
-    if (userChoice === 'default'){
-        return
-    } else {
-        button.style.backgroundColor = userChoice;
-        localStorage.setItem('button',userChoice);
-    }
+export function selectBtnColour() {
+  const items = { ...localStorage };
+  const selection = document.querySelector("#btnColourSelect");
+  const userChoice = selection.value;
+  const button = document.querySelectorAll(".btn");
+
+  if (userChoice === "default") {
+    if ("button" in items) localStorage.removeItem("button");
+    control.reloadPage();
+    return;
+  } else {
+    console.log(button);
+    localStorage.setItem("button", userChoice);
+    let i;
+    for (i = 0; i <= button.length; i++) {
+      button[i].style.backgroundColor = userChoice;
+    };
+  }
 }
 
 export function renderOptions() {
