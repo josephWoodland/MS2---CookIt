@@ -1,14 +1,14 @@
-import * as model from '../model.js'
+import * as model from "../model.js";
 const homeHTML = document.querySelector(".home");
 /**
  * @param {Object} dayPlan
- * 
+ *
  * @return {String} render to HTML
  */
 export async function renderDay(obj) {
   let title = Object.keys(obj);
   let id = Object.values(obj);
-  
+
   homeHTML.innerHTML = `
   <div class="grid-2">
   <div class="nav">
@@ -59,7 +59,7 @@ export async function renderDay(obj) {
 
 /**
  * @param {Object} weekPlan
- * 
+ *
  * @return {String} render to HTML
  */
 export function renderWeekly(plan) {
@@ -135,5 +135,4 @@ export function renderWeekly(plan) {
     </div>
     `;
   model.fetchSavedData();
-
 }

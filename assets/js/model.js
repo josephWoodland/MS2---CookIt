@@ -1,3 +1,4 @@
+/*jshint esversion: 9 */
 import * as welcome from "./views/welcome.js";
 import { URL, API_KEY } from "./config.js";
 import * as input from "./views/input.js";
@@ -48,7 +49,6 @@ export function formSubmit(e) {
       value: arr.value,
     };
   });
-  console.log(arrValues);
   inputData = Object.assign(
     {},
     ...arrValues.map((item) => ({ [item.name]: item.value }))
@@ -182,8 +182,7 @@ export function displayOptions(item, selection) {
     let i;
     for (i = 0; i < button.length; i++) {
       button[i].style.backgroundColor = selection;
-    };
-
+    }
   }
 }
 

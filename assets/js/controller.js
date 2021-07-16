@@ -12,6 +12,7 @@ import * as plans from "./views/plans.js";
 import * as options from "./views/options.js";
 
 // Global scope function so it can be used in the HTML
+window.openModal = input.openModal;
 window.getID = getID;
 window.saveRecipe = save.saveRecipe;
 window.home = home.welcomePage;
