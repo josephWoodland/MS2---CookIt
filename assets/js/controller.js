@@ -10,9 +10,10 @@ import * as recipe from "./views/recipe.js";
 import * as table from "./views/table.js";
 import * as plans from "./views/plans.js";
 import * as options from "./views/options.js";
+import * as form from "./views/form.js";
 
 // Global scope function so it can be used in the HTML
-window.openModal = input.openModal;
+window.renderForm = form.renderForm;
 window.getID = getID;
 window.saveRecipe = save.saveRecipe;
 window.home = home.welcomePage;

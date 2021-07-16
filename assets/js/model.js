@@ -39,7 +39,7 @@ export let savedPlanDay = [];
  * Colects the data form the Input HTML tags§
  * @return {Object} recipe - Recipe
  */
-export function formSubmit() {
+export async function formSubmit() {
   const inputHTML = Array.from(formInput);
   const selectHTML = Array.from(formSelect);
   const arrData = inputHTML.concat(selectHTML);
@@ -65,7 +65,7 @@ export function formSubmit() {
     {},
     ...arrValues.map((item) => ({ [item.name]: item.value }))
   );
-  getMealPlan(inputData);
+  await getMealPlan(inputData);
   input.closeModal();
   if (!("name" in localStorage)) {
     window.localStorage.setItem("name", inputData.name);

@@ -1,13 +1,90 @@
-import * as model from "../model.js";
-/**
- * @param {Event} buttonClick
- *
- * @return {} alters HTML code
- */
-export function renderForm() {
-  const modalContainer = document.querySelector("#modal");
-  modalContainer.innerHTML = `
-    <div class="form__wrapper">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>CookIt</title>
+
+    <script
+      defer
+      src="https://kit.fontawesome.com/cc9939a825.js"
+      crossorigin="anonymous"
+    ></script>
+    <script defer type="module" src="./assets/js/controller.js"></script>
+  </head>
+  <body>
+    <!-------------- Home section -------------->
+    <!-------------- Home section -------------->
+    <div class="home">
+      <div class="grid-1">
+        <div class="grid-2">
+          <!-------------- nav section -------------->
+          <!-------------- nav section -------------->
+          <div class="nav">
+            <img
+              class="nav-logo"
+              src="./assets/images/png/Logo.png"
+              alt="CookIt Logo"
+            />
+          </div>
+           <!-------------- Main section -------------->
+           <!-------------- Main section -------------->
+          <div class="main">
+            
+            <div class="main__center">
+              <div class="main__center__img">
+                <img
+                  class="main__center__img-pods"
+                  src="./assets/images/png/pods@2x.png"
+                  alt="Picture of some peas in pods"
+                />
+                <img
+                  class="main__center__img-logo"
+                  src="./assets/images/png/Logo.png"
+                  alt="CookIt Logo"
+                />
+                <img
+                  src="./assets/images/png/avocado@2x.png"
+                  alt=""
+                  class="main__center__img-avo"
+                />
+              </div>
+              <h1 class="main__center-welcomeMessage">
+                Create Your Perfect <br />
+                Meal Plan
+              </h1>
+              <button href="#" onclick="openModal()" class="btn main__center-btn">
+                Click To Start
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-------------- Main Right section -------------->
+        <!-------------- Main Right section -------------->
+        <div class="main__right">
+          <button
+            id="settings"
+            onclick="openSettings()"
+            class="main__right-settings btn"
+          >
+            Settings
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-------------- Footer section -------------->
+    <!-------------- Footer section -------------->
+    <div class="footer"></div>
+    <!-------------- Overlay section -------------->
+    <!-------------- Overlay section -------------->
+    <div class="overlay hidden"></div>
+    <!-------------- Form section -------------->
+    <!-------------- Form section -------------->
+    <div id="modal" class="form grid-form hidden">
+      <div class="form__wrapper">
         <img
           class="form__logo"
           src="./assets/images/png/Logo.png"
@@ -26,7 +103,7 @@ export function renderForm() {
           </div>
           <div class="form__question">
             <p>How long do you want us to create a meal plan for?</p>
-            <select required name="time" id="time" class="form__question-2">
+            <select name="time" id="time" class="form__question-2">
               <option value="day">Day</option>
               <option value="week">Week</option>
             </select>
@@ -35,7 +112,7 @@ export function renderForm() {
             <p>What is your target Calories per day?</p>
             <input
               required
-              type="number"
+              type="text"
               class="form__question-3"
               id="calorie"
               placeholder="e.g. 2000"
@@ -85,13 +162,12 @@ export function renderForm() {
             class="btn form-btn"
             value="Make me a plan"
             id="form-btn"
-            onclick="formSubmit()"
           />
         </form>
       </div>
       <div class="form__right">
-        <a href="#" onclick="closeModal()" class="form__right-close"><i class="fas fa-times"></i></a>
+        <a href="#" class="form__right-close"><i class="fas fa-times"></i></a>
       </div>
-`;
-  model.fetchSavedData();
-}
+    </div>
+  </body>
+</html>
