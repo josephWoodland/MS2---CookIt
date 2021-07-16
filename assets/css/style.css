@@ -82,7 +82,7 @@ input[type=submit] {
   visibility: hidden;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 900px) {
   .space {
     display: none;
     visibility: hidden;
@@ -118,7 +118,7 @@ input[type=submit] {
     height: 75vh;
   }
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 900px) {
   .grid-2 {
     height: auto;
   }
@@ -130,7 +130,7 @@ input[type=submit] {
   height: 60vh;
   width: 100vw;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 900px) {
   .grid-3 {
     margin-bottom: 6rem;
     margin-top: 6rem;
@@ -142,7 +142,7 @@ input[type=submit] {
   grid-template-rows: repeat(4, 1fr);
   height: 100%;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 900px) {
   .grid-4 {
     display: flex;
   }
@@ -150,10 +150,9 @@ input[type=submit] {
 .grid-weekly {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  grid-template-rows: repeat(4, minmax(min-content 1fr));
   grid-column-gap: 2rem;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 900px) {
   .grid-weekly {
     grid-template-columns: repeat(4, 25%);
     grid-template-rows: repeat(7, 1fr);
@@ -170,10 +169,17 @@ input[type=submit] {
   display: grid;
   grid-template-columns: 6fr minmax(30rem, 1fr);
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 900px) {
   .grid-form {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+  }
+}
+@media screen and (max-width: 600px) {
+  .grid-form {
+    width: 100%;
+    height: 100%;
   }
 }
 
@@ -234,16 +240,10 @@ input[type=submit] {
 }
 .nav input[type=text] {
   margin-left: 2rem;
-  padding: none;
   border-style: none;
   border-bottom: 2px solid #224a95;
   background-color: #f8f8f8;
   font-family: "Noto Sans JP", sans-serif;
-  transition: all 0 ease;
-  -webkit-transition: all 0 ease;
-  -moz-transition: all 0 ease;
-  -ms-transition: all 0 ease;
-  -o-transition: all 0 ease;
 }
 .nav input[type=text]:focus {
   border-style: none;
@@ -302,6 +302,12 @@ input[type=submit] {
   .main__center__img-pods {
     height: 5rem;
     margin-left: auto;
+  }
+}
+@media screen and (max-width: 600px) {
+  .main__center__img-pods {
+    display: none;
+    visibility: hidden;
   }
 }
 .main__center__img-logo {
@@ -373,9 +379,9 @@ input[type=submit] {
   width: 100%;
   margin: 10% auto auto auto;
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 900px) {
   .main__right-delete {
-    width: 40%;
+    width: 30%;
   }
 }
 @media screen and (max-width: 1200px) {
@@ -393,7 +399,7 @@ input[type=submit] {
 }
 @media screen and (max-width: 1200px) and (max-width: 900px) {
   .main__right-settings {
-    width: 30%;
+    width: 10%;
   }
 }
 
@@ -425,8 +431,8 @@ input[type=submit] {
 }
 @media screen and (max-width: 900px) {
   .form {
-    height: 100%;
     width: 100%;
+    height: auto;
   }
 }
 .form__logo {
@@ -437,12 +443,6 @@ input[type=submit] {
   margin: auto;
   text-align: center;
   margin-bottom: 1rem;
-}
-@media screen and (max-width: 900px) {
-  .form__header {
-    margin-top: 3rem;
-    font-size: 4rem;
-  }
 }
 .form__paragraph {
   width: 70%;
@@ -456,8 +456,7 @@ input[type=submit] {
 }
 @media screen and (max-width: 900px) {
   .form__input {
-    margin: 0;
-    padding: 1rem;
+    margin: 3rem;
   }
 }
 .form__question {
@@ -467,6 +466,7 @@ input[type=submit] {
 @media screen and (max-width: 900px) {
   .form__question {
     flex-direction: column;
+    margin-top: 3rem;
   }
 }
 .form__right {
@@ -474,10 +474,7 @@ input[type=submit] {
 }
 @media screen and (max-width: 900px) {
   .form__right {
-    border-left: none;
-    border-top: 1rem solid #224a95;
-    display: flex;
-    height: 5rem;
+    border: none;
   }
 }
 .form__right-close {
@@ -498,16 +495,10 @@ input[type=submit] {
 .form input[type=number],
 .form select {
   margin-left: 2rem;
-  padding: none;
   border-style: none;
   border-bottom: 2px solid #224a95;
   background-color: #f8f8f8;
   font-family: "Noto Sans JP", sans-serif;
-  transition: all 0 ease;
-  -webkit-transition: all 0 ease;
-  -moz-transition: all 0 ease;
-  -ms-transition: all 0 ease;
-  -o-transition: all 0 ease;
 }
 .form input[type=text]:focus,
 .form input[type=number]:focus,
@@ -515,16 +506,6 @@ input[type=submit] {
   border-style: none;
   outline: none;
   border-bottom: 2px solid #efc600;
-}
-@media screen and (max-width: 900px) {
-  .form input[type=text],
-.form input[type=number],
-.form select {
-    width: 30%;
-    margin-left: auto;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-  }
 }
 
 .table__weekly, .table__daily {
@@ -543,7 +524,7 @@ input[type=submit] {
   -ms-transform: rotate(-45deg);
   -o-transform: rotate(-45deg);
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 900px) {
   .table__meals {
     display: none;
     transform: none;
@@ -578,6 +559,12 @@ input[type=submit] {
   background-image: url(../images/jpg/footer-img@2x.jpg);
   background-position: center;
   background-size: cover;
+}
+@media screen and (max-width: 600px) {
+  .footer {
+    display: none;
+    visibility: hidden;
+  }
 }
 
 .recipe {
@@ -704,6 +691,12 @@ input[type=submit] {
 .settings {
   padding: 3rem;
 }
+@media screen and (max-width: 900px) {
+  .settings {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
 .settings__head {
   display: flex;
   justify-content: space-between;
@@ -794,7 +787,7 @@ input[type=submit] {
   display: flex;
   flex-direction: column;
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 900px) {
   .settings__right {
     border: none;
   }
@@ -820,7 +813,11 @@ input[type=submit] {
   flex-direction: column;
   height: 50%;
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 900px) {
+  .settings__right__buttons {
+    margin: auto;
+    width: 80%;
+  }
   .settings__right__buttons-right {
     display: flex;
   }
@@ -833,10 +830,26 @@ input[type=submit] {
   height: 5rem;
   margin-top: 3rem;
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 900px) {
   .settings__right__buttons-btn {
     width: 40%;
     margin: 3rem auto 0rem auto;
+  }
+}
+.settings__hidden {
+  display: none;
+  visibility: hidden;
+}
+@media screen and (max-width: 900px) {
+  .settings__hidden {
+    display: inline;
+    visibility: visible;
+  }
+}
+@media screen and (max-width: 900px) {
+  .settings__shown {
+    display: none;
+    visibility: hidden;
   }
 }
 
@@ -849,7 +862,12 @@ input[type=submit] {
   flex-direction: column;
   width: 100%;
   font-size: 2rem;
-  font-size: "Noto Sans JP", sans-serif;
+  font-family: "Noto Sans JP", sans-serif;
+}
+@media screen and (max-width: 900px) {
+  .options__question-btn {
+    width: 40%;
+  }
 }
 .options__question select {
   margin-top: 3rem;

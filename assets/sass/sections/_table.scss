@@ -19,7 +19,7 @@
     -ms-transform: rotate(-45deg);
     -o-transform: rotate(-45deg);
 
-    @media screen and (max-width: $bp-small) {
+    @media screen and (max-width: $bp-medium) {
       display: none;
       transform: none;
       -webkit-transform: none;

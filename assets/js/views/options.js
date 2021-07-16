@@ -84,7 +84,7 @@ export function renderOptions() {
        <option value="green">Green</option>
        <option value="blue">Blue</option>
     </select>
-    <button id="btnSelect" onclick="collectBtnSelect()" class="options__question-btn-buttonSelect btn">Select</button>
+    <button id="btnSelect" onclick="collectBtnSelect()" class="options__question-btn btn">Select</button>
   </div>
   <div class="options__question"
     <h1 class="options__question-header">Press the button to change the text colour</h1>
@@ -94,7 +94,7 @@ export function renderOptions() {
       <option value="green">Green</option>
       <option value="blue">Blue</option>
     </select>
-    <button id="btnSelect" onclick="collectTextSelect()" class="options__question-btn-textSelect btn">Select</button>
+    <button id="btnSelect" onclick="collectTextSelect()" class="options__question-btn btn">Select</button>
   </div>
   <div class="options__question"
     <h1 class="options__question-header">Press the button to change the background colour</h1>
@@ -104,7 +104,7 @@ export function renderOptions() {
       <option value="green">Green</option>
       <option value="blue">Blue</option>
     </select>
-    <button id="btnSelect" onclick="collectBackSelect()" class="options__question-btn-backSelect btn">Select</button>
+    <button id="btnSelect" onclick="collectBackSelect()" class="options__question-btn btn">Select</button>
   </div>
 `;
 model.fetchSavedData();

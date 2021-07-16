@@ -4,25 +4,24 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <meta name="description" content="Online meal planner app">
     <link rel="stylesheet" href="./assets/css/style.css" />
     <title>CookIt</title>
-
     <script
       defer
       src="https://kit.fontawesome.com/cc9939a825.js"
       crossorigin="anonymous"
     ></script>
-    <script defer type="module" src="./assets/js/controller.js"></script>
+    <script type="module" src="./assets/js/controller.js"></script>
   </head>
   <body>
-    <!-------------- Home section -------------->
-    <!-------------- Home section -------------->
+    <!-- Home section -->
+    <!-- Home section -->
     <div class="home">
       <div class="grid-1">
         <div class="grid-2">
-          <!-------------- nav section -------------->
-          <!-------------- nav section -------------->
+          <!-- nav section -->
+          <!-- nav section -->
           <div class="nav">
             <img
               class="nav-logo"
@@ -30,8 +29,8 @@
               alt="CookIt Logo"
             />
           </div>
-           <!-------------- Main section -------------->
-           <!-------------- Main section -------------->
+           <!-- Main section -->
+           <!-- Main section -->
           <div class="main">
             <div class="main__left"></div>
             <div class="main__center">
@@ -56,14 +55,14 @@
                 Create Your Perfect <br />
                 Meal Plan
               </h1>
-              <button href="#" onclick="openModal()" class="btn main__center-btn">
+              <button onclick="openModal()" class="btn main__center-btn">
                 Click To Start
               </button>
             </div>
           </div>
         </div>
-        <!-------------- Main Right section -------------->
-        <!-------------- Main Right section -------------->
+        <!-- Main Right section -->
+        <!-- Main Right section -->
         <div class="main__right">
           <button
             id="settings"
@@ -75,16 +74,16 @@
         </div>
       </div>
     </div>
-    <!-------------- Footer section -------------->
-    <!-------------- Footer section -------------->
+    <!-- Footer section -->
+    <!-- Footer section -->
     <div class="footer"></div>
-    <!-------------- Overlay section -------------->
-    <!-------------- Overlay section -------------->
-    <div class="overlay hidden"></div>
-    <!-------------- Form section -------------->
-    <!-------------- Form section -------------->
-    <div id="modal" class="form grid-form hidden">
-      <div class="form__wrapper">
+    <!-- Overlay section -->
+    <!-- Overlay section -->
+    <div class="overlay "></div>
+    <!-- Form section -->
+    <!-- Form section -->
+    <div id="modal" class="form grid-form ">
+      <!-- <div class="form__wrapper">
         <img
           class="form__logo"
           src="./assets/images/png/Logo.png"
@@ -166,8 +165,122 @@
         </form>
       </div>
       <div class="form__right">
-        <a href="#" class="form__right-close"><i class="fas fa-times"></i></a>
+        <a href="#" class="form__right-close"><i onclick="closeModal()" class="fas fa-times"></i></a>
+      </div> -->
+    
+      <div class="form__wrapper">
+        <div class="settings">
+        <div class="settings__wrapper">
+           <div class="settings__head">
+            <img
+              class="settings__head-logo"
+              src="./assets/images/png/Logo.png"
+              alt="CookIt Logo"
+              />
+              <h1 class="settings__head-header">Settings</h1>
+             <a href="#" onclick="reloadPage()" class="settings__head-close"
+              ><i class="fas fa-times"></i
+              ></a>
+              </div>
+             <div id="renderContainer" class="settings__container">
+          </div>
+        </div>
+      </div>
+      <div class="settings__right settings__hidden">
+        <a href="#" onclick="closeModal()" class="settings__right-close"
+          ><i class="fas fa-times"></i
+        ></a>
+        <div class="settings__right__buttons">
+        <div class="settings__right__buttons-left">
+          <button
+            href="#"
+            id="plans"
+            onclick="renderPlans()"
+            class="btn settings__right__buttons-btn"
+          >
+            Plans
+          </button>
+          <button
+            href="#"
+            id="recipes"
+            onclick="renderRecipes()"
+            class="btn settings__right__buttons-btn"
+          >
+            Recipes
+          </button>
+          </div>
+          <div class="settings__right__buttons-right">
+          <button
+            href="#"
+            id="display"
+            onclick="renderButtonOptions()"
+            class="btn settings__right__buttons-btn"
+          >
+            Display
+          </button>
+          <button
+            href="#"
+            id="back"
+            onclick="closeModal()"
+            class="btn settings__right__buttons-btn"
+          >
+            Back
+          </button>
+          </div>
+          <button id="delete" onclick="clearStorage()" class="main__right-delete btn">
+            Clear Storage
+          </button>
+        </div>
+          
       </div>
     </div>
+    <div class="settings__right settings__shown">
+      <a href="#" onclick="closeModal()" class="settings__right-close"
+        ><i class="fas fa-times"></i
+      ></a>
+      <div class="settings__right__buttons">
+      <div class="settings__right__buttons-left">
+        <button
+          href="#"
+          id="plans"
+          onclick="renderPlans()"
+          class="btn settings__right__buttons-btn"
+        >
+          Plans
+        </button>
+        <button
+          href="#"
+          id="recipes"
+          onclick="renderRecipes()"
+          class="btn settings__right__buttons-btn"
+        >
+          Recipes
+        </button>
+        </div>
+        <div class="settings__right__buttons-right">
+        <button
+          href="#"
+          id="display"
+          onclick="renderButtonOptions()"
+          class="btn settings__right__buttons-btn"
+        >
+          Display
+        </button>
+        <button
+          href="#"
+          id="back"
+          onclick="closeModal()"
+          class="btn settings__right__buttons-btn"
+        >
+          Back
+        </button>
+        </div>
+        <button id="delete" onclick="clearStorage()" class="main__right-delete btn">
+          Clear Storage
+        </button>
+      </div>
+        
+    </div>
+ 
   </body>
 </html>

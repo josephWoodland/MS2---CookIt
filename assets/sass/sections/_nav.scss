@@ -50,16 +50,11 @@
   }
   input[type="text"] {
     margin-left: 2rem;
-    padding: none;
     border-style: none;
     border-bottom: 2px solid $color-blue;
     background-color: $color-backgound;
     font-family: $font;
-    transition: all 0 ease;
-    -webkit-transition: all 0 ease;
-    -moz-transition: all 0 ease;
-    -ms-transition: all 0 ease;
-    -o-transition: all 0 ease;
+
     &:focus {
       border-style: none;
       outline: none;

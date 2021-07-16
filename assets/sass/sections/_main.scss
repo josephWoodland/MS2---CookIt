@@ -39,7 +39,10 @@
         @media screen and (max-width:$bp-medium){
           height: 5rem;
           margin-left: auto;
-          // display: none;
+        }
+        @media screen and (max-width: $bp-small) {
+          display: none;
+          visibility: hidden;
         }
       }
 
@@ -52,7 +55,6 @@
         @media screen and (max-width:$bp-medium){
           height: 5rem;
           margin-right: auto;
-          // display: none;
         }
       }
       @media screen and (max-width:$bp-large){
@@ -109,11 +111,12 @@
     &-delete,
     &-settings{
       width: 100%;
-      margin: 10% auto auto auto
+      margin: 10% auto auto auto;
+
     }
     &-delete {
-      @media screen and (max-width: $bp-large){
-        width: 40%
+      @media screen and (max-width: $bp-medium){
+        width: 30%;
       }
     }
     @media screen and (max-width:$bp-large) {
@@ -127,7 +130,7 @@
         margin: 0;
         height: 4rem;
         @media screen and (max-width: $bp-medium){
-          width: 30%;
+          width: 10%;
         }
       }
     }

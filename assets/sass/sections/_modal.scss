@@ -24,10 +24,12 @@
   width: 80%;
   height: 80%;
   z-index: 100;
+  
   @media screen and (max-width: $bp-medium) {
-    height: 100%;
     width: 100%;
+    height: auto;
   }
+  
 
   &__logo {
     width: 10rem;
@@ -38,10 +40,6 @@
     margin: auto;
     text-align: center;
     margin-bottom: 1rem;
-    @media screen and (max-width: $bp-medium) {
-      margin-top: 3rem;
-      font-size: 4rem;
-    }
   }
   &__paragraph {
     width: 70%;
@@ -53,8 +51,7 @@
     margin-left: 10%;
     margin-top: 2rem;
     @media screen and (max-width: $bp-medium) {
-      margin: 0;
-      padding: 1rem;
+      margin: 3rem;
     }
   }
 
@@ -63,23 +60,22 @@
     margin-top: 2rem;
     @media screen and (max-width: $bp-medium) {
       flex-direction: column;
+      margin-top: 3rem;
     }
   }
   &__right {
     border-left: 5rem solid $color-blue;
     @media screen and (max-width: $bp-medium) {
-      border-left: none;
-      border-top: 1rem solid $color-blue;
-      display: flex;
-      height: 5rem;
+      border: none;
     }
-
     &-close {
       font-size: 4rem;
       color: $color-gold;
       padding-left: 85%;
       :hover {
         color: $color-blue;
+      }
+      @media screen and (max-width: $bp-medium) {
       }
     }
   }
@@ -95,26 +91,15 @@
   input[type="number"],
   select {
     margin-left: 2rem;
-    padding: none;
     border-style: none;
     border-bottom: 2px solid $color-blue;
     background-color: $color-backgound;
     font-family: $font;
-    transition: all 0 ease;
-    -webkit-transition: all 0 ease;
-    -moz-transition: all 0 ease;
-    -ms-transition: all 0 ease;
-    -o-transition: all 0 ease;
+
     &:focus {
       border-style: none;
       outline: none;
       border-bottom: 2px solid $color-gold;
-    }
-    @media screen and (max-width: $bp-medium) {
-      width: 30%;
-      margin-left: auto;
-      margin-top: 2rem;
-      margin-bottom: 2rem;
     }
   }
 }

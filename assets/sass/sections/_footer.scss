@@ -6,4 +6,8 @@
   background-image: url(../images/jpg/footer-img@2x.jpg);
   background-position: center;
   background-size: cover;
+  @media screen and (max-width: $bp-small) {
+    display: none;
+    visibility: hidden;
+  }
 }

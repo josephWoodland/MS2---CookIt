@@ -8,7 +8,6 @@ const homeHTML = document.querySelector(".home");
 export async function renderDay(obj) {
   let title = Object.keys(obj);
   let id = Object.values(obj);
-
   homeHTML.innerHTML = `
   <div class="grid-2">
   <div class="nav">
@@ -63,6 +62,7 @@ export async function renderDay(obj) {
  * @return {String} render to HTML
  */
 export function renderWeekly(plan) {
+
   homeHTML.innerHTML = `
   <div class="grid-2">
   <div class="nav">

@@ -5,6 +5,7 @@ import * as input from "./views/input.js";
 import * as table from "./views/table.js";
 import * as recipeView from "./views/recipe.js";
 import * as save from "./views/save.js";
+import * as load from "./views/loading.js";
 
 // Element Selectors
 
@@ -86,7 +87,6 @@ export async function getMealPlan(inputData) {
     const data = await res.json();
 
     if (!res.ok) throw new Error(`${data.message} (${res.status})`);
-
     if (inputData.time === "week") {
       plannerData(data);
     } else {
