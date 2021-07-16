@@ -73,12 +73,18 @@ function getID(id) {
   input.openModal();
   model.getRecipeByID(id);
 }
-
+/**
+ 
+ * @return call initial start up functions
+ */
 function init() {
   model.starterMessage();
   model.fetchSavedData();
 }
-
+/**
+ * 
+ * @return page reload
+ */
 export function reloadPage() {
   window.location.reload();
 }
