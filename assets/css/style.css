@@ -57,24 +57,6 @@ li {
 }
 
 /* //////////////////////////////////////////////////////////////////////////////// 
-------------------------------- BUTTON  --------------------------------------
-//////////////////////////////////////////////////////////////////////////////////*/
-.btn,
-input[type=submit] {
-  font-family: "Noto Sans JP", sans-serif;
-  font-size: 2.4rem;
-  color: #2b2b2b;
-  background-color: #efc600;
-  border: 1px solid #2b2b2b;
-  border-radius: 10rem;
-  -webkit-border-radius: 10rem;
-  -moz-border-radius: 10rem;
-  -ms-border-radius: 10rem;
-  -o-border-radius: 10rem;
-  cursor: pointer;
-}
-
-/* //////////////////////////////////////////////////////////////////////////////// 
 ------------------------------- CLASSES  --------------------------------------
 //////////////////////////////////////////////////////////////////////////////////*/
 .hidden {
@@ -93,94 +75,25 @@ input[type=submit] {
   border-bottom: 2px solid #efc600;
 }
 
-/* ------ sections ------*/
 /* //////////////////////////////////////////////////////////////////////////////// 
-------------------------------- GRID  --------------------------------------
+------------------------------- BUTTON  --------------------------------------
 //////////////////////////////////////////////////////////////////////////////////*/
-.grid-1 {
-  display: grid;
-  grid-template-columns: 6fr minmax(30rem, 1fr);
-}
-@media screen and (max-width: 1200px) {
-  .grid-1 {
-    display: flex;
-    flex-direction: column;
-  }
-}
-@media screen and (max-width: 600px) {
-  .grid-1 {
-    height: auto;
-  }
-}
-.grid-2 {
-  display: grid;
-  grid-template-rows: auto auto;
-  height: 85vh;
-}
-@media screen and (max-width: 1200px) {
-  .grid-2 {
-    height: 75vh;
-  }
-}
-@media screen and (max-width: 600px) {
-  .grid-2 {
-    height: auto;
-  }
-}
-.grid-3 {
-  margin: auto;
-  display: grid;
-  grid-template-columns: 0.5fr 1fr 9fr 0.5fr;
-  height: 60vh;
-  width: 100vw;
-}
-@media screen and (max-width: 600px) {
-  .grid-3 {
-    margin-bottom: 6rem;
-    margin-top: 6rem;
-    height: 100vh;
-  }
-}
-.grid-4 {
-  display: grid;
-  grid-template-rows: repeat(4, 1fr);
-  height: 100%;
-}
-@media screen and (max-width: 600px) {
-  .grid-4 {
-    display: flex;
-  }
-}
-.grid-weekly {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  grid-template-rows: repeat(4, minmax(min-content 1fr));
-  grid-column-gap: 2rem;
-}
-@media screen and (max-width: 600px) {
-  .grid-weekly {
-    grid-template-columns: repeat(4, 25%);
-    grid-template-rows: repeat(7, 1fr);
-    grid-auto-flow: column;
-    gap: 2rem;
-  }
-}
-.grid-daily {
-  display: grid;
-  width: 30rem;
-  grid-column-gap: 2rem;
-}
-.grid-form {
-  display: grid;
-  grid-template-columns: 6fr minmax(30rem, 1fr);
-}
-@media screen and (max-width: 1200px) {
-  .grid-form {
-    display: flex;
-    flex-direction: column;
-  }
+.btn,
+input[type=submit] {
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 2.4rem;
+  color: #2b2b2b;
+  background-color: #efc600;
+  border: 1px solid #2b2b2b;
+  border-radius: 10rem;
+  -webkit-border-radius: 10rem;
+  -moz-border-radius: 10rem;
+  -ms-border-radius: 10rem;
+  -o-border-radius: 10rem;
+  cursor: pointer;
 }
 
+/* ------ sections ------*/
 /* //////////////////////////////////////////////////////////////////////////////// 
 ------------------------------- NAV  --------------------------------------
 //////////////////////////////////////////////////////////////////////////////////*/
@@ -189,6 +102,7 @@ input[type=submit] {
   width: 100%;
   height: auto;
   justify-content: space-between;
+  background-color: #f8f8f8;
 }
 .nav__logo {
   height: 9rem;
@@ -212,39 +126,17 @@ input[type=submit] {
 }
 
 .main {
-  display: grid;
-  grid-template-columns: 1fr minmax(650px, auto) 1fr;
-  justify-items: center;
-  align-content: center;
-}
-@media screen and (max-width: 1200px) {
-  .main {
-    display: flex;
-    flex-direction: column;
-  }
-}
-@media screen and (max-width: 600px) {
-  .main {
-    height: auto;
-  }
+  height: 650px;
+  padding-top: 5%;
+  background-color: #f8f8f8;
 }
 .main__center {
+  height: 100%;
+  margin-top: auto;
   display: flex;
   flex-direction: column;
-  height: 100%;
   align-items: center;
   justify-content: center;
-}
-@media screen and (max-width: 1200px) {
-  .main__center {
-    height: 80%;
-  }
-}
-@media screen and (max-width: 600px) {
-  .main__center {
-    width: 100%;
-    height: 80vh;
-  }
 }
 .main__center__img {
   display: flex;
@@ -358,179 +250,6 @@ input[type=submit] {
 }
 
 /* //////////////////////////////////////////////////////////////////////////////// 
-------------------------------- MODAL  --------------------------------------
-//////////////////////////////////////////////////////////////////////////////////*/
-.overlay {
-  position: fixed;
-  background-color: rgba(0, 0, 0, 0.8);
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  display: flex;
-  flex-direction: column;
-}
-
-.form {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  margin: auto;
-  background-color: #f8f8f8;
-  width: 80%;
-  height: 80%;
-  z-index: 100;
-}
-@media screen and (max-width: 900px) {
-  .form {
-    height: 100%;
-    width: 100%;
-  }
-}
-.form__logo {
-  width: 10rem;
-}
-.form__header {
-  width: 50%;
-  margin: auto;
-  text-align: center;
-  margin-bottom: 1rem;
-}
-@media screen and (max-width: 900px) {
-  .form__header {
-    margin-top: 3rem;
-    font-size: 4rem;
-  }
-}
-.form__paragraph {
-  width: 70%;
-  margin: auto;
-  text-align: center;
-  margin-bottom: 1rem;
-}
-.form__input {
-  margin-left: 10%;
-  margin-top: 2rem;
-}
-@media screen and (max-width: 900px) {
-  .form__input {
-    margin: 0;
-    padding: 1rem;
-  }
-}
-.form__question {
-  display: flex;
-  margin-top: 2rem;
-}
-@media screen and (max-width: 900px) {
-  .form__question {
-    flex-direction: column;
-  }
-}
-.form__right {
-  border-left: 5rem solid #224a95;
-}
-@media screen and (max-width: 900px) {
-  .form__right {
-    border-left: none;
-    border-top: 1rem solid #224a95;
-    display: flex;
-    height: 5rem;
-  }
-}
-.form__right-close {
-  font-size: 4rem;
-  color: #efc600;
-  padding-left: 85%;
-}
-.form__right-close :hover {
-  color: #224a95;
-}
-.form-btn {
-  margin-top: 2rem;
-  text-transform: capitalize;
-  width: 35%;
-  height: 4rem;
-}
-.form input[type=text],
-.form input[type=number],
-.form select {
-  margin-left: 2rem;
-  padding: none;
-  border-style: none;
-  border-bottom: 2px solid #224a95;
-  background-color: #f8f8f8;
-  font-family: "Noto Sans JP", sans-serif;
-  transition: all 0 ease;
-  -webkit-transition: all 0 ease;
-  -moz-transition: all 0 ease;
-  -ms-transition: all 0 ease;
-  -o-transition: all 0 ease;
-}
-.form input[type=text]:focus,
-.form input[type=number]:focus,
-.form select:focus {
-  border-style: none;
-  outline: none;
-  border-bottom: 2px solid #efc600;
-}
-@media screen and (max-width: 900px) {
-  .form input[type=text],
-.form input[type=number],
-.form select {
-    width: 30%;
-    margin-left: auto;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-  }
-}
-
-.table__weekly, .table__daily {
-  border-left: 2px solid #224a95;
-}
-.table__weekly, .table__daily, .table__left {
-  text-align: center;
-  font-family: "Noto Sans JP", sans-serif;
-  font-size: 2.4rem;
-  color: #224a95;
-}
-.table__meals {
-  transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
-}
-@media screen and (max-width: 600px) {
-  .table__meals {
-    display: none;
-    transform: none;
-    -webkit-transform: none;
-    -moz-transform: none;
-    -ms-transform: none;
-    -o-transform: none;
-  }
-}
-.table__weekly-cell, .table__daily-cell {
-  display: flex;
-  border-right: 2px solid #224a95;
-  border-bottom: 2px solid #224a95;
-  font-size: 2rem;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  text-overflow: ellipsis;
-}
-.table__weekly-cell:hover, .table__daily-cell:hover {
-  color: #efc600;
-}
-
-.days {
-  font-weight: bold;
-}
-/* //////////////////////////////////////////////////////////////////////////////// 
 ------------------------------- FOOTER  --------------------------------------
 //////////////////////////////////////////////////////////////////////////////////*/
 .footer {
@@ -540,280 +259,42 @@ input[type=submit] {
   background-size: cover;
 }
 
-.recipe {
-  padding: 3rem;
+.form {
+  width: 70%;
 }
-.recipe__save-btn {
-  height: 3rem;
-  width: 8rem;
+.form__header {
+  width: 50%;
+  margin: 0 auto 6rem auto;
+  text-align: center;
+}
+.form__paragraph {
+  width: 70%;
+  text-align: center;
+  margin: 0 auto 6rem auto;
+}
+.form__input {
+  width: 50%;
   margin: auto;
 }
-.recipe__head {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 2rem;
-}
-@media screen and (max-width: 600px) {
-  .recipe__head {
-    flex-direction: column;
-  }
-}
-.recipe__head-logo {
-  height: 10rem;
-}
-@media screen and (max-width: 600px) {
-  .recipe__head-logo {
-    width: 10rem;
-  }
-}
-.recipe__head-header {
-  color: #707070;
-  font-size: 2.4rem;
-  width: 35%;
-  text-align: center;
-  margin-right: 20%;
-}
-@media screen and (max-width: 600px) {
-  .recipe__head-header {
-    width: 100%;
-  }
-}
-.recipe__card {
-  display: grid;
-  grid-template-columns: 2fr 5fr;
-  grid-column-gap: 3rem;
-}
-.recipe__card__info-img {
-  width: 100%;
-  border: 2px solid #efc600;
-}
-.recipe__card__info__basic {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  margin-bottom: 1rem;
-}
-.recipe__card__info__basic__portion {
-  display: flex;
-  justify-content: space-between;
-}
-.recipe__card__info__web {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.recipe__card__info-ingrediants {
-  padding-left: 2rem;
-  text-overflow: ellipsis;
-}
-.recipe__card__method {
-  margin: 0 auto;
-  text-overflow: ellipsis;
-}
-.recipe__card__method-h2 {
-  margin-bottom: 2rem;
-}
-.recipe__card__method-p {
-  font-size: 1.6rem;
-}
-.recipe__right {
-  border-left: 5rem solid #224a95;
-  display: flex;
-  flex-direction: column;
-}
-@media screen and (max-width: 600px) {
-  .recipe__right {
-    border-top: 1rem solid #224a95;
-    border-left: none;
-  }
-}
-.recipe__right-close {
-  font-size: 4rem;
-  color: #efc600;
-  padding-left: 85%;
-}
-.recipe__right-close :hover {
-  color: #224a95;
-}
-@media screen and (max-width: 600px) {
-  .recipe__right-close {
-    display: none;
-    visibility: hidden;
-  }
-}
-.recipe__right__buttons {
-  display: flex;
-  padding: 2rem 1rem 2rem 1rem;
-  justify-content: space-around;
-  flex-direction: column;
-  height: 50%;
-}
-.recipe__right__buttons-btn {
-  width: 100%;
-  height: 5rem;
-}
-@media screen and (max-width: 600px) {
-  .recipe__right__buttons-btn {
-    width: 50%;
-    margin-top: 3rem;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
-.settings {
-  padding: 3rem;
-}
-.settings__head {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 2rem;
-}
-.settings__head-close {
-  display: none;
-  visibility: hidden;
-  font-size: 4rem;
-  color: #efc600;
-}
-.settings__head-close :hover {
-  color: #224a95;
-}
-@media screen and (max-width: 600px) {
-  .settings__head-close {
-    display: inline;
-    visibility: visible;
-  }
-}
-.settings__head-logo {
-  height: 10rem;
-}
-.settings__head-header {
-  color: #707070;
-  font-size: 2.4rem;
-  width: 35%;
-  text-align: center;
-  margin-right: 20%;
-}
-.settings-emptyArray {
-  grid-column: 1/span 3;
-}
-.settings__container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  width: 90%;
-  margin: auto;
-}
-@media screen and (max-width: 1200px) {
-  .settings__container {
-    width: 100%;
-  }
-}
-@media screen and (max-width: 900px) {
-  .settings__container {
-    width: 100%;
-    grid-template-columns: repeat(1, 1fr);
-  }
-}
-.settings__container-header {
-  width: 100%;
-}
-.settings__container-recipe, .settings__container-plan {
-  text-transform: capitalize;
-  border-radius: 1rem;
-  -webkit-border-radius: 1rem;
-  -moz-border-radius: 1rem;
-  -ms-border-radius: 1rem;
-  -o-border-radius: 1rem;
-  -moz-text-decoration-style: none;
+.form__question {
+  margin: 0 auto 0 auto;
   display: flex;
 }
-.settings__container-recipe-break, .settings__container-plan-break {
-  width: 100%;
-  height: 1rem;
-  border-bottom: 2px solid #efc600;
-}
-.settings__container-recipe-edit, .settings__container-recipe-delete, .settings__container-plan-edit, .settings__container-plan-delete {
-  align-self: center;
-  font-size: 2rem;
-  margin-left: 0.5rem;
-  color: #224a95;
-}
-.settings__container-recipe-edit:hover, .settings__container-recipe-delete:hover, .settings__container-plan-edit:hover, .settings__container-plan-delete:hover {
-  color: #efc600;
-}
-.settings__container-recipe-item, .settings__container-plan-item {
+.form input[type=text],
+.form input[type=number],
+.form select {
+  margin: 2rem;
+  border-style: none;
+  border-bottom: 2px solid #224a95;
+  background-color: #f8f8f8;
   font-family: "Noto Sans JP", sans-serif;
-  font-size: 1.6rem;
-  text-align: center;
-  text-decoration: none;
-  width: 20rem;
 }
-.settings__right {
-  border-left: 5rem solid #224a95;
-  display: flex;
-  flex-direction: column;
-}
-@media screen and (max-width: 1200px) {
-  .settings__right {
-    border: none;
-  }
-}
-.settings__right-close {
-  font-size: 4rem;
-  color: #efc600;
-  padding-left: 85%;
-}
-.settings__right-close :hover {
-  color: #224a95;
-}
-@media screen and (max-width: 1200px) {
-  .settings__right-close {
-    display: none;
-    visibility: hidden;
-  }
-}
-.settings__right__buttons {
-  display: flex;
-  padding: 2rem 1rem 2rem 1rem;
-  justify-content: space-around;
-  flex-direction: column;
-  height: 50%;
-}
-@media screen and (max-width: 1200px) {
-  .settings__right__buttons-right {
-    display: flex;
-  }
-  .settings__right__buttons-left {
-    display: flex;
-  }
-}
-.settings__right__buttons-btn {
-  width: 100%;
-  height: 5rem;
-  margin-top: 3rem;
-}
-@media screen and (max-width: 1200px) {
-  .settings__right__buttons-btn {
-    width: 40%;
-    margin: 3rem auto 0rem auto;
-  }
-}
-
-.options {
-  display: flex;
-  flex-direction: column;
-}
-.options__question {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  font-size: 2rem;
-  font-size: "Noto Sans JP", sans-serif;
-}
-.options__question select {
-  margin-top: 3rem;
-  margin-bottom: 3rem;
+.form input[type=text]:focus,
+.form input[type=number]:focus,
+.form select:focus {
+  border-style: none;
+  outline: none;
+  border-bottom: 2px solid #efc600;
 }
 
 /*# sourceMappingURL=style.css.map */

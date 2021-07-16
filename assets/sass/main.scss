@@ -14,17 +14,14 @@ html {
 /* ------ variables ------*/
 @import "items/variables";
 @import "items/typography";
-@import "items/buttons";
 @import "items/classes";
+@import "items/buttons";
 
 /* ------ sections ------*/
 
-@import "sections/grid";
 @import "sections/nav";
 @import "sections/main";
-@import "sections/modal";
-@import "sections/table";
 @import "sections/footer";
-@import "sections/recipe";
-@import "sections/settings";
-@import "sections/options";
+@import "sections/form";
+
+

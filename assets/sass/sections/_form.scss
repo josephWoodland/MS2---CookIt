@@ -1,0 +1,41 @@
+.form {
+  width: 70%;
+
+  &__header {
+    width: 50%;
+    margin: 0 auto 6rem auto;
+    text-align: center;
+  }
+
+  &__paragraph {
+    width: 70%;
+    text-align: center;
+    margin: 0 auto 6rem auto;
+
+  }
+  &__input{
+      width: 50%;
+      margin: auto;
+  }
+  
+  &__question{
+      margin: 0 auto 0 auto;
+      display: flex;
+  }
+  input[type="text"],
+  input[type="number"],
+  select {
+    margin: 2rem;
+    border-style: none;
+    border-bottom: 2px solid $color-blue;
+    background-color: $color-backgound;
+    font-family: $font;
+  
+    &:focus {
+      border-style: none;
+      outline: none;
+      border-bottom: 2px solid $color-gold;
+    }
+  }
+}
+
