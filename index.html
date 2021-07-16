@@ -15,51 +15,55 @@
     ></script>
     <script defer type="module" src="./assets/js/controller.js"></script>
   </head>
-<body>
+  <body>
     <!-- Nav -->
     <div class="nav">
-        <img
-              class="nav__logo"
-              src="./assets/images/png/Logo.png"
-              alt="CookIt Logo"
-            />
-            <ul class="nav__links">
-                <li class="nav__links active"><a href="#home">Home</a></li>
-                <li class="nav__links"><a href="">Recipes</a></li>
-                <li class="nav__links"><a href="">Plans</a></li>
-                <li class="nav__links"><a href="">Settings</a></li>
-            </ul>
+      <img
+        class="nav__logo"
+        src="./assets/images/png/Logo.png"
+        alt="CookIt Logo"
+      />
+      <ul class="nav__list">
+        <li class="nav__list-li active">
+          <a class="nav__list-li-link" href="#home">Home</a>
+        </li>
+        <li class="nav__list-li"><a class="nav__list-li-link" href="">Recipes</a></li>
+        <li class="nav__list-li"><a class="nav__list-li-link" href="">Plans</a></li>
+        <li class="nav__list-li">
+          <a class="nav__list-li-link" href="">Settings</a>
+        </li>
+      </ul>
     </div>
     <!-- Main -->
     <div class="main">
-        <div class="main__center">
-            <div class="main__center__img">
-              <img
-                class="main__center__img-pods"
-                src="./assets/images/png/pods@2x.png"
-                alt="Picture of some peas in pods"
-              />
-              <img
-                class="main__center__img-logo"
-                src="./assets/images/png/Logo.png"
-                alt="CookIt Logo"
-              />
-              <img
-                src="./assets/images/png/avocado@2x.png"
-                alt=""
-                class="main__center__img-avo"
-              />
-            </div>
-            <h1 class="main__center-welcomeMessage">
-              Create Your Perfect <br />
-              Meal Plan
-            </h1>
-            <button href="#" onclick="renderForm()" class="btn main__center-btn">
-              Click To Start
-            </button>
-          </div>
+      <div class="main__center">
+        <div class="main__center__img">
+          <img
+            class="main__center__img-pods"
+            src="./assets/images/png/pods@2x.png"
+            alt="Picture of some peas in pods"
+          />
+          <img
+            class="main__center__img-logo"
+            src="./assets/images/png/Logo.png"
+            alt="CookIt Logo"
+          />
+          <img
+            src="./assets/images/png/avocado@2x.png"
+            alt=""
+            class="main__center__img-avo"
+          />
+        </div>
+        <h1 class="main__center-welcomeMessage">
+          Create Your Perfect <br />
+          Meal Plan
+        </h1>
+        <button href="#" onclick="renderForm()" class="btn main__center-btn">
+          Click To Start
+        </button>
+      </div>
     </div>
     <!-- Footer -->
     <div class="footer"></div>
-</body>
+  </body>
 </html>

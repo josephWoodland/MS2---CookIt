@@ -89,6 +89,10 @@ input[type=submit] {
   }
 }
 
+.active {
+  border-bottom: 2px solid #efc600;
+}
+
 /* ------ sections ------*/
 /* //////////////////////////////////////////////////////////////////////////////// 
 ------------------------------- GRID  --------------------------------------
@@ -186,69 +190,25 @@ input[type=submit] {
   height: auto;
   justify-content: space-between;
 }
-@media screen and (max-width: 1200px) {
-  .nav {
-    flex-direction: column;
-    align-content: center;
-  }
+.nav__logo {
+  height: 9rem;
+  width: 9rem;
+  padding-top: 1rem;
 }
-.nav-logo {
-  height: 5rem;
+.nav__list {
+  display: flex;
+  margin: 0 auto 0 auto;
 }
-@media screen and (max-width: 1200px) {
-  .nav-logo {
-    height: 9rem;
-    width: 9rem;
-    padding-top: 1rem;
-  }
-}
-.nav__logo-logo {
-  height: 5rem;
-}
-.nav__buttons {
-  margin-left: auto;
-}
-.nav__input {
-  width: 30%;
-  margin-left: auto;
-  text-align: center;
-}
-@media screen and (max-width: 600px) {
-  .nav__input {
-    display: flex;
-    width: 100%;
-  }
-  .nav__input-header {
-    width: 45%;
-  }
-}
-.nav__btn {
-  width: 10rem;
-  margin-right: 2rem;
-  margin-top: 1rem;
-}
-.nav__save-btn {
-  width: 10rem;
-  text-align: center;
-  margin-right: 1rem;
-}
-.nav input[type=text] {
-  margin-left: 2rem;
-  padding: none;
-  border-style: none;
-  border-bottom: 2px solid #224a95;
-  background-color: #f8f8f8;
+.nav__list-li {
+  text-decoration: none;
+  list-style-type: none;
+  font-size: 2.4rem;
   font-family: "Noto Sans JP", sans-serif;
-  transition: all 0 ease;
-  -webkit-transition: all 0 ease;
-  -moz-transition: all 0 ease;
-  -ms-transition: all 0 ease;
-  -o-transition: all 0 ease;
+  color: #224a95;
+  margin: auto 3rem 0 0;
 }
-.nav input[type=text]:focus {
-  border-style: none;
-  outline: none;
-  border-bottom: 2px solid #efc600;
+.nav__list-li-link {
+  text-decoration: none;
 }
 
 .main {

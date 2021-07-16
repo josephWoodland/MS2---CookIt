@@ -1,1 +1,1 @@
-.nav{display:flex}.nav-logo{height:5rem}.nav__logo-logo{height:5rem}.nav__buttons{margin-left:auto}.nav__input{width:30%;background-color:red;margin-left:auto;text-align:center}.nav__btn{width:10rem;margin-right:2rem;margin-top:1rem}.nav__save-btn{width:10rem;text-align:center;margin-right:1rem}
+.nav{display:flex;width:100%;height:auto;justify-content:space-between}.nav__logo{height:9rem;width:9rem;padding-top:1rem}.nav__links{list-style-type:none}
