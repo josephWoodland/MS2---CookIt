@@ -39,10 +39,22 @@ export let savedPlanDay = [];
  * Colects the data form the Input HTML tags§
  * @return {Object} recipe - Recipe
  */
-export function formSubmit(e) {
+export function formSubmit() {
   const inputHTML = Array.from(formInput);
   const selectHTML = Array.from(formSelect);
   const arrData = inputHTML.concat(selectHTML);
+
+  if (isNaN(inputHTML[1].value) || inputHTML[1].value === "") {
+    alert(`Calorie input must be a number`);
+    input.openModal();
+    return;
+  }
+  if (!isNaN(inputHTML[0].value) && inputData.name === undefined) {
+    alert(`Name input must be filled in correclty - Please fill in your name`);
+    input.openModal();
+    return;
+  }
+
   const arrValues = arrData.map((arr) => {
     return {
       name: arr.id,
@@ -55,7 +67,6 @@ export function formSubmit(e) {
   );
   getMealPlan(inputData);
   input.closeModal();
-
   if (!("name" in localStorage)) {
     window.localStorage.setItem("name", inputData.name);
   }
@@ -75,7 +86,6 @@ export async function getMealPlan(inputData) {
     const data = await res.json();
 
     if (!res.ok) throw new Error(`${data.message} (${res.status})`);
-    console.log(inputData.time);
 
     if (inputData.time === "week") {
       plannerData(data);
@@ -170,8 +180,6 @@ export function displayOptions(item, selection) {
   const html = document.querySelector("html");
   const button = document.querySelectorAll(".btn");
 
-  console.log(item);
-  console.log(selection);
   if (item === "background") {
     html.style.backgroundColor = selection;
   }
