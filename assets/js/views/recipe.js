@@ -1,6 +1,8 @@
 import * as model from "../model.js";
-const modalContainer = document.querySelector("#modal");
-
+const mainCenter = document.querySelector("#mainCenter");
+const plans = document.querySelector("#plans");
+const home = document.querySelector("#home");
+const recipe = document.querySelector('#recipes');
 /**
  * @param {Array, Array} ingredientsData
  *
@@ -49,8 +51,6 @@ export function renderRecipes() {
  * @return {String} to print to HTML
  */
 export function recipesHtml(recipesArr, index) {
-  const header = document.querySelector(".settings__head-header");
-  header.textContent = "Saved Recipes";
 
   return `
   <div class="settings__container-recipe">
@@ -76,65 +76,61 @@ export function recipesHtml(recipesArr, index) {
  * @return {String} to print to HTML
  */
 export async function renderRecipe(recipe) {
-  modalContainer.innerHTML = `
-<div class="form__wrapper">
-        <div class="recipe">
-        <div class="recipe__head">
-        <img
-          class="recipe__head-logo"
-          src="./assets/images/png/Logo.png"
-          alt="CookIt Logo"
-        />
-      <h1 class="recipe__head-header">${recipe.name}</h1>
-      <input 
-      required
-      type="text"
-      class="saveName hidden"
-      name="saveName"
-      id="saveName"
-      placeholder="e.g. brunch eggs"
-    />
-    <input type="submit" id="nameSubmitRecipe" class="recipe__save-btn btn hidden" value="save" onclick="getSavedName()">
-        </div>
-        <div class="recipe__card">
-          <div class="recipe__card__info">
-          <img src="${recipe.image}" alt="${
-    recipe.name
-  }" class="recipe__card__info-img">
-            <div class="recipe__card__info__basic">
-            <div class="recipe__card__info__basic__portion">
-            <h3 class="recipe__card__info__basic__portion-time">Prep time <br> <b> ${
-              recipe.time
-            } mins</b></h3>
-            <h3 class="recipe__card__info__basic__portion-serving">Serves <br> <b>Serves ${
-              recipe.servings
-            }</b></h3>
-          </div>  
-          <div class="recipe__card__info__web">
-            <a href="${
-              recipe.sourceUrl
-            }" class="recipe__card__info__web-link">Go to the website</a>
-          </div>
-        </div>
-            <ul class="recipe__card__info-ingrediants">
-              ${recipe.ingredients.map(ingredientsHtml).join("")}
-            </ul>
-          </div>
-          <div class="recipe__card__method">
-            <h2 class="recipe__card__method-h2">Method</h2>
-          <p class="recipe__card__method-p">${recipe.stepsHtml}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-      <div class="recipe__right">
-        <a href="#" onclick="closeModal()" class="recipe__right-close"><i class="fas fa-times"></i></a>
-        <div class="recipe__right__buttons">
-          <button href="#" id="saveRecipe" onclick="saveRecipe(this.recipe)" class="btn recipe__right__buttons-btn">Save</button>
-          <button href="#" id="backRecipe" onclick="closeModal()" class="btn recipe__right__buttons-btn">Back</button>
-        </div>
-      </div> 
-      </div>
+  recipe.classList.add("active");
+  home.classList.remove("active");
+  plans.classList.remove("active");
+  mainCenter.innerHTML = `
+  <div class="recipe__links">
+                <ul class="recipe__links"><a class="recipe__links-link" href="">Saved Recipes</a></ul>
+            </div>
+            <div id="recipe" class="recipe">
+                <div class="recipe__nav__input">
+                    <h2 class="recipe__nav__input-header">
+                    Would you like to save this plan?
+                    </h2>
+                <input 
+                required
+                type="text"
+                class="saveName"
+                name="saveName"
+                id="saveName"
+                placeholder="e.g. brunch eggs"
+                />
+                <input type="submit" id="nameSubmitRecipe" class="recipe__save-btn btn" value="save" onclick="getSavedName()">
+                </div>
+                <h1 class="recipe__head-header">${recipe.name}</h1>
+                <div class="recipe__card">
+                    <div class="recipe__card__info">
+                    <img src="${recipe.image}" alt="${
+                recipe.name
+                     }" class="recipe__card__info-img">
+                    <div class="recipe__card__wrapper">
+                        <div class="recipe__card__info__basic">
+                        <div class="recipe__card__info__basic__portion">
+                        <h3 class="recipe__card__info__basic__portion-time">Prep time <br> <b> ${
+                        recipe.time
+                        } mins</b></h3>
+                        <h3 class="recipe__card__info__basic__portion-serving">Serves <br> <b>Serves ${
+                        recipe.servings
+                        }</b></h3>
+                    </div>  
+                    <div class="recipe__card__info__web">
+                        <a href="${
+                        recipe.sourceUrl
+                        }" class="recipe__card__info__web-link">Go to the website</a>
+                    </div>
+                         </div>
+                        <ul class="recipe__card__info-ingrediants">
+                        ${recipe.ingredients.map(ingredientsHtml).join("")}
+                        </ul>
+                    </div>
+                   </div>
+                    <div class="recipe__card__method">
+                        <h2 class="recipe__card__method-h2">Method</h2>
+                    <p class="recipe__card__method-p">${recipe.stepsHtml}</p>
+                    </div>
+                </div>
+            </div>
 `;
   model.fetchSavedData();
 }

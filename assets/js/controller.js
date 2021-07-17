@@ -14,8 +14,9 @@ import * as form from "./views/form.js";
 
 // Global scope function so it can be used in the HTML
 
-window.renderForm = form.renderForm;
+window.showForm = form.showForm;
 window.formSubmit = model.formSubmit;
+window.getID = getID;
 
 /**
  * Get recipe ID
@@ -24,7 +25,6 @@ window.formSubmit = model.formSubmit;
  * @return {Stringt} getRecipeID - Function
  */
 function getID(id) {
-  input.openModal();
   model.getRecipeByID(id);
 }
 /**

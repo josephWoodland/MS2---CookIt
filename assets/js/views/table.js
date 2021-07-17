@@ -1,5 +1,7 @@
 import * as model from "../model.js";
-const table = document.querySelector("#table");
+const table = document.querySelector("#mainCenter");
+const plans = document.querySelector("#plans");
+const home = document.querySelector("#home");
 /**
  * @param {Object} dayPlan
  *
@@ -8,8 +10,14 @@ const table = document.querySelector("#table");
 export async function renderDay(obj) {
   let title = Object.keys(obj);
   let id = Object.values(obj);
-
+  plans.classList.add("active");
+  home.classList.remove("active");
   table.innerHTML = `
+  <div class="table__links">
+  <ul class="table__links"><a class="table__links-link" href="">Saved Weekly Plans</a></ul>
+  <ul class="table__links"><a class="table__links-link" href="">Saved Daily Plans</a></ul>
+</div>
+<div id="table" class="table">
   <div class="table__nav">
                 <div class="table__nav__input">
                   <h2 class="table__nav__input-header">
@@ -40,7 +48,8 @@ export async function renderDay(obj) {
                 <div class="table__meals">Dinner</div>
                 <div class="table__daily-cell" onClick="getID(this.id)" id="${id[1]}">${title[1]}</div>
                 </div>
-            </div>`;
+            </div>
+            </div`;
   model.fetchSavedData();
 }
 
@@ -50,6 +59,8 @@ export async function renderDay(obj) {
  * @return {String} render to HTML
  */
 export function renderWeekly(plan) {
+  plans.classList.add("active");
+  home.classList.remove("active");
   table.innerHTML = `
  
   <div class="table__nav">

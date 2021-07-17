@@ -1,13 +1,10 @@
 /////////////// MAIN SECTION ////////////////
 
 .main {
-  height: 650px;
-  padding-top: 5%;
+  padding-top: 3%;
   background-color: $color-backgound;
 
   &__center {
-    height: 100%;
-    margin-top: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -15,6 +12,7 @@
 
     &__img {
       display: flex;
+      justify-content: center;
       @media screen and (max-width: $bp-medium) {
         flex-direction: column-reverse;
       }
@@ -63,7 +61,7 @@
 
     &-welcomeMessage {
       width: 80%;
-      margin: 4rem;
+      margin: 3rem auto 3rem auto;
       text-align: center;
     }
 
@@ -73,6 +71,7 @@
       height: 5rem;
       justify-content: center;
       align-items: center;
+      margin: 0 auto 4rem auto;
     }
   }
 }
