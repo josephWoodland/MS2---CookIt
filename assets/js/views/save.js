@@ -23,6 +23,7 @@ export function curSavedPlanDayData(plans) {
  */
 export function curSavedPlanWeeklyData(plans) {
   curSavedPlanWeekly = plans;
+  console.log(curSavedPlanWeekly);
 }
 /**
  * @param {Array} planData
@@ -103,8 +104,6 @@ export function getPlanName() {
 export function savePlan() {
   const nameInput = document.querySelector("#nameInput");
   const planName = nameInput.value;
-  const input = document.querySelector(".nav__input");
-  const saveNameBtn = document.querySelector("#nameSubmit");
   console.log(planName);
 
   if (!isNaN(planName)) {
@@ -114,14 +113,11 @@ export function savePlan() {
     alert(`Plan ${planName} saved`);
     curPlan.saveName = planName;
     curSavedPlanWeekly.push(curPlan);
-    console.log(curSavedPlanWeekly.flat(3));
     const plan = JSON.stringify(curSavedPlanWeekly.flat(3));
     window.localStorage.setItem(`week`, plan);
     nameInput.value = " ";
-    input.classList.add("hidden");
-    saveNameBtn.classList.add("hidden");
+    home.welcomePage();
   }
-  home.welcomePage();
 }
 
 /**

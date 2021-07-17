@@ -17,6 +17,7 @@ import * as form from "./views/form.js";
 window.showForm = form.showForm;
 window.formSubmit = model.formSubmit;
 window.getID = getID;
+window.savePlan = save.savePlan;
 
 /**
  * Get recipe ID

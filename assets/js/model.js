@@ -204,6 +204,9 @@ export function displayOptions(item, selection) {
  */
 export function fetchSavedData() {
   // Get all data from local storage
+  savedRecipes = [];
+  savedPlanWeek = [];
+  savedPlanDay = [];
   const items = { ...localStorage };
 
   if ("recipe" in items) savedRecipes.push(JSON.parse(items.recipe));
