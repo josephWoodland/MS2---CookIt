@@ -41,43 +41,26 @@
     <!-- Main -->
     <div id="taableMain" class="main">
       <div id="tableCenter" class="main__center">
-          <div class="table__links">
-              <ul class="table__links"><a class="table__links-link" href="">Saved Recipes</a></ul>
-
+          <div class="recipe__links">
+              <ul class="recipe__links"><a class="table__links-link" href="">Saved Recipes</a></ul>
           </div>
         <div id="recipe" class="recipe">
-            <div class="table__nav__input">
+            <div class="recipe__nav__input">
                 <h2 class="table__nav__input-header">
                   Would you like to save this plan?
                 </h2>
-                <input
-                  required
-                  type="text"
-                  class="table__nav__input-saveName"
-                  name="saveName"
-                  id="nameInput"
-                  placeholder="e.g. low carb"
-                />
-                <input
-                  type="submit"
-                  id="nameSubmit"
-                  class="table__nav__input-save btn"
-                  value="save"
-                  onclick="savePlan()"
-                />
-              </div>
-              <h1 class="recipe__head-header">${recipe.name}</h1>
               <input 
               required
               type="text"
-              class="saveName hidden"
+              class="saveName"
               name="saveName"
               id="saveName"
               placeholder="e.g. brunch eggs"
-            />
-            <input type="submit" id="nameSubmitRecipe" class="recipe__save-btn btn hidden" value="save" onclick="getSavedName()">
-                </div>
-                <div class="recipe__card">
+              />
+              <input type="submit" id="nameSubmitRecipe" class="recipe__save-btn btn" value="save" onclick="getSavedName()">
+            </div>
+            <div class="recipe__card">
+                  <h1 class="recipe__head-header">${recipe.name}</h1>
                   <div class="recipe__card__info">
                   <img src="${recipe.image}" alt="${
             recipe.name
@@ -108,14 +91,6 @@
                 </div>
               </div>
             </div>
-              <div class="recipe__right">
-                <a href="#" onclick="closeModal()" class="recipe__right-close"><i class="fas fa-times"></i></a>
-                <div class="recipe__right__buttons">
-                  <button href="#" id="saveRecipe" onclick="saveRecipe(this.recipe)" class="btn recipe__right__buttons-btn">Save</button>
-                  <button href="#" id="backRecipe" onclick="closeModal()" class="btn recipe__right__buttons-btn">Back</button>
-                </div>
-              </div> 
-              </div>
         </div>
       </div>
     </div>

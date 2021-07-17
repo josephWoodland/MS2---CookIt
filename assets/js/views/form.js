@@ -76,8 +76,6 @@ export function renderForm() {
       </select>
     </div>
     <input
-    href="./plan.html"
-      type="submit"
       class="btn form-btn"
       value="Make me a plan"
       id="form-btn"

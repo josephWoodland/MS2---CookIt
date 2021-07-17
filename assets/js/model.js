@@ -7,10 +7,10 @@ import * as recipeView from "./views/recipe.js";
 import * as save from "./views/save.js";
 
 // Element Selectors
-
 const formInput = document.querySelectorAll("#form input");
 const formSelect = document.querySelectorAll("#form select");
 const mainCenter = document.querySelector(".main__center-welcomeMessage");
+const form = document.querySelector("form");
 // Empty objects to put retrived data in
 
 export let plan = {};
@@ -35,15 +35,18 @@ export let savedPlanDay = [];
 /**
  * Collect User Input data
  *
- * @param {Event} e  - HTML event
+ * @param {Event}  - HTML event
  * Colects the data form the Input HTML tags§
  * @return {Object} recipe - Recipe
  */
-export async function formSubmit() {
+export function formSubmit() {
+  console.log(formInput);
+  console.log(form);
   const inputHTML = Array.from(formInput);
   const selectHTML = Array.from(formSelect);
   const arrData = inputHTML.concat(selectHTML);
-
+  console.log(inputHTML);
+  console.log(selectHTML);
   if (isNaN(inputHTML[1].value) || inputHTML[1].value === "") {
     alert(`Calorie input must be a number`);
     input.openModal();
@@ -65,8 +68,8 @@ export async function formSubmit() {
     {},
     ...arrValues.map((item) => ({ [item.name]: item.value }))
   );
-  await getMealPlan(inputData);
-  input.closeModal();
+  console.log(inputData);
+  getMealPlan(inputData);
   if (!("name" in localStorage)) {
     window.localStorage.setItem("name", inputData.name);
   }
@@ -78,7 +81,7 @@ export async function formSubmit() {
  * @param {Object} inputData  - Collection of user paramaters
  * @return {Object} Data - Meal Plan data
  */
-export async function getMealPlan(inputData) {
+async function getMealPlan(inputData) {
   try {
     const res = await fetch(
       `${URL}mealplanner/generate?${API_KEY}&timeFrame=${inputData.time}&targetCalories=${inputData.calorie}&diet=${inputData.diet}&exclude=${inputData.allergies}`
