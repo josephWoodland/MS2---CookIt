@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>CookIt</title>
+
+    <script
+      defer
+      src="https://kit.fontawesome.com/cc9939a825.js"
+      crossorigin="anonymous"
+    ></script>
+    <script defer type="module" src="./assets/js/controller.js"></script>
+  </head>
+  <body>
+    <!-- Nav -->
+    <div class="nav">
+      <img
+        class="nav__logo"
+        src="./assets/images/png/Logo.png"
+        alt="CookIt Logo"
+      />
+      <ul class="nav__list">
+        <li class="nav__list-li">
+          <a class="nav__list-li-link" href="./index.html">Home</a>
+        </li>
+        <li class="nav__list-li">
+          <a class="nav__list-li-link active" href="./recipe.html">Recipes</a>
+        </li>
+        <li class="nav__list-li">
+          <a class="nav__list-li-link" href="./plan.html">Plans</a>
+        </li>
+        <li class="nav__list-li">
+          <a class="nav__list-li-link" href="">Settings</a>
+        </li>
+      </ul>
+    </div>
+    <!-- Main -->
+    <div id="taableMain" class="main">
+      <div id="tableCenter" class="main__center">
+          <div class="table__links">
+              <ul class="table__links"><a class="table__links-link" href="">Saved Recipes</a></ul>
+
+          </div>
+        <div id="recipe" class="recipe">
+            <div class="table__nav__input">
+                <h2 class="table__nav__input-header">
+                  Would you like to save this plan?
+                </h2>
+                <input
+                  required
+                  type="text"
+                  class="table__nav__input-saveName"
+                  name="saveName"
+                  id="nameInput"
+                  placeholder="e.g. low carb"
+                />
+                <input
+                  type="submit"
+                  id="nameSubmit"
+                  class="table__nav__input-save btn"
+                  value="save"
+                  onclick="savePlan()"
+                />
+              </div>
+              <h1 class="recipe__head-header">${recipe.name}</h1>
+              <input 
+              required
+              type="text"
+              class="saveName hidden"
+              name="saveName"
+              id="saveName"
+              placeholder="e.g. brunch eggs"
+            />
+            <input type="submit" id="nameSubmitRecipe" class="recipe__save-btn btn hidden" value="save" onclick="getSavedName()">
+                </div>
+                <div class="recipe__card">
+                  <div class="recipe__card__info">
+                  <img src="${recipe.image}" alt="${
+            recipe.name
+          }" class="recipe__card__info-img">
+                    <div class="recipe__card__info__basic">
+                    <div class="recipe__card__info__basic__portion">
+                    <h3 class="recipe__card__info__basic__portion-time">Prep time <br> <b> ${
+                      recipe.time
+                    } mins</b></h3>
+                    <h3 class="recipe__card__info__basic__portion-serving">Serves <br> <b>Serves ${
+                      recipe.servings
+                    }</b></h3>
+                  </div>  
+                  <div class="recipe__card__info__web">
+                    <a href="${
+                      recipe.sourceUrl
+                    }" class="recipe__card__info__web-link">Go to the website</a>
+                  </div>
+                </div>
+                    <ul class="recipe__card__info-ingrediants">
+                      ${recipe.ingredients.map(ingredientsHtml).join("")}
+                    </ul>
+                  </div>
+                  <div class="recipe__card__method">
+                    <h2 class="recipe__card__method-h2">Method</h2>
+                  <p class="recipe__card__method-p">${recipe.stepsHtml}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+              <div class="recipe__right">
+                <a href="#" onclick="closeModal()" class="recipe__right-close"><i class="fas fa-times"></i></a>
+                <div class="recipe__right__buttons">
+                  <button href="#" id="saveRecipe" onclick="saveRecipe(this.recipe)" class="btn recipe__right__buttons-btn">Save</button>
+                  <button href="#" id="backRecipe" onclick="closeModal()" class="btn recipe__right__buttons-btn">Back</button>
+                </div>
+              </div> 
+              </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer"></div>
+  </body>
+</html>

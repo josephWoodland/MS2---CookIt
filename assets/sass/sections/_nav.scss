@@ -22,11 +22,10 @@
       text-decoration: none;
       list-style-type: none;
       font-size: $font-size-button;
-      font-family: $font;
-      color: $color-blue;
-
       margin: auto 3rem 0 0;
       &-link {
+        font-family: $font;
+        color: $color-blue;
         text-decoration: none;
       }
     }

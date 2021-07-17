@@ -1,39 +1,64 @@
 .table {
-  &__weekly,
-  &__daily {
-    border-left: 2px solid $color-blue;
-  }
-  &__weekly,
-  &__daily,
-  &__left {
-    text-align: center;
-    font-family: $font;
+  margin: auto;
+  padding: 2rem;
+
+  &__links {
+    margin: auto;
+    display: flex;
+    list-style-type: none;
     font-size: $font-size-button;
-    color: $color-blue;
+    justify-content: space-between;
+    &-link {
+      margin-right: 3rem;
+      margin-left: 3rem;
+      font-family: $font;
+      color: $color-blue;
+      text-decoration: none;
+    }
+  }
+  &__nav {
+    text-align: center;
+    margin-bottom: 3rem;
+
+    &__input {
+      input[type="text"] {
+        margin: 2rem;
+        border-style: none;
+        border-bottom: 2px solid $color-blue;
+        background-color: $color-backgound;
+        font-family: $font;
+
+        &:focus {
+          border-style: none;
+          outline: none;
+          border-bottom: 2px solid $color-gold;
+        }
+      }
+      &-save {
+        margin-top: 3rem;
+        width: 8rem;
+      }
+    }
   }
 
   &__meals {
+    font-size: $font-size-copy;
+    color: $color-blue;
+    padding-top: 5rem;
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
     -moz-transform: rotate(-45deg);
     -ms-transform: rotate(-45deg);
     -o-transform: rotate(-45deg);
-
-    @media screen and (max-width: $bp-small) {
-      display: none;
-      transform: none;
-      -webkit-transform: none;
-      -moz-transform: none;
-      -ms-transform: none;
-      -o-transform: none;
-    }
   }
 
   &__weekly-cell,
   &__daily-cell {
+    height: 10rem;
     display: flex;
     border-right: 2px solid $color-blue;
     border-bottom: 2px solid $color-blue;
+    color: $color-blue;
     font-size: $font-size-copy;
     justify-content: center;
     align-items: center;
@@ -42,15 +67,5 @@
     &:hover {
       color: $color-gold;
     }
-  }
-}
-
-.days {
-  font-weight: bold;
-  @media screen and (max-width: $bp-small) {
-  }
-}
-.recipe {
-  @media screen and (max-width: $bp-small) {
   }
 }

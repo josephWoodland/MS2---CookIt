@@ -39,8 +39,7 @@ window.collectBackSelect = options.selectBackgroundColour;
 window.collectTextSelect = options.selectTextColour;
 window.collectBtnSelect = options.selectBtnColour;
 
-window.onclick = function (e) {
-  e.preventDefault();
+window.onclick = function () {
   const id = e.target.id;
   const div = e.target.parentNode.parentNode.closest("div");
   const dayPlan = model.savedPlanDay[0];
