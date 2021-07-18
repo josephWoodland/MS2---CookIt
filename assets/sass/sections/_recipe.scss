@@ -21,7 +21,7 @@
     margin-bottom: 3rem;
 
     &__input {
-      &-header{
+      &-header {
         text-align: center;
       }
       input[type="text"] {
@@ -43,26 +43,26 @@
       }
     }
   }
-  &__head-header{
+  &__head-header {
     text-align: center;
   }
   &__card {
     display: grid;
     grid-template-columns: 1fr auto;
-    &__wrapper{
+    &__wrapper {
       display: flex;
       justify-content: space-around;
     }
-    &__info{
-      &__basic{
-        &__portion{
+    &__info {
+      &__basic {
+        &__portion {
           display: flex;
         }
       }
       &-img {
         height: 30%;
       }
-      &-ingredients{
+      &-ingredients {
         display: grid;
         grid-template-columns: repeat(4 1fr);
       }

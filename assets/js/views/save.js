@@ -23,7 +23,6 @@ export function curSavedPlanDayData(plans) {
  */
 export function curSavedPlanWeeklyData(plans) {
   curSavedPlanWeekly = plans;
-  console.log(curSavedPlanWeekly);
 }
 /**
  * @param {Array} planData
