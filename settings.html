@@ -40,7 +40,47 @@
     </div>
     <!-- Main -->
     <div id="taableMain" class="main">
-        <div id="tableCenter" class="main__center">          
+        <div id="tableCenter" class="main__center">
+                <div class="settings">
+                    <div class="settings__buttons">
+                      <button
+                        href="#"
+                        id="plans"
+                        onclick="renderPlans()"
+                        class="btn settings__buttons-btn"
+                      >
+                        Plans
+                      </button>
+                      <button
+                        href="#"
+                        id="recipes"
+                        onclick="renderRecipes()"
+                        class="btn settings__buttons-btn"
+                      >
+                        Recipes
+                      </button>
+                      <button
+                        href="#"
+                        id="display"
+                        onclick="renderButtonOptions()"
+                        class="btn settings__buttons-btn"
+                      >
+                        Display
+                      </button>
+                      <button
+                        href="#"
+                        id="back"
+                        onclick="reloadPage()"
+                        class="btn settings__buttons-btn"
+                      >
+                        Back
+                      </button>
+                      </div>
+                      <button id="delete" onclick="clearStorage()" class="settings__button-btn">
+                        Clear Storage
+                      </button>
+                <div id="renderContainer" class="settings__container"></div>
+                </div>       
         </div>
     </div>
     <!-- Footer -->
