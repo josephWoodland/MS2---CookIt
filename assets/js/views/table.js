@@ -2,6 +2,8 @@ import * as model from "../model.js";
 const table = document.querySelector("#mainCenter");
 const plans = document.querySelector("#plans");
 const home = document.querySelector("#home");
+const recipe = document.querySelector("#recipes");
+
 /**
  * @param {Object} dayPlan
  *
@@ -12,6 +14,7 @@ export async function renderDay(obj) {
   let id = Object.values(obj);
   plans.classList.add("active");
   home.classList.remove("active");
+ recipe.classList.remove("active");
   table.innerHTML = `
   <div class="table__links">
   <ul class="table__links"><a class="table__links-link" href="">Saved Weekly Plans</a></ul>
@@ -61,6 +64,7 @@ export async function renderDay(obj) {
 export function renderWeekly(plan) {
   plans.classList.add("active");
   home.classList.remove("active");
+ recipe.classList.remove("active");
   table.innerHTML = `
  
   <div class="table__nav">

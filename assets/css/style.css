@@ -354,6 +354,20 @@ input[type=submit] {
   width: 80%;
   height: 650px;
 }
+.recipe__saved {
+  width: 17rem;
+  margin: auto;
+  display: flex;
+  font-size: 2.4rem;
+  justify-content: center;
+  text-decoration: none;
+  font-family: "Noto Sans JP", sans-serif;
+  color: #224a95;
+}
+.recipe__saved:hover {
+  color: #efc600;
+  border-bottom: 1px solid #efc600;
+}
 .recipe__links {
   display: flex;
   list-style-type: none;
@@ -369,13 +383,17 @@ input[type=submit] {
 }
 .recipe__nav {
   text-align: center;
-  margin-bottom: 3rem;
+}
+.recipe__nav__input {
+  display: flex;
 }
 .recipe__nav__input-header {
   text-align: center;
+  margin: 3rem 0;
 }
 .recipe__nav__input input[type=text] {
-  margin: 2rem;
+  width: 25rem;
+  margin: 2rem auto;
   border-style: none;
   border-bottom: 2px solid #224a95;
   background-color: #f8f8f8;
@@ -386,9 +404,10 @@ input[type=submit] {
   outline: none;
   border-bottom: 2px solid #efc600;
 }
-.recipe__nav__input-save {
-  margin-top: 3rem;
-  width: 8rem;
+.recipe__save-btn {
+  width: 18rem;
+  height: 4rem;
+  margin: 2rem auto;
 }
 .recipe__head-header {
   text-align: center;
@@ -396,18 +415,25 @@ input[type=submit] {
 .recipe__card {
   display: grid;
   grid-template-columns: 1fr auto;
+  gap: 1rem;
 }
 .recipe__card__wrapper {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+}
+.recipe__card__info {
+  display: flex;
+  flex-direction: row-reverse;
 }
 .recipe__card__info__basic__portion {
   display: flex;
 }
 .recipe__card__info-img {
-  height: 30%;
+  height: 15rem;
 }
 .recipe__card__info-ingredients {
+  width: max-content;
+  padding-left: 2rem;
   display: grid;
   grid-template-columns: repeat(4 1fr);
 }

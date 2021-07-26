@@ -2,6 +2,21 @@
   width: 80%;
   height: 650px;
 
+  &__saved {
+    width: 17rem;
+    margin: auto;
+    display: flex;
+    font-size: $font-size-button;
+    justify-content: center;
+    text-decoration: none;
+    font-family: $font;
+    color: $color-blue;
+    &:hover {
+      color: $color-gold;
+      border-bottom: 1px solid $color-gold;
+    }
+  }
+
   &__links {
     display: flex;
     list-style-type: none;
@@ -18,14 +33,15 @@
   }
   &__nav {
     text-align: center;
-    margin-bottom: 3rem;
-
     &__input {
+      display: flex;
       &-header {
         text-align: center;
+        margin: 3rem 0;
       }
       input[type="text"] {
-        margin: 2rem;
+        width: 25rem;
+        margin: 2rem auto;
         border-style: none;
         border-bottom: 2px solid $color-blue;
         background-color: $color-backgound;
@@ -37,11 +53,12 @@
           border-bottom: 2px solid $color-gold;
         }
       }
-      &-save {
-        margin-top: 3rem;
-        width: 8rem;
-      }
     }
+  }
+  &__save-btn {
+    width: 18rem;
+    height: 4rem;
+    margin: 2rem auto;
   }
   &__head-header {
     text-align: center;
@@ -49,20 +66,26 @@
   &__card {
     display: grid;
     grid-template-columns: 1fr auto;
+    gap: 1rem;
     &__wrapper {
       display: flex;
-      justify-content: space-around;
+      flex-direction: column;
     }
     &__info {
+      display: flex;
+      flex-direction: row-reverse;
+
       &__basic {
         &__portion {
           display: flex;
         }
       }
       &-img {
-        height: 30%;
+        height: 15rem;
       }
       &-ingredients {
+        width: max-content;
+        padding-left: 2rem;
         display: grid;
         grid-template-columns: repeat(4 1fr);
       }
