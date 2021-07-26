@@ -18,14 +18,18 @@ window.showForm = form.showForm;
 window.formSubmit = model.formSubmit;
 window.getID = getID;
 window.savePlan = save.savePlan;
+window.savePlanDay = save.savePlanDay;
 window.recipePage = recipe.renderRecipe;
 window.getSavedName = save.getSavedName;
 window.renderSavedRecipes = recipe.renderRecipes;
-window.renderPlans = plans.renderPlans;
+window.renderPlansDay = plans.renderPlansDay;
+window.renderPlansWeek = plans.renderPlansWeek;
 window.renderRecipePage = recipe.renderRecipePage;
-window.renderPlanPage = table.renderPlanPage;
+window.renderPlanPage = plans.renderPlanPage;
 window.renderSettingsPage = settings.renderSettingsPage;
-
+window.pageReload = reloadPage;
+window.editSaveName = save.editSaveName;
+window.deleteItem = save.deleteItem;
 
 /**
  * @param {Event} e

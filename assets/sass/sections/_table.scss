@@ -1,9 +1,29 @@
 .table {
   margin: auto;
   padding: 2rem;
+  &__container {
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+    &-plan {
+      display: flex;
+      justify-content: space-between;
 
+      &-item {
+        text-decoration: none;
+        text-align: center;
+        width: 95%;
+      }
+      &-edit,
+      &-delete {
+        text-align: center;
+        font-size: $font-size-copy;
+      }
+    }
+  }
   &__links {
-    margin: auto;
+    margin: 0 auto 0 auto;
     display: flex;
     list-style-type: none;
     font-size: $font-size-button;

@@ -1,6 +1,5 @@
 import * as model from "../model.js";
 const mainCenter = document.querySelector("#mainCenter");
-
 const plans = document.querySelector("#plans");
 const home = document.querySelector("#home");
 const recipePage = document.querySelector("#recipes");

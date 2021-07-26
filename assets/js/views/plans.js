@@ -1,56 +1,80 @@
 import * as model from "../model.js";
+
+const mainCenter = document.querySelector("#mainCenter");
+const plans = document.querySelector("#plans");
+const home = document.querySelector("#home");
+const recipePage = document.querySelector("#recipes");
+
+export function renderPlanPage() {
+  recipePage.classList.remove("active");
+  home.classList.remove("active");
+  settings.classList.remove("active");
+  plans.classList.add("active");
+  mainCenter.innerHTML = `
+        <div class="table__links">
+              <ul class="table__links"><a id="saveWeek" class="table__links-link" onclick="renderPlansWeek()" href="">Saved Weekly Plans</a></ul>
+              <ul class="table__links"><a id="saveDay" class="table__links-link" onclick="renderPlansDay()" href="">Saved Daily Plans</a></ul>
+        </div>
+        <div id="renderContainer" class="table__container"
+        <div id="table" class="table">
+        </div>
+  `;
+}
 /**
  * @param {Event} buttonClick
- * 
+ *
  * @return {String} to print to HTML
  */
-export function renderPlans() {
+export function renderPlansDay() {
   const renderContainer = document.querySelector("#renderContainer");
-  const header = document.querySelector(".settings__head-header");
+  const weekLink = document.querySelector("#saveWeek");
+  const dayLink = document.querySelector("#saveDay");
   const planArrDay = model.savedPlanDay[0];
-  const planArrWeekly = model.savedPlanWeek[0];
   const htmlDay =
     planArrDay != undefined
       ? planArrDay.map(planHtml).join("")
-      : `<h2 class="settings__emptyArray" style="grid-column:1 / span 3">You have no saved Day Plans</h2>`;
+      : `<h2 class="table__emptyArray" style="grid-column:1 / span 3">You have no saved Day Plans</h2>`;
+
+  weekLink.classList.remove("active");
+  dayLink.classList.add("active");
+  renderContainer.innerHTML = ``;
+  renderContainer.innerHTML = `${htmlDay}`;
+  model.fetchSavedData();
+}
+
+export function renderPlansWeek() {
+  const renderContainer = document.querySelector("#renderContainer");
+  const weekLink = document.querySelector("#saveWeek");
+  const dayLink = document.querySelector("#saveDay");
+  const planArrWeekly = model.savedPlanWeek[0];
   const htmlWeek =
     planArrWeekly != undefined
       ? planArrWeekly.map(planHtml).join("")
-      : `<h2 class="settings__emptyArray style="grid-column:1 / span 3"">You have no saved Weekly Plans</h2>`;
-
-  header.textContent = "Saved Plans";
-  renderContainer.innerHTML = `
-  </div>
-  <h2 class="settings__container-header">Day Plans</h2><br>
-  <div id="renderContainer" class="settings__container day">
-  ${htmlDay}
-  </div>
-  <h2 class="settings__container-header">Week Plans</h2><br>
-  <div id="renderContainer" class="settings__container week">
-  ${htmlWeek}
-  </div>`;
+      : `<h2 class="table__emptyArray style="grid-column:1 / span 3"">You have no saved Weekly Plans</h2>`;
+  weekLink.classList.add("active");
+  dayLink.classList.remove("active");
+  renderContainer.innerHTML = ``;
+  renderContainer.innerHTML = `${htmlWeek}`;
   model.fetchSavedData();
 }
+
 /**
  * @param {index} button click
  *
  * @return {Array} recipeArray
  */
 export function planHtml(planArr, index) {
-  const header = document.querySelector(".settings__head-header");
-  header.textContent = "Saved Plans";
-
   return `
-    <div class="settings__container-plan">
+    <div class="table__container-plan">
                 <a
                   id="${index}"
                   href=""
-                  class="settings__container-plan-item btn"
+                  class="table__container-plan-item btn"
                   >${planArr.saveName}</a
                 >
-                <a href="#" id="${index}" onclick="editSaveName(${index})" class="settings__container-recipe-edit"
+                <a href="#" id="${index}" onclick="editSaveName(${index})" class="table__container-plan-edit"
                   ><i class="fas fa-edit"></i></a
-                ><a href="#" id="${index}" onclick="deleteItem(${index})" class="settings__container-recipe-delete"
+                ><a href="#" id="${index}" onclick="deleteItem(${index})" class="table__container-plan-delete"
                   ><i class="far fa-trash-alt"></i></a
                 >
               </div>

@@ -17,8 +17,8 @@ export async function renderDay(obj) {
  recipe.classList.remove("active");
   table.innerHTML = `
   <div class="table__links">
-  <ul class="table__links"><a class="table__links-link" href="">Saved Weekly Plans</a></ul>
-  <ul class="table__links"><a class="table__links-link" href="">Saved Daily Plans</a></ul>
+  <ul class="table__links"><a id="saveWeek" class="table__links-link" onclick="renderPlansWeek()" href="">Saved Weekly Plans</a></ul>
+  <ul class="table__links"><a id="saveDay" class="table__links-link" onclick="renderPlansDay()" href="">Saved Daily Plans</a></ul>
 </div>
 <div id="table" class="table">
   <div class="table__nav">
@@ -39,7 +39,7 @@ export async function renderDay(obj) {
                     id="nameSubmit"
                     class="table__nav__input-save btn"
                     value="save"
-                    onclick="savePlan()"
+                    onclick="savePlanDay()"
                   />
                 </div>
 
@@ -66,7 +66,11 @@ export function renderWeekly(plan) {
   home.classList.remove("active");
  recipe.classList.remove("active");
   table.innerHTML = `
- 
+  <div class="table__links">
+  <ul class="table__links"><a id="saveWeek" class="table__links-link" onclick="renderPlansWeek()" href="">Saved Weekly Plans</a></ul>
+  <ul class="table__links"><a id="saveDay" class="table__links-link" onclick="renderPlansDay()" href="">Saved Daily Plans</a></ul>
+</div>
+<div id="renderContainer" class="table__container"
   <div class="table__nav">
   <div class="table__nav__input">
     <h2 class="table__nav__input-header">
@@ -248,6 +252,7 @@ export function renderWeekly(plan) {
     ${plan.sun[2].title}
   </div>
   <div class="table__meals">Dinner</div>
+</div>
 </div>
     `;
   model.fetchSavedData();

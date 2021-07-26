@@ -1,7 +1,6 @@
 /*jshint esversion: 9 */
 import * as welcome from "./views/welcome.js";
 import { URL, API_KEY } from "./config.js";
-import * as input from "./views/input.js";
 import * as table from "./views/table.js";
 import * as recipeView from "./views/recipe.js";
 import * as save from "./views/save.js";
@@ -10,7 +9,6 @@ import * as save from "./views/save.js";
 const formInput = document.querySelectorAll("#form input");
 const formSelect = document.querySelectorAll("#form select");
 const mainCenter = document.querySelector(".main__center-welcomeMessage");
-const form = document.querySelector("form");
 // Empty objects to put retrived data in
 
 export let plan = {};
