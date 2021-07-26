@@ -35,6 +35,7 @@ window.collectTextSelect = settings.selectTextColour;
 window.collectBackgroundSelect = settings.selectBackgroundColour;
 window.renderPlan = plans.renderPlan;
 window.clearStorage = clear.clearPopup;
+window.renderSavedRecipe = recipe.renderSavedRecipe;
 
 /**
  * @param {Event} e

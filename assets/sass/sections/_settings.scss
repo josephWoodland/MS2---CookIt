@@ -1,9 +1,16 @@
+/* //////////////////////////////////////////////////////////////////////////////// 
+------------------------------- SETTINGS  --------------------------------------
+//////////////////////////////////////////////////////////////////////////////////*/
 .settings {
   width: 40%;
   height: 100%;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+  @media screen and (max-width: $bp-small) {
+    width: 90%;
+    justify-content: start;
+  }
 
   &__question {
     display: flex;
@@ -11,12 +18,18 @@
     width: 100%;
     font-size: $font-size-copy;
     font-size: $font;
+    @media screen and (max-width: $bp-small){
+      margin-bottom: 3rem;
+    }
 
     &-header {
       font-size: $font-size-copy;
     }
     &-btn {
       width: 30%;
+      @media screen and (max-width: $bp-small){
+        margin-bottom: 3rem;
+      }
     }
 
     select {
@@ -33,6 +46,10 @@
       &-clearStorage{
         width: 30%;
         margin: 10rem auto 10rem auto;
+
+        @media screen and (max-width: $bp-small){
+          width: 100%;
+        }
       }
     }
   }

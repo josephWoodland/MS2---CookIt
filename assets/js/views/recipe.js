@@ -71,12 +71,13 @@ export function renderRecipes() {
  * @return {String} to print to HTML
  */
 export function recipesHtml(recipesArr, index) {
+
   return `
   <div class="recipe__container-recipe">
               <a
                 id="${index}"
                 href=""
-                onClick="renderSavedRecipe(this.id)"
+                onClick="renderSavedRecipe(${index})"
                 class="recipe__container-recipe-item btn"
                 >${recipesArr.saveName}</a
               >

@@ -1,4 +1,6 @@
-/////////////// MAIN SECTION ////////////////
+/* //////////////////////////////////////////////////////////////////////////////// 
+------------------------------- MAIN SECTION  --------------------------------------
+//////////////////////////////////////////////////////////////////////////////////*/
 
 .main {
   padding-top: 3%;
@@ -13,8 +15,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100%;
+    height: inherit;
+
     @media screen and (max-width: $bp-small){
+      margin: 15rem 0 0 0 ;
       justify-content: start;
     }
 
