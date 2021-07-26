@@ -1,4 +1,3 @@
-import * as input from "./input.js";
 import * as home from "./home.js";
 import * as recipe from "./recipe.js";
 import * as table from "./table.js";
@@ -83,10 +82,7 @@ export function getSavedName() {
     const recipe = JSON.stringify(curSavedRecipes.flat(3));
     window.localStorage.setItem(`recipe`, recipe);
   }
-  console.log(curPlan.mon);
-  curPlan.mon
-    ? table.renderWeekly(curPlan)
-    : table.renderDay(curPlan);
+  curPlan.mon ? table.renderWeekly(curPlan) : table.renderDay(curPlan);
 }
 
 /**
@@ -157,7 +153,6 @@ export function savePlanDay() {
  */
 export function editSaveName(index) {
   const newName = prompt("What would you like to change the name to?");
-
   let i = Number(index);
   curSavedRecipes[i].saveName = newName;
   const recipes = JSON.stringify(curSavedRecipes.flat(3));
@@ -177,4 +172,42 @@ export function deleteItem(index) {
   const recipes = JSON.stringify(curSavedRecipes.flat(3));
   window.localStorage.setItem(`recipe`, recipes);
   window.location.reload();
+}
+
+export function editSavePlanName(index) {
+  const savedWeek = document.querySelector("#saveWeek");
+  const newName = prompt("What would you like to change the name to?");
+  let i = Number(index);
+
+  if (savedWeek.classList.contains("active")) {
+    curSavedPlanWeekly[i].saveName = newName;
+    const plan = JSON.stringify(curSavedPlanWeekly.flat(3));
+    window.localStorage.setItem(`week`, plan);
+    renderPlansWeek(curSavedPlanWeekly);
+  } else {
+    curSavedPlanDays[i].saveName = newName;
+    const plan = JSON.stringify(curSavedPlanDays.flat(3));
+    window.localStorage.setItem(`day`, plan);
+    renderPlansDay(curSavedPlanDays);
+  }
+}
+
+export function deletePlanItem(index) {
+  const savedWeek = document.querySelector("#saveWeek");
+  let i = Number(index);
+  alert(
+    `You have deleted ${curSavedRecipes[i].saveName}!!, page will refresh!!`
+  );
+  if (savedWeek.classList.contains("active")) {
+    curSavedPlanWeekly.splice(i,1);
+    const plan = JSON.stringify(curSavedPlanWeekly.flat(3));
+    window.localStorage.setItem(`week`, plan);
+    window.location.reload();
+  } else {
+    curSavedPlanDays.splice(i,1);
+    const plan = JSON.stringify(curSavedPlanDays.flat(3));
+    window.localStorage.setItem(`day`, plan);
+    window.location.reload();
+  }
+ 
 }

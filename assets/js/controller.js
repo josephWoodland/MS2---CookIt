@@ -25,8 +25,14 @@ window.renderPlanPage = plans.renderPlanPage;
 window.renderSettingsPage = settings.renderSettingsPage;
 window.pageReload = reloadPage;
 window.editSaveName = save.editSaveName;
+window.editSavePlanName = save.editSavePlanName;
 window.deleteItem = save.deleteItem;
+window.deletePlanItem = save.deletePlanItem;
 window.renderSettingsPage = settings.renderSettings;
+window.collectBtnSelect = settings.selectBtnColour;
+window.collectTextSelect = settings.selectTextColour;
+window.collectBackgroundSelect = settings.selectBackgroundColour;
+window.renderPlan = plans.renderPlan;
 
 /**
  * @param {Event} e

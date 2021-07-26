@@ -102,7 +102,7 @@ export function renderSettings() {
       <option value="green">Green</option>
       <option value="blue">Blue</option>
     </select>
-    <button id="btnSelect" onclick="collectBackSelect()" class="settings__question-btn-backSelect btn">Select</button>
+    <button id="btnSelect" onclick="collectBackgroundSelect()" class="settings__question-btn-backSelect btn">Select</button>
   </div>
   <button
     id="delete"

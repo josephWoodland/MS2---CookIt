@@ -1,4 +1,5 @@
 import * as model from "../model.js";
+import * as table from "./table.js";
 
 const mainCenter = document.querySelector("#mainCenter");
 const plans = document.querySelector("#plans");
@@ -20,6 +21,12 @@ export function renderPlanPage() {
         </div>
   `;
 }
+
+export function renderPlan() {
+  planArr = 
+  planArr.mon ? table.renderWeekly(planArr) : table.renderDay(planArr);
+}
+
 /**
  * @param {Event} buttonClick
  *
@@ -64,17 +71,19 @@ export function renderPlansWeek() {
  * @return {Array} recipeArray
  */
 export function planHtml(planArr, index) {
+  console.log(planArr);
   return `
     <div class="table__container-plan">
                 <a
                   id="${index}"
+                  onclick="renderPlan(${planArr})"
                   href=""
                   class="table__container-plan-item btn"
                   >${planArr.saveName}</a
                 >
-                <a href="#" id="${index}" onclick="editSaveName(${index})" class="table__container-plan-edit"
+                <a href="#" id="${index}" onclick="editSavePlanName(${index})" class="table__container-plan-edit"
                   ><i class="fas fa-edit"></i></a
-                ><a href="#" id="${index}" onclick="deleteItem(${index})" class="table__container-plan-delete"
+                ><a href="#" id="${index}" onclick="deletePlanItem(${index})" class="table__container-plan-delete"
                   ><i class="far fa-trash-alt"></i></a
                 >
               </div>
