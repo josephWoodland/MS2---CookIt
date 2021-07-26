@@ -3,6 +3,8 @@ const mainCenter = document.querySelector("#mainCenter");
 const plans = document.querySelector("#plans");
 const home = document.querySelector("#home");
 const recipePage = document.querySelector("#recipes");
+const settings = document.querySelector('#settings');
+
 
 export function renderRecipePage() {
   recipePage.classList.add("active");

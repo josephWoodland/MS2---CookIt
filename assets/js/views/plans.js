@@ -5,6 +5,7 @@ const mainCenter = document.querySelector("#mainCenter");
 const plans = document.querySelector("#plans");
 const home = document.querySelector("#home");
 const recipePage = document.querySelector("#recipes");
+const settings = document.querySelector('#settings');
 
 export function renderPlanPage() {
   recipePage.classList.remove("active");
@@ -57,7 +58,7 @@ export function renderPlansWeek() {
   const htmlWeek =
     planArrWeekly != undefined
       ? planArrWeekly.map(planHtml).join("")
-      : `<h1 class="table__emptyArray style="grid-column:1 / span 5">You have no saved Weekly Plans</h1>`;
+      : `<h1 class="table__emptyArray" style="grid-column:1 / span 5">You have no saved Weekly Plans</h1>`;
   weekLink.classList.add("active");
   dayLink.classList.remove("active");
   renderContainer.innerHTML = ``;

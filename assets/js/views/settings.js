@@ -1,6 +1,11 @@
 import * as model from "../model.js";
 import * as control from "../controller.js";
 
+const plans = document.querySelector("#plans");
+const home = document.querySelector("#home");
+const recipePage = document.querySelector("#recipes");
+const settings = document.querySelector('#settings');
+
 /**
  * @param {Event} buttonClick
  *
@@ -72,6 +77,10 @@ export function selectBtnColour() {
  */
 export function renderSettings() {
   const mainContainer = document.querySelector("#mainCenter");
+  recipePage.classList.remove("active");
+  home.classList.remove("active");
+  settings.classList.add("active");
+  plans.classList.remove("active");
   mainContainer.innerHTML = `
   <div class="settings">
   <div class="settings__question">
