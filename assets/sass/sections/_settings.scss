@@ -1,3 +1,21 @@
 .settings {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  &__container{
 
+  }
+  &__buttons {
+    display: flex;
+    justify-content: space-evenly;
+    &-btn{
+      width: 10rem;
+      &-clearStorage{
+        width: 30%;
+        margin: 10rem auto 10rem auto;
+      }
+    }
+  }
 }

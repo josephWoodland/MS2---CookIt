@@ -34,54 +34,60 @@
           <a class="nav__list-li-link" href="./plan.html">Plans</a>
         </li>
         <li class="nav__list-li">
-          <a class="nav__list-li-link active" href="./settings.html">Settings</a>
+          <a class="nav__list-li-link active" href="./settings.html"
+            >Settings</a
+          >
         </li>
       </ul>
     </div>
     <!-- Main -->
-    <div id="taableMain" class="main">
-        <div id="tableCenter" class="main__center">
-                <div class="settings">
-                    <div class="settings__buttons">
-                      <button
-                        href="#"
-                        id="plans"
-                        onclick="renderPlans()"
-                        class="btn settings__buttons-btn"
-                      >
-                        Plans
-                      </button>
-                      <button
-                        href="#"
-                        id="recipes"
-                        onclick="renderRecipes()"
-                        class="btn settings__buttons-btn"
-                      >
-                        Recipes
-                      </button>
-                      <button
-                        href="#"
-                        id="display"
-                        onclick="renderButtonOptions()"
-                        class="btn settings__buttons-btn"
-                      >
-                        Display
-                      </button>
-                      <button
-                        href="#"
-                        id="back"
-                        onclick="reloadPage()"
-                        class="btn settings__buttons-btn"
-                      >
-                        Back
-                      </button>
-                      </div>
-                      <button id="delete" onclick="clearStorage()" class="settings__button-btn">
-                        Clear Storage
-                      </button>
-                <div id="renderContainer" class="settings__container"></div>
-                </div>       
+    <div id="main" class="main">
+      <div id="mainCenter" class="main__center">
+        <div class="settings">
+          <div id="renderContainer" class="settings__container"></div>
+          <div class="settings__buttons">
+            <button
+              href="#"
+              id="plans"
+              onclick="renderPlans()"
+              class="btn settings__buttons-btn"
+            >
+              Plans
+            </button>
+            <button
+              href="#"
+              id="recipes"
+              onclick="renderRecipes()"
+              class="btn settings__buttons-btn"
+            >
+              Recipes
+            </button>
+            <button
+              href="#"
+              id="display"
+              onclick="renderButtonOptions()"
+              class="btn settings__buttons-btn"
+            >
+              Display
+            </button>
+            <button
+              href="#"
+              id="back"
+              onclick="reloadPage()"
+              class="btn settings__buttons-btn"
+            >
+              Back
+            </button>
+          </div>
+          <button
+            id="delete"
+            onclick="clearStorage()"
+            class="settings__buttons-btn-clearStorage btn"
+          >
+            Clear Storage
+          </button>
         </div>
+      </div>
     </div>
     <!-- Footer -->
     <div class="footer"></div>
