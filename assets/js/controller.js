@@ -7,6 +7,7 @@ import * as recipe from "./views/recipe.js";
 import * as table from "./views/table.js";
 import * as plans from "./views/plans.js";
 import * as form from "./views/form.js";
+import * as clear from "./views/clear.js";
 
 // Global scope function so it can be used in the HTML
 
@@ -33,6 +34,7 @@ window.collectBtnSelect = settings.selectBtnColour;
 window.collectTextSelect = settings.selectTextColour;
 window.collectBackgroundSelect = settings.selectBackgroundColour;
 window.renderPlan = plans.renderPlan;
+window.clearStorage = clear.clearPopup;
 
 /**
  * @param {Event} e

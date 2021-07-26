@@ -10,7 +10,5 @@ export function clearPopup() {
   if (answer) {
     localStorage.clear();
     window.location.reload();
-  } else {
-    return;
   }
 }

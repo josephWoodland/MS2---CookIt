@@ -53,12 +53,15 @@ export function renderSavedRecipe(i) {
  */
 export function renderRecipes() {
   const recipeContainer = document.querySelector("#recipeContainer");
-  console.log(recipeContainer);
   recipeContainer.innerHTML = "";
   const recipeArr = model.savedRecipes[0];
-  const html = recipeArr.map(recipesHtml).join("");
-  recipeContainer.innerHTML = `${html}`;
-  model.fetchSavedData();
+  if (!model.savedRecipes[0]) {
+    recipeContainer.innerHTML = `<h1 style="grid-column:1 / span 5">You have no stored recipies</h1>`;
+  } else {
+    const html = recipeArr.map(recipesHtml).join("");
+    recipeContainer.innerHTML = `${html}`;
+    model.fetchSavedData();
+  }
 }
 /**
  * @param {Array, index} recipeData
