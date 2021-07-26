@@ -70,7 +70,7 @@ export function renderWeekly(plan) {
   <ul class="table__links"><a id="saveWeek" class="table__links-link" onclick="renderPlansWeek()" href="">Saved Weekly Plans</a></ul>
   <ul class="table__links"><a id="saveDay" class="table__links-link" onclick="renderPlansDay()" href="">Saved Daily Plans</a></ul>
 </div>
-<div id="renderContainer" class="table__container"
+<div id="renderContainer" class="table__container-table"
   <div class="table__nav">
   <div class="table__nav__input">
     <h2 class="table__nav__input-header">

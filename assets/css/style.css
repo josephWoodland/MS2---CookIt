@@ -164,6 +164,8 @@ input[type=submit] {
 @media screen and (max-width: 900px) {
   .main__center__img {
     flex-direction: column-reverse;
+    width: 90%;
+    margin: auto;
   }
 }
 .main__center__img-pods {
@@ -317,6 +319,12 @@ input[type=submit] {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
 }
+@media screen and (max-width: 600px) {
+  .grid-daily {
+    grid-template-columns: 1fr;
+    margin-top: 10rem;
+  }
+}
 .grid-form {
   display: grid;
   grid-template-columns: 6fr minmax(30rem, 1fr);
@@ -335,15 +343,37 @@ input[type=submit] {
   margin: auto;
   padding: 2rem;
 }
+@media screen and (max-width: 600px) {
+  .table {
+    margin: 0;
+  }
+}
 .table__container {
   margin-top: 3rem;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 1rem;
 }
+.table__container-table {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+}
 @media screen and (max-width: 600px) {
-  .table__container {
+  .table__container-table {
     display: flex;
+  }
+}
+.table__container-plans {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+}
+@media screen and (max-width: 600px) {
+  .table__container-plans {
+    grid-template-columns: 1fr 1fr;
   }
 }
 .table__container-plan {
@@ -383,6 +413,7 @@ input[type=submit] {
 @media screen and (max-width: 600px) {
   .table__nav__input {
     width: 100%;
+    margin-top: 3rem;
   }
 }
 .table__nav__input input[type=text] {

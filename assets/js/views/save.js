@@ -128,8 +128,6 @@ export function savePlan() {
 export function savePlanDay() {
   const nameInput = document.querySelector("#nameInput");
   const planName = nameInput.value;
-  const input = document.querySelector(".nav__input");
-  const saveNameBtn = document.querySelector("#nameSubmit");
 
   if (!isNaN(planName)) {
     alert("Invalid input valid NAME for the plan, must be a written name");
@@ -141,10 +139,8 @@ export function savePlanDay() {
     const plan = JSON.stringify(curSavedPlanDays.flat(3));
     window.localStorage.setItem(`day`, plan);
     nameInput.value = " ";
-    input.classList.add("hidden");
-    saveNameBtn.classList.add("hidden");
+    home.welcomePage();
   }
-  home.welcomePage();
 }
 /**
  * @param {Index} savedRecipes array

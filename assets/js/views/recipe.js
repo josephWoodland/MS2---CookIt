@@ -5,7 +5,6 @@ const home = document.querySelector("#home");
 const recipePage = document.querySelector("#recipes");
 const settings = document.querySelector('#settings');
 
-
 export function renderRecipePage() {
   recipePage.classList.add("active");
   home.classList.remove("active");
