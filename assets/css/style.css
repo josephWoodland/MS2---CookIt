@@ -484,6 +484,23 @@ input[type=submit] {
   justify-content: space-between;
   flex-direction: column;
 }
+.settings__question {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-size: 2rem;
+  font-size: "Noto Sans JP", sans-serif;
+}
+.settings__question-header {
+  font-size: 2rem;
+}
+.settings__question-btn {
+  width: 30%;
+}
+.settings__question select {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
 .settings__buttons {
   display: flex;
   justify-content: space-evenly;

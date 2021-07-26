@@ -5,6 +5,26 @@
   justify-content: space-between;
   flex-direction: column;
 
+  &__question {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-size: $font-size-copy;
+    font-size: $font;
+
+    &-header {
+      font-size: $font-size-copy;
+    }
+    &-btn {
+      width: 30%;
+    }
+
+    select {
+      margin-top: 3rem;
+      margin-bottom: 3rem;
+    }
+  }
+  
   &__buttons {
     display: flex;
     justify-content: space-evenly;
