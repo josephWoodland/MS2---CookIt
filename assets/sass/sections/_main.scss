@@ -18,6 +18,7 @@
     height: inherit;
 
     @media screen and (max-width: $bp-small){
+      width: 90%;
       margin: 15rem 0 0 0 ;
       justify-content: start;
     }

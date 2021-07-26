@@ -15,6 +15,8 @@ export function selectBackgroundColour() {
   const items = { ...localStorage };
   const selection = document.querySelector("#backgroundColourSelect");
   const html = document.querySelector("html");
+  const main = document.querySelector('#main');
+  const nav = document.querySelector('#nav');
   const userChoice = selection.value;
 
   if (userChoice === "default") {
@@ -23,6 +25,8 @@ export function selectBackgroundColour() {
     return;
   } else {
     html.style.backgroundColor = userChoice;
+    main.style.backgroundColor = userChoice;
+    nav.style.backgroundColor = userChoice;
     localStorage.setItem("background", userChoice);
     model.displayOptions("background", userChoice);
   }

@@ -20,7 +20,7 @@ export function renderName() {
  */
 export function hideName() {
   if (formTitle) {
-    formTitle.textContent = `Ok ${username} Let's Create a Meal Plan`;
+    formTitle.textContent = `Ok ${username} lets create a meal plan`;
     formP.textContent = "";
     formName.classList.add("hidden");
   }

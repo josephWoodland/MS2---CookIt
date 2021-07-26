@@ -1,11 +1,12 @@
 import * as model from "../model.js";
 import * as table from "./table.js";
+import * as save from "./save.js";
 
 const mainCenter = document.querySelector("#mainCenter");
 const plans = document.querySelector("#plans");
 const home = document.querySelector("#home");
 const recipePage = document.querySelector("#recipes");
-const settings = document.querySelector('#settings');
+const settings = document.querySelector("#settings");
 
 export function renderPlanPage() {
   recipePage.classList.remove("active");
@@ -17,15 +18,21 @@ export function renderPlanPage() {
               <ul class="table__links"><a id="saveWeek" class="table__links-link" onclick="renderPlansWeek()" href="">Saved Weekly Plans</a></ul>
               <ul class="table__links"><a id="saveDay" class="table__links-link" onclick="renderPlansDay()" href="">Saved Daily Plans</a></ul>
         </div>
-        <div id="renderContainer" class="table__container-plans"
+        <div id="renderContainer" class="table__container-plans">
         <div id="table" class="table">
+        </div>
         </div>
   `;
 }
 
-export function renderPlan() {
-  planArr = 
-  planArr.mon ? table.renderWeekly(planArr) : table.renderDay(planArr);
+export function renderPlan(index) {
+  const saveDay = document.querySelector("#saveDay");
+  let i = Number(index);
+  if (saveDay.classList.contains("active")) {
+    table.renderDay(save.curSavedPlanDays[i]);
+  } else {
+    table.renderWeekly(save.curSavedPlanWeekly[i]);
+  }
 }
 
 /**
@@ -77,7 +84,7 @@ export function planHtml(planArr, index) {
     <div class="table__container-plan">
                 <a
                   id="${index}"
-                  onclick="renderPlan(${planArr})"
+                  onclick="renderPlan(${index})"
                   href=""
                   class="table__container-plan-item btn"
                   >${planArr.saveName}</a

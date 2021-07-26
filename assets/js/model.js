@@ -174,9 +174,13 @@ export function dailyPlanner(day) {
 export function displayOptions(item, selection) {
   const html = document.querySelector("html");
   const button = document.querySelectorAll(".btn");
+  const main = document.querySelector('#main');
+  const nav = document.querySelector('#nav');
 
   if (item === "background") {
     html.style.backgroundColor = selection;
+    main.style.backgroundColor = selection;
+    nav.style.backgroundColor = selection;
   }
   if (item === "text") {
     html.style.color = selection;

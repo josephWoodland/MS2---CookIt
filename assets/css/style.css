@@ -153,6 +153,7 @@ input[type=submit] {
 }
 @media screen and (max-width: 600px) {
   .main__center {
+    width: 90%;
     margin: 15rem 0 0 0;
     justify-content: start;
   }
@@ -340,6 +341,7 @@ input[type=submit] {
 ------------------------------- TABLE  --------------------------------------
 //////////////////////////////////////////////////////////////////////////////////*/
 .table {
+  grid-column: 1/span 5;
   margin: auto;
   padding: 2rem;
 }
@@ -470,6 +472,11 @@ input[type=submit] {
   width: 80%;
   height: 650px;
 }
+@media screen and (max-width: 600px) {
+  .recipe {
+    width: 95%;
+  }
+}
 .recipe__container {
   margin-top: 3rem;
   display: grid;
@@ -597,14 +604,8 @@ input[type=submit] {
 .recipe__card__info-ingredients {
   width: max-content;
   padding-left: 2rem;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-}
-@media screen and (max-width: 600px) {
-  .recipe__card__info-ingredients {
-    display: flex;
-    flex-direction: column;
-  }
+  display: flex;
+  flex-direction: column;
 }
 
 /* //////////////////////////////////////////////////////////////////////////////// 

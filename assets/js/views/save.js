@@ -4,9 +4,9 @@ import * as table from "./table.js";
 
 let curRecipe;
 let curPlan;
-let curSavedPlanDays;
-let curSavedPlanWeekly;
-let curSavedRecipes;
+export let curSavedPlanDays;
+export let curSavedPlanWeekly;
+export let curSavedRecipes;
 
 /**
  * @param {Array} planData

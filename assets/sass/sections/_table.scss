@@ -2,6 +2,7 @@
 ------------------------------- TABLE  --------------------------------------
 //////////////////////////////////////////////////////////////////////////////////*/
 .table {
+  grid-column: 1 / span 5;
   margin: auto;
   padding: 2rem;
   @media screen and (max-width: $bp-small) {
@@ -16,21 +17,21 @@
 
     &-table {
       margin-top: 3rem;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 1rem;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1rem;
       @media screen and (max-width: $bp-small) {
         display: flex;
       }
     }
-    &-plans{
+    &-plans {
       margin-top: 3rem;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 1rem;
-    @media screen and (max-width: $bp-small) {
-      grid-template-columns: 1fr 1fr;
-    }
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1rem;
+      @media screen and (max-width: $bp-small) {
+        grid-template-columns: 1fr 1fr;
+      }
     }
     &-plan {
       display: flex;

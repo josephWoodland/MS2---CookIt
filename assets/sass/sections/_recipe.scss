@@ -4,13 +4,16 @@
 .recipe {
   width: 80%;
   height: 650px;
+  @media screen and (max-width: $bp-small){
+    width: 95%;
+  }
 
   &__container {
     margin-top: 3rem;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 1rem;
-    @media screen and (max-width: $bp-small){
+    @media screen and (max-width: $bp-small) {
       display: flex;
       flex-direction: column;
     }
@@ -64,7 +67,7 @@
     text-align: center;
     &__input {
       display: flex;
-      @media screen and (max-width: $bp-small){
+      @media screen and (max-width: $bp-small) {
         flex-direction: column;
       }
       &-header {
@@ -99,7 +102,7 @@
     display: grid;
     grid-template-columns: 1fr auto;
     gap: 1rem;
-    @media screen and (max-width: $bp-small){
+    @media screen and (max-width: $bp-small) {
       display: flex;
       flex-direction: column;
     }
@@ -110,7 +113,7 @@
     &__info {
       display: flex;
       flex-direction: row-reverse;
-      @media screen and (max-width: $bp-small){
+      @media screen and (max-width: $bp-small) {
         flex-direction: column-reverse;
       }
 
@@ -121,19 +124,15 @@
       }
       &-img {
         height: 15rem;
-        @media screen and (max-width: $bp-small){
+        @media screen and (max-width: $bp-small) {
           width: 100%;
         }
       }
       &-ingredients {
         width: max-content;
         padding-left: 2rem;
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        @media screen and (max-width: $bp-small){
-          display: flex;
-          flex-direction: column;
-        }
+        display: flex;
+        flex-direction: column;
       }
     }
   }
