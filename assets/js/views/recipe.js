@@ -1,19 +1,19 @@
 import * as model from "../model.js";
 const mainCenter = document.querySelector("#mainCenter");
-const recipeContainer = document.querySelector("#recipeContainer");
+
 const plans = document.querySelector("#plans");
 const home = document.querySelector("#home");
 const recipePage = document.querySelector("#recipes");
 
 export function renderRecipePage() {
-  recipe.classList.add("active");
+  recipePage.classList.add("active");
   home.classList.remove("active");
   settings.classList.remove("active");
   plans.classList.remove("active");
   mainCenter.innerHTML = `
   <div class="recpie">
       <a class="recipe__saved" onclick="renderSavedRecipes()" href="">Saved Recipes</a>
-      <div id="recipeContainer" class="recipeContainer"></div>
+      <div id="recipeContainer" class="recipe__container"></div>
   </div>  
   `;
 }
@@ -53,11 +53,12 @@ export function renderSavedRecipe(i) {
  * @return {String} to print to HTML
  */
 export function renderRecipes() {
-  const renderContainer = document.querySelector("#renderContainer");
-  renderContainer.innerHTML = "";
+  const recipeContainer = document.querySelector("#recipeContainer");
+  console.log(recipeContainer);
+  recipeContainer.innerHTML = "";
   const recipeArr = model.savedRecipes[0];
   const html = recipeArr.map(recipesHtml).join("");
-  renderContainer.innerHTML = `${html}`;
+  recipeContainer.innerHTML = `${html}`;
   model.fetchSavedData();
 }
 /**
@@ -67,17 +68,17 @@ export function renderRecipes() {
  */
 export function recipesHtml(recipesArr, index) {
   return `
-  <div class="settings__container-recipe">
+  <div class="recipe__container-recipe">
               <a
                 id="${index}"
                 href=""
                 onClick="renderSavedRecipe(this.id)"
-                class="settings__container-recipe-item btn"
+                class="recipe__container-recipe-item btn"
                 >${recipesArr.saveName}</a
               >
-              <a href="#" id="${index}" onclick="editSaveName(${index})" class="settings__container-recipe-edit"
+              <a href="#" id="${index}" onclick="editSaveName(${index})" class="recipe__container-recipe-edit"
                 ><i class="fas fa-edit"></i></a
-              ><a href="#" id="${index}" onclick="deleteItem(${index})" class="settings__container-recipe-delete"
+              ><a href="#" id="${index}" onclick="deleteItem(${index})" class="recipe__container-recipe-delete"
                 ><i class="far fa-trash-alt"></i></a
               >
             </div>

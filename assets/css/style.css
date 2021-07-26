@@ -354,6 +354,25 @@ input[type=submit] {
   width: 80%;
   height: 650px;
 }
+.recipe__container {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+}
+.recipe__container-recipe {
+  display: flex;
+  justify-content: space-between;
+}
+.recipe__container-recipe-item {
+  text-decoration: none;
+  text-align: center;
+  width: 95%;
+}
+.recipe__container-recipe-edit, .recipe__container-recipe-delete {
+  text-align: center;
+  font-size: 2rem;
+}
 .recipe__saved {
   width: 17rem;
   margin: auto;
@@ -363,6 +382,7 @@ input[type=submit] {
   text-decoration: none;
   font-family: "Noto Sans JP", sans-serif;
   color: #224a95;
+  border-bottom: 1px solid transparent;
 }
 .recipe__saved:hover {
   color: #efc600;
