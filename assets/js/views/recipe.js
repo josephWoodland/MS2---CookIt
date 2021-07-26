@@ -117,7 +117,7 @@ export async function renderRecipe(recipe) {
   
 <div class="recipe__card">
   <div class="recipe__card__info">
-    <ul class="recipe__card__info-ingrediants">
+    <ul class="recipe__card__info-ingredients">
       ${recipe.ingredients.map(ingredientsHtml).join("")}
       </ul>
     <div class="recipe__card__wrapper">

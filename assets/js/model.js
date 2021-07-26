@@ -40,21 +40,15 @@ export let savedPlanDay = [];
  * @return {Object} recipe - Recipe
  */
 export function formSubmit() {
-  console.log(formInput);
-  console.log(form);
   const inputHTML = Array.from(formInput);
   const selectHTML = Array.from(formSelect);
   const arrData = inputHTML.concat(selectHTML);
-  console.log(inputHTML);
-  console.log(selectHTML);
   if (isNaN(inputHTML[1].value) || inputHTML[1].value === "") {
     alert(`Calorie input must be a number`);
-    input.openModal();
     return;
   }
   if (!isNaN(inputHTML[0].value) && inputData.name === undefined) {
     alert(`Name input must be filled in correclty - Please fill in your name`);
-    input.openModal();
     return;
   }
 
@@ -68,7 +62,7 @@ export function formSubmit() {
     {},
     ...arrValues.map((item) => ({ [item.name]: item.value }))
   );
-  console.log(inputData);
+
   getMealPlan(inputData);
   if (!("name" in localStorage)) {
     window.localStorage.setItem("name", inputData.name);

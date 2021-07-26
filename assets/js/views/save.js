@@ -1,6 +1,7 @@
 import * as input from "./input.js";
 import * as home from "./home.js";
 import * as recipe from "./recipe.js";
+import * as table from "./table.js";
 
 let curRecipe;
 let curPlan;
@@ -81,9 +82,13 @@ export function getSavedName() {
     curSavedRecipes.push(curRecipe);
     const recipe = JSON.stringify(curSavedRecipes.flat(3));
     window.localStorage.setItem(`recipe`, recipe);
-    input.closeModal();
   }
+  console.log(curPlan.mon);
+  curPlan.mon
+    ? table.renderWeekly(curPlan)
+    : table.renderDay(curPlan);
 }
+
 /**
  * @param {Event} buttonClick
  *

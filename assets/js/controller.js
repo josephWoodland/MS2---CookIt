@@ -19,6 +19,13 @@ window.formSubmit = model.formSubmit;
 window.getID = getID;
 window.savePlan = save.savePlan;
 window.recipePage = recipe.renderRecipe;
+window.getSavedName = save.getSavedName;
+window.renderSavedRecipes = recipe.renderSavedRecipe;
+window.renderPlans = plans.renderPlans;
+window.renderRecipePage = recipe.renderRecipePage;
+window.renderPlanPage = recipe.renderPlanPage;
+window.renderSettingsPage = recipe.renderSettingsPage;
+
 
 /**
  * Get recipe ID
