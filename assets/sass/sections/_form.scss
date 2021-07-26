@@ -1,5 +1,8 @@
 .form {
   width: 70%;
+  @media screen and (max-width: $bp-small){
+    width: 100%
+  }
 
   &__header {
     width: 50%;
@@ -16,11 +19,17 @@
   &__input{
       width: 50%;
       margin: auto;
+      @media screen and (max-width: $bp-small){
+        width: 90%;
+      }
   }
   
   &__question{
       margin: 0 auto 0 auto;
       display: flex;
+      @media screen and (max-width: $bp-small){
+        flex-direction: column;
+      }
   }
   input[type="text"],
   input[type="number"],

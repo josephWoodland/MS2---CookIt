@@ -109,6 +109,11 @@ input[type=submit] {
   width: 9rem;
   padding-top: 1rem;
 }
+@media screen and (max-width: 600px) {
+  .nav__logo {
+    display: none;
+  }
+}
 .nav__list {
   display: flex;
   margin: 0 auto 0 auto;
@@ -130,12 +135,22 @@ input[type=submit] {
   background-color: #f8f8f8;
   height: 70vh;
 }
+@media screen and (max-width: 600px) {
+  .main {
+    height: 160vh;
+  }
+}
 .main__center {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100%;
+}
+@media screen and (max-width: 600px) {
+  .main__center {
+    justify-content: start;
+  }
 }
 .main__center__img {
   display: flex;
@@ -217,6 +232,11 @@ input[type=submit] {
 .form {
   width: 70%;
 }
+@media screen and (max-width: 600px) {
+  .form {
+    width: 100%;
+  }
+}
 .form__header {
   width: 50%;
   margin: 0 auto 6rem auto;
@@ -231,9 +251,19 @@ input[type=submit] {
   width: 50%;
   margin: auto;
 }
+@media screen and (max-width: 600px) {
+  .form__input {
+    width: 90%;
+  }
+}
 .form__question {
   margin: 0 auto 0 auto;
   display: flex;
+}
+@media screen and (max-width: 600px) {
+  .form__question {
+    flex-direction: column;
+  }
 }
 .form input[type=text],
 .form input[type=number],
@@ -359,6 +389,11 @@ input[type=submit] {
   -ms-transform: rotate(-45deg);
   -o-transform: rotate(-45deg);
 }
+@media screen and (max-width: 600px) {
+  .table__meals {
+    display: none;
+  }
+}
 .table__weekly-cell, .table__daily-cell {
   height: 10rem;
   display: flex;
@@ -384,6 +419,12 @@ input[type=submit] {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 1rem;
+}
+@media screen and (max-width: 600px) {
+  .recipe__container {
+    display: flex;
+    flex-direction: column;
+  }
 }
 .recipe__container-recipe {
   display: flex;
@@ -432,6 +473,11 @@ input[type=submit] {
 .recipe__nav__input {
   display: flex;
 }
+@media screen and (max-width: 600px) {
+  .recipe__nav__input {
+    flex-direction: column;
+  }
+}
 .recipe__nav__input-header {
   text-align: center;
   margin: 3rem 0;
@@ -462,6 +508,12 @@ input[type=submit] {
   grid-template-columns: 1fr auto;
   gap: 1rem;
 }
+@media screen and (max-width: 600px) {
+  .recipe__card {
+    display: flex;
+    flex-direction: column;
+  }
+}
 .recipe__card__wrapper {
   display: flex;
   flex-direction: column;
@@ -470,17 +522,33 @@ input[type=submit] {
   display: flex;
   flex-direction: row-reverse;
 }
+@media screen and (max-width: 600px) {
+  .recipe__card__info {
+    flex-direction: column-reverse;
+  }
+}
 .recipe__card__info__basic__portion {
   display: flex;
 }
 .recipe__card__info-img {
   height: 15rem;
 }
+@media screen and (max-width: 600px) {
+  .recipe__card__info-img {
+    width: 100%;
+  }
+}
 .recipe__card__info-ingredients {
   width: max-content;
   padding-left: 2rem;
   display: grid;
-  grid-template-columns: repeat(4 1fr);
+  grid-template-columns: repeat(4, 1fr);
+}
+@media screen and (max-width: 600px) {
+  .recipe__card__info-ingredients {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .settings {

@@ -4,6 +4,9 @@
   padding-top: 3%;
   background-color: $color-backgound;
   height: 70vh;
+  @media screen and (max-width: $bp-small){
+    height: 160vh;
+  }
 
   &__center {
     display: flex;
@@ -11,6 +14,9 @@
     align-items: center;
     justify-content: center;
     height: 100%;
+    @media screen and (max-width: $bp-small){
+      justify-content: start;
+    }
 
     &__img {
       display: flex;

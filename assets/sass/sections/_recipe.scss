@@ -1,11 +1,16 @@
 .recipe {
   width: 80%;
   height: 650px;
+
   &__container {
     margin-top: 3rem;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 1rem;
+    @media screen and (max-width: $bp-small){
+      display: flex;
+      flex-direction: column;
+    }
     &-recipe {
       display: flex;
       justify-content: space-between;
@@ -56,6 +61,9 @@
     text-align: center;
     &__input {
       display: flex;
+      @media screen and (max-width: $bp-small){
+        flex-direction: column;
+      }
       &-header {
         text-align: center;
         margin: 3rem 0;
@@ -88,6 +96,10 @@
     display: grid;
     grid-template-columns: 1fr auto;
     gap: 1rem;
+    @media screen and (max-width: $bp-small){
+      display: flex;
+      flex-direction: column;
+    }
     &__wrapper {
       display: flex;
       flex-direction: column;
@@ -95,6 +107,9 @@
     &__info {
       display: flex;
       flex-direction: row-reverse;
+      @media screen and (max-width: $bp-small){
+        flex-direction: column-reverse;
+      }
 
       &__basic {
         &__portion {
@@ -103,12 +118,19 @@
       }
       &-img {
         height: 15rem;
+        @media screen and (max-width: $bp-small){
+          width: 100%;
+        }
       }
       &-ingredients {
         width: max-content;
         padding-left: 2rem;
         display: grid;
-        grid-template-columns: repeat(4 1fr);
+        grid-template-columns: repeat(4, 1fr);
+        @media screen and (max-width: $bp-small){
+          display: flex;
+          flex-direction: column;
+        }
       }
     }
   }

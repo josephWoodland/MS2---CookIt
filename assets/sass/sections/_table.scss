@@ -1,6 +1,7 @@
 .table {
   margin: auto;
   padding: 2rem;
+
   &__container {
     margin-top: 3rem;
     display: grid;
@@ -71,6 +72,9 @@
     -moz-transform: rotate(-45deg);
     -ms-transform: rotate(-45deg);
     -o-transform: rotate(-45deg);
+    @media screen and (max-width: $bp-small){
+      display: none;
+    }
   }
 
   &__weekly-cell,
