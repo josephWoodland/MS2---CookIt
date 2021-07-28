@@ -53,4 +53,18 @@
       }
     }
   }
+  &__hidden {
+    display: none;
+    visibility: hidden;
+    @media screen and (max-width: $bp-medium) {
+      display: inline;
+      visibility: visible;
+    }
+  }
+  &__shown {
+    @media screen and (max-width: $bp-medium) {
+      display: none;
+      visibility: hidden;
+    }
+  }
 }

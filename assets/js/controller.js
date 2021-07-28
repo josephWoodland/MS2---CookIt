@@ -50,6 +50,7 @@ window.onclick = function (e) {
   const dayPlan = model.savedPlanDay[0];
   const weekPlan = model.savedPlanWeek[0];
   if (div === null) return;
+
   if (div.className === "settings__container week") {
     table.renderWeekly(weekPlan[id]);
   } else if (div.className === "settings__container day") {
@@ -75,7 +76,7 @@ function init() {
   model.fetchSavedData();
 }
 /**
- * 
+ *
  * @return page reload
  */
 export function reloadPage() {

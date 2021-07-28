@@ -65,7 +65,7 @@ li {
   visibility: hidden;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 900px) {
   .space {
     display: none;
     visibility: hidden;
@@ -236,6 +236,12 @@ input[type=submit] {
   background-position: center;
   background-size: cover;
 }
+@media screen and (max-width: 600px) {
+  .footer {
+    display: none;
+    visibility: hidden;
+  }
+}
 
 /* //////////////////////////////////////////////////////////////////////////////// 
 ------------------------------- FORM  --------------------------------------
@@ -330,10 +336,17 @@ input[type=submit] {
   display: grid;
   grid-template-columns: 6fr minmax(30rem, 1fr);
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 900px) {
   .grid-form {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+  }
+}
+@media screen and (max-width: 600px) {
+  .grid-form {
+    width: 100%;
+    height: 100%;
   }
 }
 
@@ -665,6 +678,22 @@ input[type=submit] {
 @media screen and (max-width: 600px) {
   .settings__buttons-btn-clearStorage {
     width: 100%;
+  }
+}
+.settings__hidden {
+  display: none;
+  visibility: hidden;
+}
+@media screen and (max-width: 900px) {
+  .settings__hidden {
+    display: inline;
+    visibility: visible;
+  }
+}
+@media screen and (max-width: 900px) {
+  .settings__shown {
+    display: none;
+    visibility: hidden;
   }
 }
 

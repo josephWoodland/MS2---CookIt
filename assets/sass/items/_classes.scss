@@ -7,7 +7,7 @@
   visibility: hidden;
 }
 .space {
-  @media screen and (max-width: $bp-small) {
+  @media screen and (max-width: $bp-medium) {
     display: none;
     visibility: hidden;
   }
