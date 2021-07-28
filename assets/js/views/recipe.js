@@ -106,7 +106,7 @@ export async function renderRecipe(recipe) {
 <div id="recipe" class="recipe">
   <div class="recipe__nav__input">
       <h2 class="recipe__nav__input-header">
-      Would you like to save this plan?
+      Would you like to save this recipe?
       </h2>
   <input 
   required
@@ -117,6 +117,7 @@ export async function renderRecipe(recipe) {
   placeholder="e.g. brunch eggs"
   />
   <input type="submit" id="nameSubmitRecipe" class="recipe__save-btn btn" value="save" onclick="getSavedName()">
+  <button id="back" class="btn">Back</button>
   </div>
   <h1 class="recipe__head-header">${recipe.name}</h1>
   

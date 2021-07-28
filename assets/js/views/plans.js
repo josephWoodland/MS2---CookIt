@@ -48,7 +48,7 @@ export function renderPlansDay() {
   const htmlDay =
     planArrDay != undefined
       ? planArrDay.map(planHtml).join("")
-      : `<h1 class="table__emptyArray" style="grid-column:1 / span 5">You have no saved Day Plans</h1>`;
+      : `<h1 class="table__emptyArray" style="grid-column:1 / span 5">Oh, looks like you have no saved Day plans yet, please click on the home button to start</h1>`;
 
   weekLink.classList.remove("active");
   dayLink.classList.add("active");
@@ -65,7 +65,7 @@ export function renderPlansWeek() {
   const htmlWeek =
     planArrWeekly != undefined
       ? planArrWeekly.map(planHtml).join("")
-      : `<h1 class="table__emptyArray" style="grid-column:1 / span 5">You have no saved Weekly Plans</h1>`;
+      : `<h1 class="table__emptyArray" style="grid-column:1 / span 5">Oh, looks like you have no saved Weekly Plans yet, please click on the home button to start.</h1>`;
   weekLink.classList.add("active");
   dayLink.classList.remove("active");
   renderContainer.innerHTML = ``;
