@@ -4,7 +4,7 @@ import * as control from "../controller.js";
 const plans = document.querySelector("#plans");
 const home = document.querySelector("#home");
 const recipePage = document.querySelector("#recipes");
-const settings = document.querySelector('#settings');
+const settings = document.querySelector("#settings");
 
 /**
  * @param {Event} buttonClick
@@ -15,8 +15,8 @@ export function selectBackgroundColour() {
   const items = { ...localStorage };
   const selection = document.querySelector("#backgroundColourSelect");
   const html = document.querySelector("html");
-  const main = document.querySelector('#main');
-  const nav = document.querySelector('#nav');
+  const main = document.querySelector("#main");
+  const nav = document.querySelector("#nav");
   const userChoice = selection.value;
 
   if (userChoice === "default") {
@@ -31,6 +31,7 @@ export function selectBackgroundColour() {
     model.displayOptions("background", userChoice);
   }
 }
+
 /**
  * @param {Event} buttonClick
  *
@@ -51,6 +52,7 @@ export function selectTextColour() {
     localStorage.setItem("text", userChoice);
   }
 }
+
 /**
  * @param {Event} buttonClick
  *
@@ -74,6 +76,7 @@ export function selectBtnColour() {
     }
   }
 }
+
 /**
  * @param {Event} buttonClick
  *

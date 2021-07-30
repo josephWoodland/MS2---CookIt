@@ -6,7 +6,7 @@ const startBtn = document.querySelector(".main__center-btn");
 
 /**
  * @param {Event} buttonClick
- * 
+ *
  * @return {} HTML change
  */
 export function openModal() {
@@ -17,7 +17,7 @@ export function openModal() {
 }
 /**
  * @param {Event} buttonClick
- * 
+ *
  * @return {} HTML change
  */
 export function closeModal() {
@@ -28,7 +28,7 @@ export function closeModal() {
 }
 /**
  * @param {k} keyPress
- * 
+ *
  * @return call the closeModal function
  */
 export function escPress(k) {

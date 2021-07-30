@@ -3,7 +3,7 @@ const mainCenter = document.querySelector("#mainCenter");
 const plans = document.querySelector("#plans");
 const home = document.querySelector("#home");
 const recipePage = document.querySelector("#recipes");
-const settings = document.querySelector('#settings');
+const settings = document.querySelector("#settings");
 
 export function renderRecipePage() {
   recipePage.classList.add("active");
@@ -70,7 +70,6 @@ export function renderRecipes() {
  * @return {String} to print to HTML
  */
 export function recipesHtml(recipesArr, index) {
-
   return `
   <div class="recipe__container-recipe">
               <a

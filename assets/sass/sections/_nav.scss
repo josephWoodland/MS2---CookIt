@@ -13,7 +13,7 @@
     height: 9rem;
     width: 9rem;
     padding-top: 1rem;
-    @media screen and (max-width: $bp-small){
+    @media screen and (max-width: $bp-small) {
       display: none;
     }
   }

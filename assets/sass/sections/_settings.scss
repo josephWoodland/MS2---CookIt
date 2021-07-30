@@ -18,7 +18,7 @@
     width: 100%;
     font-size: $font-size-copy;
     font-size: $font;
-    @media screen and (max-width: $bp-small){
+    @media screen and (max-width: $bp-small) {
       margin-bottom: 3rem;
     }
 
@@ -27,7 +27,7 @@
     }
     &-btn {
       width: 30%;
-      @media screen and (max-width: $bp-small){
+      @media screen and (max-width: $bp-small) {
         margin-bottom: 3rem;
       }
     }
@@ -37,17 +37,17 @@
       margin-bottom: 3rem;
     }
   }
-  
+
   &__buttons {
     display: flex;
     justify-content: space-evenly;
-    &-btn{
+    &-btn {
       width: 10rem;
-      &-clearStorage{
+      &-clearStorage {
         width: 30%;
         margin: 10rem auto 10rem auto;
 
-        @media screen and (max-width: $bp-small){
+        @media screen and (max-width: $bp-small) {
           width: 100%;
         }
       }

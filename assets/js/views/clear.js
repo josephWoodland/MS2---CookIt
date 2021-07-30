@@ -1,6 +1,6 @@
 /**
  * @param {Event} buttonClick
- * 
+ *
  * @return {} clears local storage
  */
 export function clearPopup() {

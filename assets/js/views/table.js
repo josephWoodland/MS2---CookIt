@@ -69,7 +69,7 @@ export function renderWeekly(plan) {
   plans.classList.add("active");
   home.classList.remove("active");
   recipe.classList.remove("active");
-  savedPlan = plan
+  savedPlan = plan;
   console.log(savedPlan);
   table.innerHTML = `
       <div class="table__links">

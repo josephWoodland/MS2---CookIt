@@ -163,6 +163,7 @@ export function dailyPlanner(day) {
   table.renderDay(mealTitle);
   save.curPlannerData(mealTitle);
 }
+
 /**
  * User input selection to alter HTML
  * @param {str, str} item from fetchSavedData
@@ -172,8 +173,8 @@ export function dailyPlanner(day) {
 export function displayOptions(item, selection) {
   const html = document.querySelector("html");
   const button = document.querySelectorAll(".btn");
-  const main = document.querySelector('#main');
-  const nav = document.querySelector('#nav');
+  const main = document.querySelector("#main");
+  const nav = document.querySelector("#nav");
 
   if (item === "background") {
     html.style.backgroundColor = selection;
@@ -197,7 +198,6 @@ export function displayOptions(item, selection) {
  * @return {Object} of all recipes {Name} {ID}
  */
 export function fetchSavedData() {
-  // Get all data from local storage
   savedRecipes = [];
   savedPlanWeek = [];
   savedPlanDay = [];
@@ -214,12 +214,12 @@ export function fetchSavedData() {
   save.curSavedRecipeData(savedRecipes.flat(4));
 }
 
-export function renderCurPlan(){
-  let plan = table.savedPlan
-if (!plan){
-  recipeView.renderRecipePage();
-  recipeView.renderRecipes();
-} else {
-  plan.mon ? table.renderWeekly(plan) : table.renderDay(plan);
-}
+export function renderCurPlan() {
+  let plan = table.savedPlan;
+  if (!plan) {
+    recipeView.renderRecipePage();
+    recipeView.renderRecipes();
+  } else {
+    plan.mon ? table.renderWeekly(plan) : table.renderDay(plan);
+  }
 }

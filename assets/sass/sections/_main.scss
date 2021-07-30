@@ -6,7 +6,7 @@
   padding-top: 3%;
   background-color: $color-backgound;
   height: 70vh;
-  @media screen and (max-width: $bp-small){
+  @media screen and (max-width: $bp-small) {
     height: 160vh;
   }
 
@@ -17,9 +17,9 @@
     justify-content: center;
     height: inherit;
 
-    @media screen and (max-width: $bp-small){
+    @media screen and (max-width: $bp-small) {
       width: 90%;
-      margin: 15rem 0 0 0 ;
+      margin: 15rem 0 0 0;
       justify-content: start;
     }
 
