@@ -215,8 +215,11 @@ export function fetchSavedData() {
 }
 
 export function renderCurPlan(){
-  console.log(table.savedPlan);
-  const plan = table.savedPlan
-  console.log('This is your current plan');
+  let plan = table.savedPlan
+if (!plan){
+  recipeView.renderRecipePage();
+  recipeView.renderRecipes();
+} else {
   plan.mon ? table.renderWeekly(plan) : table.renderDay(plan);
+}
 }
