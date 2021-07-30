@@ -3,7 +3,7 @@ import * as recipe from "./recipe.js";
 import * as table from "./table.js";
 
 let curRecipe;
-let curPlan;
+export let curPlan;
 export let curSavedPlanDays;
 export let curSavedPlanWeekly;
 export let curSavedRecipes;
@@ -57,9 +57,9 @@ export function saveRecipe() {
   const header = document.querySelector(".recipe__head-header");
   const inputBox = document.querySelector("#saveName");
   const saveNameBtn = document.querySelector("#nameSubmitRecipe");
-  const saveBtn = document.querySelector('#saveRecipe');
+  const saveBtn = document.querySelector("#saveRecipe");
   const recipeName = header.textContent;
-  saveBtn.classList.add('hidden');
+  saveBtn.classList.add("hidden");
   header.textContent = `What would you like to save this recipe as? ${recipeName}`;
   inputBox.classList.remove("hidden");
   saveNameBtn.classList.remove("hidden");
@@ -72,7 +72,7 @@ export function saveRecipe() {
 export function getSavedName() {
   const inputBox = document.querySelector("#saveName");
   const recipeName = inputBox.value;
-
+  console.log(curPlan);
   if (!isNaN(recipeName)) {
     alert("Invalid input valid NAME for the recipe, must be a written name");
     inputBox.value = "";
@@ -83,8 +83,8 @@ export function getSavedName() {
     curSavedRecipes.push(curRecipe);
     const recipe = JSON.stringify(curSavedRecipes.flat(3));
     window.localStorage.setItem(`recipe`, recipe);
+    curPlan.mon ? table.renderWeekly(curPlan) : table.renderDay(curPlan);
   }
-  curPlan.mon ? table.renderWeekly(curPlan) : table.renderDay(curPlan);
 }
 
 /**
@@ -106,7 +106,6 @@ export function getPlanName() {
 export function savePlan() {
   const nameInput = document.querySelector("#nameInput");
   const planName = nameInput.value;
-  console.log(planName);
 
   if (!isNaN(planName)) {
     alert("Invalid input valid NAME for the plan, must be a written name");
@@ -197,15 +196,14 @@ export function deletePlanItem(index) {
     `You have deleted ${curSavedRecipes[i].saveName}!!, page will refresh!!`
   );
   if (savedWeek.classList.contains("active")) {
-    curSavedPlanWeekly.splice(i,1);
+    curSavedPlanWeekly.splice(i, 1);
     const plan = JSON.stringify(curSavedPlanWeekly.flat(3));
     window.localStorage.setItem(`week`, plan);
     window.location.reload();
   } else {
-    curSavedPlanDays.splice(i,1);
+    curSavedPlanDays.splice(i, 1);
     const plan = JSON.stringify(curSavedPlanDays.flat(3));
     window.localStorage.setItem(`day`, plan);
     window.location.reload();
   }
- 
 }

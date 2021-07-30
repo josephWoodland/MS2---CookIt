@@ -117,7 +117,7 @@ export async function renderRecipe(recipe) {
   placeholder="e.g. brunch eggs"
   />
   <input type="submit" id="nameSubmitRecipe" class="recipe__save-btn btn" value="save" onclick="getSavedName()">
-  <button id="back" class="btn">Back</button>
+  <button id="back" onclick="renderCurPlan()" class="recipe__back-btn btn">Back</button>
   </div>
   <h1 class="recipe__head-header">${recipe.name}</h1>
   

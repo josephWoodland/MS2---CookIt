@@ -36,6 +36,7 @@ window.collectBackgroundSelect = settings.selectBackgroundColour;
 window.renderPlan = plans.renderPlan;
 window.clearStorage = clear.clearPopup;
 window.renderSavedRecipe = recipe.renderSavedRecipe;
+window.renderCurPlan = model.renderCurPlan
 
 /**
  * @param {Event} e

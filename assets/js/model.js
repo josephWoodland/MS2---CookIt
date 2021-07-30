@@ -4,7 +4,6 @@ import { URL, API_KEY } from "./config.js";
 import * as table from "./views/table.js";
 import * as recipeView from "./views/recipe.js";
 import * as save from "./views/save.js";
-import * as load from "./views/loading.js";
 
 // Element Selectors
 const formInput = document.querySelectorAll("#form input");
@@ -104,7 +103,6 @@ export async function getRecipeByID(id) {
     const res = await fetch(
       `https://api.spoonacular.com/recipes/${id}/information?${API_KEY}`
     );
-    console.log(res);
     const data = await res.json();
 
     if (!res.ok) throw new Error(`${data.message} (${res.status})`);
@@ -214,4 +212,11 @@ export function fetchSavedData() {
   save.curSavedPlanWeeklyData(savedPlanWeek.flat(4));
   save.curSavedPlanDayData(savedPlanDay.flat(4));
   save.curSavedRecipeData(savedRecipes.flat(4));
+}
+
+export function renderCurPlan(){
+  console.log(table.savedPlan);
+  const plan = table.savedPlan
+  console.log('This is your current plan');
+  plan.mon ? table.renderWeekly(plan) : table.renderDay(plan);
 }

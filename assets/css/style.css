@@ -76,6 +76,10 @@ li {
   border-bottom: 2px solid #efc600;
 }
 
+.padding {
+  padding-top: 5rem;
+}
+
 /* //////////////////////////////////////////////////////////////////////////////// 
 ------------------------------- BUTTON  --------------------------------------
 //////////////////////////////////////////////////////////////////////////////////*/
@@ -450,7 +454,6 @@ input[type=submit] {
 .table__meals {
   font-size: 2rem;
   color: #224a95;
-  padding-top: 5rem;
   transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
   -moz-transform: rotate(-45deg);
@@ -571,7 +574,7 @@ input[type=submit] {
   outline: none;
   border-bottom: 2px solid #efc600;
 }
-.recipe__save-btn {
+.recipe__save-btn, .recipe__back-btn {
   width: 18rem;
   height: 4rem;
   margin: 2rem auto;

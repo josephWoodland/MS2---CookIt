@@ -1,8 +1,11 @@
 import * as model from "../model.js";
+import * as save from "./save.js";
 const table = document.querySelector("#mainCenter");
 const plans = document.querySelector("#plans");
 const home = document.querySelector("#home");
 const recipe = document.querySelector("#recipes");
+
+export let savedPlan;
 
 /**
  * @param {Object} dayPlan
@@ -14,7 +17,8 @@ export async function renderDay(obj) {
   let id = Object.values(obj);
   plans.classList.add("active");
   home.classList.remove("active");
- recipe.classList.remove("active");
+  recipe.classList.remove("active");
+  savedPlan = obj;
   table.innerHTML = `
     <div class="table__links">
       <ul class="table__links"><a id="saveWeek" class="table__links-link" onclick="renderPlansWeek()" href="">Saved Weekly Plans</a></ul>
@@ -44,11 +48,11 @@ export async function renderDay(obj) {
             />
           </div>
           <div class="grid-daily">
-                <div class="table__meals">Breakfast</div>
+                <div class="table__meals padding">Breakfast</div>
                 <div class="table__daily-cell" onClick="getID(this.id)" id="${id[0]}">${title[0]}</div>
-                <div class="table__meals">Lunch</div>
+                <div class="table__meals padding">Lunch</div>
                 <div class="table__daily-cell" onClick="getID(this.id)" id="${id[2]}">${title[2]}</div>
-                <div class="table__meals">Dinner</div>
+                <div class="table__meals padding">Dinner</div>
                 <div class="table__daily-cell" onClick="getID(this.id)" id="${id[1]}">${title[1]}</div>
           </div>
       </div>
@@ -64,7 +68,9 @@ export async function renderDay(obj) {
 export function renderWeekly(plan) {
   plans.classList.add("active");
   home.classList.remove("active");
- recipe.classList.remove("active");
+  recipe.classList.remove("active");
+  savedPlan = plan
+  console.log(savedPlan);
   table.innerHTML = `
       <div class="table__links">
       <ul class="table__links"><a id="saveWeek" class="table__links-link" onclick="renderPlansWeek()" href="">Saved Weekly Plans</a></ul>
