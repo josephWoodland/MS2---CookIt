@@ -32,6 +32,7 @@ export function renderPlan(index) {
     table.renderDay(save.curSavedPlanDays[i]);
   } else {
     table.renderWeekly(save.curSavedPlanWeekly[i]);
+    console.log(save.curPlan);
   }
 }
 
@@ -79,7 +80,6 @@ export function renderPlansWeek() {
  * @return {Array} recipeArray
  */
 export function planHtml(planArr, index) {
-  console.log(planArr);
   return `
     <div class="table__container-plan">
                 <a
