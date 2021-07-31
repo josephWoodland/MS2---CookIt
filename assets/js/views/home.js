@@ -1,4 +1,3 @@
-const home = document.querySelector(".home");
 /**
  * @param {Event} buttonClick
  *

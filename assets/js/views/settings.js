@@ -1,6 +1,8 @@
+// Import functions
 import * as model from "../model.js";
 import * as control from "../controller.js";
 
+// Element Selectors
 const plans = document.querySelector("#plans");
 const home = document.querySelector("#home");
 const recipePage = document.querySelector("#recipes");

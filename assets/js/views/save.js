@@ -1,7 +1,9 @@
+// Import functions
 import * as home from "./home.js";
 import * as recipe from "./recipe.js";
 import * as table from "./table.js";
 
+// Objects to hold data
 let curRecipe;
 export let curPlan;
 export let curSavedPlanDays;
@@ -72,7 +74,6 @@ export function saveRecipe() {
 export function getSavedName() {
   const inputBox = document.querySelector("#saveName");
   const recipeName = inputBox.value;
-  console.log(curPlan);
   if (!isNaN(recipeName)) {
     alert("Invalid input valid NAME for the recipe, must be a written name");
     inputBox.value = "";

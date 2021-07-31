@@ -1,16 +1,19 @@
+// Import function
 import * as model from "../model.js";
-import * as save from "./save.js";
+
+// Element selectors
 const table = document.querySelector("#mainCenter");
 const plans = document.querySelector("#plans");
 const home = document.querySelector("#home");
 const recipe = document.querySelector("#recipes");
 
+// Object to store data
 export let savedPlan;
 
 /**
  * @param {Object} dayPlan
- *
- * @return {String} render to HTML
+ * 
+ * @return {HTML String} render to HTML
  */
 export async function renderDay(obj) {
   let title = Object.keys(obj);
@@ -63,14 +66,13 @@ export async function renderDay(obj) {
 /**
  * @param {Object} weekPlan
  *
- * @return {String} render to HTML
+ * @return {HTML String} render to HTML
  */
 export function renderWeekly(plan) {
   plans.classList.add("active");
   home.classList.remove("active");
   recipe.classList.remove("active");
   savedPlan = plan;
-  console.log(savedPlan);
   table.innerHTML = `
       <div class="table__links">
       <ul class="table__links"><a id="saveWeek" class="table__links-link" onclick="renderPlansWeek()" href="">Saved Weekly Plans</a></ul>

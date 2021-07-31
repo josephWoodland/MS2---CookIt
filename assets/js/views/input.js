@@ -15,6 +15,7 @@ export function openModal() {
   formWrapper.classList.remove("hidden");
   startBtn.classList.add("hidden");
 }
+
 /**
  * @param {Event} buttonClick
  *
@@ -26,6 +27,7 @@ export function closeModal() {
   formWrapper.classList.add("hidden");
   startBtn.classList.remove("hidden");
 }
+
 /**
  * @param {k} keyPress
  *

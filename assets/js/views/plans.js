@@ -1,7 +1,9 @@
+// Import functions
 import * as model from "../model.js";
 import * as table from "./table.js";
 import * as save from "./save.js";
 
+// Element Selectors
 const mainCenter = document.querySelector("#mainCenter");
 const plans = document.querySelector("#plans");
 const home = document.querySelector("#home");
@@ -32,12 +34,11 @@ export function renderPlan(index) {
     table.renderDay(save.curSavedPlanDays[i]);
   } else {
     table.renderWeekly(save.curSavedPlanWeekly[i]);
-    console.log(save.curPlan);
   }
 }
 
 /**
- * @param {Event} buttonClick
+ * Called on user interaction
  *
  * @return {String} to print to HTML
  */
@@ -58,6 +59,10 @@ export function renderPlansDay() {
   model.fetchSavedData();
 }
 
+/**
+ * Called on user interaction
+ * @return {String} to print to the HTML
+ */
 export function renderPlansWeek() {
   const renderContainer = document.querySelector("#renderContainer");
   const weekLink = document.querySelector("#saveWeek");

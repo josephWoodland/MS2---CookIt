@@ -1,8 +1,10 @@
+// Element Selectors
 const welcomeMessage = document.querySelector(".main__center-welcomeMessage");
 const formTitle = document.querySelector(".form__header");
 const formP = document.querySelector(".form__paragraph");
 const formName = document.querySelector("#formName");
 
+// Object to store data
 let username;
 
 /**

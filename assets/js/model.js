@@ -1,4 +1,5 @@
 /*jshint esversion: 9 */
+// Import functions
 import * as welcome from "./views/welcome.js";
 import { URL, API_KEY } from "./config.js";
 import * as table from "./views/table.js";
@@ -9,8 +10,8 @@ import * as save from "./views/save.js";
 const formInput = document.querySelectorAll("#form input");
 const formSelect = document.querySelectorAll("#form select");
 const mainCenter = document.querySelector(".main__center-welcomeMessage");
-// Empty objects to put retrived data in
 
+// Empty objects to put retrived data in
 export let plan = {};
 export let inputData = {};
 export let recipe = {};
@@ -31,10 +32,8 @@ export let savedPlanDay = [];
 }
 
 /**
- * Collect User Input data
- *
+ * Colects the data form the Input HTML tags
  * @param {Event}  - HTML event
- * Colects the data form the Input HTML tags§
  * @return {Object} recipe - Recipe
  */
 export function formSubmit() {
@@ -69,7 +68,6 @@ export function formSubmit() {
 
 /**
  * Get Meal Plan by user input data
- *
  * @param {Object} inputData  - Collection of user paramaters
  * @return {Object} Data - Meal Plan data
  */
@@ -94,7 +92,6 @@ async function getMealPlan(inputData) {
 
 /**
  * Get recipe data by ID
- *
  * @param {Number} id  - Recipe id
  * @return {Object} recipe - Recipe
  */

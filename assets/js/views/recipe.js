@@ -1,10 +1,17 @@
+// Import functions
 import * as model from "../model.js";
+
+// Element Selectors
 const mainCenter = document.querySelector("#mainCenter");
 const plans = document.querySelector("#plans");
 const home = document.querySelector("#home");
 const recipePage = document.querySelector("#recipes");
 const settings = document.querySelector("#settings");
 
+/**
+ * Function called by user interaction
+ * @return {String} to print to HTML
+ */
 export function renderRecipePage() {
   recipePage.classList.add("active");
   home.classList.remove("active");
@@ -36,6 +43,7 @@ export function ingredientsHtml(ingredients, inputData) {
   }: ${ingredients.name}</li>
   `;
 }
+
 /**
  * @param {index} button click
  *
@@ -65,8 +73,8 @@ export function renderRecipes() {
   }
 }
 /**
- * @param {Array, index} recipeData
- *
+ * @param {Array} recipeData
+ * @param {index} Number of the array
  * @return {String} to print to HTML
  */
 export function recipesHtml(recipesArr, index) {
@@ -88,6 +96,7 @@ export function recipesHtml(recipesArr, index) {
   
             `;
 }
+
 /**
  * @param {Array} recipeData
  *

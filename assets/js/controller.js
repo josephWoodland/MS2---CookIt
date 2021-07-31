@@ -1,5 +1,4 @@
 // Import data and functions
-
 import * as model from "./model.js";
 import * as save from "./views/save.js";
 import * as settings from "./views/settings.js";
@@ -9,8 +8,7 @@ import * as plans from "./views/plans.js";
 import * as form from "./views/form.js";
 import * as clear from "./views/clear.js";
 
-// Global scope function so it can be used in the HTML
-
+// Global scope functions, so they can be called by user interaction
 window.showForm = form.showForm;
 window.formSubmit = model.formSubmit;
 window.getID = getID;
@@ -41,7 +39,7 @@ window.renderCurPlan = model.renderCurPlan;
 /**
  * @param {Event} e
  * Function to prevent reload on click
- * selects the right functino to call to render a saved plan
+ * Selects the right function to call to render a saved plan
  * @return {Plan} function call
  */
 window.onclick = function (e) {
@@ -61,27 +59,28 @@ window.onclick = function (e) {
 
 /**
  * Get recipe ID
- *
  * @param {String} id  - Recipe id
  * @return {Stringt} getRecipeID - Function
  */
 function getID(id) {
   model.getRecipeByID(id);
 }
+
 /**
- 
- * @return call initial start up functions
+ * Function to start teh app
  */
 function init() {
   model.starterMessage();
   model.fetchSavedData();
 }
+
 /**
- *
+ * Reload the app
  * @return page reload
  */
 export function reloadPage() {
   window.location.reload();
 }
 
+// Function call to start the app
 init();
