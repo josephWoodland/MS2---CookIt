@@ -1,5 +1,6 @@
 // Import functions
 import * as model from "../model.js";
+
 /**
  * @param {Event} buttonClick
  *
