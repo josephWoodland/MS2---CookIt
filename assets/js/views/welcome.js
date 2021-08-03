@@ -9,7 +9,6 @@ let username;
 
 /**
  * Renders personalised welcome message
- * @return {String} render to HTML
  */
 export function renderName() {
   username = localStorage.getItem("name");
@@ -18,7 +17,6 @@ export function renderName() {
 
 /**
  * Renders personalised form message
- * @return {String} render to HTML
  */
 export function hideName() {
   if (formTitle) {

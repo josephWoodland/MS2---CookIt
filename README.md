@@ -4,7 +4,7 @@
 
 CookIt is a food plan delivery business, they would like an interactive part of their website that allows users to create a meal plan suited for their dietary needs and any other requirements that they need.
 
-The needs of the web application from the founder are
+The needs of the web application explained by the founder are
 
 To allow potential customers to add their data
 To have the web application be personal to the user
@@ -18,7 +18,7 @@ Easy access to recipes of plans that they like
 
 ## Index
 
-- <a href="#The-Website-Brief" >The Website Brief</a>
+- <a href="#The-Website-Brief">The Website Brief</a>
 - <a href="#ux">UX</a>
 - <a href="#design">Design</a>
 - <a href="#testing">Testing</a>
@@ -26,7 +26,9 @@ Easy access to recipes of plans that they like
 - <a href="#future">Future Features</a>
 - <a href="#credits">Credits</a>
 
-<span id="#The-Website-Brief"></span>
+<span
+id="#The-Website-Brief">
+</span>
   
 # The Website Brief
 
@@ -42,7 +44,9 @@ The site should be as clean as possible and not cluttered, easy and clear to nav
 
 They requested a Desktop first design that is mobile friendly - they have an idea of their customer using a laptop or desktop to order their food plan so marketing will be focused around that.
 
-<span id="#ux"></span>
+<span
+ id="#ux">
+ </span>
   
 # UX
 
@@ -118,8 +122,11 @@ Here is a sample of the original wireframes for the app approved by the client.
 
 ![desktop](assets/readme/xd/landing.png)
 
-Other wireframes can be downloaded [here in xd format](assets/readme/xd/Cookit - Wireframes.xd)
-<span id="#design"></span>
+Other wire-frames can be downloaded [here](assets/readme/xd/Cookit - Wireframes.xd)
+
+<span
+ id="#design">
+ </span>
 
 # Design
 
@@ -228,7 +235,7 @@ Optional chaining - I sued this as an easy way to check if an element exists the
 
 - Git Desktop - I used this to manage commits and push them to the GitHub repository
 
--Source tree - I used this to manage my git branches, also to edit commit messages
+- Source tree - I used this to manage my git branches, also to edit commit messages
 
 - GitHub - I used GitHub to store the version of the project remotely.
 
@@ -244,7 +251,9 @@ Optional chaining - I sued this as an easy way to check if an element exists the
 
 ### [MDN](https://developer.mozilla.org/en-US/)
 
-<span id="#testing"></span>
+<span
+ id="#testing">
+ </span>
 
 # Testing
 
@@ -314,7 +323,9 @@ Browsers:
 
 - Chrome
 - Safari
-- <span id="#testing-responsive"></span>
+<span
+ id="#testing-responsive">
+ </span>
 
 ## Testing - Design Responsiveness
 
@@ -358,13 +369,15 @@ I had two users test my app remotely, although the reasons for them using the ap
 
 Results from user 1 test -
 
-Spelling errors on metric and imperial drop down. Overall gramma check - no need to capitalise each letter in a heading/sentence I.e ‘Ok Chanel, Let’ Create A Meal Plan’ this can just be ‘Okay Chanel, let’s create a meal plan’.
-Button: change to ‘create my plan’
-Clicked on a menu in my meal plan, then pressed back in the browser and the meal plan was gone. This shlud take the user back to the meal plan loading in the browser.
+Spelling errors on metric and imperial drop down. Overall gramma check - no need to capitalize each letter in a heading/sentence I.e ‘Ok Chanel, Let’ Create A Meal Plan’ this can just be ‘Okay Chanel, let’s create a meal plan’.
+Button: change to create my plan
+Clicked on a menu in my meal plan, then pressed back in the browser and the meal plan was gone. This should take the user back to the meal plan loading in the browser.
 Saved plan as ‘week 1’ went to saved plans, selected week 1 but unresponsive - app should of loaded the saved plan and rendered it the the HTML.
 Saved recipes: when there are no saved recipes, perhaps change the copy to ‘oh, looks like you don’t have any recipes saved. Click here to start building your meal plan’. Same for plans, when none are saved/made yet.
 
 Results from user 2 test -
+
+This user has a old HP laptop with a 700p screen and a wide aspect ratio, this user experienced multiple formatting issues, most have been fixed. 
 
 ## Testing Checklists
 
@@ -382,6 +395,10 @@ To fix this I decided to have a redesign of the app, and instead of rendering di
 
 ## Known bugs
 
+### Low res screens
+
+On low res screens with an outside the normal screen aspect ratio will experience strange formatting bugs, with there being overspill into the footer and into the nav bar sections on screens. This is due to the use of VH as a measurement to set the footer and the height of the main center section.
+
 ### Weekly plan
 
 This is a formatting bug, when shrinking the size of the viewing window in the browser, at a certain size the edge of the rendered weekly plan can be missed.
@@ -391,6 +408,10 @@ This is a formatting bug, when shrinking the size of the viewing window in the b
 # Deployment
 
 I used multiple branches in this project; the master branch is the main deployment branch which will be the most up-to-date and deployable version of the code.
+
+## API
+
+The API uses a individual key to access the API, the key is already saved in the program so you will not have to generate one individually. You get 150 calls per day, there is more information in the documentation [here](https://spoonacular.com/food-api/docs/)
 
 ## How to deploy
 
@@ -429,8 +450,11 @@ As I have been using node_modules. You will have to have npm installed on your c
 
 Once you have got the files in your coder of choice, run `npm install` to install the modules and settings laid out in the package.json file.
 
-To use the `watch:sass` and the live reload modules for the development environment in the terminal use npm start, once this has started a window with the website loaded with the current code.
-<span id="#future"></span>
+To use the `watch:sass` and the `live reload` modules for the development environment in the terminal run `npm start`, once this has started a window with the website loaded with the current code.
+
+<span
+ id="#future">
+</span>
 
 # Future Features
 
@@ -442,7 +466,9 @@ To use the `watch:sass` and the live reload modules for the development environm
 
 - I would like to add a function where the user can rate the response from the API.
 
-<span id="#credits"></span>
+<span
+ id="#credits">
+</span>
 
 # CREDITS
 

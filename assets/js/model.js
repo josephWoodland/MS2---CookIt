@@ -1,4 +1,3 @@
-/*jshint esversion: 9 */
 // Import functions
 import * as welcome from "./views/welcome.js";
 import { URL, API_KEY } from "./config.js";
@@ -21,8 +20,9 @@ export let savedPlanDay = [];
 
 /**
  * Checks to see if there is a name stored locally
- * @return {HTML text} user name and different welcome message
- */ export async function starterMessage() {
+ * Changes the welcome message
+ */
+export async function starterMessage() {
   if ("name" in localStorage) {
     welcome.renderName();
     welcome.hideName();
@@ -165,7 +165,6 @@ export function dailyPlanner(day) {
  * User input selection to alter HTML
  * @param {str, str} item from fetchSavedData
  *  Checks what HTML element to mutate
- * @return {HTML style} mutates {element} {style}
  */
 export function displayOptions(item, selection) {
   const html = document.querySelector("html");

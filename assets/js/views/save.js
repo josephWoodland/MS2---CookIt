@@ -18,6 +18,7 @@ export let curSavedRecipes;
 export function curSavedPlanDayData(plans) {
   curSavedPlanDays = plans;
 }
+
 /**
  * @param {Array} planData
  *
@@ -26,6 +27,7 @@ export function curSavedPlanDayData(plans) {
 export function curSavedPlanWeeklyData(plans) {
   curSavedPlanWeekly = plans;
 }
+
 /**
  * @param {Array} planData
  *
@@ -34,6 +36,7 @@ export function curSavedPlanWeeklyData(plans) {
 export function curSavedRecipeData(recipe) {
   curSavedRecipes = recipe;
 }
+
 /**
  * @param {Array} planData
  *
@@ -42,6 +45,7 @@ export function curSavedRecipeData(recipe) {
 export function curRecipeData(recipe) {
   curRecipe = recipe;
 }
+
 /**
  * @param {Array} planData
  *
@@ -50,6 +54,7 @@ export function curRecipeData(recipe) {
 export function curPlannerData(plan) {
   curPlan = plan;
 }
+
 /**
  * @param {Event} buttonClick
  *
@@ -66,6 +71,7 @@ export function saveRecipe() {
   inputBox.classList.remove("hidden");
   saveNameBtn.classList.remove("hidden");
 }
+
 /**
  * @param {User Input}
  *

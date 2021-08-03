@@ -55,6 +55,7 @@ export function renderSavedRecipe(i) {
   renderRecipe(recipe);
   model.fetchSavedData();
 }
+
 /**
  * @param {Array} recipeData
  *
@@ -72,6 +73,7 @@ export function renderRecipes() {
     model.fetchSavedData();
   }
 }
+
 /**
  * @param {Array} recipeData
  * @param {index} Number of the array

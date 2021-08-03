@@ -3,21 +3,21 @@
 //////////////////////////////////////////////////////////////////////////////////*/
 
 .form {
-  width: 70%;
+  width: 80%;
   @media screen and (max-width: $bp-small) {
     width: 100%;
   }
 
   &__header {
     width: 50%;
-    margin: 0 auto 6rem auto;
+    margin: 0 auto 3rem auto;
     text-align: center;
   }
 
   &__paragraph {
     width: 70%;
     text-align: center;
-    margin: 0 auto 6rem auto;
+    margin: 0 auto 3rem auto;
   }
   &__input {
     width: 50%;
@@ -28,7 +28,7 @@
   }
 
   &__question {
-    margin: 0 auto 0 auto;
+    margin-top: 1rem;
     display: flex;
     @media screen and (max-width: $bp-small) {
       flex-direction: column;
@@ -37,7 +37,6 @@
   input[type="text"],
   input[type="number"],
   select {
-    margin: 2rem;
     border-style: none;
     border-bottom: 2px solid $color-blue;
     background-color: $color-backgound;
@@ -50,6 +49,7 @@
     }
   }
   &-btn {
+    margin-top: 2rem;
     text-align: center;
   }
 }

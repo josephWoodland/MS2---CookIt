@@ -18,8 +18,6 @@ export function openModal() {
 
 /**
  * @param {Event} buttonClick
- *
- * @return {} HTML change
  */
 export function closeModal() {
   modal.classList.add("hidden");
@@ -30,8 +28,6 @@ export function closeModal() {
 
 /**
  * @param {k} keyPress
- *
- * @return call the closeModal function
  */
 export function escPress(k) {
   if (k.key === "Escape") {

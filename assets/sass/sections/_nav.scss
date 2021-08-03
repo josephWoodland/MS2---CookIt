@@ -8,12 +8,16 @@
   height: auto;
   justify-content: space-between;
   background-color: $color-backgound;
+  z-index: 1000;
 
   &__logo {
-    height: 9rem;
-    width: 9rem;
+    width: 7rem;
     padding-top: 1rem;
-    @media screen and (max-width: $bp-small) {
+
+    &:hover{
+      cursor: pointer;
+    }
+    @media screen and (max-width: $bp-medium) {
       display: none;
     }
   }
@@ -30,6 +34,9 @@
         font-family: $font;
         color: $color-blue;
         text-decoration: none;
+        &:hover{
+          color: $color-gold;
+        }
       }
     }
   }

@@ -40,7 +40,7 @@ window.renderCurPlan = model.renderCurPlan;
  * @param {Event} e
  * Function to prevent reload on click
  * Selects the right function to call to render a saved plan
- * @return {Plan} function call
+ * @return {Object} day plan
  */
 window.onclick = function (e) {
   e.preventDefault();
@@ -60,10 +60,10 @@ window.onclick = function (e) {
 /**
  * Get recipe ID
  * @param {String} id  - Recipe id
- * @return {Stringt} getRecipeID - Function
+ * @return {String} getRecipeID - Function
  */
-function getID(id) {
-  model.getRecipeByID(id);
+async function getID(id) {
+  const recipe = await model.getRecipeByID(id);
 }
 
 /**
@@ -76,11 +76,9 @@ function init() {
 
 /**
  * Reload the app
- * @return page reload
  */
 export function reloadPage() {
   window.location.reload();
 }
 
-// Function call to start the app
 init();

@@ -48,7 +48,6 @@ export function selectTextColour() {
   if (userChoice === "default") {
     if ("text" in items) localStorage.removeItem("text");
     control.reloadPage();
-    return;
   } else {
     html.style.color = userChoice;
     localStorage.setItem("text", userChoice);
@@ -69,11 +68,9 @@ export function selectBtnColour() {
   if (userChoice === "default") {
     if ("button" in items) localStorage.removeItem("button");
     control.reloadPage();
-    return;
   } else {
     localStorage.setItem("button", userChoice);
-    let i;
-    for (i = 0; i < button.length; i++) {
+    for (let i = 0; i < button.length; i++) {
       button[i].style.backgroundColor = userChoice;
     }
   }
@@ -81,11 +78,11 @@ export function selectBtnColour() {
 
 /**
  * @param {Event} buttonClick
- *
  * @return {String} to print to HTML
  */
 export function renderSettings() {
   const mainContainer = document.querySelector("#mainCenter");
+  mainContainer.style.height = "110vh";
   recipePage.classList.remove("active");
   home.classList.remove("active");
   settings.classList.add("active");
