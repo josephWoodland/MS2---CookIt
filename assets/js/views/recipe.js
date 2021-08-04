@@ -1,10 +1,17 @@
+// Import functions
 import * as model from "../model.js";
+
+// Element Selectors
 const mainCenter = document.querySelector("#mainCenter");
 const plans = document.querySelector("#plans");
 const home = document.querySelector("#home");
 const recipePage = document.querySelector("#recipes");
-const settings = document.querySelector('#settings');
+const settings = document.querySelector("#settings");
 
+/**
+ * Function called by user interaction
+ * @return {String} to print to HTML
+ */
 export function renderRecipePage() {
   recipePage.classList.add("active");
   home.classList.remove("active");
@@ -27,6 +34,7 @@ export function ingredientsHtml(ingredients, inputData) {
   return `
   <li>${
     inputData.messure === "metric"
+    /* jshint laxbreak: true */
       ? ingredients.measures.metric.amount
       : ingredients.measures.us.amount
   } ${
@@ -36,6 +44,7 @@ export function ingredientsHtml(ingredients, inputData) {
   }: ${ingredients.name}</li>
   `;
 }
+
 /**
  * @param {index} button click
  *
@@ -47,6 +56,7 @@ export function renderSavedRecipe(i) {
   renderRecipe(recipe);
   model.fetchSavedData();
 }
+
 /**
  * @param {Array} recipeData
  *
@@ -56,7 +66,8 @@ export function renderRecipes() {
   const recipeContainer = document.querySelector("#recipeContainer");
   recipeContainer.innerHTML = "";
   const recipeArr = model.savedRecipes[0];
-  if (!model.savedRecipes[0]) {
+  console.log(recipeArr.length);
+  if (recipeArr.length === 0) {
     recipeContainer.innerHTML = `<h1 style="grid-column:1 / span 5">You have no stored recipies</h1>`;
   } else {
     const html = recipeArr.map(recipesHtml).join("");
@@ -64,13 +75,13 @@ export function renderRecipes() {
     model.fetchSavedData();
   }
 }
+
 /**
- * @param {Array, index} recipeData
- *
+ * @param {Array} recipeData
+ * @param {index} Number of the array
  * @return {String} to print to HTML
  */
 export function recipesHtml(recipesArr, index) {
-
   return `
   <div class="recipe__container-recipe">
               <a
@@ -89,6 +100,7 @@ export function recipesHtml(recipesArr, index) {
   
             `;
 }
+
 /**
  * @param {Array} recipeData
  *

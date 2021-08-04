@@ -1,7 +1,7 @@
+/*jshint esversion: 11 */
 /**
+ * Clears local storage
  * @param {Event} buttonClick
- * 
- * @return {} clears local storage
  */
 export function clearPopup() {
   const answer = window.confirm(

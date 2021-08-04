@@ -1,7 +1,9 @@
+// Import functions
 import * as model from "../model.js";
 import * as table from "./table.js";
 import * as save from "./save.js";
 
+// Element Selectors
 const mainCenter = document.querySelector("#mainCenter");
 const plans = document.querySelector("#plans");
 const home = document.querySelector("#home");
@@ -37,7 +39,7 @@ export function renderPlan(index) {
 }
 
 /**
- * @param {Event} buttonClick
+ * Called on user interaction
  *
  * @return {String} to print to HTML
  */
@@ -46,6 +48,7 @@ export function renderPlansDay() {
   const weekLink = document.querySelector("#saveWeek");
   const dayLink = document.querySelector("#saveDay");
   const planArrDay = model.savedPlanDay[0];
+  /* jshint laxbreak: true */
   const htmlDay =
     planArrDay != undefined
       ? planArrDay.map(planHtml).join("")
@@ -58,11 +61,16 @@ export function renderPlansDay() {
   model.fetchSavedData();
 }
 
+/**
+ * Called on user interaction
+ * @return {String} to print to the HTML
+ */
 export function renderPlansWeek() {
   const renderContainer = document.querySelector("#renderContainer");
   const weekLink = document.querySelector("#saveWeek");
   const dayLink = document.querySelector("#saveDay");
   const planArrWeekly = model.savedPlanWeek[0];
+  /* jshint laxbreak: true */
   const htmlWeek =
     planArrWeekly != undefined
       ? planArrWeekly.map(planHtml).join("")

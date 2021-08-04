@@ -1,10 +1,12 @@
+// Import functions
 import * as model from "../model.js";
 import * as control from "../controller.js";
 
+// Element Selectors
 const plans = document.querySelector("#plans");
 const home = document.querySelector("#home");
 const recipePage = document.querySelector("#recipes");
-const settings = document.querySelector('#settings');
+const settings = document.querySelector("#settings");
 
 /**
  * @param {Event} buttonClick
@@ -15,8 +17,8 @@ export function selectBackgroundColour() {
   const items = { ...localStorage };
   const selection = document.querySelector("#backgroundColourSelect");
   const html = document.querySelector("html");
-  const main = document.querySelector('#main');
-  const nav = document.querySelector('#nav');
+  const main = document.querySelector("#main");
+  const nav = document.querySelector("#nav");
   const userChoice = selection.value;
 
   if (userChoice === "default") {
@@ -31,6 +33,7 @@ export function selectBackgroundColour() {
     model.displayOptions("background", userChoice);
   }
 }
+
 /**
  * @param {Event} buttonClick
  *
@@ -45,12 +48,12 @@ export function selectTextColour() {
   if (userChoice === "default") {
     if ("text" in items) localStorage.removeItem("text");
     control.reloadPage();
-    return;
   } else {
     html.style.color = userChoice;
     localStorage.setItem("text", userChoice);
   }
 }
+
 /**
  * @param {Event} buttonClick
  *
@@ -65,22 +68,21 @@ export function selectBtnColour() {
   if (userChoice === "default") {
     if ("button" in items) localStorage.removeItem("button");
     control.reloadPage();
-    return;
   } else {
     localStorage.setItem("button", userChoice);
-    let i;
-    for (i = 0; i < button.length; i++) {
+    for (let i = 0; i < button.length; i++) {
       button[i].style.backgroundColor = userChoice;
     }
   }
 }
+
 /**
  * @param {Event} buttonClick
- *
  * @return {String} to print to HTML
  */
 export function renderSettings() {
   const mainContainer = document.querySelector("#mainCenter");
+  mainContainer.style.height = "110vh";
   recipePage.classList.remove("active");
   home.classList.remove("active");
   settings.classList.add("active");

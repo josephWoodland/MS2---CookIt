@@ -1,13 +1,14 @@
+// Element Selectors
 const welcomeMessage = document.querySelector(".main__center-welcomeMessage");
 const formTitle = document.querySelector(".form__header");
 const formP = document.querySelector(".form__paragraph");
 const formName = document.querySelector("#formName");
 
+// Object to store data
 let username;
 
 /**
  * Renders personalised welcome message
- * @return {String} render to HTML
  */
 export function renderName() {
   username = localStorage.getItem("name");
@@ -16,7 +17,6 @@ export function renderName() {
 
 /**
  * Renders personalised form message
- * @return {String} render to HTML
  */
 export function hideName() {
   if (formTitle) {

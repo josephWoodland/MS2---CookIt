@@ -5,8 +5,9 @@
 .main {
   padding-top: 3%;
   background-color: $color-backgound;
-  height: 70vh;
-  @media screen and (max-width: $bp-small){
+  height: 90vh;
+  z-index: -1;
+  @media screen and (max-width: $bp-medium) {
     height: 160vh;
   }
 
@@ -17,9 +18,9 @@
     justify-content: center;
     height: inherit;
 
-    @media screen and (max-width: $bp-small){
+    @media screen and (max-width: $bp-medium) {
       width: 90%;
-      margin: 15rem 0 0 0 ;
+      margin: 15rem 0 0 0;
       justify-content: start;
     }
 
@@ -31,6 +32,7 @@
         width: 90%;
         margin: auto;
       }
+
       &-pods {
         margin-top: 5rem;
         height: 20rem;
@@ -42,6 +44,10 @@
 
       &-logo {
         height: 30rem;
+        @media screen and (max-width: $bp-medium) {
+          height: 5rem;
+          margin-left: auto;
+        }
       }
 
       &-avo {
@@ -51,6 +57,7 @@
           margin-right: auto;
         }
       }
+
       @media screen and (max-width: $bp-large) {
         &-pods {
           margin-top: 5rem;

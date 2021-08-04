@@ -1,4 +1,4 @@
-/*jshint esversion: 9 */
+// Import functions
 import * as welcome from "./views/welcome.js";
 import { URL, API_KEY } from "./config.js";
 import * as table from "./views/table.js";
@@ -9,8 +9,8 @@ import * as save from "./views/save.js";
 const formInput = document.querySelectorAll("#form input");
 const formSelect = document.querySelectorAll("#form select");
 const mainCenter = document.querySelector(".main__center-welcomeMessage");
-// Empty objects to put retrived data in
 
+// Empty objects to put retrived data in
 export let plan = {};
 export let inputData = {};
 export let recipe = {};
@@ -20,8 +20,9 @@ export let savedPlanDay = [];
 
 /**
  * Checks to see if there is a name stored locally
- * @return {HTML text} user name and different welcome message
- */ export async function starterMessage() {
+ * Changes the welcome message
+ */
+export async function starterMessage() {
   if ("name" in localStorage) {
     welcome.renderName();
     welcome.hideName();
@@ -31,10 +32,8 @@ export let savedPlanDay = [];
 }
 
 /**
- * Collect User Input data
- *
+ * Colects the data form the Input HTML tags
  * @param {Event}  - HTML event
- * Colects the data form the Input HTML tags§
  * @return {Object} recipe - Recipe
  */
 export function formSubmit() {
@@ -69,7 +68,6 @@ export function formSubmit() {
 
 /**
  * Get Meal Plan by user input data
- *
  * @param {Object} inputData  - Collection of user paramaters
  * @return {Object} Data - Meal Plan data
  */
@@ -94,7 +92,6 @@ async function getMealPlan(inputData) {
 
 /**
  * Get recipe data by ID
- *
  * @param {Number} id  - Recipe id
  * @return {Object} recipe - Recipe
  */
@@ -163,17 +160,17 @@ export function dailyPlanner(day) {
   table.renderDay(mealTitle);
   save.curPlannerData(mealTitle);
 }
+
 /**
  * User input selection to alter HTML
  * @param {str, str} item from fetchSavedData
  *  Checks what HTML element to mutate
- * @return {HTML style} mutates {element} {style}
  */
 export function displayOptions(item, selection) {
   const html = document.querySelector("html");
   const button = document.querySelectorAll(".btn");
-  const main = document.querySelector('#main');
-  const nav = document.querySelector('#nav');
+  const main = document.querySelector("#main");
+  const nav = document.querySelector("#nav");
 
   if (item === "background") {
     html.style.backgroundColor = selection;
@@ -197,7 +194,6 @@ export function displayOptions(item, selection) {
  * @return {Object} of all recipes {Name} {ID}
  */
 export function fetchSavedData() {
-  // Get all data from local storage
   savedRecipes = [];
   savedPlanWeek = [];
   savedPlanDay = [];
@@ -214,9 +210,16 @@ export function fetchSavedData() {
   save.curSavedRecipeData(savedRecipes.flat(4));
 }
 
-export function renderCurPlan(){
-  console.log(table.savedPlan);
-  const plan = table.savedPlan
-  console.log('This is your current plan');
-  plan.mon ? table.renderWeekly(plan) : table.renderDay(plan);
+export function renderCurPlan() {
+  let plan = table.savedPlan;
+  if (!plan) {
+    recipeView.renderRecipePage();
+    recipeView.renderRecipes();
+  } else {
+    if (!plan.mon) {
+      table.renderDay(plan);
+    } else {
+      table.renderWeekly(plan);
+    }
+  }
 }

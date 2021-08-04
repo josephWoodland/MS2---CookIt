@@ -17,42 +17,45 @@
     flex-direction: column;
     width: 100%;
     font-size: $font-size-copy;
-    font-size: $font;
-    @media screen and (max-width: $bp-small){
+    font-family: $font;
+
+    @media screen and (max-width: $bp-small) {
       margin-bottom: 3rem;
     }
 
     &-header {
       font-size: $font-size-copy;
-    }
-    &-btn {
-      width: 30%;
-      @media screen and (max-width: $bp-small){
-        margin-bottom: 3rem;
+      @media screen and (max-width: $bp-small) {
+        margin: auto;
       }
     }
 
     select {
       margin-top: 3rem;
       margin-bottom: 3rem;
+      @media screen and (max-width: $bp-small) {
+        width: 40%;
+        margin: 3rem auto;
+      }
     }
   }
-  
+
   &__buttons {
     display: flex;
     justify-content: space-evenly;
-    &-btn{
+    &-btn {
       width: 10rem;
-      &-clearStorage{
+      &-clearStorage {
         width: 30%;
         margin: 10rem auto 10rem auto;
 
-        @media screen and (max-width: $bp-small){
+        @media screen and (max-width: $bp-small) {
           width: 100%;
         }
       }
     }
   }
+
   &__hidden {
     display: none;
     visibility: hidden;
@@ -61,6 +64,7 @@
       visibility: visible;
     }
   }
+
   &__shown {
     @media screen and (max-width: $bp-medium) {
       display: none;

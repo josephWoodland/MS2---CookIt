@@ -1,8 +1,5 @@
-const home = document.querySelector(".home");
-/**
+/*jshint esversion: 11 *//**
  * @param {Event} buttonClick
- * 
- * @return {} reloads the page
  */
 export function welcomePage() {
   window.location.reload();

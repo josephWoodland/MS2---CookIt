@@ -21,6 +21,7 @@
         class="nav__logo"
         src="./assets/images/png/Logo.png"
         alt="CookIt Logo"
+        onclick="pageReload()"
       />
       <ul class="nav__list">
         <li id="home" class="nav__list-li active">
@@ -40,7 +41,7 @@
     <!-- Main -->
     <div id="main" class="main">
       <div id="mainCenter" class="main__center">
-        <div id="form" class="form hidden">
+        <div class="form hidden">
           <h2 class="form__header">
             How about we get to know each other a little better?
           </h2>
@@ -50,11 +51,12 @@
           <form id="form" class="form__input" autocomplete="off">
             <div class="form__question" id="formName">
               <p>Whats your name?</p>
-              <input required type="text" class="form__question-1" id="name" />
+              <input required type="text" class="form__question" id="name" />
             </div>
             <div class="form__question">
               <p>How long do you want us to create a meal plan for?</p>
-              <select required name="time" id="time" class="form__question-2">
+              <select required name="time" id="time" class="form__question">
+                <option value="">Choose</option>
                 <option value="day">Day</option>
                 <option value="week">Week</option>
               </select>
@@ -64,14 +66,14 @@
               <input
                 required
                 type="number"
-                class="form__question-3"
+                class="form__question"
                 id="calorie"
                 placeholder="e.g. 2000"
               />
             </div>
             <div class="form__question">
               <p>What diet are you following?</p>
-              <select name="diet" id="diet" class="form__question-4">
+              <select name="diet" id="diet" class="form__question">
                 <option value="none">None</option>
                 <option value="omnivore">Omnivore</option>
                 <option value="pesc">Pesctarian</option>
@@ -85,7 +87,7 @@
             </div>
             <div class="form__question">
               <p>Have you got any allergies?</p>
-              <select name="allergies" id="allergies" class="form__question-5">
+              <select name="allergies" id="allergies" class="form__question">
                 <option value="none">None</option>
                 <option value="dairy">Dairy</option>
                 <option value="egg">Egg</option>
@@ -103,13 +105,16 @@
             </div>
             <div class="form__question">
               <p>Metric or Imperial?</p>
-              <select name="messure" id="messure" class="form__question-5">
+              <select name="messure" id="messure" class="form__question">
                 <option value="metric">Metric</option>
                 <option value="imperial">Impreial</option>
               </select>
             </div>
             <input
+<<<<<<< HEAD
               href=""
+=======
+>>>>>>> readme
               class="btn form-btn"
               value="Create my plan"
               id="form-btn"
@@ -139,12 +144,12 @@
             Create Your Perfect <br />
             Meal Plan
           </h1>
-          <button href="#" onclick="showForm()" class="btn main__center-btn">
+          <button onclick="showForm()" class="btn main__center-btn">
             Click To Start
           </button>
         </div>
     </div>
-
+    </div>
     <!-- Footer -->
     <div class="footer"></div>
   </body>
