@@ -263,9 +263,9 @@ In JShint there was an issue with call a variable ‘name’ on the welcome.js f
 I passed the code through the online code checking tool [w3validator](https://validator.w3.org/)
 
 - Html Code has passed through the validator with no issues or warnings.
-![image of](assets/readme/Assets/Test-results/HTML.png)
+![image of](assets/readme/Assets/test-results/HTML.png)
 - CSS code passed through the validator with no issues or warnings.
-![image of](assets/readme/Assets/Test-results/CSS.png)
+![image of](assets/readme/Assets/test-results/CSS.png)
 - JShint - I used `/*jshint esversion: 20 */` at the top of each page to stop syntax errors from the use of modern JS. I did get a warning about the line break in the ternary function in the code. After researching why this happens, it seems to be an issue with JShint and not the code itself, so I added `/* jshint laxbreak: true */` to skip these lines in the code.
 
 ### Chrome DevTools
