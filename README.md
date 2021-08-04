@@ -501,3 +501,4 @@ To use the `watch:sass` and the `live reload` modules for the development enviro
 ## CREDITS
 
 There is no code that a copied in this project.
+I did use the online resources mentioned earlier in the file, to check on any problems I had with my code.
