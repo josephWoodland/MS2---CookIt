@@ -216,6 +216,10 @@ export function renderCurPlan() {
     recipeView.renderRecipePage();
     recipeView.renderRecipes();
   } else {
-    plan.mon ? table.renderWeekly(plan) : table.renderDay(plan);
+    if (!plan.mon) {
+      table.renderDay(plan);
+    } else {
+      table.renderWeekly(plan);
+    }
   }
 }

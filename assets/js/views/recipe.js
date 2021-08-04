@@ -34,6 +34,7 @@ export function ingredientsHtml(ingredients, inputData) {
   return `
   <li>${
     inputData.messure === "metric"
+    /* jshint laxbreak: true */
       ? ingredients.measures.metric.amount
       : ingredients.measures.us.amount
   } ${

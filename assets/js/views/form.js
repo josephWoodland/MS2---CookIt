@@ -1,3 +1,4 @@
+/*jshint esversion: 11 */
 // Import functions
 import * as model from "../model.js";
 

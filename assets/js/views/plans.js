@@ -47,6 +47,7 @@ export function renderPlansDay() {
   const weekLink = document.querySelector("#saveWeek");
   const dayLink = document.querySelector("#saveDay");
   const planArrDay = model.savedPlanDay[0];
+  /* jshint laxbreak: true */
   const htmlDay =
     planArrDay != undefined
       ? planArrDay.map(planHtml).join("")
@@ -68,6 +69,7 @@ export function renderPlansWeek() {
   const weekLink = document.querySelector("#saveWeek");
   const dayLink = document.querySelector("#saveDay");
   const planArrWeekly = model.savedPlanWeek[0];
+  /* jshint laxbreak: true */
   const htmlWeek =
     planArrWeekly != undefined
       ? planArrWeekly.map(planHtml).join("")

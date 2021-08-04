@@ -88,7 +88,12 @@ export function getSavedName() {
     curSavedRecipes.push(curRecipe);
     const recipe = JSON.stringify(curSavedRecipes.flat(3));
     window.localStorage.setItem(`recipe`, recipe);
-    curPlan.mon ? table.renderWeekly(curPlan) : table.renderDay(curPlan);
+
+    if (!curPlan.mon) {
+      table.renderDay(curPlan);
+    } else {
+      table.renderWeekly(curPlan);
+    }
   }
 }
 

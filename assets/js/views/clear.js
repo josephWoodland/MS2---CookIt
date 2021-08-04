@@ -1,3 +1,4 @@
+/*jshint esversion: 11 */
 /**
  * Clears local storage
  * @param {Event} buttonClick

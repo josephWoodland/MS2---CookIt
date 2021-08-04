@@ -263,18 +263,19 @@ In JShint there was an issue with call a variable ‘name’ on the welcome.js f
 I passed the code through the online code checking tool [w3validator](https://validator.w3.org/)
 
 - Html Code has passed through the validator with no issues or warnings.
-![image of](assets/readme/Assets/Test-results/HTML%20validation.png)
+![image of](assets/readme/Assets/Test-results/HTML.png)
 - CSS code passed through the validator with no issues or warnings.
-![image of](assets/readme/Assets/Test-results/CSS%20validation.png)
+![image of](assets/readme/Assets/Test-results/CSS.png)
+- JShint - I used `/*jshint esversion: 20 */` at the top of each page to stop syntax errors from the use of modern JS. I did get a warning about the line break in the ternary function in the code. After researching why this happens, it seems to be an issue with JShint and not the code itself, so I added `/* jshint laxbreak: true */` to skip these lines in the code.
 
 ### Chrome DevTools
 
 I completed an audit on the web app.
 
 Desktop
-![contact-d]()
+![contact-d](assets/readme/assets/test-results/Desktop.png)
 Mobile
-![contact-m]()
+![contact-m](assest/../assets/readme/assets/test-results/Mobile.png)
 
 - ### Performance = Ok
 
@@ -376,7 +377,7 @@ Saved recipes: when there are no saved recipes, perhaps change the copy to ‘oh
 
 Results from user 2 test -
 
-This user has a old HP laptop with a 700p screen and a wide aspect ratio, this user experienced multiple formatting issues, most have been fixed. 
+This user has a old HP laptop with a 700p screen and a wide aspect ratio, this user experienced multiple formatting issues, most have been fixed.
 
 ## Testing Checklists
 
@@ -393,7 +394,8 @@ This was a list of all the interactive features on the app and if they respond i
 - Create a plan - Form data collected.
 - Save - Current content is saved to storage.
 - Clear storage - local storage is cleared.
-- 
+- Edit Name - Edits the name of the saved recipe or plan.
+- Settings - All buttons work correctly
 
 ### User Goals
 
