@@ -14,7 +14,7 @@ Easy access to recipes of plans that they like
 
 ![image of mockups](assets/readme/assets/device-mockup.png)
 
-[live site](https://josephwoodland.github.io/MS2---Cookit.com/)
+[live site](https://josephwoodland.github.io/MS2---CookIt/)
 
 ## Index
 
