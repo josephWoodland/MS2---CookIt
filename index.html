@@ -41,7 +41,7 @@
     <!-- Main -->
     <div id="main" class="main">
       <div id="mainCenter" class="main__center">
-        <div id="form" class="form hidden">
+        <div class="form hidden">
           <h2 class="form__header">
             How about we get to know each other a little better?
           </h2>
@@ -56,6 +56,7 @@
             <div class="form__question">
               <p>How long do you want us to create a meal plan for?</p>
               <select required name="time" id="time" class="form__question">
+                <option value="">Choose</option>
                 <option value="day">Day</option>
                 <option value="week">Week</option>
               </select>
@@ -110,7 +111,6 @@
               </select>
             </div>
             <input
-              href=""
               class="btn form-btn"
               value="Create my plan"
               id="form-btn"
@@ -140,12 +140,12 @@
             Create Your Perfect <br />
             Meal Plan
           </h1>
-          <button href="#" onclick="showForm()" class="btn main__center-btn">
+          <button onclick="showForm()" class="btn main__center-btn">
             Click To Start
           </button>
         </div>
     </div>
-
+    </div>
     <!-- Footer -->
     <div class="footer"></div>
   </body>

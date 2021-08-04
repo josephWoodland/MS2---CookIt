@@ -44,16 +44,19 @@ window.renderCurPlan = model.renderCurPlan;
  */
 window.onclick = function (e) {
   e.preventDefault();
-  const id = e.target.id;
-  const div = e.target.parentNode.parentNode.closest("div");
-  const dayPlan = model.savedPlanDay[0];
-  const weekPlan = model.savedPlanWeek[0];
-  if (div === null) return;
+  const plans = document.querySelector("#plans");
+  if (plans.classList.contains("active")) {
+    const id = e.target.id;
+    const div = e.target.parentNode.parentNode.closest("div");
+    const dayPlan = model.savedPlanDay[0];
+    const weekPlan = model.savedPlanWeek[0];
+    if (div === null) return;
 
-  if (div.className === "settings__container week") {
-    table.renderWeekly(weekPlan[id]);
-  } else if (div.className === "settings__container day") {
-    table.renderDay(dayPlan[id]);
+    if (div.className === "settings__container week") {
+      table.renderWeekly(weekPlan[id]);
+    } else if (div.className === "settings__container day") {
+      table.renderDay(dayPlan[id]);
+    }
   }
 };
 
@@ -63,7 +66,7 @@ window.onclick = function (e) {
  * @return {String} getRecipeID - Function
  */
 async function getID(id) {
-  const recipe = await model.getRecipeByID(id);
+  await model.getRecipeByID(id);
 }
 
 /**

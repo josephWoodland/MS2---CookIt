@@ -17,6 +17,7 @@
     &:hover{
       cursor: pointer;
     }
+    
     @media screen and (max-width: $bp-medium) {
       display: none;
     }

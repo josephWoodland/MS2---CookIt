@@ -17,24 +17,26 @@
     flex-direction: column;
     width: 100%;
     font-size: $font-size-copy;
-    font-size: $font;
+    font-family: $font;
+
     @media screen and (max-width: $bp-small) {
       margin-bottom: 3rem;
     }
 
     &-header {
       font-size: $font-size-copy;
-    }
-    &-btn {
-      width: 30%;
       @media screen and (max-width: $bp-small) {
-        margin-bottom: 3rem;
+        margin: auto;
       }
     }
 
     select {
       margin-top: 3rem;
       margin-bottom: 3rem;
+      @media screen and (max-width: $bp-small) {
+        width: 40%;
+        margin: 3rem auto;
+      }
     }
   }
 
@@ -53,6 +55,7 @@
       }
     }
   }
+
   &__hidden {
     display: none;
     visibility: hidden;
@@ -61,6 +64,7 @@
       visibility: visible;
     }
   }
+
   &__shown {
     @media screen and (max-width: $bp-medium) {
       display: none;

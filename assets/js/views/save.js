@@ -64,9 +64,7 @@ export function saveRecipe() {
   const header = document.querySelector(".recipe__head-header");
   const inputBox = document.querySelector("#saveName");
   const saveNameBtn = document.querySelector("#nameSubmitRecipe");
-  const saveBtn = document.querySelector("#saveRecipe");
   const recipeName = header.textContent;
-  saveBtn.classList.add("hidden");
   header.textContent = `What would you like to save this recipe as? ${recipeName}`;
   inputBox.classList.remove("hidden");
   saveNameBtn.classList.remove("hidden");
@@ -158,11 +156,17 @@ export function savePlanDay() {
 export function editSaveName(index) {
   const newName = prompt("What would you like to change the name to?");
   let i = Number(index);
-  curSavedRecipes[i].saveName = newName;
-  const recipes = JSON.stringify(curSavedRecipes.flat(3));
-  window.localStorage.setItem(`recipe`, recipes);
-  recipe.renderRecipes(curSavedRecipes);
+  if (!isNaN(newName)) {
+    alert("Invalid input valid NAME for the recipe, must be a written name");
+    inputBox.value = "";
+  } else {
+    curSavedRecipes[i].saveName = newName;
+    const recipes = JSON.stringify(curSavedRecipes.flat(3));
+    window.localStorage.setItem(`recipe`, recipes);
+    recipe.renderRecipes(curSavedRecipes);
+  }
 }
+
 /**
  * @param {Array Index}
  * @return {New Str} save to local storage
@@ -199,15 +203,19 @@ export function editSavePlanName(index) {
 export function deletePlanItem(index) {
   const savedWeek = document.querySelector("#saveWeek");
   let i = Number(index);
-  alert(
-    `You have deleted ${curSavedRecipes[i].saveName}!!, page will refresh!!`
-  );
+  console.log(curSavedRecipes);
   if (savedWeek.classList.contains("active")) {
+    alert(
+      `You have deleted ${curSavedPlanWeekly[i].saveName}!!, page will refresh!!`
+    );
     curSavedPlanWeekly.splice(i, 1);
     const plan = JSON.stringify(curSavedPlanWeekly.flat(3));
     window.localStorage.setItem(`week`, plan);
     window.location.reload();
   } else {
+    alert(
+      `You have deleted ${curSavedPlanDays[i].saveName}!!, page will refresh!!`
+    );
     curSavedPlanDays.splice(i, 1);
     const plan = JSON.stringify(curSavedPlanDays.flat(3));
     window.localStorage.setItem(`day`, plan);

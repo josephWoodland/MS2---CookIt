@@ -65,7 +65,8 @@ export function renderRecipes() {
   const recipeContainer = document.querySelector("#recipeContainer");
   recipeContainer.innerHTML = "";
   const recipeArr = model.savedRecipes[0];
-  if (!model.savedRecipes[0]) {
+  console.log(recipeArr.length);
+  if (recipeArr.length === 0) {
     recipeContainer.innerHTML = `<h1 style="grid-column:1 / span 5">You have no stored recipies</h1>`;
   } else {
     const html = recipeArr.map(recipesHtml).join("");

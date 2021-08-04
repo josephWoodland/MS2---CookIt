@@ -32,7 +32,7 @@ id="#The-Website-Brief">
   
 # The Website Brief
 
-This is a copy of the [brief](assets/readme/Assets/Brief - Cook it.pdf)
+This is a copy of the brief [here](assets/readme/assets/Brief%20-%20Cook%20It.pdf)
 
 ## Summary of the brief
 
@@ -120,9 +120,9 @@ The footer on this project is not too important, no information is needed in the
 
 Here is a sample of the original wireframes for the app approved by the client.
 
-![desktop](assets/readme/xd/landing.png)
+[desktop](assets/readme/xd/landing.png)
 
-Other wire-frames can be downloaded [here](assets/readme/xd/Cookit - Wireframes.xd)
+All the wire-frames and design boards can be downloaded [here](assets/readme/xd/CookIt%20-%20Wireframes.xd)
 
 <span
  id="#design">
@@ -140,17 +140,17 @@ The design elements were influenced and informed by the client’s brief, specif
 
 ### Main colours
 
-Brand colours are ![brand](assets/readme/assets/xd/colourPalette.png)
+Brand colours are ![brand](assets/readme/xd/colourPalette.png)
 
 ## Features for the website
 
-### Responsive design on all devices
+### Responsive design
 
-- Website must be functional on all screen sizes
+- Website must be functional, but foucusing on larger screen sizes.
 
 ### Interactive page
 
-- Page HTML must be interactive for the user and feel fluid
+- Page HTML must be interactive for the user and feel fluid.
 
 ## Technologies Used
 
@@ -180,9 +180,9 @@ Allowing the use of variables makes it easy if there is any brand change that co
 
 Using the nesting feature of SCSS allows for cleaner code making site upkeep and bug fixes easier to locate and address.
 
-## Coding Architecture - Model - View - Controller
+## Coding Architecture - MVC
 
-I am using the MVC(Model - View - Controller) architecture to organise my JS files. I found this way of organizing my file base easy to understand, and clean to look at, and designed in a way to reduce the length of single js files.
+I am using the MVC(Model - View - Controller) architecture to organize my JS files. I found this way of organizing my file base easy to understand, and clean to look at, and designed in a way to reduce the length of single js files.
 
 The Model.js page is there to handle all the data that is used by the app, this makes it easy to try and look for any problems with the use of data.
 
@@ -225,9 +225,8 @@ I used basic node modules to help me code in a smoother and more organized appro
 
 I used JavaScript to compute the logic of my project, I have highlighted some of the more recent static sugar only available in the later version of JavaScript
 
-Spread operator - Used this when retrieving the data from the local storage to spread the object and then search for matching keys
-Async - Await - I used this method when making calls to the API, combined with the fetch method, It makes the code self-explanatory
-Optional chaining - I sued this as an easy way to check if an element exists then call methods on the object. Instead of writing an if block.
+Spread operator - Used this when retrieving the data from the local storage to spread the object and then search for matching keys.
+Async - Await - I used this method when making calls to the API, combined with the fetch method. I think it makes the code more self-explanatory.
 
 ## Software Used
 
@@ -249,15 +248,15 @@ Optional chaining - I sued this as an easy way to check if an element exists the
 
 ### [npm](https://www.npmjs.com/)
 
-### [MDN](https://developer.mozilla.org/en-US/)
+### [Code Pen](https://codepen.io/)
 
 <span
  id="#testing">
  </span>
 
-# Testing
+## Testing
 
-## Automated Code Validation
+### Automated Code Validation
 
 In JShint there was an issue with call a variable ‘name’ on the welcome.js file as the is a window. name on the global scope - so I changed it to ‘userName’ and it then passed with no warnings.
 
@@ -273,13 +272,13 @@ I passed the code through the online code checking tool [w3validator](https://va
 I completed an audit on the web app.
 
 Desktop
-![contact-d](assest/../assets/readme/Assets/Test-results/contact-desktop.png)
+![contact-d]()
 Mobile
-![contact-m](assest/../assets/readme/Assets/Test-results/contact-mobile.png)
+![contact-m]()
 
 - ### Performance = Ok
 
--The comments from the program was due to having data in local storage which was affecting the loading time
+-The comments from the program was due to having data in local storage which was affecting the loading time.
 
 - ### Accessibility = Good
 
@@ -287,7 +286,7 @@ Mobile
 
 - ### Best Practices = Good
 
-Marked down for having some images load in the wrong aspect ratio on some mobile screens
+Marked down for having some images load in the wrong aspect ratio on some mobile screens.
 
 - ### SEO = Good
 
@@ -357,9 +356,9 @@ Also used the responsive profiles preset in the dev tools of:
 
 ## Major testing issues identified
 
-- The major problem I faced when testing on smaller screens was down to the pop up modal, I spent a long time trying to fix the formatting but I ended up having to change the lay out to the app, and not use any modal in the app.
+- The major problem I faced when testing on smaller screens was down to the pop up modal, I spent a long time trying to fix the formatting as a result I changed the format of the app, and not use any pop up modal's at all.
 
-- If you keep using the save button, t,he function will keep on printing the name to the screen repeatedly fix I made the page reload after saving.
+- If you keep using the save button, the function will keep on printing the name to the screen repeatedly fix I made the page reload after saving.
 
 ## User testing
 
@@ -369,7 +368,7 @@ I had two users test my app remotely, although the reasons for them using the ap
 
 Results from user 1 test -
 
-Spelling errors on metric and imperial drop down. Overall gramma check - no need to capitalize each letter in a heading/sentence I.e ‘Ok Chanel, Let’ Create A Meal Plan’ this can just be ‘Okay Chanel, let’s create a meal plan’.
+Spelling errors on metric and imperial drop down. Overall grama check - no need to capitalize each letter in a heading/sentence I.e ‘Ok Chanel, Let’ Create A Meal Plan’ this can just be ‘Okay Chanel, let’s create a meal plan’.
 Button: change to create my plan
 Clicked on a menu in my meal plan, then pressed back in the browser and the meal plan was gone. This should take the user back to the meal plan loading in the browser.
 Saved plan as ‘week 1’ went to saved plans, selected week 1 but unresponsive - app should of loaded the saved plan and rendered it the the HTML.
@@ -381,7 +380,20 @@ This user has a old HP laptop with a 700p screen and a wide aspect ratio, this u
 
 ## Testing Checklists
 
-Thi was a list of all the interactive features on the app and if they respond in the correct way’
+This was a list of all the interactive features on the app and if they respond in the correct way.
+
+### Nav Bar
+
+- All links render the right content to the center section of the page - highlighting the correct page.
+- Logo links to the welcome page.
+
+### Buttons
+
+- Click to start - When pressed form is shown.
+- Create a plan - Form data collected.
+- Save - Current content is saved to storage.
+- Clear storage - local storage is cleared.
+- 
 
 ### User Goals
 
@@ -393,6 +405,18 @@ The biggest issue I faced was having the app use modal’s to render certain typ
 
 To fix this I decided to have a redesign of the app, and instead of rendering different HTML to the inside of a pop up modal, just have it all on one web page.
 
+### Saved Recipe
+
+When there was no saved recipes in storage no message was being rendered. The if statement was checking for `array[0]`, which is true even if the array is empty, I changed the if statement to check if the `array.length === 0`.
+
+### OnClick function
+
+The global onclick function that is set to prevent the page reloading on click, was showing an error in the console when the 'saved recipes' link was clicked. This was due to not having the correct parentNode. To fix I placed the code inside an IF statement that will fist check if the user is on the planner page.
+
+### Edit recipe saved name
+
+Editing the name of a saved recpie - the program would not check that the user input was correct if you tried to edit the name from the saved recipe screen.
+
 ## Known bugs
 
 ### Low res screens
@@ -403,17 +427,19 @@ On low res screens with an outside the normal screen aspect ratio will experienc
 
 This is a formatting bug, when shrinking the size of the viewing window in the browser, at a certain size the edge of the rendered weekly plan can be missed.
 
-<span id="#deployment"></span>
+<span
+ id="#deployment">
+ </span>
 
-# Deployment
+## Deployment
 
 I used multiple branches in this project; the master branch is the main deployment branch which will be the most up-to-date and deployable version of the code.
 
-## API
+### API
 
 The API uses a individual key to access the API, the key is already saved in the program so you will not have to generate one individually. You get 150 calls per day, there is more information in the documentation [here](https://spoonacular.com/food-api/docs/)
 
-## How to deploy
+### How to deploy
 
 To deploy this page to GitHub Pages from its GitHub repository, the following steps were taken:
 
@@ -423,7 +449,7 @@ To deploy this page to GitHub Pages from its GitHub repository, the following st
 - On selecting Master Branch the page will be automatically refreshed and the website is now deployed
 - Scroll back down to the GitHub Pages section in Settings to retrieve the link to the deployed website.
 
-## Run this code locally
+### Run this code locally
 
 Clone this project from GitHub by the terminal:
 
@@ -444,7 +470,7 @@ Clone this project from GitHub by the Git Desktop:
 
 Further reading and troubleshooting on cloning a repository from GitHub can be found [here](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
 
-## Running the code
+### Running the code
 
 As I have been using node_modules. You will have to have npm installed on your computer to find details [here](https://www.npmjs.com/).
 
@@ -456,7 +482,7 @@ To use the `watch:sass` and the `live reload` modules for the development enviro
  id="#future">
 </span>
 
-# Future Features
+## Future Features
 
 ### Shopping basket
 
@@ -470,6 +496,6 @@ To use the `watch:sass` and the `live reload` modules for the development enviro
  id="#credits">
 </span>
 
-# CREDITS
+## CREDITS
 
 There is no code that a copied in this project.

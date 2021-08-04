@@ -34,6 +34,7 @@
       flex-direction: column;
     }
   }
+
   input[type="text"],
   input[type="number"],
   select {
@@ -48,6 +49,7 @@
       border-bottom: 2px solid $color-gold;
     }
   }
+  
   &-btn {
     margin-top: 2rem;
     text-align: center;
