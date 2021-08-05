@@ -120,7 +120,7 @@ The footer on this project is not too important, no information is needed in the
 
 Here is a sample of the original wireframes for the app approved by the client.
 
-[desktop](assets/readme/xd/landing.png)
+![desktop](assets/readme/xd/landing.png)
 
 All the wire-frames and design boards can be downloaded [here](assets/readme/xd/CookIt%20-%20Wireframes.xd)
 
@@ -186,7 +186,7 @@ I am using the MVC(Model - View - Controller) architecture to organize my JS fil
 
 The Model.js page is there to handle all the data that is used by the app, this makes it easy to try and look for any problems with the use of data.
 
-The View.js files are handling anything to do with changing the view of the HTML, anything that prints ad replaces HTML
+The View.js files are handling anything to do with changing the view of the HTML, anything that prints ad replaces HTML.
 
 The Controller.js file will have anything to do with the connection between the two. Calling the initial information needed to start the app.
 
@@ -225,8 +225,9 @@ I used basic node modules to help me code in a smoother and more organized appro
 
 I used JavaScript to compute the logic of my project, I have highlighted some of the more recent static sugar only available in the later version of JavaScript
 
-Spread operator - Used this when retrieving the data from the local storage to spread the object and then search for matching keys.
-Async - Await - I used this method when making calls to the API, combined with the fetch method. I think it makes the code more self-explanatory.
+- Spread operator - Used this when retrieving the data from the local storage to spread the object and then search for matching keys.
+  
+- Async and Await - I used this method when making calls to the API, combined with the fetch method. I think it makes the code more self-explanatory.
 
 ## Software Used
 
@@ -258,14 +259,14 @@ Async - Await - I used this method when making calls to the API, combined with t
 
 ### Automated Code Validation
 
-In JShint there was an issue with call a variable ‘name’ on the welcome.js file as the is a window. name on the global scope - so I changed it to ‘userName’ and it then passed with no warnings.
+In JShint there was an issue with call a variable `name` on the welcome.js file as the is a window. name on the global scope - so I changed it to `userName` and it then passed with no warnings.
 
 I passed the code through the online code checking tool [w3validator](https://validator.w3.org/)
 
 - Html Code has passed through the validator with no issues or warnings.
-![image of](assets/readme/Assets/test-results/HTML.png)
+![image of](assets/readme/assets/test-results/HTML.png)
 - CSS code passed through the validator with no issues or warnings.
-![image of](assets/readme/Assets/test-results/CSS.png)
+![image of](assets/readme/assets/test-results/CSS.png)
 - JShint - I used `/*jshint esversion: 20 */` at the top of each page to stop syntax errors from the use of modern JS. I did get a warning about the line break in the ternary function in the code. After researching why this happens, it seems to be an issue with JShint and not the code itself, so I added `/* jshint laxbreak: true */` to skip these lines in the code.
 
 ### Chrome DevTools
@@ -369,7 +370,7 @@ I had two users test my app remotely, although the reasons for them using the ap
 
 Results from user 1 test -
 
-Spelling errors on metric and imperial drop down. Overall grama check - no need to capitalize each letter in a heading/sentence I.e ‘Ok Chanel, Let’ Create A Meal Plan’ this can just be ‘Okay Chanel, let’s create a meal plan’.
+Spelling errors on metric and imperial drop down. Overall grammer check - no need to capitalize each letter in a heading/sentence I.e ‘Ok Chanel, Let’ Create A Meal Plan’ this can just be ‘Okay Chanel, let’s create a meal plan’.
 Button: change to create my plan
 Clicked on a menu in my meal plan, then pressed back in the browser and the meal plan was gone. This should take the user back to the meal plan loading in the browser.
 Saved plan as ‘week 1’ went to saved plans, selected week 1 but unresponsive - app should of loaded the saved plan and rendered it the the HTML.
@@ -397,21 +398,27 @@ This was a list of all the interactive features on the app and if they respond i
 - Edit Name - Edits the name of the saved recipe or plan.
 - Settings - All buttons work correctly
 
+### API tests
+
+- API correctly load planner data - Yes
+- Does it take in user input data - Yes
+- Does it collect the recipe data by ID - Yes
+
 ### User Goals
 
 ## Issues and challenges I encountered
 
-### Modal
+### Modal - Redesign
 
 The biggest issue I faced was having the app use modal’s to render certain types of information. The issue I had was making the design responsive on smaller screens, have a modal on smaller screens was a real issue and did not work. Trying to make it work the code started to feel quite fragile.
 
-To fix this I decided to have a redesign of the app, and instead of rendering different HTML to the inside of a pop up modal, just have it all on one web page.
+To fix this I decided to have a redesign of the app, and instead of rendering different HTML to the inside of a pop up modal, just have it all on one web page. This gave me much more room to work with.
 
 ### Saved Recipe
 
 When there was no saved recipes in storage no message was being rendered. The if statement was checking for `array[0]`, which is true even if the array is empty, I changed the if statement to check if the `array.length === 0`.
 
-### OnClick function
+### Onclick function
 
 The global onclick function that is set to prevent the page reloading on click, was showing an error in the console when the 'saved recipes' link was clicked. This was due to not having the correct parentNode. To fix I placed the code inside an IF statement that will fist check if the user is on the planner page.
 
@@ -428,6 +435,10 @@ On low res screens with an outside the normal screen aspect ratio will experienc
 ### Weekly plan
 
 This is a formatting bug, when shrinking the size of the viewing window in the browser, at a certain size the edge of the rendered weekly plan can be missed.
+
+### Excessive white space
+
+On some pages of the app there seems to be more white space than is needed for design purposes. I have a continued problem with the height if the main DIV, I could not get it to be flexible and change the position of the footer depending on the content. Given more time I would of been able to fix this.
 
 <span
  id="#deployment">
