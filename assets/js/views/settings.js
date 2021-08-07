@@ -82,7 +82,6 @@ export function selectBtnColour() {
  */
 export function renderSettings() {
   const mainContainer = document.querySelector("#mainCenter");
-  mainContainer.style.height = "110vh";
   recipePage.classList.remove("active");
   home.classList.remove("active");
   settings.classList.add("active");

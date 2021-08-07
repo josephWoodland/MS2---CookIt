@@ -4,10 +4,6 @@
 .table {
   grid-column: 1 / span 5;
   margin: auto;
-  padding: 2rem;
-  @media screen and (max-width: $bp-small) {
-    margin: 0;
-  }
 
   &__container {
     margin-top: 3rem;
@@ -16,13 +12,10 @@
     gap: 1rem;
 
     &-table {
-      margin-top: 3rem;
+      padding: 2rem;
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(5,  1fr);
       gap: 1rem;
-      @media screen and (max-width: $bp-small) {
-        display: flex;
-      }
     }
     &-plans {
       margin-top: 3rem;
@@ -101,7 +94,7 @@
     -moz-transform: rotate(-45deg);
     -ms-transform: rotate(-45deg);
     -o-transform: rotate(-45deg);
-    @media screen and (max-width: $bp-small) {
+    @media screen and (max-width: $bp-medium) {
       display: none;
     }
   }
@@ -117,9 +110,12 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    text-overflow: ellipsis;
+    overflow: scroll;
     &:hover {
       color: $color-gold;
+    }
+    &::-webkit-scrollbar{
+      width: none !important;
     }
   }
 }

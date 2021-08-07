@@ -5,10 +5,11 @@
 .main {
   padding-top: 3%;
   background-color: $color-backgound;
-  height: 90vh;
+  height: 80vh;
   z-index: -1;
-  @media screen and (max-width: $bp-medium) {
-    height: 160vh;
+  overflow: scroll;
+  &::-webkit-scrollbar {
+    width: 0px !important;
   }
 
   &__center {

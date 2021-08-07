@@ -11,6 +11,9 @@ html {
   font-size: 62.5%;
   background-color: #f8f8f8;
 }
+html::-webkit-scrollbar {
+  width: none;
+}
 
 /* ------ variables ------*/
 /* //////////////////////////////////////////////////////////////////////////////// 
@@ -169,13 +172,12 @@ input[type=submit]:hover {
 .main {
   padding-top: 3%;
   background-color: #f8f8f8;
-  height: 90vh;
+  height: 80vh;
   z-index: -1;
+  overflow: scroll;
 }
-@media screen and (max-width: 900px) {
-  .main {
-    height: 160vh;
-  }
+.main::-webkit-scrollbar {
+  width: 0px !important;
 }
 .main__center {
   display: flex;
@@ -275,12 +277,6 @@ input[type=submit]:hover {
   background-position: center;
   background-size: cover;
 }
-@media screen and (max-width: 600px) {
-  .footer {
-    display: none;
-    visibility: hidden;
-  }
-}
 
 /* //////////////////////////////////////////////////////////////////////////////// 
 ------------------------------- FORM  --------------------------------------
@@ -351,7 +347,7 @@ input[type=submit]:hover {
   grid-column-gap: 2rem;
   margin: auto;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 900px) {
   .grid-weekly {
     grid-template-columns: repeat(4, 24%);
     grid-template-rows: repeat(7, 1fr);
@@ -395,12 +391,6 @@ input[type=submit]:hover {
 .table {
   grid-column: 1/span 5;
   margin: auto;
-  padding: 2rem;
-}
-@media screen and (max-width: 600px) {
-  .table {
-    margin: 0;
-  }
 }
 .table__container {
   margin-top: 3rem;
@@ -409,15 +399,10 @@ input[type=submit]:hover {
   gap: 1rem;
 }
 .table__container-table {
-  margin-top: 3rem;
+  padding: 2rem;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 1rem;
-}
-@media screen and (max-width: 600px) {
-  .table__container-table {
-    display: flex;
-  }
 }
 .table__container-plans {
   margin-top: 3rem;
@@ -495,7 +480,7 @@ input[type=submit]:hover {
   -ms-transform: rotate(-45deg);
   -o-transform: rotate(-45deg);
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 900px) {
   .table__meals {
     display: none;
   }
@@ -510,10 +495,13 @@ input[type=submit]:hover {
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  text-overflow: ellipsis;
+  overflow: scroll;
 }
 .table__weekly-cell:hover, .table__daily-cell:hover {
   color: #efc600;
+}
+.table__weekly-cell::-webkit-scrollbar, .table__daily-cell::-webkit-scrollbar {
+  width: none !important;
 }
 
 /* //////////////////////////////////////////////////////////////////////////////// 
