@@ -4,6 +4,7 @@
 .recipe {
   width: 80%;
   height: 650px;
+  overflow: scroll;
   @media screen and (max-width: $bp-small) {
     width: 95%;
   }
