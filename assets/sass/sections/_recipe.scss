@@ -4,7 +4,6 @@
 .recipe {
   width: 80%;
   height: 650px;
-  overflow: scroll;
   @media screen and (max-width: $bp-small) {
     width: 95%;
   }
@@ -113,6 +112,10 @@
     display: grid;
     grid-template-columns: 1fr auto;
     gap: 1rem;
+    overflow: scroll;
+    &__method{
+      overflow: scroll;
+    }
     @media screen and (max-width: $bp-medium) {
       display: flex;
       flex-direction: column;
@@ -148,6 +151,7 @@
         padding-left: 2rem;
         display: flex;
         flex-direction: column;
+        overflow: scroll;
       }
     }
   }
