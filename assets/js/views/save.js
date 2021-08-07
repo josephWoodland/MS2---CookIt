@@ -208,7 +208,6 @@ export function editSavePlanName(index) {
 export function deletePlanItem(index) {
   const savedWeek = document.querySelector("#saveWeek");
   let i = Number(index);
-  console.log(curSavedRecipes);
   if (savedWeek.classList.contains("active")) {
     alert(
       `You have deleted ${curSavedPlanWeekly[i].saveName}!!, page will refresh!!`

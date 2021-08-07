@@ -34,7 +34,6 @@ export function renderPlan(index) {
     table.renderDay(save.curSavedPlanDays[i]);
   } else {
     table.renderWeekly(save.curSavedPlanWeekly[i]);
-    console.log(save.curPlan);
   }
 }
 
