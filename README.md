@@ -400,6 +400,17 @@ This user has a old HP laptop with a 700p screen and a wide aspect ratio, this u
 
 This was a list of all the interactive features on the app and if they respond in the correct way.
 
+### Functions checklists
+
+Functions:
+
+- have the ability to make the app personal for each user - Pass
+- have the ability to allow the user to input data into the app tp create a meal plan - Pass
+- create suggestions based on the user input i.e. Dietary information - Pass
+- be able to show the recipe for each meal suggestion - Pass
+- have a save function that stores recipe plan data, allowing the user to see/access previously saved recipes. - Pass
+- be quick and ensure users do not need to access multiple pages (unecsearily). - Pass
+
 ### Nav Bar
 
 - All links render the right content to the center section of the page - highlighting the correct page.
