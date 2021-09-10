@@ -264,7 +264,6 @@ I used JavaScript to compute the logic of my project; I have highlighted some of
 
 ### [npm](https://www.npmjs.com/)
 
-### [Code Pen](https://codepen.io/)
 
 <span
  id="#testing">
