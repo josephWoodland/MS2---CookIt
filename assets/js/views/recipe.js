@@ -150,8 +150,6 @@ export async function renderRecipe(recipe) {
         recipe.servings
       }</b></h3>
   </div>  
-  <div class="recipe__card__info__web">
-  </div>
        </div>
   </div>
  </div>
