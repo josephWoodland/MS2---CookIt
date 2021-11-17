@@ -536,5 +536,10 @@ To use the `watch:sass` and the `live reload` modules for the development enviro
 
 ## CREDITS
 
-No code that was copied in this project.
-I used the online resources mentioned earlier in the file, to check on any problems I had with my code.
+Although I did not copy any code into this project, I completed a Udemy course on Javascript that I helped me massivly with writing and understanding the JavaScript code that I needed and how to write it. 
+
+Here is a link to the course [JavaScript Zero To Expert](https://www.udemy.com/course/the-complete-javascript-course/)
+
+I used the online resources mentioned earlier in the Readme, to check on any problems I had with my code.
+
+My Mentor Jack helped me alot with the structuring of the project.
