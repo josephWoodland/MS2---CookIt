@@ -193,8 +193,9 @@ input[type=submit]:hover {
     justify-content: start;
   }
 }
-.main__center__info {
+.main__center_info {
   text-align: center;
+  margin-bottom: 2rem;
 }
 .main__center__img {
   display: flex;
@@ -451,6 +452,7 @@ input[type=submit]:hover {
 }
 .table__nav__input {
   margin: auto;
+  z-index: 999999999;
 }
 @media screen and (max-width: 600px) {
   .table__nav__input {
