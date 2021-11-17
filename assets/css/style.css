@@ -193,6 +193,9 @@ input[type=submit]:hover {
     justify-content: start;
   }
 }
+.main__center__info {
+  text-align: center;
+}
 .main__center__img {
   display: flex;
   justify-content: center;
@@ -618,6 +621,9 @@ input[type=submit]:hover {
   gap: 1rem;
   overflow: scroll;
 }
+.recipe__card__method {
+  overflow: scroll;
+}
 @media screen and (max-width: 900px) {
   .recipe__card {
     display: flex;
@@ -653,6 +659,7 @@ input[type=submit]:hover {
   padding-left: 2rem;
   display: flex;
   flex-direction: column;
+  overflow: scroll;
 }
 
 /* //////////////////////////////////////////////////////////////////////////////// 
